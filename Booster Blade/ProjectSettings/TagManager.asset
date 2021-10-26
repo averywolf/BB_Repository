@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Wall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 3016584353
+    locked: 0
+  - name: BackgroundObj1
+    uniqueID: 3459601697
+    locked: 0
+  - name: Trail
+    uniqueID: 1026002501
+    locked: 0
+  - name: Walls
+    uniqueID: 1972533803
+    locked: 0
+  - name: Deathplane
+    uniqueID: 1210824009
+    locked: 0
+  - name: Player
+    uniqueID: 4103291367
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1997224179
+    locked: 0

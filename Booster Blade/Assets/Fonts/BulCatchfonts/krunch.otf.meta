@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a4b277ac11b5dd84c9deba606b79660a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Krunch
+  fontNames:
+  - Krunch
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9471a5c8cb49e034ab5b38b4b0ede7dd, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

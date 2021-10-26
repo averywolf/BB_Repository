@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2202984453956203352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3279255846310255337}
+  - component: {fileID: 7854000213925422049}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3279255846310255337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202984453956203352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7854000213925422049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2202984453956203352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1d1157451c33c4094878ba775303e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioControllerPool: []
+  mvol: 1
+  currentMusicTrack: {fileID: 0}
+  mixer: {fileID: 24100000, guid: 93a111c6f3a272c4e912bfced5387cef, type: 2}
+  MasterGroup: {fileID: 24300002, guid: 93a111c6f3a272c4e912bfced5387cef, type: 2}
+  MusicGroup: {fileID: -2304288041017780712, guid: 93a111c6f3a272c4e912bfced5387cef,
+    type: 2}
+  SFXGroup: {fileID: 2867233284154693652, guid: 93a111c6f3a272c4e912bfced5387cef,
+    type: 2}
+  musicParam: 
+  audioGroups:
+  - {fileID: 7464165675879133274, guid: cd88845ecf98b0244b2eb46376092476, type: 3}
+  - {fileID: 6069521843357451359, guid: ba479aa85c325c244afc593a768d99ac, type: 3}
+  audioSourceController: {fileID: 3298121450373387173, guid: 4d273ff7768e1cd45869f0d4d92a2030,
+    type: 3}
