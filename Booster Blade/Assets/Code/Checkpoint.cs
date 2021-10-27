@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Checkpoint : MonoBehaviour
 {
-    [SerializeField]
-    private int checkPointID = 0;
+    [SerializeField, Header("Make sure this is different for every checkpoint in the current scene")]
+    public int checkPointID = 0;
     [SerializeField]
     private Animator checkpointAnim;
 
@@ -23,8 +23,31 @@ public class Checkpoint : MonoBehaviour
             Debug.Log("Registering checkpoint");
             checkpointAnim.Play("checkP_active");
             isCheckpointActive = true;
-            SaveManager.instance.activeSave.RegisterRespawnPoint(gameObject.transform.position, SceneManager.GetActiveScene().name);
+            
+            SaveManager.instance.activeSave.RegisterCheckPoint(gameObject.transform.position, SceneManager.GetActiveScene().name);
+            SaveManager.instance.activeSave.RegisterCheckPoint(checkPointID, SceneManager.GetActiveScene().name);
             SaveManager.instance.Save();
+        }
+
+    }
+
+    public PlayerController.PlayerDirection GetCheckpointDirection()
+    {
+        if (transform.eulerAngles.z == 90f)
+        {
+            return PlayerController.PlayerDirection.up;
+        }
+        else if (transform.eulerAngles.z == 180)
+        {
+            return PlayerController.PlayerDirection.left;
+        }
+        else if (transform.eulerAngles.z == 270)
+        {
+            return PlayerController.PlayerDirection.down;
+        }
+        else
+        {
+            return PlayerController.PlayerDirection.right;
         }
 
     }

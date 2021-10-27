@@ -58,18 +58,27 @@ public class SaveManager : MonoBehaviour
         public float spawnY = 0.0f;
         public string lastLevel = "";
         // public List<FightData> fightDatas;
+        public int savedCheckpointID = -1;
         public SaveData() //default constructor
         {
           //  fightDict = new Dictionary<int, FightData>();
           //  fightDatas = new List<FightData>();
         }
-        public void RegisterRespawnPoint(Vector3 checkpointPosition, string sceneName)
+        public void RegisterCheckPoint(Vector3 checkpointPosition, string sceneName)
         {
             spawnX = checkpointPosition.x;
             spawnY = checkpointPosition.y;
             lastLevel = sceneName;
             lastSavedAtCheckpoint = true;
             Debug.Log("spawnX= " + spawnX + " spawnY= " + spawnY);
+        }
+        public void RegisterCheckPoint(int checkPointID, string sceneCheckpointIsIn)
+        {
+            // spawnX = checkpointPosition.x;
+            //spawnY = checkpointPosition.y;
+            savedCheckpointID = checkPointID;
+            lastLevel = sceneCheckpointIsIn;
+            lastSavedAtCheckpoint = true;     
         }
 
         //public FightData RetrieveFightData(int levelIndex)
@@ -86,15 +95,15 @@ public class SaveManager : MonoBehaviour
         //    //    }
         //    return null;
         //}
-    //public void SerializeFightData()
-    //    {
-    //        //    fightDatas = new List<FightData>();
-    //        //    foreach (KeyValuePair<int, FightData> info in fightDict)
-    //        //    {
-    //        //        fightDatas.Add(info.Value);
-    //        //        //might need to look at key?
-    //        //    }
-    //    }
+        //public void SerializeFightData()
+        //    {
+        //        //    fightDatas = new List<FightData>();
+        //        //    foreach (KeyValuePair<int, FightData> info in fightDict)
+        //        //    {
+        //        //        fightDatas.Add(info.Value);
+        //        //        //might need to look at key?
+        //        //    }
+        //    }
         ////Fill up dictionary with fightdata
         //public void LoadFightData()
         //{

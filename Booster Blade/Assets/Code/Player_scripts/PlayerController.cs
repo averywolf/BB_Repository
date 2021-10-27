@@ -109,9 +109,13 @@ public class PlayerController : MonoBehaviour
     public void Start()
     {
         playerSword.swordBoosting = false;
-        playerAnimator.Play("hero_lungeRight");
+        playerAnimator.Play("hero_lungeUp");
+        //SetLungeAnimation(currentFacingAngle);
     }
+    public void InitializePlayer(PlayerDirection playerDirection)
+    {
 
+    }
     private void Update()
     {
         if (!isDead &&levelStarted )
@@ -139,14 +143,6 @@ public class PlayerController : MonoBehaviour
             //
             RotateBody(currentFacingAngle);
          
-            
-    ///
-    /// erhaps
-    /// 
-    ///
-
-
-
 
             if (horizontal == 0 && vertical == 0)
             {

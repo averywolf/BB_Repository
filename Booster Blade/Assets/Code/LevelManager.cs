@@ -30,11 +30,11 @@ public class LevelManager : MonoBehaviour
 
     //store level checkpoints
     private SaveManager saveManager;
-
+    private CheckpointManager checkpointManager;
     // loading the game makes levelManager place the player at the appropriate checkpoint
     void Awake() 
     {
-       
+        checkpointManager = GetComponent<CheckpointManager>();
         if (instance == null)
         {
             instance = this;
@@ -49,6 +49,7 @@ public class LevelManager : MonoBehaviour
     }
     public void Start()
     {
+        AudioManager.instance.StopMusic();
        // Time.timeScale = 0;
        
         InitializePlayer();
@@ -65,12 +66,22 @@ public class LevelManager : MonoBehaviour
             pauseMenu.PauseGame();
         }
     }
+   
     public void InitializePlayer() //sets up player at the start of level
     {
         //if player saved at checkpoint, put them over where the checkpoint is
         if (saveManager.activeSave.lastSavedAtCheckpoint && !saveManager.startStageFromBeginning)
         {
-            playerController.transform.position = new Vector3(saveManager.activeSave.spawnX, saveManager.activeSave.spawnY);
+            Checkpoint startingCheckpoint = checkpointManager.SearchForCheckpoint(saveManager.activeSave.savedCheckpointID);
+            if(startingCheckpoint != null)
+            {
+               // playerController.InitializePlayer(startingCheckpoint.g)
+                // playerController.transform.position = new Vector3(saveManager.activeSave.spawnX, saveManager.activeSave.spawnY);
+                playerController.transform.position = startingCheckpoint.transform.position;
+                playerController.SetFacingDirection(startingCheckpoint.GetCheckpointDirection());
+                //might need to manually set facing angle for animation here
+            }
+
         }
         else
         {

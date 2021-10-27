@@ -92,6 +92,7 @@
     <Compile Include="Assets\Code\Breakblock.cs" />
     <Compile Include="Assets\Code\ButtonPanel.cs" />
     <Compile Include="Assets\Code\Checkpoint.cs" />
+    <Compile Include="Assets\Code\CheckpointManager.cs" />
     <Compile Include="Assets\Code\Cutscene.cs" />
     <Compile Include="Assets\Code\CutsceneEvent.cs" />
     <Compile Include="Assets\Code\DangerHitbox.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Code\LevelData.cs" />
     <Compile Include="Assets\Code\LevelExitDoor.cs" />
     <Compile Include="Assets\Code\LevelManager.cs" />
+    <Compile Include="Assets\Code\LevelSpawnPoint.cs" />
     <Compile Include="Assets\Code\LevelTitleCard.cs" />
     <Compile Include="Assets\Code\LevelUI.cs" />
     <Compile Include="Assets\Code\PauseMenu.cs" />
