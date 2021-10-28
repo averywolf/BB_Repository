@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseGraphic.SetActive(false);
     }
-    public void PauseGame()
+    public bool PauseGame()
     {
         if(gameIsPaused)
         {
@@ -29,6 +29,8 @@ public class PauseMenu : MonoBehaviour
             Debug.Log("Game Paused");
             pauseGraphic.SetActive(true);
         }
+        //tacky solution
         gameIsPaused = !gameIsPaused;
+        return gameIsPaused;
     }
 }

@@ -14,11 +14,7 @@ public class Breakblock : MonoBehaviour
     }
 
     public GameObject breakeffect;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     public void SmashBlock()
     {
@@ -38,7 +34,6 @@ public class Breakblock : MonoBehaviour
         {
             if (!breakType.Equals(BreakType.boost))
             {
-                Debug.Log("Smashed slash/regular block");
                 SmashBlock();
             }
         }
@@ -48,7 +43,6 @@ public class Breakblock : MonoBehaviour
             {
                 if (collision.GetComponent<PlayerSword>().swordBoosting)
                 {
-                    Debug.Log("Smashed boostblock!");
                     SmashBlock();
                 }
             }

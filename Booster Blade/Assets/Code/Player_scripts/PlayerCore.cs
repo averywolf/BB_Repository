@@ -31,7 +31,7 @@ public class PlayerCore : MonoBehaviour
         {
             playerController.SetFacingDirection(collision.GetComponent<BoostPanel>().GetBoostDirection());
       
-            StartCoroutine(playerController.DirectionChangeDelay(0.3f));
+            //StartCoroutine(playerController.DirectionChangeDelay(0.3f));
             playerController.BeginBoost(1, false);
 
         }

@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
 
     [HideInInspector]
     public bool canPauseGame =false;
+    public bool gamePaused;
 
     //store level checkpoints
     private SaveManager saveManager;
@@ -63,7 +64,7 @@ public class LevelManager : MonoBehaviour
         }
         if(canPauseGame && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            pauseMenu.PauseGame();
+            playerController.playerPaused = pauseMenu.PauseGame();
         }
     }
    
@@ -79,15 +80,21 @@ public class LevelManager : MonoBehaviour
                 // playerController.transform.position = new Vector3(saveManager.activeSave.spawnX, saveManager.activeSave.spawnY);
                 playerController.transform.position = startingCheckpoint.transform.position;
                 playerController.SetFacingDirection(startingCheckpoint.GetCheckpointDirection());
+                //playerController.SetMovementVel();
+                playerController.DisplayHorzVert();
+                //playerController.RotateBody(90f);
                 //might need to manually set facing angle for animation here
             }
 
         }
         else
         {
+            playerController.SetFacingDirection(PlayerController.PlayerDirection.right);
+            playerController.DisplayHorzVert();
+
             saveManager.startStageFromBeginning = false;
         }
-    
+
         levelUI.UpdateHPHUD(startingPlayerHP);
         playerController.currentPlayerHP = startingPlayerHP;
         //loads whereever the player is supposed to be
@@ -99,6 +106,7 @@ public class LevelManager : MonoBehaviour
     }
     public void LevelDeathProcess()
     {
+        AudioManager.instance.StopMusic();
         canPauseGame = false;
         levelUI.StartDeathUI();
         Invoke("RestartLevel", 2); //placeholder
@@ -114,7 +122,7 @@ public class LevelManager : MonoBehaviour
     {
         AudioManager.instance.PlayMusic("Post Apocalypse");
         StartCoroutine(GameTimer());
-        playerController.SetFacingDirection(PlayerController.PlayerDirection.right);
+       
         playerController.BeginBoost(2, false);
         playerController.levelStarted = true;
         canPauseGame = true;

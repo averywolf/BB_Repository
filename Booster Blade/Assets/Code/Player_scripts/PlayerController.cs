@@ -84,9 +84,12 @@ public class PlayerController : MonoBehaviour
 
     private bool isBouncingOffWall = false;
 
-
+    public SuperTextMesh debugMovetext;
     public PlayerDirection lastplayerDirection = PlayerDirection.right;
 
+    private LevelManager levelManager;
+
+    public bool playerPaused = false;
     public enum PlayerMoveStates
     {
         idle,
@@ -105,20 +108,28 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         wallChecker = GetComponentInChildren<WallChecker>();
         dashTrail.SetEnabled(true);
+        levelManager = LevelManager.instance;
     }
     public void Start()
     {
+        
         playerSword.swordBoosting = false;
-        playerAnimator.Play("hero_lungeUp");
+       // playerAnimator.Play("hero_lungeUp");
         //SetLungeAnimation(currentFacingAngle);
     }
-    public void InitializePlayer(PlayerDirection playerDirection)
+    public void InitializePlayer(PlayerDirection playerDirection, Vector3 spawnPosition)
     {
 
     }
+    public void DisplayHorzVert()
+    {
+        Debug.Log("Horizontal= " + horizontal + "Vertical = " + vertical);
+        Debug.Log("PLAYERDIR= " + currentFacingAngle);
+    }
     private void Update()
     {
-        if (!isDead &&levelStarted )
+        debugMovetext.text = "Horz= " + horizontal + "Vert = " + vertical + "\n Last direction= " +lastplayerDirection.ToString();
+        if (!isDead && levelStarted &&!playerPaused)
         {
            
             #region DEBUG INPUTS
@@ -138,26 +149,30 @@ public class PlayerController : MonoBehaviour
             //    wallChecker.ReEnableChecker();
             //}
 
-            ReadDirectionInputs();       //where should this go?
-            SetLungeAnimation(currentFacingAngle);
-            //
-            RotateBody(currentFacingAngle);
-         
 
+
+            //SetLungeAnimation(currentFacingAngle);
+
+            //RotateBody(currentFacingAngle);
+
+            ReadDirectionInputs();       //where should this go?
+            SetMovementVel();
             if (horizontal == 0 && vertical == 0)
             {
 
             }
             else
             {
-                SetMovementVel(); //might be safe to move outside?
+               //might be safe to move outside?
             }
+          
         }
     }
     public void RotateBody(float angleToRotate)
     {
         playerBody.transform.rotation = Quaternion.Euler(0, 0, angleToRotate);
-    
+      
+
     }
     public void ReadDirectionInputs()
     {
@@ -166,8 +181,8 @@ public class PlayerController : MonoBehaviour
         {
             bool directionChanged = CheckDirectionInput();
 
-
-            if (directionChanged)
+            Debug.Log("Horz= " + horizontal + "Vert = " + vertical);
+           // if (directionChanged)
             {
                 //delay from changing direction?
                // StartCoroutine(DirectionChangeDelay(0.3f)); //might need to be in fixedUpdate maybe?
@@ -190,7 +205,7 @@ public class PlayerController : MonoBehaviour
         {
             movementVelValue = new Vector2(horizontal * (currentRunSpeed + boostSpeedModifier), vertical * (currentRunSpeed + boostSpeedModifier));
         }
-
+      
     }
     /// <summary>
     /// Sets the PlayerDirection based on the player's inputs. 
@@ -250,40 +265,48 @@ public class PlayerController : MonoBehaviour
     {
         bool directionChanged = false;
         //need to make it so if you are holding two keys and let go of one of them, the other key takes over
-        if (!lastplayerDirection.Equals(PlayerDirection.right) &&  Keyboard.current.rightArrowKey.wasPressedThisFrame)           
+        if (!Keyboard.current.anyKey.isPressed)
         {
-            if (!lastplayerDirection.Equals(PlayerDirection.left))
-            {
-                SetFacingDirection(PlayerDirection.right);
-                directionChanged = true;
-            }
 
         }
-        else if (!lastplayerDirection.Equals(PlayerDirection.up) && Keyboard.current.upArrowKey.wasPressedThisFrame)
+        else
         {
-            if (!lastplayerDirection.Equals(PlayerDirection.down))
+            if (!lastplayerDirection.Equals(PlayerDirection.right) && Keyboard.current.rightArrowKey.wasPressedThisFrame)
             {
-                SetFacingDirection(PlayerDirection.up);
-                directionChanged = true;
+                if (!lastplayerDirection.Equals(PlayerDirection.left))
+                {
+                    SetFacingDirection(PlayerDirection.right);
+                    directionChanged = true;
+                }
+
             }
-        }
-        else if (!lastplayerDirection.Equals(PlayerDirection.left) && Keyboard.current.leftArrowKey.wasPressedThisFrame)
-        {
-            if (!lastplayerDirection.Equals(PlayerDirection.right))
+            else if (!lastplayerDirection.Equals(PlayerDirection.up) && Keyboard.current.upArrowKey.wasPressedThisFrame)
             {
-                SetFacingDirection(PlayerDirection.left);
-                directionChanged = true;
+                if (!lastplayerDirection.Equals(PlayerDirection.down))
+                {
+                    SetFacingDirection(PlayerDirection.up);
+                    directionChanged = true;
+                }
             }
-        }
-        else if (!lastplayerDirection.Equals(PlayerDirection.down) && Keyboard.current.downArrowKey.wasPressedThisFrame)
-        {
-            if (!lastplayerDirection.Equals(PlayerDirection.up))
+            else if (!lastplayerDirection.Equals(PlayerDirection.left) && Keyboard.current.leftArrowKey.wasPressedThisFrame)
             {
-                SetFacingDirection(PlayerDirection.down);
-                directionChanged = true;
+                if (!lastplayerDirection.Equals(PlayerDirection.right))
+                {
+                    SetFacingDirection(PlayerDirection.left);
+                    directionChanged = true;
+                }
             }
+            else if (!lastplayerDirection.Equals(PlayerDirection.down) && Keyboard.current.downArrowKey.wasPressedThisFrame)
+            {
+                if (!lastplayerDirection.Equals(PlayerDirection.up))
+                {
+                    SetFacingDirection(PlayerDirection.down);
+                    directionChanged = true;
+                }
+            }
+            Debug.Log("player direction reads " + currentFacingAngle);
         }
-   
+    
         return directionChanged;
     }
     //might replace logic in other function?
@@ -322,6 +345,10 @@ public class PlayerController : MonoBehaviour
             currentFacingAngle = 90;
         }
         AudioManager.instance.Play("ChangeDirection");
+  
+        SetLungeAnimation(currentFacingAngle);
+        //
+        RotateBody(currentFacingAngle);
     }
 
     public void ReverseDirection(PlayerDirection currentDirection)
@@ -368,7 +395,7 @@ public class PlayerController : MonoBehaviour
 
     public void BoostInput(InputAction.CallbackContext context)
     {
-        if (!currentMoveState.Equals(PlayerMoveStates.boosting) && levelStarted && !isDead &&!isStunned)
+        if (!currentMoveState.Equals(PlayerMoveStates.boosting) && levelStarted && !isDead &&!isStunned && !playerPaused)
         {
             if (context.performed)
             {
@@ -386,7 +413,7 @@ public class PlayerController : MonoBehaviour
 
     public void SlashInput(InputAction.CallbackContext context)
     {
-        if (context.performed && levelStarted && !isDead && !isStunned)
+        if (context.performed && levelStarted && !isDead && !isStunned && !playerPaused)
         {
             TestSwordAnim.Play("sword_slash");
             //AudioManager.instance.Play("HighLaser");
@@ -507,7 +534,7 @@ public class PlayerController : MonoBehaviour
             yield return new WaitForSeconds(invincibleTime / 3);
             flashingTime += (invincibleTime / 3);
         }
-        yield return new WaitForSeconds(invincibleTime);
+        //yield return new WaitForSeconds(invincibleTime);
         isInvincible = false;
         Debug.Log("Can be damaged again.");
         yield return null;
