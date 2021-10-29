@@ -62,20 +62,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Brushes\TintTextureGenerator.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\GridInformation\GridInformation.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\AnimatedTile\AnimatedTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\HexagonalRuleTile\HexagonalRuleTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\IsometricRuleTile\IsometricRuleTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\PipelineTile\PipelineTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\RandomTile\RandomTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\RuleTile\RuleTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\TerrainTile\TerrainTile.cs" />
-    <Compile Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Tiles\WeightedRandomTile\WeightedRandomTile.cs" />
-    <None Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Unity.2D.Tilemap.Extras.asmdef" />
-    <None Include="C:\Users\avery\Downloads\2d-extras-2019.4\2d-extras-2019.4\Runtime\Brushes\TintedTilemap.shader" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Brushes\TintTextureGenerator.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\GridInformation\GridInformation.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\AnimatedTile\AnimatedTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\HexagonalRuleTile\HexagonalRuleTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\IsometricRuleTile\IsometricRuleTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\PipelineTile\PipelineTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\RandomTile\RandomTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\RuleOverrideTile\AdvancedRuleOverrideTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\RuleOverrideTile\RuleOverrideTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\RuleTile\RuleTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\TerrainTile\TerrainTile.cs" />
+    <Compile Include="Packages\2d-extras-2019.4\Runtime\Tiles\WeightedRandomTile\WeightedRandomTile.cs" />
+    <None Include="Packages\2d-extras-2019.4\Runtime\Unity.2D.Tilemap.Extras.asmdef" />
+    <None Include="Packages\2d-extras-2019.4\Runtime\Brushes\TintedTilemap.shader" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.19f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
