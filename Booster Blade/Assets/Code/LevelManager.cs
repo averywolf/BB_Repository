@@ -32,9 +32,11 @@ public class LevelManager : MonoBehaviour
     //store level checkpoints
     private SaveManager saveManager;
     private CheckpointManager checkpointManager;
+    private EntityManager entityManager;
     // loading the game makes levelManager place the player at the appropriate checkpoint
     void Awake() 
     {
+        entityManager = GetComponent<EntityManager>();
         checkpointManager = GetComponent<CheckpointManager>();
         if (instance == null)
         {
