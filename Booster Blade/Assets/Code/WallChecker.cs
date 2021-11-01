@@ -30,6 +30,7 @@ public class WallChecker : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Hit wall!");
+            AudioManager.instance.Play("WallBounce");
             playerController.ReverseDirection(playerController.lastplayerDirection);
             
             //movementVelValue=-movementVelValue;

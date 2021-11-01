@@ -59,19 +59,21 @@ public class SaveManager : MonoBehaviour
         public string lastLevel = "";
         // public List<FightData> fightDatas;
         public int savedCheckpointID = -1;
+        public Dictionary<int, LevelData> levelDict;
+
         public SaveData() //default constructor
         {
-          //  fightDict = new Dictionary<int, FightData>();
-          //  fightDatas = new List<FightData>();
+            levelDict = new Dictionary<int, LevelData>();
+        //initialize level data
         }
-        public void RegisterCheckPoint(Vector3 checkpointPosition, string sceneName)
-        {
-            spawnX = checkpointPosition.x;
-            spawnY = checkpointPosition.y;
-            lastLevel = sceneName;
-            lastSavedAtCheckpoint = true;
-            Debug.Log("spawnX= " + spawnX + " spawnY= " + spawnY);
-        }
+        //public void RegisterCheckPoint(Vector3 checkpointPosition, string sceneName)
+        //{
+        //    spawnX = checkpointPosition.x;
+        //    spawnY = checkpointPosition.y;
+        //    lastLevel = sceneName;
+        //    lastSavedAtCheckpoint = true;
+        //    Debug.Log("spawnX= " + spawnX + " spawnY= " + spawnY);
+        //}
         public void RegisterCheckPoint(int checkPointID, string sceneCheckpointIsIn)
         {
             // spawnX = checkpointPosition.x;
@@ -79,6 +81,45 @@ public class SaveManager : MonoBehaviour
             savedCheckpointID = checkPointID;
             lastLevel = sceneCheckpointIsIn;
             lastSavedAtCheckpoint = true;     
+        }
+        //saves level data
+        //appears to be called when creating a save
+        public void SerializeLevelData()
+        {
+
+        }
+
+        //searches the dictionary of levels for the levelData at the specified index
+        public LevelData RetrieveLevelData(int lvlIndex)
+        {
+            if (levelDict.ContainsKey(lvlIndex))
+            {
+                return levelDict[lvlIndex];
+            }
+            else
+            {
+                //testing
+                return levelDict[lvlIndex] = new LevelData();
+
+                //return null;
+            }
+        }
+        //called when the player reaches the end of the level.
+        public void SaveCompleteLevelData(int lvlIndex, float timeAchieved)
+        {
+            //maybe handle overwritting logic outside of save system?
+            if (levelDict.ContainsKey(lvlIndex))
+            {
+                levelDict[lvlIndex].bestTime = timeAchieved;
+
+            }
+            else
+            {
+                //not sure if calling the constructor to fill out this information is needed
+                levelDict[lvlIndex] = new LevelData(lvlIndex, timeAchieved);
+                //The player hasn't beaten this level before! Add the data.
+
+            }
         }
 
         //public FightData RetrieveFightData(int levelIndex)

@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class LevelExitDoor : MonoBehaviour
 {
-    public string levelName = "";
+    private LevelManager levelManager;
+
+    private void Start()
+    {
+        levelManager = LevelManager.instance;
+    }
+
     public void GoThroughExitDoor()
     {
         //call Levelmanager, proceed to next level
-        SceneManager.LoadScene(levelName);
+        levelManager.ExitLevel();
+
     }
 }

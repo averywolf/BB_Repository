@@ -472,6 +472,7 @@ public class PlayerController : MonoBehaviour
             currentTime += cooldownRate;
             yield return null;
         }
+        AudioManager.instance.Play("BoostMeterFull");
         canBoost = true;
     }
     #endregion
@@ -569,5 +570,10 @@ public class PlayerController : MonoBehaviour
         {
             StopCoroutine(enumerator);
         }
+    }
+
+    public void FreezePlayer(bool shouldFreeze)
+    {
+
     }
 }

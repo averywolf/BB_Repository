@@ -112,8 +112,10 @@
     <Compile Include="Assets\Code\LevelExitDoor.cs" />
     <Compile Include="Assets\Code\LevelManager.cs" />
     <Compile Include="Assets\Code\LevelSpawnPoint.cs" />
+    <Compile Include="Assets\Code\LevelStandardInfo.cs" />
     <Compile Include="Assets\Code\LevelTitleCard.cs" />
     <Compile Include="Assets\Code\LevelUI.cs" />
+    <Compile Include="Assets\Code\ObjectPooler.cs" />
     <Compile Include="Assets\Code\PauseMenu.cs" />
     <Compile Include="Assets\Code\Player_scripts\DashTrail.cs" />
     <Compile Include="Assets\Code\Player_scripts\DashTrailObject.cs" />
@@ -128,11 +130,22 @@
     <Compile Include="Assets\Code\ScrollingObject.cs" />
     <Compile Include="Assets\Code\SpriteFlash.cs" />
     <Compile Include="Assets\Code\StandardPickup.cs" />
+    <Compile Include="Assets\Code\TransitionManager.cs" />
     <Compile Include="Assets\Code\WallChecker.cs" />
+    <Compile Include="Assets\LeanTween\Framework\LTDescr.cs" />
+    <Compile Include="Assets\LeanTween\Framework\LTDescrOptional.cs" />
+    <Compile Include="Assets\LeanTween\Framework\LTSeq.cs" />
+    <Compile Include="Assets\LeanTween\Framework\LeanAudio.cs" />
+    <Compile Include="Assets\LeanTween\Framework\LeanSmooth.cs" />
+    <Compile Include="Assets\LeanTween\Framework\LeanTest.cs" />
+    <Compile Include="Assets\LeanTween\Framework\LeanTween.cs" />
+    <Compile Include="Assets\LeanTween\Framework\LeanTweenExt.cs" />
     <None Include="Assets\Clavian\SuperTextMesh\Shaders\STMshadow.cginc" />
+    <None Include="Assets\LeanTween\ReadMe.txt" />
     <None Include="Assets\Fonts\Roboto\LICENSE.txt" />
     <None Include="Assets\Clavian\SuperTextMesh\3rdPartyComponentLicense.txt" />
     <None Include="Assets\Clavian\SuperTextMesh\Shaders\UI\STM UI DropshadowAndOutline.shader" />
+    <None Include="Assets\LeanTween\License.txt" />
     <None Include="Assets\Clavian\SuperTextMesh\Shaders\Unlit\STM Unlit Dropshadow.shader" />
     <None Include="Assets\Clavian\SuperTextMesh\Shaders\UI\STM UI.shader" />
     <None Include="Assets\Clavian\SuperTextMesh\Shaders\UI\STM UI Dropshadow.shader" />
@@ -779,14 +792,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
-      <Project>{C41D8ECC-7E7E-6BCC-6CE3-069FC1712655}</Project>
-      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
-      <Project>{DCB14EF2-783F-1133-4C8A-81E765A00C4F}</Project>
-      <Name>Unity.2D.Tilemap.Extras</Name>
-    </ProjectReference>
     <ProjectReference Include="AstarPathfindingProject.csproj">
       <Project>{9A95739E-1B3E-97B7-6BF5-4DA5E0FB4D9A}</Project>
       <Name>AstarPathfindingProject</Name>
@@ -795,9 +800,17 @@
       <Project>{40DF9062-2887-DFDF-5C2B-7436DC718B76}</Project>
       <Name>PackageToolsEditor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{C41D8ECC-7E7E-6BCC-6CE3-069FC1712655}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
       <Project>{497904A9-BC3B-39A9-5DA4-6831818C4D42}</Project>
       <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{DCB14EF2-783F-1133-4C8A-81E765A00C4F}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

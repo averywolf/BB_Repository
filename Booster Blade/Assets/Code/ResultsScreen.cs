@@ -13,6 +13,11 @@ public class ResultsScreen : MonoBehaviour
     private SuperTextMesh timeText;
     public void DisplayResults()
     {
+
+
+        //diplay score based on time text
+
+        timeText.text = ("Best Time: " + SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime.ToString());
         resultsAnim.Play("resultsTest");
  
     }

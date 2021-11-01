@@ -19,6 +19,10 @@ public class IntermissionManager : MonoBehaviour
     [SerializeField]
     private string nextLevel="";
     private IntermissionState currentInterState;
+
+    //index of the level the player just beat
+    [SerializeField]
+    public int LevelResultsIndex;
     public enum IntermissionState
     {
         beforeresults,
@@ -42,14 +46,6 @@ public class IntermissionManager : MonoBehaviour
             return;
         }
     }
-    //particle effects how
-    //colored 
-    //win and fail objective
-    //killing enemies charges nearby batteries
-    //how is the game crontrolled
-    //Home
-    //com Truse
-
 
     public void Start()
     {

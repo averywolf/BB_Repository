@@ -6,6 +6,9 @@ public class Breakblock : MonoBehaviour
 {
     [SerializeField]
     private BreakType breakType;
+
+    [SerializeField]
+    private string breakSound = "BreakCrystal1";
     private enum BreakType
     {
         standard,
@@ -18,7 +21,7 @@ public class Breakblock : MonoBehaviour
 
     public void SmashBlock()
     {
-        AudioManager.instance.Play("EnemyDeath_D");
+        AudioManager.instance.Play(breakSound);
         SpawnParticles(breakeffect, transform.position);
         Destroy(gameObject);
     }

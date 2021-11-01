@@ -144,5 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breakType: 0
+  breakSound: BreakCrystal1
   breakeffect: {fileID: 3326193482900577939, guid: 2cfae92664739084f94d12de3658e759,
     type: 3}

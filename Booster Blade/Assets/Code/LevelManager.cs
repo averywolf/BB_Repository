@@ -33,6 +33,11 @@ public class LevelManager : MonoBehaviour
     private SaveManager saveManager;
     private CheckpointManager checkpointManager;
     private EntityManager entityManager;
+
+    public int currentLevelIndex;
+
+    [SerializeField, Header("After beating level, this scene loads (usually an Intermission)")]
+    public string sceneToGoToNext = "";
     // loading the game makes levelManager place the player at the appropriate checkpoint
     void Awake() 
     {
@@ -145,11 +150,22 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void ResultsScreen()
-    {
-        //
-    }
 
-    /// SET SAVED AT CHECKPOINT TO FALSE WHEN MOVING ON TO NEXT SCENE
+    public void ExitLevel()
+    {
+        //saves level information (time that level was beaten, deathcount)
+
+        // transitions to intermission scene
+
+        /// SET SAVED AT CHECKPOINT TO FALSE WHEN MOVING ON TO NEXT SCENE
+        /// 
+        /// 
+        ///IMPORTANT: I don't think the data is truly saved yet (as in, if you close the game, the data will go away)
+        ///Need to make sure that happens
+        saveManager.activeSave.lastSavedAtCheckpoint = false;
+        saveManager.activeSave.SaveCompleteLevelData(currentLevelIndex, levelTime);
+        StartCoroutine(TransitionManager.instance.TransitionToIntermission(sceneToGoToNext));
+    }
+    
 
 }
