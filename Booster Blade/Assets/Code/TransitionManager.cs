@@ -80,6 +80,7 @@ public class TransitionManager : MonoBehaviour
         //playerfreeze
         FadeToColor(1, 3);
         fadingToIntermission = true;
+        LevelManager.instance.GetPlayerController().FreezePlayer(true);
         yield return new WaitForSeconds(3);
         
         SceneManager.LoadScene(sceneName);

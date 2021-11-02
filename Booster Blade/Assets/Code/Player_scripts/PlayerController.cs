@@ -90,6 +90,8 @@ public class PlayerController : MonoBehaviour
     private LevelManager levelManager;
 
     public bool playerPaused = false;
+    //currently unsure if a distinction is necessary between freeze and paused. freeze is set outside of pause contexts
+    private bool isPlayerFrozen = false;
     public enum PlayerMoveStates
     {
         idle,
@@ -129,7 +131,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         debugMovetext.text = "Horz= " + horizontal + "Vert = " + vertical + "\n Last direction= " +lastplayerDirection.ToString();
-        if (!isDead && levelStarted &&!playerPaused)
+        if (!isDead && levelStarted &&!playerPaused && !isPlayerFrozen)
         {
            
             #region DEBUG INPUTS
@@ -377,7 +379,7 @@ public class PlayerController : MonoBehaviour
     {
         if (currentMoveState.Equals(PlayerMoveStates.moving) || currentMoveState.Equals(PlayerMoveStates.boosting))
         {
-            if (!isStunned && !isDead && levelStarted)
+            if (!isStunned && !isDead && levelStarted && !isPlayerFrozen)
             {
                 playerRb.velocity = movementVelValue; //might instead set when changing facing directions
             }
@@ -395,7 +397,7 @@ public class PlayerController : MonoBehaviour
 
     public void BoostInput(InputAction.CallbackContext context)
     {
-        if (!currentMoveState.Equals(PlayerMoveStates.boosting) && levelStarted && !isDead &&!isStunned && !playerPaused)
+        if (!currentMoveState.Equals(PlayerMoveStates.boosting) && levelStarted && !isDead &&!isStunned && !playerPaused &&!isPlayerFrozen)
         {
             if (context.performed)
             {
@@ -413,7 +415,7 @@ public class PlayerController : MonoBehaviour
 
     public void SlashInput(InputAction.CallbackContext context)
     {
-        if (context.performed && levelStarted && !isDead && !isStunned && !playerPaused)
+        if (context.performed && levelStarted && !isDead && !isStunned && !playerPaused && !isPlayerFrozen)
         {
             TestSwordAnim.Play("sword_slash");
             //AudioManager.instance.Play("HighLaser");
@@ -574,6 +576,11 @@ public class PlayerController : MonoBehaviour
 
     public void FreezePlayer(bool shouldFreeze)
     {
+        isPlayerFrozen = shouldFreeze;
+        if (shouldFreeze)
+        {
 
+            playerRb.velocity = new Vector3(0, 0, 0);
+        }
     }
 }

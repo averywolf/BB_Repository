@@ -166,6 +166,10 @@ public class LevelManager : MonoBehaviour
         saveManager.activeSave.SaveCompleteLevelData(currentLevelIndex, levelTime);
         StartCoroutine(TransitionManager.instance.TransitionToIntermission(sceneToGoToNext));
     }
-    
+    //Useful so any object can grab a reference to it
+    public PlayerController GetPlayerController()
+    {
+        return playerController;
+    }
 
 }

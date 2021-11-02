@@ -36,15 +36,15 @@ MonoBehaviour:
   m_Name: Movie
   m_EditorClassIdentifier: 
   enabled: 1
-  take: 1
+  take: 2
   captureEveryNthFrame: 1
   fileNameGenerator:
     m_Path:
       m_Root: 0
-      m_Leaf: Recordings
+      m_Leaf: /Recordings
       m_ForceAssetFolder: 0
       m_AbsolutePath: 
-    m_FileName: bb_basicscroll
+    m_FileName: bb_rec
   outputFormat: 0
   videoBitRateMode: 2
   captureAlpha: 0
