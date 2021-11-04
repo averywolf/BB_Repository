@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class ScrollingObject : MonoBehaviour
 {
-    private Rigidbody2D rb2d;
     [SerializeField]
-    private float scrollSpeed=-14f;
+    public Rigidbody2D rb2d;
+    [SerializeField]
+    public Transform relevantTransform;
+    public float ogZValue;
+
+
+    private float scrollSpeed;
+    public Renderer sizeDeterminer;
     // Use this for initialization
-    void Start()
+    private void Awake()
     {
-        //Get and store a reference to the Rigidbody2D attached to this GameObject.
-        rb2d = GetComponent<Rigidbody2D>();
+      
+    ogZValue = transform.position.z;
+    // rb2d = GetComponent<Rigidbody2D>();
+}
 
-        //Start the object moving.
-        //scrollspeed
-        rb2d.velocity = new Vector2(scrollSpeed, 0);
+    public void StartScrolling(float scrollingSpeed)
+    {
+     
+        rb2d.velocity = new Vector2(scrollingSpeed, 0);
+        Debug.Log("Object has started scrolling with scrollspeed " + scrollingSpeed);
     }
 
-    void Update()
-    {
-        //// If the game is over, stop scrolling.
-        //if (GameControl.instance.gameOver == true)
-        //{
-        //    rb2d.velocity = Vector2.zero;
-        //}
-    }
 }

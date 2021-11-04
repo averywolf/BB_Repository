@@ -45,6 +45,9 @@ TagManager:
   - name: BackgroundObj1
     uniqueID: 3459601697
     locked: 0
+  - name: Enemy
+    uniqueID: 4260852355
+    locked: 0
   - name: Trail
     uniqueID: 1026002501
     locked: 0

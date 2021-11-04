@@ -48,7 +48,7 @@ public class TransitionManager : MonoBehaviour
         if (fadingToIntermission)
         {
             fadingToIntermission = false;
-            FadeToColor(0, 3);
+            FadeToColor(0, 0.5f);
         }
     }
 
@@ -60,28 +60,16 @@ public class TransitionManager : MonoBehaviour
     {
         return transAnim.GetCurrentAnimatorStateInfo(0).length;
     }
-    public IEnumerator FightTransitionProcess(int sceneID)
-    {
-        //yield return new WaitForSeconds(0.5f);
-        PlayTransitionAnimation("FadeToBlack");
-        startingFight = true;
-        AudioManager.instance.StopMusic();
-        yield return new WaitForSeconds(transAnim.GetCurrentAnimatorStateInfo(0).length);
 
-        Debug.LogWarning("LOADING FIGHT");
-        SceneManager.LoadScene(sceneID);
-
-
-    }
     //need to freeze player when this is happening;
     public IEnumerator TransitionToIntermission(string sceneName)
     {
 
         //playerfreeze
-        FadeToColor(1, 3);
+        FadeToColor(1, 0.5f);
         fadingToIntermission = true;
         LevelManager.instance.GetPlayerController().FreezePlayer(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(0.5f);
         
         SceneManager.LoadScene(sceneName);
     }
@@ -89,7 +77,7 @@ public class TransitionManager : MonoBehaviour
     {
         if (fadeToValue == 0) //probably better way
         {
-            flatColor.color =  new Color(0,0,0,1);
+            flatColor.color =  new Color(1,1,1,1);
         }
         Debug.Log("Should fade!");
         LeanTween.alpha(flatColor.rectTransform, fadeToValue, fadingTime);
