@@ -108,6 +108,7 @@
     <Compile Include="Assets\Code\EntityManager.cs" />
     <Compile Include="Assets\Code\GameManager.cs" />
     <Compile Include="Assets\Code\IntermissionManager.cs" />
+    <Compile Include="Assets\Code\Laser.cs" />
     <Compile Include="Assets\Code\LevelData.cs" />
     <Compile Include="Assets\Code\LevelExitDoor.cs" />
     <Compile Include="Assets\Code\LevelManager.cs" />
