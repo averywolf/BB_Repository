@@ -132,6 +132,7 @@ public class LevelManager : MonoBehaviour
        
         playerController.BeginBoost(2, false);
         playerController.levelStarted = true;
+        entityManager.ActivateEntities();
         canPauseGame = true;
     }
     public IEnumerator GameTimer()

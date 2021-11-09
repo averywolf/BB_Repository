@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 142684903}
   - component: {fileID: 142684905}
   - component: {fileID: 142684904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 2273449788443605632}
   - component: {fileID: 2273449788443605639}
   - component: {fileID: 2273449788443605636}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,9 @@ MonoBehaviour:
   currentFacingAngle: 0
   currentMoveState: 1
   playerSword: {fileID: 1867033004}
+  debugMovetext: {fileID: 0}
   lastplayerDirection: 3
+  playerPaused: 0
 --- !u!114 &2273449788443605632
 MonoBehaviour:
   m_ObjectHideFlags: 0

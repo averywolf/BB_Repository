@@ -25,6 +25,7 @@ public class PlayerCore : MonoBehaviour
         //doesnt' work yet
         if (collision.GetComponent<DangerHitbox>())
         {
+            //logic for hitting lasers works on the laser's end
             playerController.HurtPlayer(collision.gameObject);
         }
         if (collision.GetComponent<BoostPanel>())

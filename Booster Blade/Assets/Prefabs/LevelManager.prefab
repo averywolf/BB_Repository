@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5960935827734739998}
   - component: {fileID: 4338645959656096726}
+  - component: {fileID: 8425930940845957715}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -43,5 +44,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821fa919ca736fd4385876cbdc18529e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelUI: {fileID: 0}
   startingPlayerHP: 3
   playerController: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  canPauseGame: 0
+  gamePaused: 0
+  currentLevelIndex: 0
+  sceneToGoToNext: 
+--- !u!114 &8425930940845957715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6254648743470356954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c2f7edc32d9484282fbec3841be1e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
