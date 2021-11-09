@@ -156,6 +156,10 @@ public class PlayerController : MonoBehaviour
             //SetLungeAnimation(currentFacingAngle);
 
             //RotateBody(currentFacingAngle);
+            if(wallChecker.boxCollider2D.enabled== false)
+            {
+                wallChecker.ReEnableChecker();
+            }
 
             ReadDirectionInputs();       //where should this go?
             SetMovementVel();
@@ -351,6 +355,7 @@ public class PlayerController : MonoBehaviour
         SetLungeAnimation(currentFacingAngle);
         //
         RotateBody(currentFacingAngle);
+        wallChecker.TemporarilyDisableChecker();
     }
 
     public void ReverseDirection(PlayerDirection currentDirection)

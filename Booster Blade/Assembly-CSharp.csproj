@@ -101,6 +101,7 @@
     <Compile Include="Assets\Code\DialogueManager.cs" />
     <Compile Include="Assets\Code\Door.cs" />
     <Compile Include="Assets\Code\Enemies\BackNForthObstacle.cs" />
+    <Compile Include="Assets\Code\Enemies\BatEnemy.cs" />
     <Compile Include="Assets\Code\Enemies\EnemyHealth.cs" />
     <Compile Include="Assets\Code\Enemies\EnemyHitbox.cs" />
     <Compile Include="Assets\Code\Enemies\EntityBehavior.cs" />
