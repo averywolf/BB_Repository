@@ -7,6 +7,8 @@ public class EntityManager : MonoBehaviour
     public delegate void LevelStarted();
     public static event LevelStarted OnStartOfLevel;
 
+    public delegate void LevelTransition();
+    public static event LevelTransition OnLevelTransition;
     
     public static EntityManager instance;
  

@@ -12,6 +12,9 @@ public class BatEnemy : MonoBehaviour
     private Transform batGFX;
     [SerializeField]
     private float batMoveSpeed = 10;
+
+    [SerializeField]
+    private GameObject batDeathFX;
     private void Awake()
     {
         aIPath = GetComponent<AIPath>();
@@ -39,5 +42,16 @@ public class BatEnemy : MonoBehaviour
         {
             batGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
+    }
+    //called through OnEnemyDeath event
+    public void BatDeath()
+    {
+        SpawnParticles(batDeathFX, transform.position);
+        Destroy(gameObject);
+    }
+    public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)
+    {
+        GameObject particleEffect = Instantiate(particleEffectPrefab, spawnPoint, particleEffectPrefab.transform.rotation);
+        Destroy(particleEffect, particleEffect.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
     }
 }

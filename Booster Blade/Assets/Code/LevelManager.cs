@@ -39,6 +39,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField, Header("After beating level, this scene loads (usually an Intermission)")]
     public string sceneToGoToNext = "";
     // loading the game makes levelManager place the player at the appropriate checkpoint
+
+      
+    public Transform initialCameraPoint; //use this to get camera to look a bit ahead at the start of the level?
     void Awake() 
     {
         entityManager = GetComponent<EntityManager>();

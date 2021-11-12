@@ -5,14 +5,17 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     private LineRenderer lineRenderer;
-    public Transform laserHit;
+
 
     public GameObject laserHitFX;
     // Start is called before the first frame update
     public bool isLaserActive;
     public bool effectsEnabled = false;
+    private Vector3 laserHitPos;
     void Start()
     {
+
+
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.useWorldSpace = true; // important I think?
     }
@@ -24,14 +27,15 @@ public class Laser : MonoBehaviour
         if (isLaserActive)
         {
             //will need to expand so enemies don't hit lasers, probably
+            // RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, 15f, 12 );
             RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up);
             Debug.DrawLine(transform.position, ray.point);
-            laserHit.position = ray.point;
+            laserHitPos = ray.point;
             lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, laserHit.position);
+            lineRenderer.SetPosition(1, laserHitPos);
             if (effectsEnabled)
             {
-                SpawnParticles(laserHitFX, laserHit.position);
+                SpawnParticles(laserHitFX, laserHitPos);
             }
             if (ray.collider != null)
             {

@@ -118,6 +118,8 @@ GameObject:
   - component: {fileID: 5106567439025957700}
   - component: {fileID: 5106567439025957697}
   - component: {fileID: 5106567439025957702}
+  - component: {fileID: 1295071389}
+  - component: {fileID: 1295071390}
   m_Layer: 0
   m_Name: BatEnemy
   m_TagString: Untagged
@@ -268,6 +270,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c787f8a57efc2404ba19e11b603f410a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnemyDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1295071389}
+        m_MethodName: BatDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5106567439025957702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,3 +297,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 5106567439025957697}
+--- !u!114 &1295071389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106567439025957753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136d87044c5d87b46a0e6435261373c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  batGFX: {fileID: 5106567438835389690}
+  batMoveSpeed: 13
+  batDeathFX: {fileID: 3326193482900577939, guid: 547ec2fb4a341d5459cbdc8a36ff3d8b,
+    type: 3}
+--- !u!114 &1295071390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5106567439025957753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9c59a5175c0144d98f723fdf0275d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEntityWakeUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1295071389}
+        m_MethodName: StartBatMoving
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
