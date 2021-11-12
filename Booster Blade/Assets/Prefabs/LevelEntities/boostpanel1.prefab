@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3273746070774412066}
   - component: {fileID: 3273746070774412067}
   - component: {fileID: 7050982757167495872}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: boostpanel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -835365599
-  m_SortingLayer: -5
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: -4334789244331099691, guid: dfdcef9b3fcc54f49be823627b943a2a,
     type: 3}
