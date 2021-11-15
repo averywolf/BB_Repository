@@ -12,6 +12,7 @@ public class Laser : MonoBehaviour
     public bool isLaserActive;
     public bool effectsEnabled = false;
     private Vector3 laserHitPos;
+    //maybe start laser as inactive?
     void Start()
     {
 
@@ -30,7 +31,8 @@ public class Laser : MonoBehaviour
             // RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, 15f, 12 );
             //lasermask determiens what layers to ignore
             //make it so raycast ignores trigger colliders (they collide but aren't stopped by it)
-            int layerMaskk=1<<13; //BITSHIFTING
+            int layerMaskk=(1<<13) + (1<<14) + (1<<11); //BITSHIFTING
+            
             layerMaskk = ~layerMaskk; //turns every zero into a 1 or whatever (inverting)
 
             RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity,layerMaskk); //anything on layer 13 should be ignored, everything else would be hit
@@ -49,18 +51,35 @@ public class Laser : MonoBehaviour
             {
                 if (ray.collider.GetComponent<PlayerCore>())
                 {
-                    Debug.Log("Hitting Player core");
+                    
                     ray.collider.GetComponentInParent<PlayerController>().HurtPlayer(gameObject); //not sure if it's the best idea to do this here
                 }
             }
+        }
+        else
+        {
+            //hideLineRenderer
         }
   
     }
     public void TurnOnLaser(bool turnOn)
     {
         isLaserActive = turnOn;
+        if (turnOn)
+        {
+            lineRenderer.enabled = true;
+        }
+        else
+        {
+            lineRenderer.enabled = false;
+        }
+  
     }
-
+    public void ToggleLaser()
+    {
+        //isLaserActive= !isLaserActive;
+        TurnOnLaser(!isLaserActive);
+    }
 
     public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)
     {

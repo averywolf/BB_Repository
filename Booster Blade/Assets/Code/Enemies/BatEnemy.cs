@@ -15,8 +15,11 @@ public class BatEnemy : MonoBehaviour
 
     [SerializeField]
     private GameObject batDeathFX;
+
+    private bool batReady = false;
     private void Awake()
     {
+        batReady= false;
         aIPath = GetComponent<AIPath>();
         seeker = GetComponent<Seeker>();
         aIDestinationSetter = GetComponent<AIDestinationSetter>();
@@ -28,9 +31,26 @@ public class BatEnemy : MonoBehaviour
     {
         aIDestinationSetter.target = LevelManager.instance.GetPlayerController().transform; //might be better to grab playerCore transform?
     }
+    //make this be called by EnitityBehavior?
+    public void BatWakeUp()
+    {
+        batReady = true;
+    }
+    public void BatSpotPlayer(bool wasSpotted)
+    {
+        if (wasSpotted)
+        {
+            Debug.Log("Bat found target!");
+            StartBatMoving();
+        }
+    }
     public void StartBatMoving()
     {
-        aIPath.canMove = true;
+        if (batReady)
+        {
+            aIPath.canMove = true;
+        }
+      
     }
     public void Update()
     {

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68569400}
   - component: {fileID: 68569401}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SparkEmmiter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 309562060}
   - component: {fileID: 309562062}
   - component: {fileID: 8406394453102169241}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: SlashHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 1867033004}
   - component: {fileID: 1575433577}
   - component: {fileID: 1575433573}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,7 +595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2273449789586011496}
   - component: {fileID: 2273449789586011497}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DashTrailController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -725,7 +725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2273449790131124437}
   - component: {fileID: 2273449790131124434}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlayerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 2273449790326727277}
   - component: {fileID: 2273449790326727276}
   - component: {fileID: 414264765}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Herobody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -925,7 +925,7 @@ GameObject:
   - component: {fileID: 8866345437205874690}
   - component: {fileID: 6134906471069206382}
   - component: {fileID: 6873445571469701}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Wallchecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}

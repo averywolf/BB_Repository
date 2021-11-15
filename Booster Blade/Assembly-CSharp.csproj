@@ -102,12 +102,15 @@
     <Compile Include="Assets\Code\DialogueManager.cs" />
     <Compile Include="Assets\Code\Door.cs" />
     <Compile Include="Assets\Code\Enemies\BackNForthObstacle.cs" />
+    <Compile Include="Assets\Code\Enemies\BasicRepeatController.cs" />
     <Compile Include="Assets\Code\Enemies\BatEnemy.cs" />
     <Compile Include="Assets\Code\Enemies\EnemyHealth.cs" />
     <Compile Include="Assets\Code\Enemies\EnemyHitbox.cs" />
     <Compile Include="Assets\Code\Enemies\EnemySensor.cs" />
     <Compile Include="Assets\Code\Enemies\EntityBehavior.cs" />
+    <Compile Include="Assets\Code\Enemies\LaserRepeatController.cs" />
     <Compile Include="Assets\Code\Enemies\LevelEntity.cs" />
+    <Compile Include="Assets\Code\Enemies\SenseRadius.cs" />
     <Compile Include="Assets\Code\Enemies\SpinningThing.cs" />
     <Compile Include="Assets\Code\Enemies\TestEnemy.cs" />
     <Compile Include="Assets\Code\EnemyGem.cs" />
