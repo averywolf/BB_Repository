@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 public class BasicRepeatController : MonoBehaviour
 {
+    /// <summary>
+    /// OBSOLETE CODE, DELETE LATER
+    /// </summary>
+
     public UnityEvent RepeatedAction;
 
     public float delay1 = 1;

@@ -115,6 +115,7 @@
     <Compile Include="Assets\Code\Enemies\TestEnemy.cs" />
     <Compile Include="Assets\Code\EnemyGem.cs" />
     <Compile Include="Assets\Code\EntityManager.cs" />
+    <Compile Include="Assets\Code\EntranceDoor.cs" />
     <Compile Include="Assets\Code\GameManager.cs" />
     <Compile Include="Assets\Code\IntermissionManager.cs" />
     <Compile Include="Assets\Code\KeyGem.cs" />
