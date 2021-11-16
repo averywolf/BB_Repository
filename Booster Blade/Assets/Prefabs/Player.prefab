@@ -203,7 +203,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309562059}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -221,10 +221,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.6277328, y: 0.21051717}
-      - {x: 1.0592488, y: 2.129124}
-      - {x: 1.2535903, y: 0.22679508}
-      - {x: 1.2008926, y: -1.9858629}
+    - - {x: 2.45, y: 0}
+      - {x: 1, y: 2.4}
+      - {x: -0.5, y: 2.4}
+      - {x: 0, y: 0}
+      - {x: -0.5, y: -2.4}
+      - {x: 1, y: -2.4}
 --- !u!1 &2273449788443605633
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +284,6 @@ MonoBehaviour:
   testStun: 0
   dashTrail: {fileID: 2273449789586011497}
   playerBody: {fileID: 2273449790131124435}
-  TestSwordAnim: {fileID: 0}
   ChargeReleaseEffect: {fileID: 3326193482900577939, guid: 65fc1e762c73d804c9bd41565937081a,
     type: 3}
   playerAnimator: {fileID: 3848308425418389359}
@@ -298,6 +299,7 @@ MonoBehaviour:
   playerSword: {fileID: 1867033004}
   debugMovetext: {fileID: 0}
   lastplayerDirection: 3
+  isReversing: 0
   playerPaused: 0
 --- !u!114 &2273449788443605632
 MonoBehaviour:

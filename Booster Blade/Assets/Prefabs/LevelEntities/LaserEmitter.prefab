@@ -95,8 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 821ab5f57e24333448a64d4bd0a27ec2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldCycleLaser: 0
   delay1: 1
   delay2: 2
+  shouldStartTurnedOn: 1
 --- !u!1 &6269134658972509522
 GameObject:
   m_ObjectHideFlags: 0

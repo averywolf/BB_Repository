@@ -87,7 +87,8 @@ public class PlayerController : MonoBehaviour
     public PlayerDirection lastplayerDirection = PlayerDirection.right;
 
     private LevelManager levelManager;
-
+    [HideInInspector]
+    public bool isReversing = false;
     public bool playerPaused = false;
     //currently unsure if a distinction is necessary between freeze and paused. freeze is set outside of pause contexts
     private bool isPlayerFrozen = false;
@@ -116,6 +117,7 @@ public class PlayerController : MonoBehaviour
 
         playerAnimator.SetBool("heroBoosting", false);
         playerSword.swordBoosting = false;
+        isReversing = false;
        // playerAnimator.Play("hero_lungeUp");
         //SetLungeAnimation(currentFacingAngle);
     }
@@ -159,6 +161,7 @@ public class PlayerController : MonoBehaviour
             if(wallChecker.boxCollider2D.enabled== false)
             {
                 wallChecker.ReEnableChecker();
+                isReversing = false;
             }
 
             ReadDirectionInputs();       //where should this go?

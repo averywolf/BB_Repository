@@ -29,14 +29,13 @@ public class WallChecker : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Debug.Log("Hit wall!");
-            AudioManager.instance.Play("WallBounce");
-            playerController.ReverseDirection(playerController.lastplayerDirection);
-            
-            //movementVelValue=-movementVelValue;
-            //StartCoroutine(TempStun());
-            //playerRb.velocity = movementVelValue; //might instead set when changing facing directions
-            //prevent quickly changing directions after?
+            if (playerController.isReversing == false)
+            {
+                Debug.Log("Hit wall!");
+                AudioManager.instance.Play("WallBounce");
+                playerController.isReversing = true; //is it best to set this here?
+                playerController.ReverseDirection(playerController.lastplayerDirection);
+            }
         }
     }
 }
