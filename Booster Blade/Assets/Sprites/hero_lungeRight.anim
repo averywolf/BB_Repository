@@ -20,10 +20,18 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 240517508221956904, guid: 948f3fd282b1ded4597290491a20c8f1,
+      value: {fileID: -3577085347431246455, guid: 65c73042161881b4a9d1dc6f846ff0ea,
         type: 3}
     attribute: m_Sprite
-    path: 
+    path: PlayerBody/Herobody
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 7113549497127142848, guid: f0764d7208e624541a25307c2f809026,
+        type: 3}
+    attribute: m_Sprite
+    path: PlayerBody/Sword
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 1
@@ -34,14 +42,22 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 1191899644
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 1176341899
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 240517508221956904, guid: 948f3fd282b1ded4597290491a20c8f1, type: 3}
+    - {fileID: -3577085347431246455, guid: 65c73042161881b4a9d1dc6f846ff0ea, type: 3}
+    - {fileID: 7113549497127142848, guid: f0764d7208e624541a25307c2f809026, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

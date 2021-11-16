@@ -43,9 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd24a0d0e65d73e468e577cd07caee56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actorName: JOHN CENA
+  actorName: Archie
   expressions:
-  - {fileID: 733164478461345436, guid: ea4e410bb9286bb4092b29424e352769, type: 3}
-  - {fileID: -4514313875950258030, guid: ea4e410bb9286bb4092b29424e352769, type: 3}
-  - {fileID: -1012635877301672974, guid: ea4e410bb9286bb4092b29424e352769, type: 3}
-  - {fileID: -6189772619957206258, guid: ea4e410bb9286bb4092b29424e352769, type: 3}
+  - {fileID: 1715363004317213705, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
+  - {fileID: -3649686553616001890, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
+  - {fileID: -9047775278847243159, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
+  - {fileID: -8619719861473038999, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
+  - {fileID: -2689728134420388843, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}

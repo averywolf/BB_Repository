@@ -8,22 +8,16 @@ public class CutsceneEvent
     [TextArea]
     public string dialogueline = "";
     //speedread and skiptotheend are supertextmeshfeatures;
-    public DialoguePosition dialoguePosition = DialoguePosition.top;
-    public Actor characterActor = Actor.Player;
+
+    //variable that determines which DialogueActor to use
+    public Actor characterActor = Actor.Archie;
     public int expressionNum = 0;
-    public enum DialoguePosition
-    {
-        top,
-        bottom,
-    }
+
     public enum Actor
     {
-        Player,
-        Support,
+        Archie,
+        Zaria,
         Badguy
     }
-    public DialogueActor dialogueActorTest;
 
-
-    //DialogueActor
 }

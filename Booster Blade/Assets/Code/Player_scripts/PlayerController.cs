@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject playerBody;
 
-    public Animator TestSwordAnim;
     public GameObject ChargeReleaseEffect;
     private IEnumerator exhaustBoost; //after a certain time, exit boost and return to normal movement
     private IEnumerator boostCooldown; // can't spam charge over and over
@@ -114,7 +113,8 @@ public class PlayerController : MonoBehaviour
     }
     public void Start()
     {
-        
+
+        playerAnimator.SetBool("heroBoosting", false);
         playerSword.swordBoosting = false;
        // playerAnimator.Play("hero_lungeUp");
         //SetLungeAnimation(currentFacingAngle);
@@ -417,12 +417,18 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    public void SwingSFX()
+    {
+        AudioManager.instance.Play("Slash");
+    }
     public void SlashInput(InputAction.CallbackContext context)
     {
         if (context.performed && levelStarted && !isDead && !isStunned && !playerPaused && !isPlayerFrozen)
         {
-            TestSwordAnim.Play("sword_slash");
+
+                playerAnimator.SetTrigger("slashAttack");
+               // TestSwordAnim.Play("sword_slash");
+         
             //AudioManager.instance.Play("HighLaser");
         }
     }
@@ -451,7 +457,7 @@ public class PlayerController : MonoBehaviour
         AudioManager.instance.Play("Boost");
   
         playerSword.swordBoosting = true;
-      
+        playerAnimator.SetBool("heroBoosting", true);
         //should go after the last horizontal/vertical
     }
 
@@ -463,6 +469,7 @@ public class PlayerController : MonoBehaviour
     }
     public void ExitBoost()
     {
+        playerAnimator.SetBool("heroBoosting", false);
         currentMoveState = PlayerMoveStates.moving;
         dashTrail.SetEnabled(false);
         playerSword.swordBoosting = false;//
@@ -552,24 +559,25 @@ public class PlayerController : MonoBehaviour
 
     public void SetLungeAnimation(float lungeAngle)
     {
-        if (lungeAngle == 0f)
-        {
-            playerAnimator.Play("hero_lungeRight");
-        }
-        else if (lungeAngle == 90f) //this is at 90.00001 for some reason
-        {
-            playerAnimator.Play("hero_lungeUp");
-        }
-        else if (lungeAngle == 180f)
-        {
+        //if (lungeAngle == 0f)
+        //{
+        //    playerAnimator.Play("hero_lungeRight");
+        //}
+        //else if (lungeAngle == 90f) //this is at 90.00001 for some reason
+        //{
+        //    playerAnimator.Play("hero_lungeUp");
+        //}
+        //else if (lungeAngle == 180f)
+        //{
 
-            playerAnimator.Play("hero_lungeLeft");
-        }
-        else if (lungeAngle == 270)
-        {
+        //    playerAnimator.Play("hero_lungeLeft");
+        //}
+        //else if (lungeAngle == 270)
+        //{
 
-            playerAnimator.Play("hero_lungeDown");
-        }
+        //    playerAnimator.Play("hero_lungeDown");
+        //}
+        playerAnimator.SetFloat("heroDirection", lungeAngle);
     }
     public void CeaseRoutine(IEnumerator enumerator)
     {
