@@ -20,7 +20,7 @@ public class ScrollController : MonoBehaviour
     }
     public void SetUpScrollObjects()
     {
-      scrollObject.GetComponent<ScrollingObject>().StartScrolling(scrollspeed);
+ 
         scrollingObjects.Add(scrollObject);
         
         GameObject scolObj = Instantiate(scrollObject, transform);
@@ -30,6 +30,7 @@ public class ScrollController : MonoBehaviour
         Vector3 groundOffSet = new Vector3(scrollHorzLength, 0, 0);
 
         scolObj.transform.position = scolObj.transform.position + groundOffSet;
+        scrollObject.GetComponent<ScrollingObject>().StartScrolling(scrollspeed);
         scolObj.GetComponent<ScrollingObject>().StartScrolling(scrollspeed);
         //GetEverythingScrolling();
 

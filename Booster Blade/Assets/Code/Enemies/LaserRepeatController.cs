@@ -8,12 +8,15 @@ public class LaserRepeatController : MonoBehaviour
     public bool shouldCycleLaser;
     public float delay1 = 1;
     public float delay2 = 1;
+    public bool shouldStartTurnedOn;
     private void Awake()
     {
         laser = GetComponentInChildren<Laser>();
     }
     public void Start()
     {
+        laser.TurnOnLaser(shouldStartTurnedOn);
+
         if (shouldCycleLaser)
         {
             StartCoroutine(ActionProcess());
