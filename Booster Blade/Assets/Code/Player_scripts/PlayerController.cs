@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
     [HideInInspector]
-    public bool levelStarted = false;
+    public bool canControlPlayer = false;
     private bool isDead = false;
     public int currentPlayerHP;
 
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         debugMovetext.text = "Horz= " + horizontal + "Vert = " + vertical + "\n Last direction= " +lastplayerDirection.ToString();
-        if (!isDead && levelStarted &&!playerPaused && !isPlayerFrozen)
+        if (!isDead && !playerPaused && !isPlayerFrozen)
         {
            
             #region DEBUG INPUTS
@@ -147,17 +147,6 @@ public class PlayerController : MonoBehaviour
             }
             #endregion
 
-            //if (!wallChecker.boxCollider2D.enabled)
-            //{
-            //    isBouncingOffWall = false;
-            //    wallChecker.ReEnableChecker();
-            //}
-
-
-
-            //SetLungeAnimation(currentFacingAngle);
-
-            //RotateBody(currentFacingAngle);
             if(wallChecker.boxCollider2D.enabled== false)
             {
                 wallChecker.ReEnableChecker();
@@ -180,13 +169,11 @@ public class PlayerController : MonoBehaviour
     public void RotateBody(float angleToRotate)
     {
         playerBody.transform.rotation = Quaternion.Euler(0, 0, angleToRotate);
-      
-
     }
     public void ReadDirectionInputs()
     {
-        //
-        if (canTurn && !playerSword.swordSwinging && !isBouncingOffWall)
+ //move levelStarted check to here?
+        if (canTurn && !playerSword.swordSwinging && !isBouncingOffWall && canControlPlayer)
         {
             bool directionChanged = CheckDirectionInput();
 
@@ -230,52 +217,14 @@ public class PlayerController : MonoBehaviour
         }
         return directionWasChanged;
     }
-    //public bool CheckDirectionInput()
-    //{
-    //    bool directionChanged = false;
-    //    //need to make it so if you are holding two keys and let go of one of them, the other key takes over
-    //    if (!lastplayerDirection.Equals(PlayerDirection.right) && Keyboard.current.rightArrowKey.wasPressedThisFrame)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.left))
-    //        {
-    //            SetFacingDirection(PlayerDirection.right);
-    //            directionChanged = true;
-    //        }
-
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.up) && Keyboard.current.upArrowKey.wasPressedThisFrame)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.down))
-    //        {
-    //            SetFacingDirection(PlayerDirection.up);
-    //            directionChanged = true;
-    //        }
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.left) && Keyboard.current.leftArrowKey.wasPressedThisFrame)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.right))
-    //        {
-    //            SetFacingDirection(PlayerDirection.left);
-    //            directionChanged = true;
-    //        }
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.down) && Keyboard.current.downArrowKey.wasPressedThisFrame)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.up))
-    //        {
-    //            SetFacingDirection(PlayerDirection.down);
-    //            directionChanged = true;
-    //        }
-    //    }
-
-    //    return directionChanged;
-    //}
     public bool CheckDirectionInput()
     {
         bool directionChanged = false;
         //need to make it so if you are holding two keys and let go of one of them, the other key takes over
         if (!Keyboard.current.anyKey.isPressed)
         {
+          //  SetFacingDirection(lastplayerDirection);
+
 
         }
         else
@@ -387,7 +336,7 @@ public class PlayerController : MonoBehaviour
     {
         if (currentMoveState.Equals(PlayerMoveStates.moving) || currentMoveState.Equals(PlayerMoveStates.boosting))
         {
-            if (!isStunned && !isDead && levelStarted && !isPlayerFrozen)
+            if (!isStunned && !isDead && !isPlayerFrozen)
             {
                 playerRb.velocity = movementVelValue; //might instead set when changing facing directions
             }
@@ -405,7 +354,7 @@ public class PlayerController : MonoBehaviour
 
     public void BoostInput(InputAction.CallbackContext context)
     {
-        if (!currentMoveState.Equals(PlayerMoveStates.boosting) && levelStarted && !isDead &&!isStunned && !playerPaused &&!isPlayerFrozen)
+        if (!currentMoveState.Equals(PlayerMoveStates.boosting) && canControlPlayer && !isDead &&!isStunned && !playerPaused &&!isPlayerFrozen)
         {
             if (context.performed)
             {
@@ -426,7 +375,7 @@ public class PlayerController : MonoBehaviour
     }
     public void SlashInput(InputAction.CallbackContext context)
     {
-        if (context.performed && levelStarted && !isDead && !isStunned && !playerPaused && !isPlayerFrozen)
+        if (context.performed && canControlPlayer && !isDead && !isStunned && !playerPaused && !isPlayerFrozen)
         {
 
                 playerAnimator.SetTrigger("slashAttack");
@@ -475,7 +424,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("heroBoosting", false);
         currentMoveState = PlayerMoveStates.moving;
         dashTrail.SetEnabled(false);
-        playerSword.swordBoosting = false;//
+        playerSword.swordBoosting = false;
     }
     public IEnumerator BoostCooldown(float coolDown)
     {

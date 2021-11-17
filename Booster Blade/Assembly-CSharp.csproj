@@ -118,6 +118,7 @@
     <Compile Include="Assets\Code\EntranceDoor.cs" />
     <Compile Include="Assets\Code\GameManager.cs" />
     <Compile Include="Assets\Code\IntermissionManager.cs" />
+    <Compile Include="Assets\Code\IntroCamTrigger.cs" />
     <Compile Include="Assets\Code\KeyGem.cs" />
     <Compile Include="Assets\Code\Laser.cs" />
     <Compile Include="Assets\Code\LevelData.cs" />

@@ -54,6 +54,9 @@ TagManager:
   - name: Walls
     uniqueID: 1972533803
     locked: 0
+  - name: ForegroundDecor
+    uniqueID: 147276167
+    locked: 0
   - name: Deathplane
     uniqueID: 1210824009
     locked: 0

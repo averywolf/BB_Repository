@@ -39,8 +39,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField, Header("After beating level, this scene loads (usually an Intermission)")]
     public string sceneToGoToNext = "";
     // loading the game makes levelManager place the player at the appropriate checkpoint
-
-      
+    private bool startingFromEntrance = false;
+    
     public Transform initialCameraPoint; //use this to get camera to look a bit ahead at the start of the level?
     void Awake() 
     {
@@ -86,25 +86,23 @@ public class LevelManager : MonoBehaviour
             Checkpoint startingCheckpoint = checkpointManager.SearchForCheckpoint(saveManager.activeSave.savedCheckpointID);
             if(startingCheckpoint != null)
             {
-               // playerController.InitializePlayer(startingCheckpoint.g)
-                // playerController.transform.position = new Vector3(saveManager.activeSave.spawnX, saveManager.activeSave.spawnY);
                 playerController.transform.position = startingCheckpoint.transform.position;
                 playerController.SetFacingDirection(startingCheckpoint.GetCheckpointDirection());
-                //playerController.SetMovementVel();
                 playerController.DisplayHorzVert();
-                //playerController.RotateBody(90f);
-                //might need to manually set facing angle for animation here
             }
-
+            else
+            {
+                startingFromEntrance = true;
+            }
         }
         else
         {
             playerController.SetFacingDirection(PlayerController.PlayerDirection.right);
             playerController.DisplayHorzVert();
-
-            saveManager.startStageFromBeginning = false;
+            startingFromEntrance = true;
+            saveManager.startStageFromBeginning = false; //wait why is this here
         }
-
+        playerController.FreezePlayer(true);
         levelUI.UpdateHPHUD(startingPlayerHP);
         playerController.currentPlayerHP = startingPlayerHP;
         //loads whereever the player is supposed to be
@@ -124,19 +122,31 @@ public class LevelManager : MonoBehaviour
 
     public void BeginLevel()
     {
+        
         levelStarted = true;
         levelUI.ClearTitleCard();
     }
 
+    public void EnablePlayerControl(bool shouldControl)
+    {
+        playerController.canControlPlayer = shouldControl;
+        
+    }
     public void BlastOff()
     {
         AudioManager.instance.PlayMusic("Post Apocalypse");
         StartCoroutine(GameTimer());
-       
+        playerController.FreezePlayer(false);
         playerController.BeginBoost(2, false);
-        playerController.levelStarted = true;
         entityManager.ActivateEntities();
         canPauseGame = true;
+      
+        if (!startingFromEntrance)
+        {
+            EnablePlayerControl(true);
+        }
+
+
     }
     public IEnumerator GameTimer()
     { //currently resets when you die?
