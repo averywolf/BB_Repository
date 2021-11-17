@@ -83,7 +83,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isBouncingOffWall = false;
 
-    public SuperTextMesh debugMovetext;
     public PlayerDirection lastplayerDirection = PlayerDirection.right;
 
     private LevelManager levelManager;
@@ -92,6 +91,9 @@ public class PlayerController : MonoBehaviour
     public bool playerPaused = false;
     //currently unsure if a distinction is necessary between freeze and paused. freeze is set outside of pause contexts
     private bool isPlayerFrozen = false;
+
+    [HideInInspector]
+    public bool swordSlashing=false;
     public enum PlayerMoveStates
     {
         idle,
@@ -121,10 +123,7 @@ public class PlayerController : MonoBehaviour
        // playerAnimator.Play("hero_lungeUp");
         //SetLungeAnimation(currentFacingAngle);
     }
-    public void InitializePlayer(PlayerDirection playerDirection, Vector3 spawnPosition)
-    {
 
-    }
     public void DisplayHorzVert()
     {
         Debug.Log("Horizontal= " + horizontal + "Vertical = " + vertical);
@@ -132,7 +131,6 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        debugMovetext.text = "Horz= " + horizontal + "Vert = " + vertical + "\n Last direction= " +lastplayerDirection.ToString();
         if (!isDead && !playerPaused && !isPlayerFrozen)
         {
            
@@ -173,7 +171,7 @@ public class PlayerController : MonoBehaviour
     public void ReadDirectionInputs()
     {
  //move levelStarted check to here?
-        if (canTurn && !playerSword.swordSwinging && !isBouncingOffWall && canControlPlayer)
+        if (canTurn && !swordSlashing && !isBouncingOffWall && canControlPlayer)
         {
             bool directionChanged = CheckDirectionInput();
 
@@ -262,7 +260,6 @@ public class PlayerController : MonoBehaviour
                     directionChanged = true;
                 }
             }
-            Debug.Log("player direction reads " + currentFacingAngle);
         }
     
         return directionChanged;
@@ -377,7 +374,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.performed && canControlPlayer && !isDead && !isStunned && !playerPaused && !isPlayerFrozen)
         {
-
+            ///Curenntly, the variable swordSwinging on the sword script is not set
                 playerAnimator.SetTrigger("slashAttack");
                // TestSwordAnim.Play("sword_slash");
          
@@ -452,6 +449,7 @@ public class PlayerController : MonoBehaviour
         {
             currentPlayerHP -= 1; //might get value from dangerObj IDK
             Debug.Log("Owch! Player health: " + currentPlayerHP);
+            swordSlashing = false; //breaks out of slash?
             LevelManager.instance.ManagerUpdateHud(currentPlayerHP);
             AudioManager.instance.Play("PlayerTakeDamage");
             if (currentPlayerHP < 1)

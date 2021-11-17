@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class IntroCamTrigger : MonoBehaviour
 {
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //enable control
-        LevelManager.instance.EnablePlayerControl(true);
+        if (collision.GetComponent<PlayerCore>())
+        {
+            LevelManager.instance.EnableControlAtLevelStart();
+        }
     }
 }

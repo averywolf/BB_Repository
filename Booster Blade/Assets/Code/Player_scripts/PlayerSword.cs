@@ -25,14 +25,7 @@ public class PlayerSword : MonoBehaviour
     {
         SpawnSparkParticles(turnSparkEffect, leftSparkEmitter.transform);
     }
-    public void SetNeutralSword()
-    {
 
-    }
-    public void SwingSFX()
-    {
-        AudioManager.instance.Play("Slash");
-    }
     public void SpawnSparkParticles(GameObject particleEffectPrefab, Transform spawnPoint)
     {
         GameObject particleEffect = Instantiate(particleEffectPrefab, spawnPoint);

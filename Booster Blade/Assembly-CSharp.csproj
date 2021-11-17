@@ -122,6 +122,7 @@
     <Compile Include="Assets\Code\KeyGem.cs" />
     <Compile Include="Assets\Code\Laser.cs" />
     <Compile Include="Assets\Code\LevelData.cs" />
+    <Compile Include="Assets\Code\LevelEntrance.cs" />
     <Compile Include="Assets\Code\LevelExitDoor.cs" />
     <Compile Include="Assets\Code\LevelManager.cs" />
     <Compile Include="Assets\Code\LevelSpawnPoint.cs" />

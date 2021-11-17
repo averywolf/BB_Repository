@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using Cinemachine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
@@ -40,8 +41,12 @@ public class LevelManager : MonoBehaviour
     public string sceneToGoToNext = "";
     // loading the game makes levelManager place the player at the appropriate checkpoint
     private bool startingFromEntrance = false;
-    
-    public Transform initialCameraPoint; //use this to get camera to look a bit ahead at the start of the level?
+    public CinemachineVirtualCamera introCam;
+    public CinemachineVirtualCamera playerCam;
+
+    [SerializeField] //make sure to asssign this
+    public LevelEntrance levelEntrance;
+   
     void Awake() 
     {
         entityManager = GetComponent<EntityManager>();
@@ -57,6 +62,9 @@ public class LevelManager : MonoBehaviour
         }
         saveManager = SaveManager.instance; // MAKE SURE THIS IS INTIALIZED FIRST
         levelStarted = false;
+        introCam=levelEntrance.entranceCam;
+        playerCam.gameObject.SetActive(false);
+        introCam.gameObject.SetActive(false);
     }
     public void Start()
     {
@@ -89,16 +97,26 @@ public class LevelManager : MonoBehaviour
                 playerController.transform.position = startingCheckpoint.transform.position;
                 playerController.SetFacingDirection(startingCheckpoint.GetCheckpointDirection());
                 playerController.DisplayHorzVert();
+                playerCam.gameObject.SetActive(true);
+                introCam.gameObject.SetActive(false);
             }
             else
             {
+                introCam.gameObject.SetActive(true);
+                playerCam.gameObject.SetActive(false);
                 startingFromEntrance = true;
             }
         }
         else
         {
+            Debug.Log("Starting from beginning of level");
             playerController.SetFacingDirection(PlayerController.PlayerDirection.right);
+            //puts player at initialspawn
+            playerController.transform.position = levelEntrance.initialSpawn.transform.position;
+
             playerController.DisplayHorzVert();
+            playerCam.gameObject.SetActive(false);
+            introCam.gameObject.SetActive(true);
             startingFromEntrance = true;
             saveManager.startStageFromBeginning = false; //wait why is this here
         }
@@ -130,7 +148,15 @@ public class LevelManager : MonoBehaviour
     public void EnablePlayerControl(bool shouldControl)
     {
         playerController.canControlPlayer = shouldControl;
-        
+
+    }
+    //called to shift player from cutscene mode, only necessary to call if player started from the entrance
+    public void EnableControlAtLevelStart()
+    {
+        EnablePlayerControl(true);
+        introCam.gameObject.SetActive(false);
+        playerCam.gameObject.SetActive(true);
+        levelEntrance.BlockBacktracking();
     }
     public void BlastOff()
     {
@@ -139,6 +165,7 @@ public class LevelManager : MonoBehaviour
         playerController.FreezePlayer(false);
         playerController.BeginBoost(2, false);
         entityManager.ActivateEntities();
+        levelEntrance.OpenDoor(true, startingFromEntrance); //only gets door to play effect if starting from beginning
         canPauseGame = true;
       
         if (!startingFromEntrance)
