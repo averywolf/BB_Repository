@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actorName: Archie
+  actorDialoguePosition: 0
   expressions:
-  - {fileID: 1715363004317213705, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
-  - {fileID: -3649686553616001890, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
-  - {fileID: -9047775278847243159, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
-  - {fileID: -8619719861473038999, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
-  - {fileID: -2689728134420388843, guid: ee97e0a4db34d3547875ae172652e37e, type: 3}
+  - {fileID: 21300000, guid: fc1d97a26624e764cb8b94ae4fd123b8, type: 3}
+  - {fileID: 21300000, guid: c7a496120c2383741b86326121cfbc8c, type: 3}
+  - {fileID: 21300000, guid: 04b0e13784485034f9390ac95b61c191, type: 3}
+  - {fileID: 21300000, guid: 2c1bd68fa7b8c4c42a7ef40f42595188, type: 3}
+  - {fileID: 21300000, guid: c39f75fb928a231498b09122d60f3955, type: 3}

@@ -143,3 +143,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkPointID: 0
   checkpointAnim: {fileID: 2795925779259442590}
+  checkpointtouchFX: {fileID: 3326193482900577939, guid: 0116f6bc6b931a34c9d8131129ceac0a,
+    type: 3}

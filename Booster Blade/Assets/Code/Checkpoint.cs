@@ -10,6 +10,7 @@ public class Checkpoint : MonoBehaviour
     private Animator checkpointAnim;
 
     private bool isCheckpointActive=false;
+    public GameObject checkpointtouchFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (isCheckpointActive == false)
         {
+            SpawnParticles(checkpointtouchFX, transform.position);
             Debug.Log("Registering checkpoint");
             checkpointAnim.Play("checkP_active");
             isCheckpointActive = true;
@@ -30,7 +32,11 @@ public class Checkpoint : MonoBehaviour
         }
 
     }
-
+    public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)
+    {
+        GameObject particleEffect = Instantiate(particleEffectPrefab, spawnPoint, particleEffectPrefab.transform.rotation);
+        Destroy(particleEffect, particleEffect.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
+    }
     public PlayerController.PlayerDirection GetCheckpointDirection()
     {
         if (transform.eulerAngles.z == 90f)

@@ -138,7 +138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1479d86f8590ee54c81b43d81338b774, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc1d97a26624e764cb8b94ae4fd123b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -326,8 +326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: 6}
-  m_SizeDelta: {x: 195.88, y: 38.3}
+  m_AnchoredPosition: {x: 25, y: 0}
+  m_SizeDelta: {x: 175, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8343523973597302248
 MonoBehaviour:
@@ -344,14 +344,14 @@ MonoBehaviour:
   showTextFoldout: 1
   showAppearanceFoldout: 1
   showMaterialFoldout: 0
-  showPositionFoldout: 0
+  showPositionFoldout: 1
   showTimingFoldout: 1
   showFunctionalityFoldout: 0
   showAudioFoldout: 1
   showEventFoldout: 0
   showBetaFoldout: 0
   info:
-  - pos: {x: -97.94, y: 4.1499996, z: 0}
+  - pos: {x: -87.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -360,7 +360,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -390,7 +390,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -89.5025, y: 4.1499996, z: 0}
+  - pos: {x: -80, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.03
@@ -399,7 +399,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -429,7 +429,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -81.065, y: 4.1499996, z: 0}
+  - pos: {x: -72.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.06
@@ -438,7 +438,7 @@ MonoBehaviour:
     rawIndex: 1
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -468,7 +468,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -77.315, y: 4.1499996, z: 0}
+  - pos: {x: -70, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.089999996
@@ -477,7 +477,7 @@ MonoBehaviour:
     rawIndex: 2
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -507,7 +507,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -73.565, y: 4.1499996, z: 0}
+  - pos: {x: -67.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.12
@@ -516,7 +516,7 @@ MonoBehaviour:
     rawIndex: 3
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -546,7 +546,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -65.1275, y: 4.1499996, z: 0}
+  - pos: {x: -60, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.14999999
@@ -555,7 +555,7 @@ MonoBehaviour:
     rawIndex: 4
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -585,7 +585,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -60.440002, y: 4.1499996, z: 0}
+  - pos: {x: -57.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.32999998
@@ -594,7 +594,7 @@ MonoBehaviour:
     rawIndex: 5
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -624,7 +624,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -55.752502, y: 4.1499996, z: 0}
+  - pos: {x: -55, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.35999998
@@ -633,7 +633,7 @@ MonoBehaviour:
     rawIndex: 6
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -663,7 +663,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -47.315002, y: 4.1499996, z: 0}
+  - pos: {x: -47.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.39
@@ -672,7 +672,7 @@ MonoBehaviour:
     rawIndex: 7
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -702,7 +702,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -38.877502, y: 4.1499996, z: 0}
+  - pos: {x: -40, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.42
@@ -711,7 +711,7 @@ MonoBehaviour:
     rawIndex: 8
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -741,7 +741,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -34.190002, y: 4.1499996, z: 0}
+  - pos: {x: -37.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.45
@@ -750,7 +750,7 @@ MonoBehaviour:
     rawIndex: 9
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -780,7 +780,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -26.690002, y: 4.1499996, z: 0}
+  - pos: {x: -30, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.48
@@ -789,7 +789,7 @@ MonoBehaviour:
     rawIndex: 10
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -819,7 +819,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -18.252502, y: 4.1499996, z: 0}
+  - pos: {x: -22.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.51
@@ -828,7 +828,7 @@ MonoBehaviour:
     rawIndex: 11
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -858,7 +858,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -9.815002, y: 4.1499996, z: 0}
+  - pos: {x: -15, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.53999996
@@ -867,7 +867,7 @@ MonoBehaviour:
     rawIndex: 12
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -897,7 +897,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -1.3775024, y: 4.1499996, z: 0}
+  - pos: {x: -7.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.56999993
@@ -906,7 +906,7 @@ MonoBehaviour:
     rawIndex: 13
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -936,7 +936,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 3.3099976, y: 4.1499996, z: 0}
+  - pos: {x: -5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.5999999
@@ -945,7 +945,7 @@ MonoBehaviour:
     rawIndex: 14
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -975,7 +975,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 7.9974976, y: 4.1499996, z: 0}
+  - pos: {x: -2.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.6299999
@@ -984,7 +984,7 @@ MonoBehaviour:
     rawIndex: 15
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1014,7 +1014,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 15.497498, y: 4.1499996, z: 0}
+  - pos: {x: 5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.65999985
@@ -1023,7 +1023,7 @@ MonoBehaviour:
     rawIndex: 16
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1053,7 +1053,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 20.184998, y: 4.1499996, z: 0}
+  - pos: {x: 7.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.6899998
@@ -1062,7 +1062,7 @@ MonoBehaviour:
     rawIndex: 17
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1092,7 +1092,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 28.622498, y: 4.1499996, z: 0}
+  - pos: {x: 15, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.7199998
@@ -1101,7 +1101,7 @@ MonoBehaviour:
     rawIndex: 18
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1131,7 +1131,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 36.122498, y: 4.1499996, z: 0}
+  - pos: {x: 22.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.74999976
@@ -1140,7 +1140,7 @@ MonoBehaviour:
     rawIndex: 19
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1170,7 +1170,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 44.559998, y: 4.1499996, z: 0}
+  - pos: {x: 30, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.77999973
@@ -1179,7 +1179,7 @@ MonoBehaviour:
     rawIndex: 20
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1209,7 +1209,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 52.997498, y: 4.1499996, z: 0}
+  - pos: {x: 37.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.8099997
@@ -1218,7 +1218,7 @@ MonoBehaviour:
     rawIndex: 21
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1248,7 +1248,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 57.684998, y: 4.1499996, z: 0}
+  - pos: {x: 40, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.8399997
@@ -1257,7 +1257,7 @@ MonoBehaviour:
     rawIndex: 22
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1287,7 +1287,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 66.1225, y: 4.1499996, z: 0}
+  - pos: {x: 47.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.86999965
@@ -1296,7 +1296,7 @@ MonoBehaviour:
     rawIndex: 23
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1326,16 +1326,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 68.935, y: 4.1499996, z: 0}
+  - pos: {x: 50, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.98999965
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 24
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1365,16 +1365,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -97.94, y: -10.85, z: 0}
+  - pos: {x: 52.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.0199996
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 25
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1404,16 +1404,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -89.5025, y: -10.85, z: 0}
+  - pos: {x: 60, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.0499996
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 26
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1443,16 +1443,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -81.065, y: -10.85, z: 0}
+  - pos: {x: 67.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.0799996
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 27
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1482,16 +1482,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -76.3775, y: -10.85, z: 0}
+  - pos: {x: 70, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.1099995
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 28
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1521,7 +1521,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -68.8775, y: -10.85, z: 0}
+  - pos: {x: 77.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.1399995
@@ -1530,7 +1530,7 @@ MonoBehaviour:
     rawIndex: 29
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1560,7 +1560,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -64.19, y: -10.85, z: 0}
+  - pos: {x: -87.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.1699995
@@ -1569,7 +1569,7 @@ MonoBehaviour:
     rawIndex: 30
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1599,7 +1599,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -59.502502, y: -10.85, z: 0}
+  - pos: {x: -85, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.1999995
@@ -1608,7 +1608,7 @@ MonoBehaviour:
     rawIndex: 31
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1638,7 +1638,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -52.002502, y: -10.85, z: 0}
+  - pos: {x: -77.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.2299994
@@ -1647,7 +1647,7 @@ MonoBehaviour:
     rawIndex: 32
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1677,7 +1677,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -47.315002, y: -10.85, z: 0}
+  - pos: {x: -75, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.2599994
@@ -1686,7 +1686,7 @@ MonoBehaviour:
     rawIndex: 33
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1716,7 +1716,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -38.877502, y: -10.85, z: 0}
+  - pos: {x: -67.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.2899994
@@ -1725,7 +1725,7 @@ MonoBehaviour:
     rawIndex: 34
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1755,7 +1755,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -30.440002, y: -10.85, z: 0}
+  - pos: {x: -60, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.3199993
@@ -1764,7 +1764,7 @@ MonoBehaviour:
     rawIndex: 35
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1794,7 +1794,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -25.752502, y: -10.85, z: 0}
+  - pos: {x: -57.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.3499993
@@ -1803,7 +1803,7 @@ MonoBehaviour:
     rawIndex: 36
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1833,7 +1833,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -19.190002, y: -10.85, z: 0}
+  - pos: {x: -50, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.3799993
@@ -1842,7 +1842,7 @@ MonoBehaviour:
     rawIndex: 37
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1872,7 +1872,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -10.752502, y: -10.85, z: 0}
+  - pos: {x: -42.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.4099993
@@ -1881,7 +1881,7 @@ MonoBehaviour:
     rawIndex: 38
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1911,7 +1911,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -3.2525024, y: -10.85, z: 0}
+  - pos: {x: -35, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.4399992
@@ -1920,7 +1920,7 @@ MonoBehaviour:
     rawIndex: 39
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1950,7 +1950,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 3.3099976, y: -10.85, z: 0}
+  - pos: {x: -27.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.4699992
@@ -1959,7 +1959,7 @@ MonoBehaviour:
     rawIndex: 40
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -1989,7 +1989,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 7.9974976, y: -10.85, z: 0}
+  - pos: {x: -25, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.4999992
@@ -1998,7 +1998,7 @@ MonoBehaviour:
     rawIndex: 41
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2028,7 +2028,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 16.434998, y: -10.85, z: 0}
+  - pos: {x: -17.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.5299991
@@ -2037,7 +2037,7 @@ MonoBehaviour:
     rawIndex: 42
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2067,7 +2067,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 24.872498, y: -10.85, z: 0}
+  - pos: {x: -10, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.5599991
@@ -2076,7 +2076,7 @@ MonoBehaviour:
     rawIndex: 43
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2106,7 +2106,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 32.372498, y: -10.85, z: 0}
+  - pos: {x: -2.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.5899991
@@ -2115,7 +2115,7 @@ MonoBehaviour:
     rawIndex: 44
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2145,7 +2145,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 35.184998, y: -10.85, z: 0}
+  - pos: {x: 0, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.7099991
@@ -2154,7 +2154,7 @@ MonoBehaviour:
     rawIndex: 45
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2184,7 +2184,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 39.872498, y: -10.85, z: 0}
+  - pos: {x: 2.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.739999
@@ -2193,7 +2193,7 @@ MonoBehaviour:
     rawIndex: 46
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2223,7 +2223,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 48.309998, y: -10.85, z: 0}
+  - pos: {x: 10, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.769999
@@ -2232,7 +2232,7 @@ MonoBehaviour:
     rawIndex: 47
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2262,7 +2262,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 52.059998, y: -10.85, z: 0}
+  - pos: {x: 12.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.799999
@@ -2271,7 +2271,7 @@ MonoBehaviour:
     rawIndex: 48
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2301,7 +2301,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 60.497498, y: -10.85, z: 0}
+  - pos: {x: 20, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.829999
@@ -2310,7 +2310,7 @@ MonoBehaviour:
     rawIndex: 49
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2340,7 +2340,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 68.935, y: -10.85, z: 0}
+  - pos: {x: 27.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.859999
@@ -2349,7 +2349,7 @@ MonoBehaviour:
     rawIndex: 50
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2379,7 +2379,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 76.435, y: -10.85, z: 0}
+  - pos: {x: 35, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.8899989
@@ -2388,7 +2388,7 @@ MonoBehaviour:
     rawIndex: 51
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2418,16 +2418,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 84.8725, y: -10.85, z: 0}
+  - pos: {x: 42.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.9199989
     unreadTime: 0
-    line: 2
+    line: 1
     rawIndex: 52
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2457,16 +2457,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -97.94, y: -25.85, z: 0}
+  - pos: {x: 45, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.9499989
     unreadTime: 0
-    line: 2
+    line: 1
     rawIndex: 53
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2496,16 +2496,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -89.5025, y: -25.85, z: 0}
+  - pos: {x: 52.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.9799988
     unreadTime: 0
-    line: 2
+    line: 1
     rawIndex: 54
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2535,7 +2535,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -81.065, y: -25.85, z: 0}
+  - pos: {x: 60, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.0099988
@@ -2544,7 +2544,7 @@ MonoBehaviour:
     rawIndex: 55
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2574,7 +2574,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -76.3775, y: -25.85, z: 0}
+  - pos: {x: -87.5, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.0399988
@@ -2583,7 +2583,7 @@ MonoBehaviour:
     rawIndex: 56
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2613,7 +2613,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -68.8775, y: -25.85, z: 0}
+  - pos: {x: -80, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.0699987
@@ -2622,7 +2622,7 @@ MonoBehaviour:
     rawIndex: 57
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2652,7 +2652,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -64.19, y: -25.85, z: 0}
+  - pos: {x: -77.5, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.0999987
@@ -2661,7 +2661,7 @@ MonoBehaviour:
     rawIndex: 58
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2691,7 +2691,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -55.752502, y: -25.85, z: 0}
+  - pos: {x: -70, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.1299987
@@ -2700,7 +2700,7 @@ MonoBehaviour:
     rawIndex: 59
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2730,7 +2730,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -47.315002, y: -25.85, z: 0}
+  - pos: {x: -62.5, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.1599987
@@ -2739,7 +2739,7 @@ MonoBehaviour:
     rawIndex: 60
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -2771,13 +2771,12 @@ MonoBehaviour:
     invoked: 1
   _text: Hello! My name is Archie. This is my text box. Please be nice.
   drawText: Hello! My name is Archie. This is my text box. Please be nice.
-  hyphenedText: 'Hello! My name is Archie.
+  hyphenedText: 'Hello! My name is Archie. This
 
-    This is my text box. Please
+    is my text box. Please be
 
-    be
     nice.'
-  font: {fileID: 12800000, guid: 2c4272676b112f34b99287cae1053e69, type: 3}
+  font: {fileID: 12800000, guid: 806eac7b6e5b3b140acacb07fc1a714c, type: 3}
   _color32:
     serializedVersion: 2
     rgba: 4294967295
@@ -2804,7 +2803,7 @@ MonoBehaviour:
   perlinPitchMulti: 1
   reading: 0
   unreading: 0
-  size: 15
+  size: 10
   bestFitMulti: 1
   quality: 64
   filterMode: 1
@@ -2812,7 +2811,7 @@ MonoBehaviour:
   style: 0
   baseOffset: {x: 0, y: 0, z: 0}
   relativeBaseOffset: 1
-  lineSpacing: 1
+  lineSpacing: 1.2
   characterSpacing: 0
   tabSize: 4
   autoWrap: 12
@@ -2827,25 +2826,25 @@ MonoBehaviour:
   leftoverText: 
   textMaterial: {fileID: 2100000, guid: e490a80c3724140c0ad176edb075a09e, type: 2}
   textMesh: {fileID: 0}
-  rawTopLeftBounds: {x: 97.94, y: -19.15, z: 0}
-  rawBottomRightBounds: {x: -97.94, y: 19.15, z: 0}
-  rawBottomRightTextBounds: {x: 182.8125, y: -45, z: 0}
-  topLeftBounds: {x: 192.12, y: 350.3, z: 0}
-  topRightBounds: {x: 583.88, y: 350.3, z: 0}
-  bottomLeftBounds: {x: 192.12, y: 273.7, z: 0}
-  bottomRightBounds: {x: 583.88, y: 273.7, z: 0}
-  centerBounds: {x: 388, y: 312, z: 0}
-  topLeftTextBounds: {x: 192.12, y: 350.3, z: 0}
-  topRightTextBounds: {x: 557.745, y: 350.3, z: 0}
-  bottomLeftTextBounds: {x: 192.12, y: 260.3, z: 0}
-  bottomRightTextBounds: {x: 557.745, y: 260.3, z: 0}
-  centerTextBounds: {x: 374.9325, y: 305.3, z: 0}
-  finalTopLeftTextBounds: {x: 192.12, y: 350.3, z: 0}
-  finalTopRightTextBounds: {x: 557.745, y: 350.3, z: 0}
-  finalBottomLeftTextBounds: {x: 192.12, y: 260.3, z: 0}
-  finalBottomRightTextBounds: {x: 557.745, y: 260.3, z: 0}
-  finalCenterTextBounds: {x: 374.9325, y: 305.3, z: 0}
-  unwrappedBottomRightTextBounds: {x: 412.5, y: -15, z: 0}
+  rawTopLeftBounds: {x: 87.5, y: -22.5, z: 0}
+  rawBottomRightBounds: {x: -87.5, y: 22.5, z: 0}
+  rawBottomRightTextBounds: {x: 165, y: -36, z: 0}
+  topLeftBounds: {x: 195, y: 345, z: 0}
+  topRightBounds: {x: 545, y: 345, z: 0}
+  bottomLeftBounds: {x: 195, y: 255, z: 0}
+  bottomRightBounds: {x: 545, y: 255, z: 0}
+  centerBounds: {x: 370, y: 300, z: 0}
+  topLeftTextBounds: {x: 195, y: 345, z: 0}
+  topRightTextBounds: {x: 525, y: 345, z: 0}
+  bottomLeftTextBounds: {x: 195, y: 273, z: 0}
+  bottomRightTextBounds: {x: 525, y: 273, z: 0}
+  centerTextBounds: {x: 360, y: 309, z: 0}
+  finalTopLeftTextBounds: {x: 195, y: 345, z: 0}
+  finalTopRightTextBounds: {x: 525, y: 345, z: 0}
+  finalBottomLeftTextBounds: {x: 195, y: 273, z: 0}
+  finalBottomRightTextBounds: {x: 525, y: 273, z: 0}
+  finalCenterTextBounds: {x: 360, y: 309, z: 0}
+  unwrappedBottomRightTextBounds: {x: 345, y: -12, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3031,8 +3030,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24, y: 6}
-  m_SizeDelta: {x: 195.88, y: 38.3}
+  m_AnchoredPosition: {x: -25, y: 1.5}
+  m_SizeDelta: {x: 170, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5801043225770220719
 MonoBehaviour:
@@ -3049,14 +3048,14 @@ MonoBehaviour:
   showTextFoldout: 1
   showAppearanceFoldout: 1
   showMaterialFoldout: 0
-  showPositionFoldout: 0
+  showPositionFoldout: 1
   showTimingFoldout: 1
   showFunctionalityFoldout: 0
   showAudioFoldout: 1
   showEventFoldout: 0
   showBetaFoldout: 0
   info:
-  - pos: {x: -97.94, y: 4.1499996, z: 0}
+  - pos: {x: -85, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -3065,7 +3064,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3095,7 +3094,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -89.5025, y: 4.1499996, z: 0}
+  - pos: {x: -77.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.03
@@ -3104,7 +3103,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3134,7 +3133,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -81.065, y: 4.1499996, z: 0}
+  - pos: {x: -70, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.06
@@ -3143,7 +3142,7 @@ MonoBehaviour:
     rawIndex: 1
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3173,7 +3172,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -77.315, y: 4.1499996, z: 0}
+  - pos: {x: -67.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.089999996
@@ -3182,7 +3181,7 @@ MonoBehaviour:
     rawIndex: 2
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3212,7 +3211,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -73.565, y: 4.1499996, z: 0}
+  - pos: {x: -65, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.12
@@ -3221,7 +3220,7 @@ MonoBehaviour:
     rawIndex: 3
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3251,7 +3250,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -65.1275, y: 4.1499996, z: 0}
+  - pos: {x: -57.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.14999999
@@ -3260,7 +3259,7 @@ MonoBehaviour:
     rawIndex: 4
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3290,7 +3289,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -60.440002, y: 4.1499996, z: 0}
+  - pos: {x: -55, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.32999998
@@ -3299,7 +3298,7 @@ MonoBehaviour:
     rawIndex: 5
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3329,7 +3328,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -55.752502, y: 4.1499996, z: 0}
+  - pos: {x: -52.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.35999998
@@ -3338,7 +3337,7 @@ MonoBehaviour:
     rawIndex: 6
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3368,7 +3367,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -47.315002, y: 4.1499996, z: 0}
+  - pos: {x: -45, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.39
@@ -3377,7 +3376,7 @@ MonoBehaviour:
     rawIndex: 7
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3407,7 +3406,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -38.877502, y: 4.1499996, z: 0}
+  - pos: {x: -37.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.42
@@ -3416,7 +3415,7 @@ MonoBehaviour:
     rawIndex: 8
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3446,7 +3445,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -34.190002, y: 4.1499996, z: 0}
+  - pos: {x: -35, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.45
@@ -3455,7 +3454,7 @@ MonoBehaviour:
     rawIndex: 9
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3485,7 +3484,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -26.690002, y: 4.1499996, z: 0}
+  - pos: {x: -27.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.48
@@ -3494,7 +3493,7 @@ MonoBehaviour:
     rawIndex: 10
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3524,7 +3523,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -18.252502, y: 4.1499996, z: 0}
+  - pos: {x: -20, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.51
@@ -3533,7 +3532,7 @@ MonoBehaviour:
     rawIndex: 11
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3563,7 +3562,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -9.815002, y: 4.1499996, z: 0}
+  - pos: {x: -12.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.53999996
@@ -3572,7 +3571,7 @@ MonoBehaviour:
     rawIndex: 12
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3602,7 +3601,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -1.3775024, y: 4.1499996, z: 0}
+  - pos: {x: -5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.56999993
@@ -3611,7 +3610,7 @@ MonoBehaviour:
     rawIndex: 13
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3641,7 +3640,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 3.3099976, y: 4.1499996, z: 0}
+  - pos: {x: -2.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.5999999
@@ -3650,7 +3649,7 @@ MonoBehaviour:
     rawIndex: 14
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3680,7 +3679,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 7.9974976, y: 4.1499996, z: 0}
+  - pos: {x: 0, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.6299999
@@ -3689,7 +3688,7 @@ MonoBehaviour:
     rawIndex: 15
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3719,7 +3718,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 15.497498, y: 4.1499996, z: 0}
+  - pos: {x: 7.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.65999985
@@ -3728,7 +3727,7 @@ MonoBehaviour:
     rawIndex: 16
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3758,7 +3757,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 20.184998, y: 4.1499996, z: 0}
+  - pos: {x: 10, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.6899998
@@ -3767,7 +3766,7 @@ MonoBehaviour:
     rawIndex: 17
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3797,7 +3796,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 28.622498, y: 4.1499996, z: 0}
+  - pos: {x: 17.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.7199998
@@ -3806,7 +3805,7 @@ MonoBehaviour:
     rawIndex: 18
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3836,7 +3835,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 36.122498, y: 4.1499996, z: 0}
+  - pos: {x: 25, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.74999976
@@ -3845,7 +3844,7 @@ MonoBehaviour:
     rawIndex: 19
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3875,7 +3874,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 44.559998, y: 4.1499996, z: 0}
+  - pos: {x: 32.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.77999973
@@ -3884,7 +3883,7 @@ MonoBehaviour:
     rawIndex: 20
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3914,7 +3913,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 52.997498, y: 4.1499996, z: 0}
+  - pos: {x: 40, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.8099997
@@ -3923,7 +3922,7 @@ MonoBehaviour:
     rawIndex: 21
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3953,7 +3952,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 57.684998, y: 4.1499996, z: 0}
+  - pos: {x: 42.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.8399997
@@ -3962,7 +3961,7 @@ MonoBehaviour:
     rawIndex: 22
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -3992,7 +3991,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 66.1225, y: 4.1499996, z: 0}
+  - pos: {x: 50, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.86999965
@@ -4001,7 +4000,7 @@ MonoBehaviour:
     rawIndex: 23
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4031,16 +4030,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 68.935, y: 4.1499996, z: 0}
+  - pos: {x: 52.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0.98999965
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 24
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4070,16 +4069,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -97.94, y: -10.85, z: 0}
+  - pos: {x: 55, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.0199996
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 25
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4109,16 +4108,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -89.5025, y: -10.85, z: 0}
+  - pos: {x: 62.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.0499996
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 26
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4148,16 +4147,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -81.065, y: -10.85, z: 0}
+  - pos: {x: 70, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.0799996
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 27
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4187,16 +4186,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -76.3775, y: -10.85, z: 0}
+  - pos: {x: 72.5, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.1099995
     unreadTime: 0
-    line: 1
+    line: 0
     rawIndex: 28
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4226,7 +4225,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -68.8775, y: -10.85, z: 0}
+  - pos: {x: 80, y: 10.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.1399995
@@ -4235,7 +4234,7 @@ MonoBehaviour:
     rawIndex: 29
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4265,7 +4264,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -64.19, y: -10.85, z: 0}
+  - pos: {x: -85, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.1699995
@@ -4274,7 +4273,7 @@ MonoBehaviour:
     rawIndex: 30
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4304,7 +4303,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -59.502502, y: -10.85, z: 0}
+  - pos: {x: -82.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.1999995
@@ -4313,7 +4312,7 @@ MonoBehaviour:
     rawIndex: 31
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4343,7 +4342,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -52.002502, y: -10.85, z: 0}
+  - pos: {x: -75, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.2299994
@@ -4352,7 +4351,7 @@ MonoBehaviour:
     rawIndex: 32
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4382,7 +4381,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -47.315002, y: -10.85, z: 0}
+  - pos: {x: -72.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.2599994
@@ -4391,7 +4390,7 @@ MonoBehaviour:
     rawIndex: 33
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4421,7 +4420,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -38.877502, y: -10.85, z: 0}
+  - pos: {x: -65, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.2899994
@@ -4430,7 +4429,7 @@ MonoBehaviour:
     rawIndex: 34
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4460,7 +4459,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -30.440002, y: -10.85, z: 0}
+  - pos: {x: -57.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.3199993
@@ -4469,7 +4468,7 @@ MonoBehaviour:
     rawIndex: 35
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4499,7 +4498,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -25.752502, y: -10.85, z: 0}
+  - pos: {x: -55, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.3499993
@@ -4508,7 +4507,7 @@ MonoBehaviour:
     rawIndex: 36
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4538,7 +4537,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -19.190002, y: -10.85, z: 0}
+  - pos: {x: -47.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.3799993
@@ -4547,7 +4546,7 @@ MonoBehaviour:
     rawIndex: 37
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4577,7 +4576,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -10.752502, y: -10.85, z: 0}
+  - pos: {x: -40, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.4099993
@@ -4586,7 +4585,7 @@ MonoBehaviour:
     rawIndex: 38
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4616,7 +4615,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -3.2525024, y: -10.85, z: 0}
+  - pos: {x: -32.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.4399992
@@ -4625,7 +4624,7 @@ MonoBehaviour:
     rawIndex: 39
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4655,7 +4654,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 3.3099976, y: -10.85, z: 0}
+  - pos: {x: -25, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.4699992
@@ -4664,7 +4663,7 @@ MonoBehaviour:
     rawIndex: 40
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4694,7 +4693,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 7.9974976, y: -10.85, z: 0}
+  - pos: {x: -22.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.4999992
@@ -4703,7 +4702,7 @@ MonoBehaviour:
     rawIndex: 41
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4733,7 +4732,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 16.434998, y: -10.85, z: 0}
+  - pos: {x: -15, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.5299991
@@ -4742,7 +4741,7 @@ MonoBehaviour:
     rawIndex: 42
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4772,7 +4771,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 24.872498, y: -10.85, z: 0}
+  - pos: {x: -7.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.5599991
@@ -4781,7 +4780,7 @@ MonoBehaviour:
     rawIndex: 43
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4811,7 +4810,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 32.372498, y: -10.85, z: 0}
+  - pos: {x: 0, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.5899991
@@ -4820,7 +4819,7 @@ MonoBehaviour:
     rawIndex: 44
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4850,7 +4849,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 35.184998, y: -10.85, z: 0}
+  - pos: {x: 2.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.7099991
@@ -4859,7 +4858,7 @@ MonoBehaviour:
     rawIndex: 45
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4889,7 +4888,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 39.872498, y: -10.85, z: 0}
+  - pos: {x: 5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.739999
@@ -4898,7 +4897,7 @@ MonoBehaviour:
     rawIndex: 46
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4928,7 +4927,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 48.309998, y: -10.85, z: 0}
+  - pos: {x: 12.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.769999
@@ -4937,7 +4936,7 @@ MonoBehaviour:
     rawIndex: 47
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -4967,7 +4966,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 52.059998, y: -10.85, z: 0}
+  - pos: {x: 15, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.799999
@@ -4976,7 +4975,7 @@ MonoBehaviour:
     rawIndex: 48
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5006,7 +5005,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 60.497498, y: -10.85, z: 0}
+  - pos: {x: 22.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.829999
@@ -5015,7 +5014,7 @@ MonoBehaviour:
     rawIndex: 49
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5045,7 +5044,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 68.935, y: -10.85, z: 0}
+  - pos: {x: 30, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.859999
@@ -5054,7 +5053,7 @@ MonoBehaviour:
     rawIndex: 50
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5084,7 +5083,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 76.435, y: -10.85, z: 0}
+  - pos: {x: 37.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.8899989
@@ -5093,7 +5092,7 @@ MonoBehaviour:
     rawIndex: 51
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5123,16 +5122,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: 84.8725, y: -10.85, z: 0}
+  - pos: {x: 45, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.9199989
     unreadTime: 0
-    line: 2
+    line: 1
     rawIndex: 52
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5162,16 +5161,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -97.94, y: -25.85, z: 0}
+  - pos: {x: 47.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.9499989
     unreadTime: 0
-    line: 2
+    line: 1
     rawIndex: 53
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5201,16 +5200,16 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -89.5025, y: -25.85, z: 0}
+  - pos: {x: 55, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 1.9799988
     unreadTime: 0
-    line: 2
+    line: 1
     rawIndex: 54
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5240,7 +5239,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -81.065, y: -25.85, z: 0}
+  - pos: {x: 62.5, y: -1.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.0099988
@@ -5249,7 +5248,7 @@ MonoBehaviour:
     rawIndex: 55
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5279,7 +5278,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -76.3775, y: -25.85, z: 0}
+  - pos: {x: -85, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.0399988
@@ -5288,7 +5287,7 @@ MonoBehaviour:
     rawIndex: 56
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5318,7 +5317,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -68.8775, y: -25.85, z: 0}
+  - pos: {x: -77.5, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.0699987
@@ -5327,7 +5326,7 @@ MonoBehaviour:
     rawIndex: 57
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5357,7 +5356,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -64.19, y: -25.85, z: 0}
+  - pos: {x: -75, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.0999987
@@ -5366,7 +5365,7 @@ MonoBehaviour:
     rawIndex: 58
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5396,7 +5395,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -55.752502, y: -25.85, z: 0}
+  - pos: {x: -67.5, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.1299987
@@ -5405,7 +5404,7 @@ MonoBehaviour:
     rawIndex: 59
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5435,7 +5434,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -47.315002, y: -25.85, z: 0}
+  - pos: {x: -60, y: -13.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 2.1599987
@@ -5444,7 +5443,7 @@ MonoBehaviour:
     rawIndex: 60
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 15, y: 15}
+    size: {x: 10, y: 10}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -5476,13 +5475,12 @@ MonoBehaviour:
     invoked: 1
   _text: Hello! My name is Archie. This is my text box. Please be nice.
   drawText: Hello! My name is Archie. This is my text box. Please be nice.
-  hyphenedText: 'Hello! My name is Archie.
+  hyphenedText: 'Hello! My name is Archie. This
 
-    This is my text box. Please
+    is my text box. Please be
 
-    be
     nice.'
-  font: {fileID: 12800000, guid: 2c4272676b112f34b99287cae1053e69, type: 3}
+  font: {fileID: 12800000, guid: 806eac7b6e5b3b140acacb07fc1a714c, type: 3}
   _color32:
     serializedVersion: 2
     rgba: 4294967295
@@ -5509,7 +5507,7 @@ MonoBehaviour:
   perlinPitchMulti: 1
   reading: 0
   unreading: 0
-  size: 15
+  size: 10
   bestFitMulti: 1
   quality: 64
   filterMode: 1
@@ -5517,7 +5515,7 @@ MonoBehaviour:
   style: 0
   baseOffset: {x: 0, y: 0, z: 0}
   relativeBaseOffset: 1
-  lineSpacing: 1
+  lineSpacing: 1.2
   characterSpacing: 0
   tabSize: 4
   autoWrap: 12
@@ -5532,25 +5530,25 @@ MonoBehaviour:
   leftoverText: 
   textMaterial: {fileID: 2100000, guid: e490a80c3724140c0ad176edb075a09e, type: 2}
   textMesh: {fileID: 0}
-  rawTopLeftBounds: {x: 97.94, y: -19.15, z: 0}
-  rawBottomRightBounds: {x: -97.94, y: 19.15, z: 0}
-  rawBottomRightTextBounds: {x: 182.8125, y: -45, z: 0}
-  topLeftBounds: {x: 76.119995, y: 110.3, z: 0}
-  topRightBounds: {x: 467.88, y: 110.3, z: 0}
-  bottomLeftBounds: {x: 76.119995, y: 33.699997, z: 0}
-  bottomRightBounds: {x: 467.88, y: 33.699997, z: 0}
-  centerBounds: {x: 272, y: 72, z: 0}
-  topLeftTextBounds: {x: 76.119995, y: 124.3, z: 0}
-  topRightTextBounds: {x: 441.745, y: 124.3, z: 0}
-  bottomLeftTextBounds: {x: 76.119995, y: 34.300003, z: 0}
-  bottomRightTextBounds: {x: 441.745, y: 34.300003, z: 0}
-  centerTextBounds: {x: 258.9325, y: 79.3, z: 0}
-  finalTopLeftTextBounds: {x: 76.119995, y: 110.3, z: 0}
-  finalTopRightTextBounds: {x: 441.745, y: 110.3, z: 0}
-  finalBottomLeftTextBounds: {x: 76.119995, y: 20.300003, z: 0}
-  finalBottomRightTextBounds: {x: 441.745, y: 20.300003, z: 0}
-  finalCenterTextBounds: {x: 258.9325, y: 65.3, z: 0}
-  unwrappedBottomRightTextBounds: {x: 412.5, y: -15, z: 0}
+  rawTopLeftBounds: {x: 85, y: -22.5, z: 0}
+  rawBottomRightBounds: {x: -85, y: 22.5, z: 0}
+  rawBottomRightTextBounds: {x: 165, y: -36, z: 0}
+  topLeftBounds: {x: 100, y: 108, z: 0}
+  topRightBounds: {x: 440, y: 108, z: 0}
+  bottomLeftBounds: {x: 100, y: 18, z: 0}
+  bottomRightBounds: {x: 440, y: 18, z: 0}
+  centerBounds: {x: 270, y: 63, z: 0}
+  topLeftTextBounds: {x: 100, y: 108, z: 0}
+  topRightTextBounds: {x: 430, y: 108, z: 0}
+  bottomLeftTextBounds: {x: 100, y: 36, z: 0}
+  bottomRightTextBounds: {x: 430, y: 36, z: 0}
+  centerTextBounds: {x: 265, y: 72, z: 0}
+  finalTopLeftTextBounds: {x: 100, y: 108, z: 0}
+  finalTopRightTextBounds: {x: 430, y: 108, z: 0}
+  finalBottomLeftTextBounds: {x: 100, y: 36, z: 0}
+  finalBottomRightTextBounds: {x: 430, y: 36, z: 0}
+  finalCenterTextBounds: {x: 265, y: 72, z: 0}
+  unwrappedBottomRightTextBounds: {x: 345, y: -12, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls:
@@ -6992,11 +6990,11 @@ MonoBehaviour:
   bottomLeftBounds: {x: 0, y: 276.526, z: 0}
   bottomRightBounds: {x: 640, y: 276.526, z: 0}
   centerBounds: {x: 320, y: 298.806, z: 0}
-  topLeftTextBounds: {x: -75.5, y: 354.37347, z: 0}
-  topRightTextBounds: {x: 563.7424, y: 354.37347, z: 0}
-  bottomLeftTextBounds: {x: -75.5, y: 314.5763, z: 0}
-  bottomRightTextBounds: {x: 563.7424, y: 314.5763, z: 0}
-  centerTextBounds: {x: 244.12119, y: 334.47488, z: 0}
+  topLeftTextBounds: {x: 0, y: 321.086, z: 0}
+  topRightTextBounds: {x: 517.2125, y: 321.086, z: 0}
+  bottomLeftTextBounds: {x: 0, y: 288.886, z: 0}
+  bottomRightTextBounds: {x: 517.2125, y: 288.886, z: 0}
+  centerTextBounds: {x: 258.60626, y: 304.986, z: 0}
   finalTopLeftTextBounds: {x: 0, y: 321.086, z: 0}
   finalTopRightTextBounds: {x: 517.2125, y: 321.086, z: 0}
   finalBottomLeftTextBounds: {x: 0, y: 288.886, z: 0}
@@ -7568,11 +7566,11 @@ MonoBehaviour:
   bottomLeftBounds: {x: 114.600006, y: -98.39401, z: 0}
   bottomRightBounds: {x: 514.6, y: -98.39401, z: 0}
   centerBounds: {x: 314.59998, y: 1.6059875, z: 0}
-  topLeftTextBounds: {x: 66.13844, y: 83.1099, z: 0}
-  topRightTextBounds: {x: 284.80667, y: 83.1099, z: 0}
-  bottomLeftTextBounds: {x: 66.13844, y: 33.128586, z: 0}
-  bottomRightTextBounds: {x: 284.80667, y: 33.128586, z: 0}
-  centerTextBounds: {x: 175.47256, y: 58.119244, z: 0}
+  topLeftTextBounds: {x: 114.600006, y: 101.60599, z: 0}
+  topRightTextBounds: {x: 291.525, y: 101.60599, z: 0}
+  bottomLeftTextBounds: {x: 114.600006, y: 61.165985, z: 0}
+  bottomRightTextBounds: {x: 291.525, y: 61.165985, z: 0}
+  centerTextBounds: {x: 203.0625, y: 81.38599, z: 0}
   finalTopLeftTextBounds: {x: 114.600006, y: 101.60599, z: 0}
   finalTopRightTextBounds: {x: 291.525, y: 101.60599, z: 0}
   finalBottomLeftTextBounds: {x: 114.600006, y: 61.165985, z: 0}
@@ -7897,8 +7895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3597094090687096676, guid: 5135c428ec5fb1644b5b38d6bebae16c,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1eccad6802c7094894f60e95d6f8aad, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
