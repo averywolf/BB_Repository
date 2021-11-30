@@ -44,7 +44,7 @@ MonoBehaviour:
       m_Leaf: /Recordings
       m_ForceAssetFolder: 0
       m_AbsolutePath: 
-    m_FileName: bb_rec
+    m_FileName: bb_dialoguePromo
   outputFormat: 0
   videoBitRateMode: 2
   captureAlpha: 0

@@ -1527,12 +1527,180 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
+      propertyPath: cutsceneEvents.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[0].dialogueline
+      value: Hey, Archie! I just got some info on the next area.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[1].dialogueline
+      value: Okay, what's up ahead?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[2].dialogueline
+      value: This segment of the  <w>Crystal Path</w> is notoriously rough even for
+        experienced spelunkers...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[3].dialogueline
+      value: If your reflexes are slow you'll get impaled by a crystal spike and
+        probably die.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[4].dialogueline
+      value: So make sure to take it slow and stop before you crash into something,
+        okay?
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[5].dialogueline
+      value: <j>THAT'S NOT EXACTLY A THING I CAN DO RIGHT NOW</j>
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[6].dialogueline
+      value: okay earthquake's over for me I'm done with this conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[7].dialogueline
+      value: okay earthquake's over for me I'm done with this conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[8].dialogueline
+      value: okay earthquake's over for me I'm done with this conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[9].dialogueline
+      value: okay earthquake's over for me I'm done with this conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[0].expressionNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[10].dialogueline
+      value: okay earthquake's over for me I'm done with this conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[11].dialogueline
+      value: okay earthquake's over for me I'm done with this conversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[1].expressionNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[2].expressionNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[3].expressionNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[4].expressionNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[5].expressionNum
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[6].expressionNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[7].expressionNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[8].expressionNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[9].expressionNum
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[0].characterActor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
       propertyPath: cutsceneEvents.Array.data[1].characterActor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[2].characterActor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[3].characterActor
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: cutsceneEvents.Array.data[4].characterActor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[5].characterActor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[6].characterActor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[7].characterActor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[8].characterActor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[9].characterActor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[10].characterActor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706354301534303443, guid: 59d4100509a10304c942f4719ec7a01e,
+        type: 3}
+      propertyPath: cutsceneEvents.Array.data[11].characterActor
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3706354301591527326, guid: 59d4100509a10304c942f4719ec7a01e,
@@ -2781,152 +2949,152 @@ PrefabInstance:
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: centerBounds.x
-      value: 206.40627
+      value: 455
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: centerBounds.y
-      value: 73.828125
+      value: 31.5
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topLeftBounds.x
-      value: 7.1875305
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topLeftBounds.y
-      value: 126.56249
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topRightBounds.x
-      value: 405.625
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topRightBounds.y
-      value: 126.56249
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomLeftBounds.x
-      value: 7.1875305
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 21.09375
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: centerTextBounds.x
-      value: 200.54689
+      value: 452.5
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: centerTextBounds.y
-      value: 84.375
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomRightBounds.x
-      value: 405.625
+      value: 540
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomRightBounds.y
-      value: 21.09375
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 7.1875305
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 126.56249
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topRightTextBounds.x
-      value: 393.90625
+      value: 535
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topRightTextBounds.y
-      value: 126.56249
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 7.1875305
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 42.1875
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 393.90625
+      value: 535
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 42.1875
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalCenterTextBounds.x
-      value: 200.54689
+      value: 452.5
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 84.375
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 7.1875305
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 126.56249
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 393.90625
+      value: 535
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 126.56249
+      value: 54
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 7.1875305
+      value: 370
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 42.1875
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 393.90625
+      value: 535
       objectReference: {fileID: 0}
     - target: {fileID: 5801043225770220719, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 42.1875
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
@@ -2936,152 +3104,152 @@ PrefabInstance:
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: centerBounds.x
-      value: 433.59375
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: centerBounds.y
-      value: 289.6875
+      value: 330
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topLeftBounds.x
-      value: 228.51561
+      value: 97.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topLeftBounds.y
-      value: 342.42188
+      value: 352.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topRightBounds.x
-      value: 638.6719
+      value: 272.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topRightBounds.y
-      value: 342.42188
+      value: 352.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomLeftBounds.x
-      value: 228.51561
+      value: 97.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomLeftBounds.y
-      value: 236.95312
+      value: 307.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: centerTextBounds.x
-      value: 421.875
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: centerTextBounds.y
-      value: 300.23438
+      value: 334.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomRightBounds.x
-      value: 638.6719
+      value: 272.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomRightBounds.y
-      value: 236.95312
+      value: 307.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topLeftTextBounds.x
-      value: 228.51561
+      value: 97.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topLeftTextBounds.y
-      value: 342.42188
+      value: 352.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topRightTextBounds.x
-      value: 615.2344
+      value: 262.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: topRightTextBounds.y
-      value: 342.42188
+      value: 352.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomLeftTextBounds.x
-      value: 228.51561
+      value: 97.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomLeftTextBounds.y
-      value: 258.04688
+      value: 316.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomRightTextBounds.x
-      value: 615.2344
+      value: 262.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: bottomRightTextBounds.y
-      value: 258.04688
+      value: 316.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalCenterTextBounds.x
-      value: 421.875
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalCenterTextBounds.y
-      value: 300.23438
+      value: 334.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalTopLeftTextBounds.x
-      value: 228.51561
+      value: 97.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalTopLeftTextBounds.y
-      value: 342.42188
+      value: 352.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalTopRightTextBounds.x
-      value: 615.2344
+      value: 262.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalTopRightTextBounds.y
-      value: 342.42188
+      value: 352.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalBottomLeftTextBounds.x
-      value: 228.51561
+      value: 97.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalBottomLeftTextBounds.y
-      value: 258.04688
+      value: 316.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalBottomRightTextBounds.x
-      value: 615.2344
+      value: 262.5
       objectReference: {fileID: 0}
     - target: {fileID: 8343523973597302248, guid: 59d4100509a10304c942f4719ec7a01e,
         type: 3}
       propertyPath: finalBottomRightTextBounds.y
-      value: 258.04688
+      value: 316.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59d4100509a10304c942f4719ec7a01e, type: 3}
