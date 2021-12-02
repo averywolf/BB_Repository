@@ -15,6 +15,7 @@ public class Door : MonoBehaviour
     {
         if (shouldOpen)
         {
+            AudioManager.instance.Play("BreakCrystal1");
             doorAnim.Play("basicdoor_open");
             isDoorOpen = true;
         }

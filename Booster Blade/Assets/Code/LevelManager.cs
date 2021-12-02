@@ -118,6 +118,7 @@ public class LevelManager : MonoBehaviour
             playerCam.gameObject.SetActive(false);
             introCam.gameObject.SetActive(true);
             startingFromEntrance = true;
+            saveManager.activeSave.lastSavedAtCheckpoint = false;
             saveManager.startStageFromBeginning = false; //wait why is this here
         }
         playerController.FreezePlayer(true);

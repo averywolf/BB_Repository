@@ -16,8 +16,8 @@ public class ResultsScreen : MonoBehaviour
 
 
         //diplay score based on time text
-
-        timeText.text = ("Best Time: " + SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime.ToString());
+        ///Since currently this doesn't represenet the player's actual best time, I changed the wording. (It'll return to Best Time later)
+        timeText.text = ("Time: " + SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime.ToString());
         resultsAnim.Play("resultsTest");
  
     }

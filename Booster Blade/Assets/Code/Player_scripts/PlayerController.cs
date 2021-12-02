@@ -135,14 +135,14 @@ public class PlayerController : MonoBehaviour
         {
            
             #region DEBUG INPUTS
-            if (Keyboard.current.uKey.wasPressedThisFrame) //used for debugging
-            {
-                KillPLayer();
-            }
-            if (Keyboard.current.iKey.wasPressedThisFrame)
-            {
-                SaveManager.instance.DeleteSave();
-            }
+            //if (Keyboard.current.uKey.wasPressedThisFrame) //used for debugging
+            //{
+            //    KillPLayer();
+            //}
+            //if (Keyboard.current.iKey.wasPressedThisFrame)
+            //{
+            //    SaveManager.instance.DeleteSave();
+            //}
             #endregion
 
             if(wallChecker.boxCollider2D.enabled== false)
