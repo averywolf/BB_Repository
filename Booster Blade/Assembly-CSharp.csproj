@@ -113,6 +113,7 @@
     <Compile Include="Assets\Code\Enemies\SenseRadius.cs" />
     <Compile Include="Assets\Code\Enemies\SpinningThing.cs" />
     <Compile Include="Assets\Code\Enemies\TestEnemy.cs" />
+    <Compile Include="Assets\Code\Enemies\Weakpoint.cs" />
     <Compile Include="Assets\Code\EnemyGem.cs" />
     <Compile Include="Assets\Code\EntityManager.cs" />
     <Compile Include="Assets\Code\EntranceDoor.cs" />
