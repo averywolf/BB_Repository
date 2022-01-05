@@ -5024,7 +5024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043508630576103959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 0.33333334, y: 0.05, z: 1}
   m_Children:
   - {fileID: 2043508630293792390}
@@ -5052,7 +5052,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 170
+    FieldOfView: 60
     OrthographicSize: 22.5
     NearClipPlane: 0.001
     FarClipPlane: 1000

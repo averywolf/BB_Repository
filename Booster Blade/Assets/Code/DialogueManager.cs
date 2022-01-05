@@ -33,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue()
     {
+        IntermissionManager.instance.SetInterState(IntermissionManager.IntermissionState.afterDialogue);
         IntermissionManager.instance.GoToNextLevel();
     }
     public void ReadCutsceneText(CutsceneEvent cutsceneEvent)

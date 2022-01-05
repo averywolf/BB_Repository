@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-
     #region unorganized variables
     //baseRunSpeed
     // Start is called before the first frame update
@@ -14,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public PlayerInput playerInput;
     private Rigidbody2D playerRb;
+    public static float testBaseSpeed = -26;
     [SerializeField]
     private float currentRunSpeed;
     [SerializeField]

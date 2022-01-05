@@ -141,9 +141,7 @@
     <Compile Include="Assets\Code\Portal.cs" />
     <Compile Include="Assets\Code\ResultsScreen.cs" />
     <Compile Include="Assets\Code\SaveManager.cs" />
-    <Compile Include="Assets\Code\SceneryScroller.cs" />
     <Compile Include="Assets\Code\ScrollController.cs" />
-    <Compile Include="Assets\Code\ScrollProp.cs" />
     <Compile Include="Assets\Code\ScrollingObject.cs" />
     <Compile Include="Assets\Code\SpriteFlash.cs" />
     <Compile Include="Assets\Code\StandardPickup.cs" />

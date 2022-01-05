@@ -27,7 +27,7 @@ public class IntermissionManager : MonoBehaviour
     {
         beforeresults,
         results,
-        beforeDialogue,
+        duringDialogue,
         afterDialogue,
         other
     }
@@ -61,14 +61,20 @@ public class IntermissionManager : MonoBehaviour
             {
                 resultsScreen.HideResults();
                 dialogueManager.BeginDialogue();
-                currentInterState = IntermissionState.beforeDialogue;
+                currentInterState = IntermissionState.duringDialogue;
                 AudioManager.instance.PlayMusic("Occult");
             }
-            else
+            else if(currentInterState.Equals(IntermissionState.duringDialogue))
             {
                 dialogueManager.AdvanceCutscene();
             }
-   
+        }
+        else if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            if (currentInterState.Equals(IntermissionState.duringDialogue))
+            {
+                dialogueManager.EndDialogue();
+            }
         }
     }
     public void SetInterState(IntermissionState interState)
