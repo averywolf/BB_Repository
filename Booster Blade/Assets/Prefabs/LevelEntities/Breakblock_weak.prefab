@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5970337397126400652}
   - component: {fileID: 5970337397126400689}
   - component: {fileID: 1239552648841393924}
+  - component: {fileID: 2624781169796591239}
   m_Layer: 0
   m_Name: Breakblock_weak
   m_TagString: Wall
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1972533803
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 76fa456c5adb3a34ea3864cd881d4e13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -145,5 +146,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakType: 0
   breakSound: BreakCrystal1
+  breakSource: {fileID: 0}
   breakeffect: {fileID: 3326193482900577939, guid: 2cfae92664739084f94d12de3658e759,
     type: 3}
+--- !u!114 &2624781169796591239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970337397126400653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 82b0243bb06c82141a228792f74e348d, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.1
+      m_DecayTime: 0.1
+      m_ScaleWithImpact: 0
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 343

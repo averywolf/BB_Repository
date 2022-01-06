@@ -6992,11 +6992,11 @@ MonoBehaviour:
   bottomLeftBounds: {x: 0, y: 276.526, z: 0}
   bottomRightBounds: {x: 640, y: 276.526, z: 0}
   centerBounds: {x: 320, y: 298.806, z: 0}
-  topLeftTextBounds: {x: 161.39374, y: 321.086, z: 0}
-  topRightTextBounds: {x: 678.60626, y: 321.086, z: 0}
-  bottomLeftTextBounds: {x: 161.39374, y: 288.886, z: 0}
-  bottomRightTextBounds: {x: 678.60626, y: 288.886, z: 0}
-  centerTextBounds: {x: 420, y: 304.986, z: 0}
+  topLeftTextBounds: {x: 61.393738, y: 321.086, z: 0}
+  topRightTextBounds: {x: 578.60626, y: 321.086, z: 0}
+  bottomLeftTextBounds: {x: 61.393738, y: 288.886, z: 0}
+  bottomRightTextBounds: {x: 578.60626, y: 288.886, z: 0}
+  centerTextBounds: {x: 320, y: 304.986, z: 0}
   finalTopLeftTextBounds: {x: 61.393738, y: 321.086, z: 0}
   finalTopRightTextBounds: {x: 578.60626, y: 321.086, z: 0}
   finalBottomLeftTextBounds: {x: 61.393738, y: 288.886, z: 0}
@@ -9326,6 +9326,7 @@ GameObject:
   - component: {fileID: 5717492772485172550}
   - component: {fileID: 793875404345253768}
   - component: {fileID: 6076247165936541931}
+  - component: {fileID: 4349188803591753264}
   m_Layer: 0
   m_Name: BoxBorder
   m_TagString: Untagged
@@ -9389,6 +9390,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 0.5
+--- !u!114 &4349188803591753264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545035473072764109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 1
 --- !u!1 &9033842793802414980
 GameObject:
   m_ObjectHideFlags: 0
@@ -9582,7 +9596,7 @@ MonoBehaviour:
   debugMode: 0
   totalReadTime: 0.00001
   totalUnreadTime: 0.00001
-  currentReadTime: 127.71117
+  currentReadTime: 573.827
   autoRead: 1
   rememberReadPosition: 1
   autoQuality: 0

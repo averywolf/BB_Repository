@@ -9,8 +9,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private LevelUI levelUI;
 
-
-    private float currentLevelTime;
     public static LevelManager instance;
 
     public int startingPlayerHP = 3;
@@ -46,6 +44,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] //make sure to asssign this
     public LevelEntrance levelEntrance;
+    private Coroutine gameTimer;
    
     void Awake() 
     {
@@ -65,6 +64,7 @@ public class LevelManager : MonoBehaviour
         introCam=levelEntrance.entranceCam;
         playerCam.gameObject.SetActive(false);
         introCam.gameObject.SetActive(false);
+        levelUI.gameObject.SetActive(true);
     }
     public void Start()
     {
@@ -84,8 +84,35 @@ public class LevelManager : MonoBehaviour
         {
             playerController.playerPaused = pauseMenu.PauseGame();
         }
+        if (Keyboard.current.hKey.wasPressedThisFrame)
+        {
+           // ShakeCamera(10f, 0.2f);
+        }
     }
-   
+    public void BoostShake()
+    {
+
+    }
+    //public void ShakeCamera(float intensity, float time)
+    //{
+    //    CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
+    //        playerCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>(); //maybe make function that sets this?
+    //    cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+    //    StartCoroutine(CamShake(time));
+    //}
+    public IEnumerator CamShake(float time)
+    {
+        float shakeTime = 0;
+        while (shakeTime < time)
+        {
+            shakeTime += Time.deltaTime;
+            yield return null;
+        }
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
+             playerCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
+    }
+
     public void InitializePlayer() //sets up player at the start of level
     {
         //if player saved at checkpoint, put them over where the checkpoint is
@@ -136,9 +163,11 @@ public class LevelManager : MonoBehaviour
         AudioManager.instance.StopMusic();
         canPauseGame = false;
         levelUI.StartDeathUI();
+        StopCoroutine(gameTimer);
+        saveManager.activeSave.SetCurrentLevelTime(levelTime); //registers time before death but doesn't formally save it
         Invoke("RestartLevel", 2); //placeholder
     }
-
+    
     public void BeginLevel()
     {
         
@@ -161,8 +190,9 @@ public class LevelManager : MonoBehaviour
     }
     public void BlastOff()
     {
-        AudioManager.instance.PlayMusic("Post Apocalypse");
-        StartCoroutine(GameTimer());
+        AudioManager.instance.PlayMusic("Post Apocalypse"); // should instead play relevant level music
+
+        gameTimer = StartCoroutine(GameTimer());
         playerController.FreezePlayer(false);
         playerController.BeginBoost(2, false);
         entityManager.ActivateEntities();
@@ -173,12 +203,11 @@ public class LevelManager : MonoBehaviour
         {
             EnablePlayerControl(true);
         }
-
-
     }
     public IEnumerator GameTimer()
     { //currently resets when you die?
-        levelTime = 0;
+        //levelTime = 0;
+        levelTime = saveManager.activeSave.currentLevelTime;
         while (true)
         {
             levelTime += Time.deltaTime;

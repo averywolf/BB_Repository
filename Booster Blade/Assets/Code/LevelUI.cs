@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class LevelUI : MonoBehaviour
 {
     [SerializeField]
@@ -45,6 +46,19 @@ public class LevelUI : MonoBehaviour
     {
         //trunctuates to two decimal places
 
-        timer.text = "Time: " + timerValue.ToString("F2");
+        //timer.text = "Time: " + timerValue.ToString("F2");
+        //TimeSpan timeToDisplay
+        //timer.text = "Time: " + timerValue.ToString(@"hh\:mm\:ss");
+        timer.text = "Time: " + FormatTime(timerValue);
+    }
+    private string FormatTime(float time)
+    {
+        int intTime = (int)time;
+        int minutes = intTime / 60;
+        int seconds = intTime % 60;
+        float fraction = time * 1000;
+        fraction = (fraction % 1000);
+        string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, fraction);
+        return timeText;
     }
 }

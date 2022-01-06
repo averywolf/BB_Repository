@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 public class Breakblock : MonoBehaviour
 {
     [SerializeField]
@@ -9,6 +9,7 @@ public class Breakblock : MonoBehaviour
 
     [SerializeField]
     private string breakSound = "BreakCrystal1";
+    private CinemachineImpulseSource breakSource;
     private enum BreakType
     {
         standard,
@@ -18,11 +19,15 @@ public class Breakblock : MonoBehaviour
 
     public GameObject breakeffect;
 
-
+    private void Awake()
+    {
+        breakSource = GetComponent<CinemachineImpulseSource>();    
+    }
     public void SmashBlock()
     {
         AudioManager.instance.Play(breakSound);
         SpawnParticles(breakeffect, transform.position);
+        breakSource.GenerateImpulse();
         Destroy(gameObject);
     }
 

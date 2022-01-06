@@ -61,6 +61,10 @@ public class SaveManager : MonoBehaviour
         public int savedCheckpointID = -1;
         public Dictionary<int, LevelData> levelDict;
 
+        public float currentLevelTime=0; //time in current stage. if player quits level early this is not saved. only saved after reaching the end.
+
+        //maybe save deaths?
+
         public SaveData() //default constructor
         {
             levelDict = new Dictionary<int, LevelData>();
@@ -88,7 +92,10 @@ public class SaveManager : MonoBehaviour
         {
 
         }
-
+        public void SetCurrentLevelTime(float time)
+        {
+            currentLevelTime = time;
+        }
         //searches the dictionary of levels for the levelData at the specified index
         public LevelData RetrieveLevelData(int lvlIndex)
         {

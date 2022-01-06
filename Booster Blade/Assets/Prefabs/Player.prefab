@@ -241,6 +241,7 @@ GameObject:
   - component: {fileID: 2273449788443605639}
   - component: {fileID: 2273449788443605636}
   - component: {fileID: 3848308425418389359}
+  - component: {fileID: 8114450488961590515}
   m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
@@ -287,7 +288,7 @@ MonoBehaviour:
   ChargeReleaseEffect: {fileID: 3326193482900577939, guid: 65fc1e762c73d804c9bd41565937081a,
     type: 3}
   playerAnimator: {fileID: 3848308425418389359}
-  levelStarted: 0
+  canControlPlayer: 0
   currentPlayerHP: 0
   boostDuration: 2
   boostCooldownTime: 3
@@ -297,10 +298,11 @@ MonoBehaviour:
   currentFacingAngle: 0
   currentMoveState: 1
   playerSword: {fileID: 1867033004}
-  debugMovetext: {fileID: 0}
   lastplayerDirection: 3
   isReversing: 0
   playerPaused: 0
+  swordSlashing: 0
+  boostSource: {fileID: 0}
 --- !u!114 &2273449788443605632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,6 +445,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8114450488961590515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2273449788443605633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: 3a00c0fdd8515554fb72d49a9c54e490, type: 2}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.1
+      m_DecayTime: 0.3
+      m_ScaleWithImpact: 0
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000
+    m_PropagationSpeed: 343
 --- !u!1 &2273449788518762573
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +560,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -191675929
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 1
   m_Sprite: {fileID: 7113549497127142848, guid: f0764d7208e624541a25307c2f809026,
     type: 3}
@@ -820,7 +864,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -191675929
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: -3577085347431246455, guid: 65c73042161881b4a9d1dc6f846ff0ea,
     type: 3}

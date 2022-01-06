@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using Cinemachine;
 public class PlayerController : MonoBehaviour
 {
 
@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector]
     public bool swordSlashing=false;
+    public CinemachineImpulseSource boostSource;
     public enum PlayerMoveStates
     {
         idle,
@@ -108,6 +109,7 @@ public class PlayerController : MonoBehaviour
 
     public void Awake()
     {
+        boostSource = GetComponent<CinemachineImpulseSource>();
         playerInput = GetComponent<PlayerInput>();
         playerRb = GetComponent<Rigidbody2D>();
         wallChecker = GetComponentInChildren<WallChecker>();
@@ -133,19 +135,23 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDead && !playerPaused && !isPlayerFrozen)
         {
-           
+
             #region DEBUG INPUTS
-            //if (Keyboard.current.uKey.wasPressedThisFrame) //used for debugging
-            //{
-            //    KillPLayer();
-            //}
+            if (Keyboard.current.uKey.wasPressedThisFrame) //used for debugging
+            {
+                Debug.Log("Trying to shake!");
+               //s Vector3 shakeVect = new Vector3(horizontal, vertical, 0f);
+                //boostSource.GenerateImpulse(movementVelValue);
+                boostSource.GenerateImpulse();
+                // KillPLayer();
+            }
             //if (Keyboard.current.iKey.wasPressedThisFrame)
             //{
             //    SaveManager.instance.DeleteSave();
             //}
             #endregion
 
-            if(wallChecker.boxCollider2D.enabled== false)
+            if (wallChecker.boxCollider2D.enabled== false)
             {
                 wallChecker.ReEnableChecker();
                 isReversing = false;
@@ -394,6 +400,7 @@ public class PlayerController : MonoBehaviour
         CeaseRoutine(exhaustBoost);
         //CeaseRoutine(boostCooldown); //not sure fi this should be here
         GameObject boostStartEffect = Instantiate(ChargeReleaseEffect, transform.position, ChargeReleaseEffect.transform.rotation);
+        boostSource.GenerateImpulse();
         Destroy(boostStartEffect, boostStartEffect.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
         dashTrail.SetEnabled(true);
         currentMoveState = PlayerMoveStates.boosting;

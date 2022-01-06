@@ -383,21 +383,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 60, y: -12.5, z: 0}
   rawBottomRightBounds: {x: -60, y: 12.5, z: 0}
   rawBottomRightTextBounds: {x: 43.75, y: -20, z: 0}
-  topLeftBounds: {x: 438.502, y: 1094.3546, z: 99}
-  topRightBounds: {x: 1962.508, y: 1094.3546, z: 99}
-  bottomLeftBounds: {x: 438.502, y: 776.8534, z: 99}
-  bottomRightBounds: {x: 1962.508, y: 776.8534, z: 99}
-  centerBounds: {x: 1200.505, y: 935.604, z: 99}
-  topLeftTextBounds: {x: 421.9919, y: 1094.3546, z: 99}
-  topRightTextBounds: {x: 977.61914, y: 1094.3546, z: 99}
-  bottomLeftTextBounds: {x: 421.9919, y: 840.35364, z: 99}
-  bottomRightTextBounds: {x: 977.61914, y: 840.35364, z: 99}
-  centerTextBounds: {x: 699.80554, y: 967.3541, z: 0}
-  finalTopLeftTextBounds: {x: 438.502, y: 1094.3546, z: 99}
-  finalTopRightTextBounds: {x: 994.1293, y: 1094.3546, z: 99}
-  finalBottomLeftTextBounds: {x: 438.502, y: 840.35364, z: 99}
-  finalBottomRightTextBounds: {x: 994.1293, y: 840.35364, z: 99}
-  finalCenterTextBounds: {x: 716.3157, y: 967.3541, z: 0}
+  topLeftBounds: {x: -36.299896, y: -10.568508, z: 80}
+  topRightBounds: {x: 40.800415, y: -10.568508, z: 80}
+  bottomLeftBounds: {x: -36.299896, y: -26.631073, z: 80}
+  bottomRightBounds: {x: 40.800415, y: -26.631073, z: 80}
+  centerBounds: {x: 2.2502594, y: -18.59979, z: 80}
+  topLeftTextBounds: {x: -36.299896, y: -10.568508, z: 80}
+  topRightTextBounds: {x: -8.190407, y: -10.568508, z: 80}
+  bottomLeftTextBounds: {x: -36.299896, y: -23.41856, z: 80}
+  bottomRightTextBounds: {x: -8.190407, y: -23.41856, z: 80}
+  centerTextBounds: {x: -22.245152, y: -16.993534, z: 0}
+  finalTopLeftTextBounds: {x: -36.299896, y: -10.568508, z: 80}
+  finalTopRightTextBounds: {x: -8.190407, y: -10.568508, z: 80}
+  finalBottomLeftTextBounds: {x: -36.299896, y: -23.41856, z: 80}
+  finalBottomRightTextBounds: {x: -8.190407, y: -23.41856, z: 80}
+  finalCenterTextBounds: {x: -22.245152, y: -16.993534, z: 0}
   unwrappedBottomRightTextBounds: {x: 43.75, y: -20, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
@@ -470,7 +470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2497117486111457027}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70, y: -80, z: -20}
+  m_LocalPosition: {x: -62, y: -70, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2497117486408054323}
@@ -2870,21 +2870,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 180, y: -22.5, z: 0}
   rawBottomRightBounds: {x: -180, y: 22.5, z: 0}
   rawBottomRightTextBounds: {x: 261.5, y: -32, z: 0}
-  topLeftBounds: {x: -2355.509, y: -569.3519, z: 99}
-  topRightBounds: {x: 2216.509, y: -569.3519, z: 99}
-  bottomLeftBounds: {x: -2355.509, y: -1140.8542, z: 99}
-  bottomRightBounds: {x: 2216.509, y: -1140.8542, z: 99}
-  centerBounds: {x: -69.5, y: -855.1031, z: 99}
-  topLeftTextBounds: {x: -1730.0316, y: -569.3519, z: 99}
-  topRightTextBounds: {x: 1591.0316, y: -569.3519, z: 99}
-  bottomLeftTextBounds: {x: -1730.0316, y: -975.7536, z: 99}
-  bottomRightTextBounds: {x: 1591.0316, y: -975.7536, z: 99}
-  centerTextBounds: {x: -69.5, y: -772.55273, z: 0}
-  finalTopLeftTextBounds: {x: -1730.0316, y: -569.3519, z: 99}
-  finalTopRightTextBounds: {x: 1591.0316, y: -569.3519, z: 99}
-  finalBottomLeftTextBounds: {x: -1730.0316, y: -975.7536, z: 99}
-  finalBottomRightTextBounds: {x: 1591.0316, y: -975.7536, z: 99}
-  finalCenterTextBounds: {x: -69.5, y: -772.55273, z: 0}
+  topLeftBounds: {x: -119.73503, y: -82.34888, z: 80}
+  topRightBounds: {x: -4.2649727, y: -82.34888, z: 80}
+  bottomLeftBounds: {x: -119.73503, y: -96.78264, z: 80}
+  bottomRightBounds: {x: -4.2649727, y: -96.78264, z: 80}
+  centerBounds: {x: -62, y: -89.56576, z: 80}
+  topLeftTextBounds: {x: -103.93808, y: -82.34888, z: 80}
+  topRightTextBounds: {x: -20.06192, y: -82.34888, z: 80}
+  bottomLeftTextBounds: {x: -103.93808, y: -92.612885, z: 80}
+  bottomRightTextBounds: {x: -20.06192, y: -92.612885, z: 80}
+  centerTextBounds: {x: -62, y: -87.48088, z: 0}
+  finalTopLeftTextBounds: {x: -103.93808, y: -82.34888, z: 80}
+  finalTopRightTextBounds: {x: -20.06192, y: -82.34888, z: 80}
+  finalBottomLeftTextBounds: {x: -103.93808, y: -92.612885, z: 80}
+  finalBottomRightTextBounds: {x: -20.06192, y: -92.612885, z: 80}
+  finalCenterTextBounds: {x: -62, y: -87.48088, z: 0}
   unwrappedBottomRightTextBounds: {x: 261.5, y: -32, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
@@ -3161,6 +3161,7 @@ GameObject:
   - component: {fileID: 2497117487784916913}
   - component: {fileID: 2497117487784916914}
   - component: {fileID: 2497117487784916912}
+  - component: {fileID: 8044516151422512932}
   m_Layer: 0
   m_Name: Vcam_Main
   m_TagString: Untagged
@@ -3176,7 +3177,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2497117487784916915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70, y: -80, z: -20}
+  m_LocalPosition: {x: -62, y: -70, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2497117486146400055}
@@ -3226,11 +3227,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2497117487784916915}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8044516151422512932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2497117487784916915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 1
 --- !u!1 &2497117487845952578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3675,21 +3691,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 70, y: -12.5, z: 0}
   rawBottomRightBounds: {x: -70, y: 12.5, z: 0}
   rawBottomRightTextBounds: {x: 26.25, y: -20, z: 0}
-  topLeftBounds: {x: -2039.2778, y: 1094.3546, z: 99}
-  topRightBounds: {x: -261.27075, y: 1094.3546, z: 99}
-  bottomLeftBounds: {x: -2039.2778, y: 776.8534, z: 99}
-  bottomRightBounds: {x: -261.27075, y: 776.8534, z: 99}
-  centerBounds: {x: -1150.2743, y: 935.604, z: 99}
-  topLeftTextBounds: {x: -2039.2778, y: 1094.3546, z: 99}
-  topRightTextBounds: {x: -1705.9016, y: 1094.3546, z: 99}
-  bottomLeftTextBounds: {x: -2039.2778, y: 840.35364, z: 99}
-  bottomRightTextBounds: {x: -1705.9016, y: 840.35364, z: 99}
-  centerTextBounds: {x: -1872.5897, y: 967.3541, z: 0}
-  finalTopLeftTextBounds: {x: -2039.2778, y: 1094.3546, z: 99}
-  finalTopRightTextBounds: {x: -1705.9016, y: 1094.3546, z: 99}
-  finalBottomLeftTextBounds: {x: -2039.2778, y: 840.35364, z: 99}
-  finalBottomRightTextBounds: {x: -1705.9016, y: 840.35364, z: 99}
-  finalCenterTextBounds: {x: -1872.5897, y: 967.3541, z: 0}
+  topLeftBounds: {x: -111.74835, y: -40.330612, z: 80}
+  topRightBounds: {x: -66.84332, y: -40.330612, z: 80}
+  bottomLeftBounds: {x: -111.74835, y: -48.349365, z: 80}
+  bottomRightBounds: {x: -66.84332, y: -48.349365, z: 80}
+  centerBounds: {x: -89.29584, y: -44.33999, z: 80}
+  topLeftTextBounds: {x: -111.74835, y: -40.330612, z: 80}
+  topRightTextBounds: {x: -103.32866, y: -40.330612, z: 80}
+  bottomLeftTextBounds: {x: -111.74835, y: -46.745613, z: 80}
+  bottomRightTextBounds: {x: -103.32866, y: -46.745613, z: 80}
+  centerTextBounds: {x: -107.538506, y: -43.538113, z: 0}
+  finalTopLeftTextBounds: {x: -111.74835, y: -40.330612, z: 80}
+  finalTopRightTextBounds: {x: -103.32866, y: -40.330612, z: 80}
+  finalBottomLeftTextBounds: {x: -111.74835, y: -46.745613, z: 80}
+  finalBottomRightTextBounds: {x: -103.32866, y: -46.745613, z: 80}
+  finalCenterTextBounds: {x: -107.538506, y: -43.538113, z: 0}
   unwrappedBottomRightTextBounds: {x: 26.25, y: -20, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
@@ -4202,21 +4218,21 @@ MonoBehaviour:
   rawTopLeftBounds: {x: 50, y: -50, z: 0}
   rawBottomRightBounds: {x: -50, y: 50, z: 0}
   rawBottomRightTextBounds: {x: 98, y: -32, z: 0}
-  topLeftBounds: {x: -704.5025, y: 299.33154, z: 99}
-  topRightBounds: {x: 565.5025, y: 299.33154, z: 99}
-  bottomLeftBounds: {x: -704.5025, y: -970.6735, z: 99}
-  bottomRightBounds: {x: 565.5025, y: -970.6735, z: 99}
-  centerBounds: {x: -69.5, y: -335.671, z: 99}
-  topLeftTextBounds: {x: -704.5025, y: 299.33154, z: 99}
-  topRightTextBounds: {x: 540.1024, y: 299.33154, z: 99}
-  bottomLeftTextBounds: {x: -704.5025, y: -107.07008, z: 99}
-  bottomRightTextBounds: {x: 540.1024, y: -107.07008, z: 99}
-  centerTextBounds: {x: -82.20004, y: 96.13073, z: 0}
-  finalTopLeftTextBounds: {x: -704.5025, y: 299.33154, z: 99}
-  finalTopRightTextBounds: {x: 540.1024, y: 299.33154, z: 99}
-  finalBottomLeftTextBounds: {x: -704.5025, y: -107.07008, z: 99}
-  finalBottomRightTextBounds: {x: 540.1024, y: -107.07008, z: 99}
-  finalCenterTextBounds: {x: -82.20004, y: 96.13073, z: 0}
+  topLeftBounds: {x: -78.037506, y: -60.40957, z: 80}
+  topRightBounds: {x: -45.962494, y: -60.40957, z: 80}
+  bottomLeftBounds: {x: -78.037506, y: -92.48459, z: 80}
+  bottomRightBounds: {x: -45.962494, y: -92.48459, z: 80}
+  centerBounds: {x: -62, y: -76.44708, z: 80}
+  topLeftTextBounds: {x: -78.037506, y: -60.40957, z: 80}
+  topRightTextBounds: {x: -46.603992, y: -60.40957, z: 80}
+  bottomLeftTextBounds: {x: -78.037506, y: -70.67358, z: 80}
+  bottomRightTextBounds: {x: -46.603992, y: -70.67358, z: 80}
+  centerTextBounds: {x: -62.320747, y: -65.54157, z: 0}
+  finalTopLeftTextBounds: {x: -78.037506, y: -60.40957, z: 80}
+  finalTopRightTextBounds: {x: -46.603992, y: -60.40957, z: 80}
+  finalBottomLeftTextBounds: {x: -78.037506, y: -70.67358, z: 80}
+  finalBottomRightTextBounds: {x: -46.603992, y: -70.67358, z: 80}
+  finalCenterTextBounds: {x: -62.320747, y: -65.54157, z: 0}
   unwrappedBottomRightTextBounds: {x: 98, y: -32, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
@@ -4242,7 +4258,7 @@ MonoBehaviour:
   debugMode: 0
   totalReadTime: 0.00001
   totalUnreadTime: 0.00001
-  currentReadTime: 27.051443
+  currentReadTime: 0.00001
   autoRead: 1
   rememberReadPosition: 1
   autoQuality: 0
