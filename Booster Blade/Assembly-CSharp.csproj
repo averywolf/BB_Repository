@@ -130,6 +130,7 @@
     <Compile Include="Assets\Code\LevelStandardInfo.cs" />
     <Compile Include="Assets\Code\LevelTitleCard.cs" />
     <Compile Include="Assets\Code\LevelUI.cs" />
+    <Compile Include="Assets\Code\MenuArrow.cs" />
     <Compile Include="Assets\Code\ObjectPooler.cs" />
     <Compile Include="Assets\Code\PauseMenu.cs" />
     <Compile Include="Assets\Code\Player_scripts\DashTrail.cs" />
