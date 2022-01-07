@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class MainMenu : MonoBehaviour
 {
     public string firstLevelName="";
-
+    public PlayerInput playerInput;
     private bool ableToInteractWithMenu=false;
 
     //no loading save yet

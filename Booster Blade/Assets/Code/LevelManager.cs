@@ -45,6 +45,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] //make sure to asssign this
     public LevelEntrance levelEntrance;
     private Coroutine gameTimer;
+
+    public InputAction startBoost;
    
     void Awake() 
     {
@@ -76,41 +78,20 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Keyboard.current.zKey.isPressed && !levelStarted)
-        {
-            BeginLevel();
-        }
-        if(canPauseGame && Keyboard.current.escapeKey.wasPressedThisFrame)
+        //if (Keyboard.current.zKey.isPressed && !levelStarted)
+        //{
+        //    BeginLevel();
+        //}
+        //if (startBoost.triggered && !levelStarted)
+        //{
+
+        //    BeginLevel();
+        //}
+        if (canPauseGame && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             playerController.playerPaused = pauseMenu.PauseGame();
         }
-        if (Keyboard.current.hKey.wasPressedThisFrame)
-        {
-           // ShakeCamera(10f, 0.2f);
-        }
-    }
-    public void BoostShake()
-    {
 
-    }
-    //public void ShakeCamera(float intensity, float time)
-    //{
-    //    CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
-    //        playerCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>(); //maybe make function that sets this?
-    //    cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
-    //    StartCoroutine(CamShake(time));
-    //}
-    public IEnumerator CamShake(float time)
-    {
-        float shakeTime = 0;
-        while (shakeTime < time)
-        {
-            shakeTime += Time.deltaTime;
-            yield return null;
-        }
-        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin =
-             playerCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0;
     }
 
     public void InitializePlayer() //sets up player at the start of level
@@ -122,8 +103,8 @@ public class LevelManager : MonoBehaviour
             if(startingCheckpoint != null)
             {
                 playerController.transform.position = startingCheckpoint.transform.position;
-                playerController.SetFacingDirection(startingCheckpoint.GetCheckpointDirection());
-                playerController.DisplayHorzVert();
+                Vector2 checkDirection = playerController.DirectionConverter(startingCheckpoint.transform.eulerAngles.z);
+                playerController.SetFacingDirection(checkDirection.x, checkDirection.y);
                 playerCam.gameObject.SetActive(true);
                 introCam.gameObject.SetActive(false);
             }
@@ -137,11 +118,9 @@ public class LevelManager : MonoBehaviour
         else
         {
             Debug.Log("Starting from beginning of level");
-            playerController.SetFacingDirection(PlayerController.PlayerDirection.right);
+            playerController.SetFacingDirection(1,0);
             //puts player at initialspawn
             playerController.transform.position = levelEntrance.initialSpawn.transform.position;
-
-            playerController.DisplayHorzVert();
             playerCam.gameObject.SetActive(false);
             introCam.gameObject.SetActive(true);
             startingFromEntrance = true;
@@ -215,7 +194,19 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
     }
-
+    public void OnStartBoost(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Debug.Log("Should BOOST OFF");
+            if (!levelStarted)
+            {
+                BeginLevel();
+            }
+        }
+ 
+   
+    }
     //i guess this resets all enemies?
     public void RestartLevel()
     {

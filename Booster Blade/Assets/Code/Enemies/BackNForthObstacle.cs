@@ -32,9 +32,7 @@ public class BackNForthObstacle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            //Debug.Log("Hit wall!");
-            // AudioManager.instance.Play("WallBounce");
-            // playerController.ReverseDirection(playerController.lastplayerDirection);
+
             Debug.Log("drone hit wall");
             obstacleRB.velocity = new Vector2(0,0);
 

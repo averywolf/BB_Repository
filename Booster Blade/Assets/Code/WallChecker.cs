@@ -17,13 +17,13 @@ public class WallChecker : MonoBehaviour
 
     public void TemporarilyDisableChecker()
     {
-        Debug.Log("Colliderdisabled");
+     //   Debug.Log("Colliderdisabled");
         boxCollider2D.enabled = false;
     }
     public void ReEnableChecker()
     {
         boxCollider2D.enabled = true;
-        Debug.Log("ColliderIsBackNow");
+      //  Debug.Log("ColliderIsBackNow");
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,10 +31,10 @@ public class WallChecker : MonoBehaviour
         {
             if (playerController.isReversing == false)
             {
-                Debug.Log("Hit wall!");
+              //  Debug.Log("Hit wall!");
                 AudioManager.instance.Play("WallBounce");
                 playerController.isReversing = true; //is it best to set this here?
-                playerController.ReverseDirection(playerController.lastplayerDirection);
+                playerController.ReverseDirection();
             }
         }
     }

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5960935827734739998}
   - component: {fileID: 4338645959656096726}
   - component: {fileID: 8425930940845957715}
+  - component: {fileID: 2497117487245328177}
+  - component: {fileID: 979863488076380005}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -51,7 +53,18 @@ MonoBehaviour:
   canPauseGame: 0
   gamePaused: 0
   currentLevelIndex: 0
-  sceneToGoToNext: 
+  sceneToGoToNext: Inter_0
+  introCam: {fileID: 0}
+  playerCam: {fileID: 0}
+  levelEntrance: {fileID: 0}
+  startBoost:
+    m_Name: Start Boost
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 8de896a5-5b47-4369-9e11-6dd95574cb3d
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
 --- !u!114 &8425930940845957715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,3 +77,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c2f7edc32d9484282fbec3841be1e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2497117487245328177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6254648743470356954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44caa2aa8fdbc9f42a0a5585b9c984eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkpointsInLevel:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &979863488076380005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6254648743470356954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5b164f4e299d5494f892aa42c9a34d6f,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c605e128-0562-466e-8c21-34a78af57a3b
+    m_ActionName: Player/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4338645959656096726}
+        m_MethodName: OnStartBoost
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a05b8332-8def-4c40-87af-7c74c0fd889e
+    m_ActionName: Player/Boost[/Keyboard/z,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e45acaac-8202-4feb-a7ea-077f8b403754
+    m_ActionName: Player/Slash[/Keyboard/x,/Keyboard/l,/XInputControllerWindows/buttonWest]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

@@ -6,15 +6,6 @@ public class PlayerCore : MonoBehaviour
 {
     public PlayerController playerController;
 
-    private float camDistance;
-    private float frustumHeight = 18;
-    private float fov = 60f;
-    public void Start()
-    {
-        camDistance = frustumHeight * 0.5f / Mathf.Tan(60 * 0.5f * Mathf.Deg2Rad);
-        Debug.Log("This is should be camdistance= " + camDistance);
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -39,7 +30,8 @@ public class PlayerCore : MonoBehaviour
         }
         if (collision.GetComponent<BoostPanel>())
         {
-            playerController.SetFacingDirection(collision.GetComponent<BoostPanel>().GetBoostDirection());
+            Vector2 boostDirection = playerController.DirectionConverter(collision.GetComponent<BoostPanel>().boostPanelTransform.eulerAngles.z);
+            playerController.SetFacingDirection(boostDirection.x, boostDirection.y);
       
             //StartCoroutine(playerController.DirectionChangeDelay(0.3f));
             playerController.BeginBoost(1, false);

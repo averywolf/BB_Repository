@@ -37,25 +37,6 @@ public class Checkpoint : MonoBehaviour
         GameObject particleEffect = Instantiate(particleEffectPrefab, spawnPoint, particleEffectPrefab.transform.rotation);
         Destroy(particleEffect, particleEffect.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
     }
-    public PlayerController.PlayerDirection GetCheckpointDirection()
-    {
-        if (transform.eulerAngles.z == 90f)
-        {
-            return PlayerController.PlayerDirection.up;
-        }
-        else if (transform.eulerAngles.z == 180)
-        {
-            return PlayerController.PlayerDirection.left;
-        }
-        else if (transform.eulerAngles.z == 270)
-        {
-            return PlayerController.PlayerDirection.down;
-        }
-        else
-        {
-            return PlayerController.PlayerDirection.right;
-        }
-
-    }
+    
     //might have specific starting angles?
 }

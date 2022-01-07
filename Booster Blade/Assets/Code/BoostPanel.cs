@@ -9,25 +9,9 @@ public class BoostPanel : MonoBehaviour
     /// Currently doesn't work on multiples of these values
     /// </summary>
     /// <returns></returns>
-
-    public PlayerController.PlayerDirection GetBoostDirection()
+    public Transform boostPanelTransform;
+    private void Awake()
     {
-        if (transform.eulerAngles.z == 90f)
-        {
-            return PlayerController.PlayerDirection.up;
-        }
-        else if(transform.eulerAngles.z == 180)
-        {
-            return PlayerController.PlayerDirection.left;
-        }
-        else if (transform.eulerAngles.z == 270)
-        {
-            return PlayerController.PlayerDirection.down;
-        }
-        else
-        {
-            return PlayerController.PlayerDirection.right;
-        }
-
+        boostPanelTransform = transform;
     }
 }

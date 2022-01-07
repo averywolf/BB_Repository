@@ -97,6 +97,7 @@
     <Compile Include="Assets\Code\Cutscene.cs" />
     <Compile Include="Assets\Code\CutsceneEvent.cs" />
     <Compile Include="Assets\Code\DangerHitbox.cs" />
+    <Compile Include="Assets\Code\DebugLevelUI.cs" />
     <Compile Include="Assets\Code\DialogueActor.cs" />
     <Compile Include="Assets\Code\DialogueBox.cs" />
     <Compile Include="Assets\Code\DialogueManager.cs" />
