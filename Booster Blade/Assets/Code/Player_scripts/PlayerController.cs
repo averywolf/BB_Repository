@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
     public bool canControlPlayer = false;
     private bool isDead = false;
     public int currentPlayerHP;
-    private float angleToFace=0;
+   
 
     [SerializeField]
     private float boostDuration = 2;
@@ -190,192 +190,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     /// <returns> if the direction is different, it returns directionchanged as true </returns>
     /// 
-    //public bool CheckIfLastDirectionIsDifferent(PlayerDirection currentDir, PlayerDirection lastDir)
-    //{
-    //    bool directionWasChanged = false;
-    //    if ((int)lastDir == (int)currentDir)
-    //    {
-    //        directionWasChanged = true;
-    //    }
-    //    return directionWasChanged;
-    //}
-    //public bool NewerCheckDirectionInput()
-    //{
-    //    bool directionChanged = false;
-    //    //need to make it so if you are holding two keys and let go of one of them, the other key takes over
-
-    //    if (!lastplayerDirection.Equals(PlayerDirection.right) && inputX == 1 && inputY == 0)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.left))
-    //        {
-    //            SetFacingDirection(PlayerDirection.right);
-    //            directionChanged = true;
-    //        }
-
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.up) && inputX == 0 && inputY > 0)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.down))
-    //        {
-    //            SetFacingDirection(PlayerDirection.up);
-    //            directionChanged = true;
-    //        }
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.left) && inputX < 0 && inputY == 0)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.right))
-    //        {
-    //            SetFacingDirection(PlayerDirection.left);
-    //            directionChanged = true;
-    //        }
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.down) && inputX == 0 && inputY < 0)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.up))
-    //        {
-    //            SetFacingDirection(PlayerDirection.down);
-    //            directionChanged = true;
-    //        }
-    //    }
-
-    //    debugUI.lastDirection.text = lastplayerDirection.ToString();
-    //    return directionChanged;
-    //}
-
-
-    //public bool NewCheckDirectionInput()
-    //{
-    //    bool directionChanged = false;
-    //    //need to make it so if you are holding two keys and let go of one of them, the other key takes over
-
-    //    if (!lastplayerDirection.Equals(PlayerDirection.right) && inputX == 1 && inputY == 0)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.left))
-    //        {
-    //            SetFacingDirection(PlayerDirection.right);
-    //            directionChanged = true;
-    //        }
-
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.up) && inputX == 0 && inputY > 0)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.down))
-    //        {
-    //            SetFacingDirection(PlayerDirection.up);
-    //            directionChanged = true;
-    //        }
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.left) && inputX < 0 && inputY == 0)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.right))
-    //        {
-    //            SetFacingDirection(PlayerDirection.left);
-    //            directionChanged = true;
-    //        }
-    //    }
-    //    else if (!lastplayerDirection.Equals(PlayerDirection.down) && inputX == 0 && inputY < 0)
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.up))
-    //        {
-    //            SetFacingDirection(PlayerDirection.down);
-    //            directionChanged = true;
-    //        }
-    //    }
-     
-    //    debugUI.lastDirection.text = lastplayerDirection.ToString();
-    //    return directionChanged;
-    //}
-    //public bool CheckDirectionInput()
-    //{
-    //    bool directionChanged = false;
-    //    //need to make it so if you are holding two keys and let go of one of them, the other key takes over
-    //    if (!Keyboard.current.anyKey.isPressed)
-    //    {
-    //      //  SetFacingDirection(lastplayerDirection);
-
-
-    //    }
-    //    else
-    //    {
-    //        if (!lastplayerDirection.Equals(PlayerDirection.right) && Keyboard.current.rightArrowKey.wasPressedThisFrame)
-    //        {
-    //            if (!lastplayerDirection.Equals(PlayerDirection.left))
-    //            {
-    //                SetFacingDirection(PlayerDirection.right);
-    //                directionChanged = true;
-    //            }
-
-    //        }
-    //        else if (!lastplayerDirection.Equals(PlayerDirection.up) && Keyboard.current.upArrowKey.wasPressedThisFrame)
-    //        {
-    //            if (!lastplayerDirection.Equals(PlayerDirection.down))
-    //            {
-    //                SetFacingDirection(PlayerDirection.up);
-    //                directionChanged = true;
-    //            }
-    //        }
-    //        else if (!lastplayerDirection.Equals(PlayerDirection.left) && Keyboard.current.leftArrowKey.wasPressedThisFrame)
-    //        {
-    //            if (!lastplayerDirection.Equals(PlayerDirection.right))
-    //            {
-    //                SetFacingDirection(PlayerDirection.left);
-    //                directionChanged = true;
-    //            }
-    //        }
-    //        else if (!lastplayerDirection.Equals(PlayerDirection.down) && Keyboard.current.downArrowKey.wasPressedThisFrame)
-    //        {
-    //            if (!lastplayerDirection.Equals(PlayerDirection.up))
-    //            {
-    //                SetFacingDirection(PlayerDirection.down);
-    //                directionChanged = true;
-    //            }
-    //        }
-    //    }
-    
-    //    return directionChanged;
-    //}
-    //might replace logic in other function?
-
-
-    /// <summary>
-    /// Used by CheckDirectioninput to actually set specific direction parameters
-    /// </summary>
-    /// <param name="direction"></param>
-    //public void SetFacingDirection(PlayerDirection direction)
-    //{
-    //    if (direction.Equals(PlayerDirection.right))
-    //    {
-    //        lastplayerDirection = PlayerDirection.right;
-    //        horizontal = 1; vertical = 0;
-    //        currentFacingAngle = 0;
-    //    }
-    //    else if(direction.Equals(PlayerDirection.left))
-    //    {
-    //        lastplayerDirection = PlayerDirection.left;
-    //        horizontal = -1; vertical = 0;
-    //        currentFacingAngle = 180;
-      
-    //    }
-    //    else if(direction.Equals(PlayerDirection.down))
-    //    {
-    //        lastplayerDirection = PlayerDirection.down;
-    //        horizontal = 0; vertical = -1;
-    //        currentFacingAngle = 270;
-      
-    //    }
-    //    else if (direction.Equals(PlayerDirection.up))
-    //    {
-    //        lastplayerDirection = PlayerDirection.up;
-    //        horizontal = 0; vertical = 1;
-    //        currentFacingAngle = 90;
-    //    }
-    //    AudioManager.instance.Play("ChangeDirection");
   
-    //    SetLungeAnimation(currentFacingAngle);
-    //    //
-    //    RotateBody(currentFacingAngle);
-    //    wallChecker.TemporarilyDisableChecker();
-    //}
 
     public void ReverseDirection()
     {
@@ -421,13 +236,11 @@ public class PlayerController : MonoBehaviour
         {
 
             //bool directionChanged = CheckDirectionInput();
-             GamerUpdate(inputX, inputY);
-           // SetFacingDirection(inputX, inputY);
-            //bool directionChanged = NewCheckDirectionInput();
+             ReadMoveInputs(inputX, inputY);
+
         }
 
-        debugUI.xDebugDisplay.text = "xinput= " + inputX.ToString();
-        debugUI.yDebugDisplay.text = "yinput= " + inputY.ToString();
+        
 
     }
     #region SPECIAL MOVES
@@ -631,46 +444,43 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+    
+  
+
+    //Turns the player based on the specified direction, that's it
+    //Used after PlayerController decides through logic if you're allowed to make a turn, or called instantly by other objects to make player face a certain way
     public void SetFacingDirection(float horzValue, float vertValue)
     {
-        //if direction isn't different than the one you're going in now, don't bother changing it and playing the sound and stuff
-
-        if (horzValue == 1 && vertical == 0)
+        float newAngleToFace=0;
+        //sets newAngleToFace based on the corresponding direction values
+        if (horzValue == 1f && vertValue== 0f)
         {
-
           //  horizontal = 1; vertical = 0;
-            angleToFace = 0;
+            newAngleToFace = 0;
         }
-        else if (horzValue == -1 && vertical == 0)
+        else if (horzValue == -1f && vertValue == 0f)
         {
-           // horizontal = -1; vertical = 0;
-            angleToFace = 180;
+            newAngleToFace = 180;
+        }
+        else if (horzValue == 0 && vertValue == -1f)
+        {
+            // horizontal = 0; vertical = -1;
+            newAngleToFace = 270;
 
         }
-        else if (horzValue == 0 && vertical == -1)
+        else if (horzValue == 0f && vertValue == 1f)
         {
-           // horizontal = 0; vertical = -1;
-            angleToFace = 270;
-
+            // horizontal = 0; vertical = 1;
+            newAngleToFace = 90;
         }
-        else if (horzValue == 0 && vertical == 1)
-        {
-           // horizontal = 0; vertical = 1;
-            angleToFace = 90;
-        }
+        RotateBody(newAngleToFace);
+        debugUI.lastDirection.text = "angle: " + newAngleToFace;
         horizontal = horzValue; vertical = vertValue;
-        if (horzValue != lastMove.x && vertValue != lastMove.y)
-        {
-            AudioManager.instance.Play("ChangeDirection");
-            // i guess here?
-        }
-        RotateBody(angleToFace);
+        lastMove = new Vector2(horzValue, vertValue);
         wallChecker.TemporarilyDisableChecker();
-        //only do this when rotating
-
-
     }
-    //lastMove has only 4 possible values
+    
+    //I don't think this is used yet
     public Vector2 GetOppositeDirection(Vector2 ogDirection)
     {
         Vector2 opDirection = new Vector2(0,0);
@@ -694,7 +504,8 @@ public class PlayerController : MonoBehaviour
         }
         return opDirection;
     }
-    void GamerUpdate(float xinput, float yinput)
+    //should probably handle movement logic in here, huh. that way I can use SetPlayerDirection for everything
+    void ReadMoveInputs(float xinput, float yinput)
     {
         bool isMovingHorizontal = Mathf.Abs(xinput) > 0.5f;
         bool isMovingVertical = Mathf.Abs(yinput) > 0.5f;
@@ -706,33 +517,44 @@ public class PlayerController : MonoBehaviour
             //if player is pressing in both directions, look at if the last input was completely horizontal or vertical, and set the player moving with the method that wasn't there
             if (wasMovingVertical)
             { //
-                SetFacingDirection(xinput, 0);
-                lastMove = new Vector2(horizontal, 0f);
+               // SetFacingDirection(xinput, 0);
+                AttemptTurn(xinput, 0);
             }
             else
             {
-                SetFacingDirection(0, yinput);
-                lastMove = new Vector2(0f, vertical);
+               // SetFacingDirection(0, yinput);
+                AttemptTurn(0f, yinput);
             }
         }
         //only changes wasMovingVertical status if not inputting diagonally.
         else if (isMovingHorizontal)
         {
             wasMovingVertical = false;
-            SetFacingDirection(xinput, 0);
-
-            lastMove = new Vector2(horizontal, 0f);
+            AttemptTurn(xinput, 0);
+            //SetFacingDirection(xinput, 0);
         }
         else if (isMovingVertical)
         {
             wasMovingVertical = true;
-            SetFacingDirection(0, yinput);
-
-            lastMove = new Vector2(0f, vertical);
+            //SetFacingDirection(0, yinput);
+            AttemptTurn(0f, yinput);
         }
         else
         {
             //the player is not pressing anything
         }
     }
+    //Only called normally through reading inputs. Checks to see if player isn't trying to move in the opposite direction or the same direction, first.
+    public void AttemptTurn(float horzVal, float vertVal)
+    {
+        debugUI.xDebugDisplay.text = "horzval= " + horzVal.ToString();
+        debugUI.yDebugDisplay.text = "vertval " + vertVal.ToString();
+        if (horzVal != lastMove.x && vertVal != lastMove.y)
+        {
+            SetFacingDirection(horzVal, vertVal);
+            AudioManager.instance.Play("ChangeDirection");
+        }
+    }
+
+
 }

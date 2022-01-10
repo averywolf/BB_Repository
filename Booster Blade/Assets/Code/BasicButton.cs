@@ -13,6 +13,9 @@ public class BasicButton : MonoBehaviour
 
     public UnityEvent OnButtonPressed;
     public GameObject ButtonPressFX;
+
+    public GameObject KeyBolt;
+    public Transform testDoor;
     private void Awake()
     {
         butAnim = GetComponent<Animator>();
@@ -23,6 +26,11 @@ public class BasicButton : MonoBehaviour
         if (!isPressed)
         {
             Debug.Log("PressingButton");
+            if(KeyBolt != null)
+            {
+                StartCoroutine(TestShootBolt(testDoor, 1f));
+            }
+            
             SpawnParticles(ButtonPressFX, transform.position);
             //should play clicking sound
             //might play particle effect when pressed?
@@ -30,7 +38,20 @@ public class BasicButton : MonoBehaviour
            
         }
     }
-    
+    public IEnumerator TestShootBolt(Transform target, float timeSpeed)
+    {
+        GameObject bolt = Instantiate(KeyBolt, transform.position, transform.rotation);
+        Transform boltTrans = bolt.transform;
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * timeSpeed)
+        {
+            boltTrans.position = Vector3.Lerp(transform.position, target.position, t);
+
+            yield return null;
+        }
+        Destroy(bolt);
+    }
+
+
     public void ChangeButtonStatus(bool setToPressed)
     {
         if (setToPressed)

@@ -14,8 +14,8 @@ public class IntermissionManager : MonoBehaviour
     [SerializeField]
     private ResultsScreen resultsScreen;
 
-    private bool canAdvance = false;
-    private bool isDisplayingResults= true;
+    //private bool canAdvance = false;
+    //private bool isDisplayingResults= true;
     [SerializeField]
     private string nextLevel="";
     private IntermissionState currentInterState;
