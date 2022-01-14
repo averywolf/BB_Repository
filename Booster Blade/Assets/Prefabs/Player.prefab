@@ -293,12 +293,11 @@ MonoBehaviour:
   boostDuration: 2
   boostCooldownTime: 3
   testUI: {fileID: 0}
+  debugUI: {fileID: 0}
   bodyFlash: {fileID: 414264765}
   swordFlash: {fileID: 1575433573}
-  currentFacingAngle: 0
   currentMoveState: 1
   playerSword: {fileID: 1867033004}
-  lastplayerDirection: 3
   isReversing: 0
   playerPaused: 0
   swordSlashing: 0
@@ -680,7 +679,10 @@ MonoBehaviour:
   mTrailTime: 0.8
   mTrailObject: {fileID: 6175785047837480026, guid: 44899a452c66eb74aba8e6b1792b3491,
     type: 3}
+  basicTrailColor: {r: 0.40392157, g: 0.050980393, b: 0.75686276, a: 1}
+  boostTrailColor: {r: 0, g: 0.54509807, b: 1, a: 1}
   DashSpawnPoint: {fileID: 2273449788443605637}
+  testDashBoosting: 0
 --- !u!1 &2273449789855303060
 GameObject:
   m_ObjectHideFlags: 0

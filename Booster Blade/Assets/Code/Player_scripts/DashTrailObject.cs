@@ -54,4 +54,8 @@ public class DashTrailObject : MonoBehaviour
         mSpawner = trail;
         mbInUse = true;
     }
+    public void SetDashTrailColor(Color startColor)
+    {
+        mStartColor = startColor;
+    }
 }

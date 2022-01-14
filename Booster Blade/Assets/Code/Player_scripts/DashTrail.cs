@@ -13,7 +13,8 @@ public class DashTrail : MonoBehaviour
     public int mTrailSegments;
     public float mTrailTime;
     public GameObject mTrailObject;
-
+    public Color basicTrailColor;
+    public Color boostTrailColor;
     private float mSpawnInterval;
     private float mSpawnTimer;
     private bool mbEnabled;
@@ -21,7 +22,8 @@ public class DashTrail : MonoBehaviour
     public Transform DashSpawnPoint;
     private List<GameObject> mTrailObjectsInUse;
     private Queue<GameObject> mTrailObjectsNotInUse;
-
+    public bool testDashBoosting=false;
+    
     // Use this for initialization
     void Start()
     {
@@ -56,6 +58,14 @@ public class DashTrail : MonoBehaviour
                         DashTrailObject trailObject = trail.GetComponent<DashTrailObject>();
 
                         trailObject.Initiate(mTrailTime, mLeadingSprite.sprite, DashSpawnPoint.position, this);
+                        if (testDashBoosting)
+                        {
+                            trailObject.SetDashTrailColor(boostTrailColor);
+                        }
+                        else
+                        {
+                            trailObject.SetDashTrailColor(basicTrailColor);
+                        }
                         mTrailObjectsInUse.Add(trail);
 
                         mSpawnTimer = 0;

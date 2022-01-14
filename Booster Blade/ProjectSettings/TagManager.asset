@@ -51,6 +51,9 @@ TagManager:
   - name: Trail
     uniqueID: 1026002501
     locked: 0
+  - name: BoostParticles
+    uniqueID: 736958487
+    locked: 0
   - name: Walls
     uniqueID: 1972533803
     locked: 0

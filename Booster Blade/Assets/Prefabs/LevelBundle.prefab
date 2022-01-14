@@ -108,8 +108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 80}
-  m_SizeDelta: {x: 120, y: 25}
+  m_AnchoredPosition: {x: 115, y: 80}
+  m_SizeDelta: {x: 148, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2497117486070259862
 MonoBehaviour:
@@ -357,7 +357,7 @@ MonoBehaviour:
   perlinPitchMulti: 1
   reading: 0
   unreading: 0
-  size: 20
+  size: 16
   bestFitMulti: 1
   quality: 64
   filterMode: 0
@@ -1093,6 +1093,8 @@ MonoBehaviour:
   xDebugDisplay: {fileID: 7563686152225985807}
   yDebugDisplay: {fileID: 4070523531229579430}
   lastDirection: {fileID: 6238807946693819392}
+  movingHorz: {fileID: 0}
+  movingVert: {fileID: 0}
 --- !u!1 &2497117486589821535
 GameObject:
   m_ObjectHideFlags: 0

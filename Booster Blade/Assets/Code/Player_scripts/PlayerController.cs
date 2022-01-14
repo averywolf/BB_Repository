@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!isDead && !playerPaused && !isPlayerFrozen)
+        if (!playerPaused && !isPlayerFrozen)
         {
 
             #region DEBUG INPUTS
@@ -232,16 +232,13 @@ public class PlayerController : MonoBehaviour
         float inputX = context.ReadValue<Vector2>().x;
         float inputY = context.ReadValue<Vector2>().y;
         
-        if (canTurn && !swordSlashing && !isBouncingOffWall && canControlPlayer)
+        if (!isDead && canTurn && !swordSlashing && !isBouncingOffWall && canControlPlayer)
         {
 
             //bool directionChanged = CheckDirectionInput();
              ReadMoveInputs(inputX, inputY);
 
         }
-
-        
-
     }
     #region SPECIAL MOVES
 
@@ -255,7 +252,7 @@ public class PlayerController : MonoBehaviour
                 if (canBoost)
                 {
                     BeginBoost(boostDuration, true);
-                    //Gamepad.current.SetMotorSpeeds(0.25f, 0.75f);
+                    //Gamepad.current.SetMotorSpeeds(0.25f, 0.75f); //could add gamepad rumble, potentially!
                 }
                 else
                 {
@@ -287,10 +284,11 @@ public class PlayerController : MonoBehaviour
     {
         CeaseRoutine(exhaustBoost);
         //CeaseRoutine(boostCooldown); //not sure fi this should be here
-        GameObject boostStartEffect = Instantiate(ChargeReleaseEffect, transform.position, ChargeReleaseEffect.transform.rotation);
+        GameObject boostStartEffect = Instantiate(ChargeReleaseEffect, transform.position, playerBody.transform.rotation, transform);
         boostSource.GenerateImpulse();
         Destroy(boostStartEffect, boostStartEffect.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
         dashTrail.SetEnabled(true);
+        dashTrail.testDashBoosting = true;
         currentMoveState = PlayerMoveStates.boosting;
         StartCoroutine(exhaustBoost = SlowFromBoost(boostingDuration));
         if (spendStamina)
@@ -315,7 +313,8 @@ public class PlayerController : MonoBehaviour
     {
         playerAnimator.SetBool("heroBoosting", false);
         currentMoveState = PlayerMoveStates.moving;
-        dashTrail.SetEnabled(false);
+        //dashTrail.SetEnabled(false);
+        dashTrail.testDashBoosting = false;
         playerSword.swordBoosting = false;
     }
     public IEnumerator BoostCooldown(float coolDown)

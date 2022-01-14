@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Boost
   m_EditorClassIdentifier: 
   audioName: Boost
-  Clip: {fileID: 8300000, guid: 1fd1f0c884e334044a099a9ef4bbefe6, type: 3}
-  Volume: 1
+  Clip: {fileID: 8300000, guid: d36596f892db3c448a5d161dcd06f8b4, type: 3}
+  Volume: 0.258
   Pitch: 1
   Loop: 0
   SpacialBlend: 0
