@@ -19,6 +19,7 @@ public class MainMenu : MonoBehaviour
         ableToInteractWithMenu = true;
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlayMusic("Occult");
+        SaveManager.instance.hasNotBeganLevel = true; //just in case
     }
 
     public void Update()

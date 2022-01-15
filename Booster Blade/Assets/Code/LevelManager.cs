@@ -70,6 +70,7 @@ public class LevelManager : MonoBehaviour
     }
     public void Start()
     {
+        saveManager.isGoingToIntermissionFromLevel = false;
         AudioManager.instance.StopMusic();
        // Time.timeScale = 0;
        
@@ -78,10 +79,15 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
-        //if (Keyboard.current.zKey.isPressed && !levelStarted)
-        //{
-        //    BeginLevel();
-        //}
+        if (Keyboard.current.uKey.wasPressedThisFrame)
+        {
+            saveManager.DeleteSave();
+        }
+        else if (Keyboard.current.pKey.wasPressedThisFrame)
+        {
+            ExitLevel();
+            //ends level immediately
+        }
         //if (startBoost.triggered && !levelStarted)
         //{
 
@@ -117,7 +123,12 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Starting from beginning of level");
+            if (saveManager.hasNotBeganLevel)
+            {
+                saveManager.currentTimeInLevel = 0;
+                Debug.Log("First time playing level");
+                saveManager.hasNotBeganLevel = false;
+            }
             playerController.SetFacingDirection(1,0);
             //puts player at initialspawn
             playerController.transform.position = levelEntrance.initialSpawn.transform.position;
@@ -186,7 +197,8 @@ public class LevelManager : MonoBehaviour
     public IEnumerator GameTimer()
     { //currently resets when you die?
         //levelTime = 0;
-        levelTime = saveManager.activeSave.currentLevelTime;
+        Debug.Log("Setting GameTimer to" + saveManager.currentTimeInLevel);
+        levelTime = saveManager.currentTimeInLevel;
         while (true)
         {
             levelTime += Time.deltaTime;
@@ -219,12 +231,10 @@ public class LevelManager : MonoBehaviour
 
         // transitions to intermission scene
 
-        /// SET SAVED AT CHECKPOINT TO FALSE WHEN MOVING ON TO NEXT SCENE
-        /// 
-        /// 
         ///IMPORTANT: I don't think the data is truly saved yet (as in, if you close the game, the data will go away)
         ///Need to make sure that happens
         saveManager.activeSave.lastSavedAtCheckpoint = false;
+        saveManager.isGoingToIntermissionFromLevel = true;
         saveManager.activeSave.SaveCompleteLevelData(currentLevelIndex, levelTime);
         StartCoroutine(TransitionManager.instance.TransitionToIntermission(sceneToGoToNext));
     }

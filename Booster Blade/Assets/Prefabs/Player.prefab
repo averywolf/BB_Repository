@@ -679,7 +679,7 @@ MonoBehaviour:
   mTrailTime: 0.8
   mTrailObject: {fileID: 6175785047837480026, guid: 44899a452c66eb74aba8e6b1792b3491,
     type: 3}
-  basicTrailColor: {r: 0.40392157, g: 0.050980393, b: 0.75686276, a: 1}
+  basicTrailColor: {r: 1, g: 1, b: 1, a: 0.7607843}
   boostTrailColor: {r: 0, g: 0.54509807, b: 1, a: 1}
   DashSpawnPoint: {fileID: 2273449788443605637}
   testDashBoosting: 0

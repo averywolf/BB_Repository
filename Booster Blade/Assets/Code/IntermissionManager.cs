@@ -51,6 +51,7 @@ public class IntermissionManager : MonoBehaviour
     {
         currentInterState = IntermissionState.beforeresults;
         AudioManager.instance.PlayMusic("CardVictoryJingle");
+        SaveManager.instance.hasNotBeganLevel = true; //just in case
         resultsScreen.DisplayResults();
     }
     public void Update()

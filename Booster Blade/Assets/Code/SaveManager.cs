@@ -18,7 +18,10 @@ public class SaveManager : MonoBehaviour
 
     string BBData;
     public bool startStageFromBeginning= true;
+    public float currentTimeInLevel; //should be reset to 0 when starting level from beginning,
 
+    public bool hasNotBeganLevel = true;
+    public bool isGoingToIntermissionFromLevel = false;
     private void Awake()
     {
         //if no save exists, create one
@@ -105,7 +108,7 @@ public class SaveManager : MonoBehaviour
             }
             else
             {
-                //testing
+                //this makes an empty set of LevelData to look at, I think
                 return levelDict[lvlIndex] = new LevelData();
 
                 //return null;
