@@ -25,10 +25,10 @@ public class Checkpoint : MonoBehaviour
             Debug.Log("Registering checkpoint");
             checkpointAnim.Play("checkP_active");
             isCheckpointActive = true;
-            
+            //used to send in the name of the scene, too, but that's irrelevant
             //SaveManager.instance.activeSave.RegisterCheckPoint(gameObject.transform.position, SceneManager.GetActiveScene().name);
-            SaveManager.instance.activeSave.RegisterCheckPoint(checkPointID, SceneManager.GetActiveScene().name);
-            SaveManager.instance.Save();
+            SaveManager.instance.RegisterCheckPoint(checkPointID);
+            SaveManager.instance.SaveBothData();
         }
 
     }

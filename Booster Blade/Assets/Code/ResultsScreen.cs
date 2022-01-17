@@ -11,19 +11,27 @@ public class ResultsScreen : MonoBehaviour
 
     [SerializeField]
     private SuperTextMesh timeText;
+    private SaveManager saveManager;
+    private IntermissionManager intermissionManager;
+    public void Awake()
+    {
+        saveManager = SaveManager.instance;
+        intermissionManager = IntermissionManager.instance;
+    }
     public void DisplayResults()
     {
+        Debug.Log("Current time when loading into results: " + saveManager.currentTimeInLevel);
         //diplay score based on time text
-        
-        ///Since currently this doesn't represenet the player's actual best time, I changed the wording. (It'll return to Best Time later)
-        
-        resultsAnim.Play("resultsTest");
 
-        if(SaveManager.instance.isGoingToIntermissionFromLevel)
+        ///Since currently this doesn't represenet the player's actual best time, I changed the wording. (It'll return to Best Time later)
+
+        resultsAnim.Play("resultsTest");
+        int curIndex = intermissionManager.LevelResultsIndex;
+        if(saveManager.isGoingToIntermissionFromLevel)
         {
             Debug.Log("Got here from level.");
-            CompareTimes(SaveManager.instance.currentTimeInLevel, SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime);
-            timeText.text = ("Time: " + FormatTime(SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime));
+            CompareTimes(saveManager.RetrieveCurrentTime(curIndex).bestTime, saveManager.RetrieveRecordTime(curIndex).bestTime);
+            //timeText.text = ("Time: " + FormatTime(SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime));
         }
         else
         {
@@ -33,7 +41,32 @@ public class ResultsScreen : MonoBehaviour
 
     public void CompareTimes(float curTime, float timeToBeat)
     {
+        saveManager.LoadBothData(); //probably pointless to put this here
+        Debug.Log("The time to beat is " + timeToBeat);
+        if (timeToBeat == 999999)
+        {
+            //I guess this is how I can determine if the player didn't beat the level yet?
+            Debug.Log("Beat level for first time!");
+            timeText.text = ("Time : " + FormatTime(curTime));
 
+            saveManager.SaveCurrentTimes(intermissionManager.LevelResultsIndex, curTime);
+            saveManager.SaveNewRecord(intermissionManager.LevelResultsIndex, curTime);
+        }
+        else if (curTime <= timeToBeat)
+        {
+            timeText.text = ("New best time : " + FormatTime(curTime) + "\nOld time:" + FormatTime(timeToBeat));
+
+            saveManager.SaveCurrentTimes(intermissionManager.LevelResultsIndex, curTime);
+            saveManager.SaveNewRecord(intermissionManager.LevelResultsIndex, curTime);
+        }
+        else
+        {
+            timeText.text = ("Time : " + FormatTime(curTime) + "Record:" + FormatTime(timeToBeat));
+            saveManager.SaveCurrentTimes(intermissionManager.LevelResultsIndex, curTime);
+        }
+
+        saveManager.SaveBothData();
+        //do I need to save manually?
     }
     // compare the currentLevelTime to the BestTime, (if there is a best time)
     // if cur <= best, display cur, and save cur as the new BestTime. signify high score.

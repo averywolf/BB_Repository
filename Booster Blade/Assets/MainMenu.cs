@@ -8,12 +8,18 @@ public class MainMenu : MonoBehaviour
     public string firstLevelName="";
     public PlayerInput playerInput;
     private bool ableToInteractWithMenu=false;
+    private SaveManager saveManager;
 
+    public SuperTextMesh resultsTemp;
     //no loading save yet
 
 
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        saveManager = SaveManager.instance;   
+    }
     void Start()
     {
         ableToInteractWithMenu = true;
@@ -24,13 +30,38 @@ public class MainMenu : MonoBehaviour
 
     public void Update()
     {
-        if (Keyboard.current.zKey.wasPressedThisFrame)
-        {
-            if (ableToInteractWithMenu)
-            {
-                ableToInteractWithMenu = false;
-                SceneManager.LoadScene(firstLevelName);
-            }
-        }
+
+    }
+    //starts run from the beginning, plays the intro cutscene, goes onto the first level
+    public void StartNewGame()
+    {
+        ableToInteractWithMenu = false;
+        //temp solution
+        saveManager.DeleteRunProgress();
+        SceneManager.LoadScene(firstLevelName);
+    }
+    //picks up from the level where the current run left off. starts at beginning of the last level, doesn't take into account checkpoints
+    public void ContinueGame()
+    {
+        SceneManager.LoadScene(saveManager.currentRunData.continueIndex);
+
+    }
+    //deletes all save data
+    public void WipeRecords()
+    {
+        saveManager.WipeSave();
+    }
+    public void ViewRecords()
+    {
+        Debug.Log("Would be able to use a feature for records... IF I HAD THEM!!!!");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void DisplayTempResults()
+    {
+
     }
 }

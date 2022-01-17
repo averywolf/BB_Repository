@@ -81,12 +81,21 @@ public class LevelManager : MonoBehaviour
     {
         if (Keyboard.current.uKey.wasPressedThisFrame)
         {
-            saveManager.DeleteSave();
+            saveManager.DeleteRunProgress();
+        }
+        else if (Keyboard.current.jKey.wasPressedThisFrame)
+        {
+            saveManager.WipeSave();
+            //ends level immediately
         }
         else if (Keyboard.current.pKey.wasPressedThisFrame)
         {
             ExitLevel();
             //ends level immediately
+        }
+        else if (Keyboard.current.oKey.wasPressedThisFrame)
+        {
+            playerController.KillPLayer();
         }
         //if (startBoost.triggered && !levelStarted)
         //{
@@ -103,9 +112,9 @@ public class LevelManager : MonoBehaviour
     public void InitializePlayer() //sets up player at the start of level
     {
         //if player saved at checkpoint, put them over where the checkpoint is
-        if (saveManager.activeSave.lastSavedAtCheckpoint && !saveManager.startStageFromBeginning)
+        if (saveManager.lastSavedAtCheckpoint && !saveManager.startStageFromBeginning)
         {
-            Checkpoint startingCheckpoint = checkpointManager.SearchForCheckpoint(saveManager.activeSave.savedCheckpointID);
+            Checkpoint startingCheckpoint = checkpointManager.SearchForCheckpoint(saveManager.tempCheckpointID);
             if(startingCheckpoint != null)
             {
                 playerController.transform.position = startingCheckpoint.transform.position;
@@ -135,7 +144,7 @@ public class LevelManager : MonoBehaviour
             playerCam.gameObject.SetActive(false);
             introCam.gameObject.SetActive(true);
             startingFromEntrance = true;
-            saveManager.activeSave.lastSavedAtCheckpoint = false;
+            saveManager.lastSavedAtCheckpoint = false;
             saveManager.startStageFromBeginning = false; //wait why is this here
         }
         playerController.FreezePlayer(true);
@@ -154,7 +163,9 @@ public class LevelManager : MonoBehaviour
         canPauseGame = false;
         levelUI.StartDeathUI();
         StopCoroutine(gameTimer);
-        saveManager.activeSave.SetCurrentLevelTime(levelTime); //registers time before death but doesn't formally save it
+        //do this but with currentLevelTime
+        saveManager.currentTimeInLevel = levelTime;
+        //saveManager.activeSave.SetCurrentLevelTime(levelTime); //registers time before death but doesn't formally save it
         Invoke("RestartLevel", 2); //placeholder
     }
     
@@ -233,9 +244,12 @@ public class LevelManager : MonoBehaviour
 
         ///IMPORTANT: I don't think the data is truly saved yet (as in, if you close the game, the data will go away)
         ///Need to make sure that happens
-        saveManager.activeSave.lastSavedAtCheckpoint = false;
+        StopCoroutine(gameTimer);
+        saveManager.currentTimeInLevel = levelTime;
+        Debug.Log("Current time when exiting: " + saveManager.currentTimeInLevel);
+        saveManager.lastSavedAtCheckpoint = false;
         saveManager.isGoingToIntermissionFromLevel = true;
-        saveManager.activeSave.SaveCompleteLevelData(currentLevelIndex, levelTime);
+        //saveManager.activeSave.SaveCompleteLevelData(currentLevelIndex, levelTime);
         StartCoroutine(TransitionManager.instance.TransitionToIntermission(sceneToGoToNext));
     }
     //Useful so any object can grab a reference to it
