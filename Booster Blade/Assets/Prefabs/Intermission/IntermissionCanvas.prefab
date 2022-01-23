@@ -7157,7 +7157,7 @@ MonoBehaviour:
   showEventFoldout: 0
   showBetaFoldout: 0
   info:
-  - pos: {x: -100, y: 29.78, z: 0}
+  - pos: {x: -100, y: 36, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -7166,7 +7166,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 20.22, y: 20.22}
+    size: {x: 14, y: 14}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -7196,7 +7196,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -88.62625, y: 29.78, z: 0}
+  - pos: {x: -92.125, y: 36, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -7205,7 +7205,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 20.22, y: 20.22}
+    size: {x: 14, y: 14}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -7235,7 +7235,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -82.3075, y: 29.78, z: 0}
+  - pos: {x: -87.75, y: 36, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -7244,7 +7244,7 @@ MonoBehaviour:
     rawIndex: 1
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 20.22, y: 20.22}
+    size: {x: 14, y: 14}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -7274,7 +7274,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  - pos: {x: -70.93375, y: 29.78, z: 0}
+  - pos: {x: -79.875, y: 36, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -7283,7 +7283,7 @@ MonoBehaviour:
     rawIndex: 2
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 20.22, y: 20.22}
+    size: {x: 14, y: 14}
     alignment: 0
     drawOrder: 0
     ev: []
@@ -7342,7 +7342,7 @@ MonoBehaviour:
   perlinPitchMulti: 1
   reading: 0
   unreading: 0
-  size: 20.22
+  size: 14
   bestFitMulti: 1
   quality: 64
   filterMode: 1
@@ -7367,23 +7367,23 @@ MonoBehaviour:
   textMesh: {fileID: 0}
   rawTopLeftBounds: {x: 100, y: -50, z: 0}
   rawBottomRightBounds: {x: -100, y: 50, z: 0}
-  rawBottomRightTextBounds: {x: 40.44, y: -20.22, z: 0}
+  rawBottomRightTextBounds: {x: 28, y: -14, z: 0}
   topLeftBounds: {x: 114.600006, y: 101.60599, z: 0}
   topRightBounds: {x: 514.6, y: 101.60599, z: 0}
   bottomLeftBounds: {x: 114.600006, y: -98.39401, z: 0}
   bottomRightBounds: {x: 514.6, y: -98.39401, z: 0}
   centerBounds: {x: 314.59998, y: 1.6059875, z: 0}
   topLeftTextBounds: {x: 114.600006, y: 101.60599, z: 0}
-  topRightTextBounds: {x: 195.48, y: 101.60599, z: 0}
-  bottomLeftTextBounds: {x: 114.600006, y: 61.165985, z: 0}
-  bottomRightTextBounds: {x: 195.48, y: 61.165985, z: 0}
-  centerTextBounds: {x: 155.04001, y: 81.38599, z: 0}
+  topRightTextBounds: {x: 170.6, y: 101.60599, z: 0}
+  bottomLeftTextBounds: {x: 114.600006, y: 73.60599, z: 0}
+  bottomRightTextBounds: {x: 170.6, y: 73.60599, z: 0}
+  centerTextBounds: {x: 142.6, y: 87.60599, z: 0}
   finalTopLeftTextBounds: {x: 114.600006, y: 101.60599, z: 0}
-  finalTopRightTextBounds: {x: 195.48, y: 101.60599, z: 0}
-  finalBottomLeftTextBounds: {x: 114.600006, y: 61.165985, z: 0}
-  finalBottomRightTextBounds: {x: 195.48, y: 61.165985, z: 0}
-  finalCenterTextBounds: {x: 155.04001, y: 81.38599, z: 0}
-  unwrappedBottomRightTextBounds: {x: 40.44, y: -20.22, z: 0}
+  finalTopRightTextBounds: {x: 170.6, y: 101.60599, z: 0}
+  finalBottomLeftTextBounds: {x: 114.600006, y: 73.60599, z: 0}
+  finalBottomRightTextBounds: {x: 170.6, y: 73.60599, z: 0}
+  finalCenterTextBounds: {x: 142.6, y: 87.60599, z: 0}
+  unwrappedBottomRightTextBounds: {x: 28, y: -14, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -9596,7 +9596,7 @@ MonoBehaviour:
   debugMode: 0
   totalReadTime: 0.00001
   totalUnreadTime: 0.00001
-  currentReadTime: 573.827
+  currentReadTime: 19.655579
   autoRead: 1
   rememberReadPosition: 1
   autoQuality: 0

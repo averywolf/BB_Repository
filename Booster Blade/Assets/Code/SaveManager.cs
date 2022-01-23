@@ -181,10 +181,12 @@ public class SaveManager : MonoBehaviour
     [System.Serializable]
     public class CurrentRunData
     {
-        public int continueIndex; //level that's loaded if you select to continue the game
+        public int continueIndex; //index of the level that's loaded if you select to continue the game, might need to be set independently of LevelData
         bool beatGame = false;
         int totalDeathCount= 0;
         int totalHitsTaken = 0;
+
+        public List<LevelData> levelDatas;
         //game should look at this when continuing
         int currentLevelIndex;
 
@@ -195,7 +197,42 @@ public class SaveManager : MonoBehaviour
         {
             currentRunLevelDict= new Dictionary<int, LevelData>();
         }
+
+        public void SetContinueIndex(int indexToSet)
+        {
+            continueIndex = indexToSet;
+        }
+        public void SerializeLevelData()
+        {
+            levelDatas = new List<LevelData>();
+            foreach (KeyValuePair<int, LevelData> info in currentRunLevelDict)
+            {
+                levelDatas.Add(info.Value);
+            }
+        }
+
+        //might have something to do with how dictionaries are ordered?
+        public void LoadCurrentRunDict()
+        {
+            currentRunLevelDict = new Dictionary<int, LevelData>();
+            for (int i = 0; i < levelDatas.Count; i++)
+            {
+                currentRunLevelDict[levelDatas[i].levelIndex] = levelDatas[i];
+            }
+        }
+
     }
+    /// <summary>
+    /// In Bullet Catcher
+    /// - You beat a level, UpdateBestTime is called for the level's index with the time you got. (should do the similar with LevelManager)
+    /// - Update best time sets the values in fightDict for that level index
+    /// - Do the comparison for if the time is better right there?
+    /// - Save() is called, which before writing it to JSON uses SerializeFightData()
+    /// - SerializeFightData populates fightdata based on what's in the fightDict
+    /// WHAT IS FIGHTDATA???
+    /// Fightdata appears to be unnecessary, unless you want to see the information in levelDict in the inspector.
+    /// </summary>
+
 
     //stores data relevant to the whole game
     //only cleared when wiping save
@@ -203,28 +240,97 @@ public class SaveManager : MonoBehaviour
     public class RecordsData
     {
         public Dictionary<int, LevelData> recordLevelDict;
-        //lowest death count
-        
+        public List<LevelData> levelDatas;
+
+        //also should store lowest death count
+        public RecordsData()
+        {
+            recordLevelDict = new Dictionary<int, LevelData>();
+        }
+        ////resets levelDatas to then fill it up with the information in the dictionary
+        //fills this up so it can be saved to JSON (dictionaries can't be saved, but lists can)
+        public void SerializeRecordsData()
+        {
+            levelDatas = new List<LevelData>();
+            foreach (KeyValuePair<int, LevelData> info in recordLevelDict)
+            {
+                levelDatas.Add(info.Value);
+            }
+        }
+
+        //might have something to do with how dictionaries are ordered?
+        public void LoadRecordsDict()
+        {
+            recordLevelDict = new Dictionary<int, LevelData>();
+            for (int i = 0; i < levelDatas.Count; i++)
+            {
+                recordLevelDict[levelDatas[i].levelIndex] = levelDatas[i];
+            }
+        }
+
+
     }
 
+    //public FightData RetrieveFightData(int levelIndex)
+    //{
+    //    //    LoadFightData();
+    //    //    if (fightDict.ContainsKey(levelIndex))
+    //    //    {
+    //    //        return fightDict[levelIndex];
+    //    //    }
+    //    //    else
+    //    //    {
+    //    //        //fightDict[levelIndex] = new FightData(levelIndex);
+    //    //        return null;//fightDict[levelIndex];
+    //    //    }
+    //    return null;
+    //}
+    //public void SerializeFightData()
+    //    {
+    //        //    fightDatas = new List<FightData>();
+    //        //    foreach (KeyValuePair<int, FightData> info in fightDict)
+    //        //    {
+    //        //        fightDatas.Add(info.Value);
+    //        //        //might need to look at key?
+    //        //    }
+    //    }
+
+    //Based on RetrieveFightData, likely will not work without LoadingFightData first
     private LevelData RetrieveLevelTime(int lvlIndex, Dictionary<int, LevelData> dictToRetrieve)
     {
+       if(dictToRetrieve == null)
+        {
+            Debug.LogWarning("NO DICT!");
+        }
+
         if (dictToRetrieve.ContainsKey(lvlIndex))
         {
             return dictToRetrieve[lvlIndex];
         }
         else
         {
+            Debug.LogWarning("Could not find leveldata at key" + lvlIndex);
             //this makes an empty set of LevelData to look at, I think
             return dictToRetrieve[lvlIndex] = new LevelData();
         }
     }
     public LevelData RetrieveCurrentTime(int lvlIndex)
     {
+        //only need to call LoadDict here since the dictionary won't matter outside of looking at times (since it's the level data list that's viewable in inspector and always updates when saving)
+        currentRunData.LoadCurrentRunDict();
         return RetrieveLevelTime(lvlIndex, currentRunData.currentRunLevelDict);
     }
     public LevelData RetrieveRecordTime(int lvlIndex)
     {
+        recordsData.LoadRecordsDict();
+        Debug.Log("Looking for best time at index " + lvlIndex);
+        //for (int i = 0; i <recordsData.recordsLevelDatas.Count; i++)
+        //{
+        //    if(recordsData.recordsLevelDatas[i].levelIndex== lvlIndex)
+        //    {
+        //        return recordsData.recordsLevelDatas[i];
+        //    }
+        //}
         return RetrieveLevelTime(lvlIndex, recordsData.recordLevelDict);
     }
     private void SaveLevelTime(int lvlIndex, float timeAchieved, Dictionary<int, LevelData> dictToSave)
@@ -236,7 +342,7 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            //not sure if calling the constructor to fill out this information is needed
+            Debug.Log("No data found at " + lvlIndex + ", creating it and setting the time as " + timeAchieved +" now.");
             dictToSave[lvlIndex] = new LevelData(lvlIndex, timeAchieved);
             //The player hasn't beaten this level before! Add the data.
         }
@@ -247,54 +353,43 @@ public class SaveManager : MonoBehaviour
     public void SaveNewRecord(int lvlIndex, float timeAchieved)
     {
         SaveLevelTime(lvlIndex, timeAchieved, recordsData.recordLevelDict);
+       // recordsData.recordsLevelDatas.Add(new LevelData(lvlIndex, timeAchieved));
+
     }
     public void SaveCurrentTimes(int lvlIndex, float timeAchieved)
     {
         SaveLevelTime(lvlIndex, timeAchieved, currentRunData.currentRunLevelDict);
     }
 
-
-
-    //public void Save()
-    //{
-    //    string BBData;
-    //    BBData = JsonUtility.ToJson(recordsData);
-    //    System.IO.File.WriteAllText(Application.persistentDataPath + "/BB_data.json", BBData);
-    //    Debug.Log("Should have saved information to JSON.");
-    //}
-
     //Saves both the current run and records to disk
     public void SaveBothData()
     {
+        currentRunData.SerializeLevelData();
         string run;
         run = JsonUtility.ToJson(currentRunData);
         //not 100% sure but I hope you don't need to grab Application.peristentDataPath again here, like if it changed during runtime
         System.IO.File.WriteAllText(runFilePath, run);
 
-        Debug.Log("Should have saved run info to JSON.");
-
+        recordsData.SerializeRecordsData();
         string records;
         records = JsonUtility.ToJson(recordsData);
         System.IO.File.WriteAllText(recordsFilePath, records);
-        Debug.Log("And should have saved records to JSON.");
     }
-
+    
     //called at the beginning of each scene I think
+    //might need to Load Level Data here, it doesn't appear to show up in the inspector yet
     public void LoadBothData()
     {
         if (File.Exists(recordsFilePath))
         {
             recordsData = JsonUtility.FromJson<RecordsData>((File.ReadAllText(recordsFilePath)));
+            
         }
         else
         {
-
-            Debug.Log("Couldn't find the records? Creating a new one.");
             recordsData = new RecordsData(); //prob temporary for solving bug
-
+            
         }
-        Debug.Log("Should have loaded recordsdata to JSON.");
-
 
         if (File.Exists(runFilePath))
         {
@@ -302,69 +397,60 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-
-            Debug.Log("Couldn't find the run? Creating a new one.");
-            currentRunData = new CurrentRunData(); //prob temporary for solving bug
-
+            currentRunData = new CurrentRunData();
+            //might need to serialize here?
         }
-        Debug.Log("Should have loaded rundata to JSON.");
-
         hasLoaded = true;
 
     }
-    //public void Load()
-    //{
-    //    // should probably check if file exists first, not sure if this code is good
-    //    if (File.Exists(recordsFilePath))
-    //    {
-    //        //   activeSave.LoadFightData();
-    //        //activeSave = JsonUtility.FromJson<SaveData>((File.ReadAllText(Application.persistentDataPath + "/BB_data.json")));
-    //        recordsData = JsonUtility.FromJson<RecordsData>((File.ReadAllText(Application.persistentDataPath + recordsFilePath)));
-    //        Debug.Log("Should have loaded data to JSON.");
-    //        hasLoaded = true;
 
-    //    }
-    //    else
-    //    {
-
-    //        Debug.Log("Couldn't find the save? Creating a new one.");
-    //        activeSave = new SaveData(); //prob temporary for solving bug
-    //                                     //  activeSave.SerializeFightData();
-
-    //        //   activeSave.LoadFightData();
-    //        Debug.Log("Should have loaded data to JSON.");
-    //        hasLoaded = true;
-    //    }
-
-    //}
+ 
 
 
-    //public void DeleteSave()
-    //{
-    //    if (File.Exists(recordsFilePath))
-    //    {
-    //        File.Delete(recordsFilePath);
-    //        activeSave = new SaveData(); //reset to default values
-    //        Debug.Log("Save file deleted");
-    //        Save();
-    //    }
-    //    else
-    //    {
-    //        activeSave = new SaveData(); //reset to default values
+    public void SetUpSavesAtLevelStart(int curSceneIndex)
+    {
+        currentRunData.SetContinueIndex(curSceneIndex);
 
-    //        Save();
-    //        Debug.Log("There was no save file to delete, but activeSave was overwritten anyway");
-    //    }
-    //    Load();
-    //}
+        SaveBothData();
+        
+    }
+    public void LogLevelCompletionData(int curLevelIndex, float endTime)
+    {   // Called at the end of the level by level manager before moving to intermission. updates the current times and results
+        // Maybe will create a variation that doesn't save currentTime (like for time trials?)
+        Debug.Log("Completion time was: " + endTime + ". Saving data for lvlIndex " +curLevelIndex + ".");
+        currentTimeInLevel = endTime; //unsure about this
 
+       
+        SaveCurrentTimes(curLevelIndex, endTime);
+        float timeToBeat = RetrieveRecordTime(curLevelIndex).bestTime;
+
+        if (timeToBeat == 999999)
+        {
+            Debug.Log("First time clearing level " + curLevelIndex);
+            SaveNewRecord(curLevelIndex, endTime);
+        }
+        else if(endTime < timeToBeat)
+        {//player beat their record!
+            SaveNewRecord(curLevelIndex, endTime);
+            //have a variable called Old best time? intermission might look at that
+        }
+        else
+        {
+
+        }
+
+        lastSavedAtCheckpoint = false;
+        isGoingToIntermissionFromLevel = true;
+        SaveBothData(); //sure? levelmanager might have been missing this
+    }
+
+    //Called when starting a New Game
     public void DeleteRunProgress()
     {
         if (File.Exists(runFilePath))
         {
             File.Delete(runFilePath);
             currentRunData = new CurrentRunData(); //reset to default values
-            Debug.Log("Current run has been deleted.");
             SaveBothData();
         }
         else
@@ -372,16 +458,10 @@ public class SaveManager : MonoBehaviour
             currentRunData = new CurrentRunData(); //reset to default values
 
             SaveBothData();
-            Debug.Log("There was no save file to delete, but CurrentRun e was overwritten anyway");
         }
         LoadBothData();
     }
    
-
-    public void BeginNewRun()
-    {
-        //only resets currentData
-    }
     public void WipeSave()
     {
         if (File.Exists(runFilePath))

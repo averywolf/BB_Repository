@@ -71,6 +71,9 @@ public class LevelManager : MonoBehaviour
     public void Start()
     {
         saveManager.isGoingToIntermissionFromLevel = false;
+        //This should ensure that the player will Continue from this level. Think I need to save to make this happen, though.
+
+        saveManager.SetUpSavesAtLevelStart((SceneManager.GetActiveScene().buildIndex));
         AudioManager.instance.StopMusic();
        // Time.timeScale = 0;
        
@@ -83,7 +86,7 @@ public class LevelManager : MonoBehaviour
         {
             saveManager.DeleteRunProgress();
         }
-        else if (Keyboard.current.jKey.wasPressedThisFrame)
+        else if (Keyboard.current.jKey.wasPressedThisFrame) //is this the same key for WASD attack?
         {
             saveManager.WipeSave();
             //ends level immediately
@@ -242,14 +245,11 @@ public class LevelManager : MonoBehaviour
 
         // transitions to intermission scene
 
-        ///IMPORTANT: I don't think the data is truly saved yet (as in, if you close the game, the data will go away)
-        ///Need to make sure that happens
         StopCoroutine(gameTimer);
-        saveManager.currentTimeInLevel = levelTime;
+        saveManager.LogLevelCompletionData(currentLevelIndex, levelTime);
+        
         Debug.Log("Current time when exiting: " + saveManager.currentTimeInLevel);
-        saveManager.lastSavedAtCheckpoint = false;
-        saveManager.isGoingToIntermissionFromLevel = true;
-        //saveManager.activeSave.SaveCompleteLevelData(currentLevelIndex, levelTime);
+
         StartCoroutine(TransitionManager.instance.TransitionToIntermission(sceneToGoToNext));
     }
     //Useful so any object can grab a reference to it

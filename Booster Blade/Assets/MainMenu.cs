@@ -28,10 +28,6 @@ public class MainMenu : MonoBehaviour
         SaveManager.instance.hasNotBeganLevel = true; //just in case
     }
 
-    public void Update()
-    {
-
-    }
     //starts run from the beginning, plays the intro cutscene, goes onto the first level
     public void StartNewGame()
     {
@@ -43,6 +39,7 @@ public class MainMenu : MonoBehaviour
     //picks up from the level where the current run left off. starts at beginning of the last level, doesn't take into account checkpoints
     public void ContinueGame()
     {
+        //Maybe if continue index is 0 don't continue?
         SceneManager.LoadScene(saveManager.currentRunData.continueIndex);
 
     }
@@ -54,6 +51,7 @@ public class MainMenu : MonoBehaviour
     public void ViewRecords()
     {
         Debug.Log("Would be able to use a feature for records... IF I HAD THEM!!!!");
+        //Use resultsTemp
     }
     public void QuitGame()
     {

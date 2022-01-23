@@ -27,9 +27,10 @@ public class ResultsScreen : MonoBehaviour
 
         resultsAnim.Play("resultsTest");
         int curIndex = intermissionManager.LevelResultsIndex;
-        if(saveManager.isGoingToIntermissionFromLevel)
+        if (saveManager.isGoingToIntermissionFromLevel)
         {
-            Debug.Log("Got here from level.");
+            saveManager.LoadBothData(); //probably pointless to put this here
+            Debug.Log("CHECKING TIMES at index " + curIndex + ". CURRENT= " + saveManager.RetrieveCurrentTime(curIndex).bestTime + ", RECORD = " + saveManager.RetrieveRecordTime(curIndex).bestTime);
             CompareTimes(saveManager.RetrieveCurrentTime(curIndex).bestTime, saveManager.RetrieveRecordTime(curIndex).bestTime);
             //timeText.text = ("Time: " + FormatTime(SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime));
         }
@@ -41,8 +42,6 @@ public class ResultsScreen : MonoBehaviour
 
     public void CompareTimes(float curTime, float timeToBeat)
     {
-        saveManager.LoadBothData(); //probably pointless to put this here
-        Debug.Log("The time to beat is " + timeToBeat);
         if (timeToBeat == 999999)
         {
             //I guess this is how I can determine if the player didn't beat the level yet?
@@ -50,23 +49,21 @@ public class ResultsScreen : MonoBehaviour
             timeText.text = ("Time : " + FormatTime(curTime));
 
             saveManager.SaveCurrentTimes(intermissionManager.LevelResultsIndex, curTime);
-            saveManager.SaveNewRecord(intermissionManager.LevelResultsIndex, curTime);
+
         }
         else if (curTime <= timeToBeat)
         {
             timeText.text = ("New best time : " + FormatTime(curTime) + "\nOld time:" + FormatTime(timeToBeat));
 
             saveManager.SaveCurrentTimes(intermissionManager.LevelResultsIndex, curTime);
-            saveManager.SaveNewRecord(intermissionManager.LevelResultsIndex, curTime);
+
         }
         else
         {
             timeText.text = ("Time : " + FormatTime(curTime) + "Record:" + FormatTime(timeToBeat));
-            saveManager.SaveCurrentTimes(intermissionManager.LevelResultsIndex, curTime);
+
         }
 
-        saveManager.SaveBothData();
-        //do I need to save manually?
     }
     // compare the currentLevelTime to the BestTime, (if there is a best time)
     // if cur <= best, display cur, and save cur as the new BestTime. signify high score.
