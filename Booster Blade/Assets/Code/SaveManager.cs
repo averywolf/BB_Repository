@@ -22,7 +22,8 @@ public class SaveManager : MonoBehaviour
     public bool hasNotBeganLevel = true;
     public bool isGoingToIntermissionFromLevel = false;
     public bool lastSavedAtCheckpoint = false;
-    public int tempCheckpointID= -1; 
+    public int tempCheckpointID= -1;
+    public float oldBestTime = 999999; //just used to carry on to intermission, the results are saved once you beat the level
     //move lastSavedAtCheckpoint over here?
     private void Awake()
     {
@@ -160,14 +161,14 @@ public class SaveManager : MonoBehaviour
     //serialize that to show the score, all you would have to do is populate the dictionary
     //upon loading, and then check if there's a score for the level in question.
 
-    //persists between scenes and reloads but is not saved to memory ever
+    //persists between scenes and reloads but is not saved to memory ever, not actually used I think
     public class TempLevelData
     {
         public int tempLevelID;
 
         public TempLevelData()
         {
-            Debug.Log("Created temp data, should only be called once!");
+           // Debug.Log("Created temp data, should only be called once!");
             //resetsStuffIGuess
         }
         //lastSavedAtCheckpoint
@@ -296,7 +297,7 @@ public class SaveManager : MonoBehaviour
     //    }
 
     //Based on RetrieveFightData, likely will not work without LoadingFightData first
-    private LevelData RetrieveLevelTime(int lvlIndex, Dictionary<int, LevelData> dictToRetrieve)
+    private LevelData RetrieveLevelData(int lvlIndex, Dictionary<int, LevelData> dictToRetrieve)
     {
        if(dictToRetrieve == null)
         {
@@ -314,31 +315,25 @@ public class SaveManager : MonoBehaviour
             return dictToRetrieve[lvlIndex] = new LevelData();
         }
     }
+    
     public LevelData RetrieveCurrentTime(int lvlIndex)
     {
         //only need to call LoadDict here since the dictionary won't matter outside of looking at times (since it's the level data list that's viewable in inspector and always updates when saving)
         currentRunData.LoadCurrentRunDict();
-        return RetrieveLevelTime(lvlIndex, currentRunData.currentRunLevelDict);
+        return RetrieveLevelData(lvlIndex, currentRunData.currentRunLevelDict);
     }
     public LevelData RetrieveRecordTime(int lvlIndex)
     {
         recordsData.LoadRecordsDict();
         Debug.Log("Looking for best time at index " + lvlIndex);
-        //for (int i = 0; i <recordsData.recordsLevelDatas.Count; i++)
-        //{
-        //    if(recordsData.recordsLevelDatas[i].levelIndex== lvlIndex)
-        //    {
-        //        return recordsData.recordsLevelDatas[i];
-        //    }
-        //}
-        return RetrieveLevelTime(lvlIndex, recordsData.recordLevelDict);
+
+        return RetrieveLevelData(lvlIndex, recordsData.recordLevelDict);
     }
     private void SaveLevelTime(int lvlIndex, float timeAchieved, Dictionary<int, LevelData> dictToSave)
     {
-        if (recordsData.recordLevelDict.ContainsKey(lvlIndex))
+        if (dictToSave.ContainsKey(lvlIndex))
         {
             dictToSave[lvlIndex].bestTime = timeAchieved;
-
         }
         else
         {
@@ -383,7 +378,8 @@ public class SaveManager : MonoBehaviour
         if (File.Exists(recordsFilePath))
         {
             recordsData = JsonUtility.FromJson<RecordsData>((File.ReadAllText(recordsFilePath)));
-            
+            Debug.Log("test records load");
+            recordsData.LoadRecordsDict(); //testing, apprears to help but leads to a bug
         }
         else
         {
@@ -394,6 +390,7 @@ public class SaveManager : MonoBehaviour
         if (File.Exists(runFilePath))
         {
             currentRunData = JsonUtility.FromJson<CurrentRunData>((File.ReadAllText(runFilePath)));
+            currentRunData.LoadCurrentRunDict();
         }
         else
         {
@@ -410,8 +407,8 @@ public class SaveManager : MonoBehaviour
     public void SetUpSavesAtLevelStart(int curSceneIndex)
     {
         currentRunData.SetContinueIndex(curSceneIndex);
-
-        SaveBothData();
+        oldBestTime = 999999; //reset at beginning of stage? might need to be reset at another point
+        SaveBothData(); //should just save continue index, I don't think it should cause further issues
         
     }
     public void LogLevelCompletionData(int curLevelIndex, float endTime)
@@ -422,25 +419,33 @@ public class SaveManager : MonoBehaviour
 
        
         SaveCurrentTimes(curLevelIndex, endTime);
+        
+        
         float timeToBeat = RetrieveRecordTime(curLevelIndex).bestTime;
-
+        
+        
+        //only need to show old record if you beat the level with a better record than before
         if (timeToBeat == 999999)
         {
             Debug.Log("First time clearing level " + curLevelIndex);
             SaveNewRecord(curLevelIndex, endTime);
         }
         else if(endTime < timeToBeat)
-        {//player beat their record!
+        {
+            //player beat their record!
+            if (RetrieveRecordTime(curLevelIndex).hasLevelBeenBeaten) //no point in updating oldBestTime if they haven't beaten level before
+            {
+                oldBestTime = timeToBeat;
+            }
+
             SaveNewRecord(curLevelIndex, endTime);
             //have a variable called Old best time? intermission might look at that
         }
-        else
-        {
 
-        }
 
         lastSavedAtCheckpoint = false;
         isGoingToIntermissionFromLevel = true;
+        RetrieveRecordTime(curLevelIndex).hasLevelBeenBeaten = true;
         SaveBothData(); //sure? levelmanager might have been missing this
     }
 
@@ -496,8 +501,7 @@ public class SaveManager : MonoBehaviour
         LoadBothData();
         //gets rid of ALL save data, not just for the current run
     }
+    
 
-    // [make a function that sets SaveSpawn]
-    // [called when moving to a new scene?]
-
+    //need to figure out when to set the continue index
 }

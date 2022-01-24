@@ -31,7 +31,7 @@ public class ResultsScreen : MonoBehaviour
         {
             saveManager.LoadBothData(); //probably pointless to put this here
             Debug.Log("CHECKING TIMES at index " + curIndex + ". CURRENT= " + saveManager.RetrieveCurrentTime(curIndex).bestTime + ", RECORD = " + saveManager.RetrieveRecordTime(curIndex).bestTime);
-            CompareTimes(saveManager.RetrieveCurrentTime(curIndex).bestTime, saveManager.RetrieveRecordTime(curIndex).bestTime);
+            CompareTimes(saveManager.RetrieveCurrentTime(curIndex).bestTime, saveManager.oldBestTime);
             //timeText.text = ("Time: " + FormatTime(SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime));
         }
         else
@@ -42,25 +42,20 @@ public class ResultsScreen : MonoBehaviour
 
     public void CompareTimes(float curTime, float timeToBeat)
     {
-        if (timeToBeat == 999999)
+        if (timeToBeat == 999999) //erronously shows if player beat level again but didn't beat their record
         {
             //I guess this is how I can determine if the player didn't beat the level yet?
             Debug.Log("Beat level for first time!");
-            timeText.text = ("Time : " + FormatTime(curTime));
-
-            saveManager.SaveCurrentTimes(intermissionManager.LevelResultsIndex, curTime);
+            timeText.text = ("Best time: " + FormatTime(curTime));
 
         }
         else if (curTime <= timeToBeat)
         {
-            timeText.text = ("New best time : " + FormatTime(curTime) + "\nOld time:" + FormatTime(timeToBeat));
-
-            saveManager.SaveCurrentTimes(intermissionManager.LevelResultsIndex, curTime);
-
+            timeText.text = ("New best time: " + FormatTime(curTime) + "\nOld time:" + FormatTime(timeToBeat));
         }
         else
         {
-            timeText.text = ("Time : " + FormatTime(curTime) + "Record:" + FormatTime(timeToBeat));
+            timeText.text = ("Your time: " + FormatTime(curTime) + "\nRecord:" + FormatTime(timeToBeat));
 
         }
 
