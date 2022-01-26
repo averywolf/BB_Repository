@@ -78,6 +78,7 @@ public class LevelManager : MonoBehaviour
        // Time.timeScale = 0;
        
         InitializePlayer();
+        Time.timeScale = 1;
     
     }
     private void Update()
@@ -89,7 +90,7 @@ public class LevelManager : MonoBehaviour
         else if (Keyboard.current.jKey.wasPressedThisFrame) //is this the same key for WASD attack?
         {
             saveManager.WipeSave();
-            //ends level immediately
+
         }
         else if (Keyboard.current.pKey.wasPressedThisFrame)
         {
@@ -251,6 +252,10 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Current time when exiting: " + saveManager.currentTimeInLevel);
 
         StartCoroutine(TransitionManager.instance.TransitionToIntermission(sceneToGoToNext));
+    }
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     //Useful so any object can grab a reference to it
     public PlayerController GetPlayerController()

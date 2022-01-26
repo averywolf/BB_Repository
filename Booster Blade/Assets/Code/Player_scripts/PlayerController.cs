@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         wallChecker = GetComponentInChildren<WallChecker>();
         dashTrail.SetEnabled(true);
+        playerPaused = false; //probably need to set values just like this
         levelManager = LevelManager.instance;
     }
     public void Start()
@@ -232,7 +233,7 @@ public class PlayerController : MonoBehaviour
         float inputX = context.ReadValue<Vector2>().x;
         float inputY = context.ReadValue<Vector2>().y;
         
-        if (!isDead && canTurn && !swordSlashing && !isBouncingOffWall && canControlPlayer)
+        if (!isDead && canTurn && !swordSlashing && !isBouncingOffWall && canControlPlayer &&!playerPaused)
         {
 
             //bool directionChanged = CheckDirectionInput();
