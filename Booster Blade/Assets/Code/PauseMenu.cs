@@ -19,18 +19,20 @@ public class PauseMenu : MonoBehaviour
     {
         if(gameIsPaused)
         {
+            AudioManager.instance.PauseMusic(false);
+            // AudioManager.instance.MusicPitchSetTest(1f);
             Time.timeScale = 1;
-            Debug.Log("Game Resumed");
             SetNewFirstSelected(null);
             pauseGraphic.SetActive(false);
-
         }
         else
         {
+            AudioManager.instance.PauseMusic(true);
+            // AudioManager.instance.MusicPitchSetTest(0.5f);
             Time.timeScale = 0;
-            Debug.Log("Game Paused");
             SetNewFirstSelected(firstPauseButton);
             pauseGraphic.SetActive(true);
+
         }
         //tacky solution
         gameIsPaused = !gameIsPaused;
@@ -46,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Unpause()
     {
+
         Debug.Log("Unpause pressed");
         Time.timeScale = 1;
         Debug.Log("Game Resumed");
@@ -53,6 +56,8 @@ public class PauseMenu : MonoBehaviour
         pauseGraphic.SetActive(false);
         LevelManager.instance.GetPlayerController().playerPaused = false;
         gameIsPaused = false;
+        AudioManager.instance.PauseMusic(false);
+        // AudioManager.instance.MusicPitchSetTest(1f);
     }
     public void RetryLevel()
     {

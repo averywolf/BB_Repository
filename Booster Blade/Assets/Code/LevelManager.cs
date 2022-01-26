@@ -47,7 +47,6 @@ public class LevelManager : MonoBehaviour
     private Coroutine gameTimer;
 
     public InputAction startBoost;
-   
     void Awake() 
     {
         entityManager = GetComponent<EntityManager>();
@@ -75,7 +74,7 @@ public class LevelManager : MonoBehaviour
 
         saveManager.SetUpSavesAtLevelStart((SceneManager.GetActiveScene().buildIndex));
         AudioManager.instance.StopMusic();
-       // Time.timeScale = 0;
+        Time.timeScale = 0;
        
         InitializePlayer();
         Time.timeScale = 1;
@@ -91,6 +90,15 @@ public class LevelManager : MonoBehaviour
         {
             saveManager.WipeSave();
 
+        }
+        else if (Keyboard.current.bKey.wasPressedThisFrame)
+        {
+            AudioManager.instance.PauseMusic(true);
+        }
+        else if (Keyboard.current.nKey.wasPressedThisFrame)
+        {
+
+            AudioManager.instance.PauseMusic(false);
         }
         else if (Keyboard.current.pKey.wasPressedThisFrame)
         {

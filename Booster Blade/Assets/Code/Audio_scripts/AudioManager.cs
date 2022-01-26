@@ -135,11 +135,28 @@ public class AudioManager : MonoBehaviour
 
         return audioController;
     }
-    public void PauseMusic(bool pause)
+    public void MusicPitchSetTest(float pitchValue)
     {
+        if (currentMusicTrack != null)
+        {
+            currentMusicTrack.SetSourcePitch(pitchValue);
+        }
+    }
+    //does not work
+    public void PauseMusic(bool pause)
+    {   
         if(currentMusicTrack != null)
         {
-            currentMusicTrack.PauseSource(pause);
+            if (pause)
+            {         
+                currentMusicTrack.PauseSource(true);
+            }
+            else
+            {
+              
+                currentMusicTrack.PauseSource(false);
+            }
+           
         }
         else
         {

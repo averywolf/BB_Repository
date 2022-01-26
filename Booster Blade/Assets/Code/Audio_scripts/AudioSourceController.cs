@@ -13,6 +13,7 @@ public class AudioSourceController : MonoBehaviour
 
     public int funValue = 0;
     private float defaultPitch = 1;
+    public bool isSourcePaused = false;
     void Awake()
     {
         _transform = transform;
@@ -38,7 +39,7 @@ public class AudioSourceController : MonoBehaviour
         _source.pitch = pitch;
         defaultPitch = pitch;
         _source.loop = loop;
-
+      
         _source.spatialBlend = spacialBlend;
 
         AssignMixer(_source, mixgroup);
@@ -53,6 +54,7 @@ public class AudioSourceController : MonoBehaviour
     public void Play()
     {
         _claimed = true;
+        isSourcePaused = false;
         _source.Play();
 
     }
@@ -67,13 +69,16 @@ public class AudioSourceController : MonoBehaviour
     {
         if (shouldPause)
         {
+            Debug.Log("Pausing current track.");
+            isSourcePaused = true;
             _source.Pause();
         }
         else
         {
+            Debug.Log("Unpausing current track.");
             _source.UnPause();
-        }
-      
+            isSourcePaused = false;
+        }  
     }
     public void SetSourcePitch(float pitchval)
     {
@@ -109,7 +114,9 @@ public class AudioSourceController : MonoBehaviour
     void LateUpdate()
     {
         //NEEDS TO CHECK IF AUDIO LISTENER IS PAUSED
-        if (_claimed && _source.isPlaying == false && AudioListener.pause == false)
+        //_source_isPlaying== false;
+        //might be source of problems in future, it definitely tripped me up when figuring out pausing
+        if (_claimed && _source.isPlaying == false && AudioListener.pause == false &&!isSourcePaused)
         {
             Stop();
             return;
