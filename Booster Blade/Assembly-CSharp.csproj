@@ -83,6 +83,12 @@
     <Compile Include="Assets\Clavian\SuperTextMesh\Scripts\SuperTextMeshData.cs" />
     <Compile Include="Assets\Clavian\SuperTextMesh\Utility\STMChangeSortingOrder.cs" />
     <Compile Include="Assets\Clavian\SuperTextMesh\Utility\STMCurveGenerator.cs" />
+    <Compile Include="Assets\Code\Attack_scripts\BulletAction.cs" />
+    <Compile Include="Assets\Code\Attack_scripts\BulletBehavior.cs" />
+    <Compile Include="Assets\Code\Attack_scripts\BulletMovement.cs" />
+    <Compile Include="Assets\Code\Attack_scripts\BulletPooler.cs" />
+    <Compile Include="Assets\Code\Attack_scripts\PoolHolder.cs" />
+    <Compile Include="Assets\Code\Attack_scripts\StandardAttack.cs" />
     <Compile Include="Assets\Code\Audio_scripts\AudioData.cs" />
     <Compile Include="Assets\Code\Audio_scripts\AudioGroup.cs" />
     <Compile Include="Assets\Code\Audio_scripts\AudioManager.cs" />
