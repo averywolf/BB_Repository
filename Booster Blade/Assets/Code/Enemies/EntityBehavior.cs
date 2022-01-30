@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class EntityBehavior : MonoBehaviour
 {
-
+    [Header("usually should call whatever behavior wake up function you need")]
     public UnityEvent OnEntityWakeUp;
 
     private void OnEnable()

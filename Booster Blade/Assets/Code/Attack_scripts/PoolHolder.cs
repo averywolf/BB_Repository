@@ -6,4 +6,3 @@ public static class PoolHolder
 {
     public static BulletPooler Pooler;
 }
-}

@@ -47,6 +47,7 @@ public class DashTrailObject : MonoBehaviour
     public void Initiate(float displayTime, Sprite sprite, Vector2 position, DashTrail trail)
     {
         mDisplayTime = displayTime;
+        
         mRenderer.sprite = sprite;
         mRenderer.enabled = true;
         mPosition = position;

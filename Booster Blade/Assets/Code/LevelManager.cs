@@ -187,7 +187,10 @@ public class LevelManager : MonoBehaviour
         levelStarted = true;
         levelUI.ClearTitleCard();
     }
-
+    public Transform GetPlayerTransform()
+    {
+        return playerController.transform;
+    }
     public void EnablePlayerControl(bool shouldControl)
     {
         playerController.canControlPlayer = shouldControl;

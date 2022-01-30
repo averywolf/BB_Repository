@@ -105,7 +105,7 @@ public class BulletMovement : MonoBehaviour
     {
         if (facePlayer)
         {
-            Vector3 direction = BugFightManager.instance.GetPlayerPosition().position - bulTransform.position; //worried about Vector3
+            Vector3 direction = LevelManager.instance.GetPlayerTransform().position - bulTransform.position; //worried about Vector3
             float angle = Mathf.Atan2(direction.y, direction.x)//returns a value in radians--the angle 
                 * Mathf.Rad2Deg; //multiply by this to convert to degrees
             bulTransform.rotation = Quaternion.Euler(0, 0, angle);

@@ -63,7 +63,8 @@ public class PlayerController : MonoBehaviour
     private SpriteFlash swordFlash;
     private bool isStunned = false;
     //might make public
-    private bool isInvincible = false;
+    [HideInInspector]
+    public bool isInvincible = false;
     #endregion
 
     [HideInInspector]
