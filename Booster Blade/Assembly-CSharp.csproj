@@ -122,6 +122,7 @@
     <Compile Include="Assets\Code\DialogueBox.cs" />
     <Compile Include="Assets\Code\DialogueManager.cs" />
     <Compile Include="Assets\Code\Door.cs" />
+    <Compile Include="Assets\Code\Enemies\Assassin.cs" />
     <Compile Include="Assets\Code\Enemies\BackNForthObstacle.cs" />
     <Compile Include="Assets\Code\Enemies\BasicRepeatController.cs" />
     <Compile Include="Assets\Code\Enemies\BatEnemy.cs" />

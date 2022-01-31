@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
-  currentRunSpeed: 26
+  currentRunSpeed: 22
   boostSpeedModifier: 15
   testStun: 0
   dashTrail: {fileID: 2273449789586011497}
@@ -296,6 +296,7 @@ MonoBehaviour:
   debugUI: {fileID: 0}
   bodyFlash: {fileID: 414264765}
   swordFlash: {fileID: 1575433573}
+  isInvincible: 0
   currentMoveState: 1
   playerSword: {fileID: 1867033004}
   isReversing: 0

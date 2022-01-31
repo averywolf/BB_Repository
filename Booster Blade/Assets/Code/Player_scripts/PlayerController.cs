@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour
     private float boostSpeedModifier = 10;
     // It's *these* variables, which are set equal to those inputX/inputY most of the time that move the player.
     // They are set to zero under some circumestances, like being stunned.
-    private float horizontal;
-    private float vertical;
+    [HideInInspector]
+    public float horizontal;
+    [HideInInspector]
+    public float vertical;
 
     public bool testStun = false;
     //forget what exactly this is
