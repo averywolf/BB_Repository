@@ -16,14 +16,25 @@ public class SlamCrusher : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("Hit wall!");
-            transform.rotation = Quaternion.Euler(0, 0, transform.rotation.z + 180); ;
-            rb.velocity = Vector3.right * moveSpeed;
+            //screenshake?
+            //StartCrushing(-transform.rotation.z);
+ 
         }
   
     }
     public void WakeCrusher()
     {
         GetComponent<DashTrail>().SetEnabled(true);
-        rb.velocity = Vector3.right * moveSpeed;
+        StartCrushing(90f);
+    }
+
+    public void StartCrushing(float attackAngle)
+    {
+        transform.rotation = Quaternion.Euler(0, 0, attackAngle) ;
+        rb.velocity = transform.right * moveSpeed;
+    }
+    public void EndCrushing()
+    {
+        rb.velocity = Vector3.zero;
     }
 }
