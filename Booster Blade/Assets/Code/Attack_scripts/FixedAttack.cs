@@ -11,7 +11,7 @@ public abstract class FixedAttack : StandardAttack
     }
     public virtual void Fire(Transform firePoint)
     {
-
+        Fire(firePoint.position);
     }
 
 }

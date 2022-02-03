@@ -20,13 +20,18 @@ public class CircleSpread : FixedAttack
         {
             angleStart = Random.Range(0, 360);
         }
+        CircleAttack(angleStart, firePoint);
+
+    }
+    private void CircleAttack(float angleStart, Vector2 firePoint)
+    {
         float angleIncrements = 360 / amountToFire;
         BulletPooler pooler = PoolHolder.Pooler;
         for (int j = 0; j < amountToFire; j++)
         {
 
             GameObject bullet = pooler.GrabBullet(bulletPrefab);
-            if(bullet != null)
+            if (bullet != null)
             {
                 float angle = j * angleIncrements + angleStart;
                 ShootBullet(bullet, firePoint, angle, bulletMoveSpeed);
@@ -35,4 +40,10 @@ public class CircleSpread : FixedAttack
         Debug.Log("Should do this only once per shot");
         PlayAttackSFX();
     }
+    public override void Fire(Transform firePoint)
+    {//unsure if quaternions ruin this
+        CircleAttack(firePoint.rotation.z, firePoint.position);
+
+    }
+
 }

@@ -21,19 +21,18 @@ public class BackNForthObstacle : MonoBehaviour
 
     public void Start()
     {
-        currentFacingAngle = transform.eulerAngles.z;
-      
+        currentFacingAngle = transform.eulerAngles.z;    
     }
+
     public void TestFunction()
     {
         Debug.LogWarning("A BEYBLADE WITH 3 BITBEASTS HAS BEEN FOUND.");
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-
-            Debug.Log("drone hit wall");
             obstacleRB.velocity = new Vector2(0,0);
 
             ReverseDirection();
