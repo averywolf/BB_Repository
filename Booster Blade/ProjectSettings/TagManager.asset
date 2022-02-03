@@ -42,11 +42,20 @@ TagManager:
   - name: Background
     uniqueID: 3016584353
     locked: 0
+  - name: BackDecorTiles(Bottom)
+    uniqueID: 4224392145
+    locked: 0
+  - name: BackDecorTiles(Top)
+    uniqueID: 68525
+    locked: 0
   - name: BackgroundObj1
     uniqueID: 3459601697
     locked: 0
   - name: Enemy
     uniqueID: 4260852355
+    locked: 0
+  - name: LevelObject
+    uniqueID: 1626648527
     locked: 0
   - name: Trail
     uniqueID: 1026002501
@@ -54,7 +63,7 @@ TagManager:
   - name: BoostParticles
     uniqueID: 736958487
     locked: 0
-  - name: Walls
+  - name: WallTiles
     uniqueID: 1972533803
     locked: 0
   - name: Deathplane
@@ -63,7 +72,10 @@ TagManager:
   - name: Player
     uniqueID: 4103291367
     locked: 0
-  - name: ForegroundDecor
+  - name: TempTunnelCovers
+    uniqueID: 4237857519
+    locked: 0
+  - name: ForeDecorTiles
     uniqueID: 147276167
     locked: 0
   - name: Default

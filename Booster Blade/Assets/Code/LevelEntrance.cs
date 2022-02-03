@@ -11,14 +11,16 @@ public class LevelEntrance : MonoBehaviour
     public CinemachineVirtualCamera entranceCam;
     public ParticleSystem doorBurstFX;
     public GameObject backtrackCollider;
+    [Tooltip("Place player spawns at initially")]
     public Transform initialSpawn;
+
     public void Awake()
     {
         backtrackCollider.SetActive(false);
     }
     public void OpenDoor(bool shouldOpen, bool startingFromEntrance)
     {
-        if (shouldOpen)
+        if (shouldOpen && !isDoorOpen)
         {
             entranceDoorAnim.Play("entrance_opening");
             isDoorOpen = true;
@@ -26,10 +28,8 @@ public class LevelEntrance : MonoBehaviour
             if (startingFromEntrance)
             {
                 doorBurstFX.Play(true);
-                //Probably play sound effect, too
+                //Probably play explosion SFX, too
             }
-
-      
         }
     }
     //isn't called yet
