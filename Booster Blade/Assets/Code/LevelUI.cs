@@ -9,6 +9,10 @@ public class LevelUI : MonoBehaviour
     SuperTextMesh healthtext;
 
     [SerializeField]
+    SuperTextMesh actTitleText;
+
+
+    [SerializeField]
     Animator titlecardanim;
 
     [SerializeField]
@@ -60,5 +64,9 @@ public class LevelUI : MonoBehaviour
         fraction = (fraction % 1000);
         string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, fraction);
         return timeText;
+    }
+    public void SetActText(string message)
+    {
+        actTitleText.text = message;
     }
 }

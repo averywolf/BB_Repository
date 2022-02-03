@@ -47,6 +47,11 @@ public class LevelManager : MonoBehaviour
     private Coroutine gameTimer;
 
     public InputAction startBoost;
+
+    [SerializeField]
+    private string levelMusic = "Post Apocalypse";
+    [SerializeField]
+    private string actName = "";
     void Awake() 
     {
         entityManager = GetComponent<EntityManager>();
@@ -75,7 +80,7 @@ public class LevelManager : MonoBehaviour
         saveManager.SetUpSavesAtLevelStart((SceneManager.GetActiveScene().buildIndex));
         AudioManager.instance.StopMusic();
         Time.timeScale = 0;
-       
+        levelUI.SetActText(actName);
         InitializePlayer();
         Time.timeScale = 1;
     
@@ -206,7 +211,11 @@ public class LevelManager : MonoBehaviour
     }
     public void BlastOff()
     {
-        AudioManager.instance.PlayMusic("Post Apocalypse"); // should instead play relevant level music
+        if (levelMusic != "")
+        {
+            AudioManager.instance.PlayMusic(levelMusic);
+        }
+        //AudioManager.instance.PlayMusic("Post Apocalypse"); // should instead play relevant level music
 
         gameTimer = StartCoroutine(GameTimer());
         playerController.FreezePlayer(false);

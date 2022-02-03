@@ -65,6 +65,8 @@ MonoBehaviour:
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
+  levelMusic: Post Apocalypse
+  actName: CRYSTAL PATH ACT 1
 --- !u!114 &8425930940845957715
 MonoBehaviour:
   m_ObjectHideFlags: 0
