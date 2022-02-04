@@ -30,6 +30,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Inter_5.unity
     guid: 4f7c5d96418758242807febf703f768a
   - enabled: 1
+    path: Assets/Scenes/Inter_6.unity
+    guid: 3e531d4dbeef27f4999d3b57b2c61b22
+  - enabled: 1
+    path: Assets/Scenes/Inter_7.unity
+    guid: 408c6357da3a74d40ad6bf3a03243a98
+  - enabled: 1
+    path: Assets/Scenes/Inter_8.unity
+    guid: 510ce6764f214fc4b8c0b6c0fbe146f7
+  - enabled: 1
+    path: Assets/Scenes/Inter_9.unity
+    guid: 5a9c7a9581498de4cbc29d5396723517
+  - enabled: 1
+    path: Assets/Scenes/Inter_10.unity
+    guid: 19c7b89b97879cc48bda8d4fb2f60095
+  - enabled: 1
+    path: Assets/Scenes/Inter_11.unity
+    guid: 62a7de5ef2d969f4e884c5f7ec00e2d6
+  - enabled: 1
     path: Assets/Scenes/Inter_template.unity
     guid: 5ed74767ebe78414288571b7d7a06339
   - enabled: 1
