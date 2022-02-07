@@ -5,6 +5,8 @@ using UnityEngine;
 public class FixedTurret : MonoBehaviour
 {
     public FixedAttack fixedAttack;
+    public Transform turretFirePoint;
+
     // Start is called before the first frame update
 
     public void TurretWake()
