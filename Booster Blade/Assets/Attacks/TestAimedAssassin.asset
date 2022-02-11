@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d3de0fe13d3bc489e02062eccd5e25, type: 3}
   m_Name: TestAimedAssassin
   m_EditorClassIdentifier: 
-  rateOfFire: 0.05
+  rateOfFire: 0.01
   bulletPrefab: {fileID: 6850305764697293782, guid: bb765574767026f4da364d8eedc28de7,
     type: 3}
   fireSFX: 
   bulletKeyPoints: []
   bulletColor: {r: 1, g: 1, b: 1, a: 1}
-  bulletMoveSpeed: 45
+  bulletMoveSpeed: 55
   shotOffset: 0
   angleVariance: 0
   speedVariance: 0
