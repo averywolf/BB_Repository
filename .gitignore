@@ -2,7 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-Booster Blade/[Ll]ibrary/
+/Booster Blade/[Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
@@ -79,4 +79,10 @@ Booster Blade/Library/ArtifactDB
 Booster Blade/Library/ArtifactDB
 Booster Blade/Library/ArtifactDB
 Booster Blade/Library/ArtifactDB
+Booster Blade/Library/ArtifactDB
+Booster Blade/Library/SourceAssetDB
+Booster Blade/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.Editor.dll
+Booster Blade/Library/ScriptAssemblies/Unity.2D.Tilemap.Extras.dll
+Booster Blade/Library/ScriptAssemblies/Assembly-CSharp.dll
+Booster Blade/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
 Booster Blade/Library/ArtifactDB
