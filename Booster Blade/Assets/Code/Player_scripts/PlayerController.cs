@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool swordSlashing=false;
     public CinemachineImpulseSource boostSource;
+    
     public enum PlayerMoveStates
     {
         idle,
@@ -403,7 +404,10 @@ public class PlayerController : MonoBehaviour
         yield return null;
     }
     #endregion
-
+    public void SetDebugInvincibility(bool setTrue)
+    {
+        isInvincible = setTrue;
+    }
 
  
     public void CeaseRoutine(IEnumerator enumerator)

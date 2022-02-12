@@ -9,7 +9,7 @@ public class EnemyHitbox : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<PlayerSword>() || collision.GetComponent<SwordSlash>())
+        if (collision.GetComponent<SwordSlash>())
         {
             enemyHealth.HurtEnemy();
         }

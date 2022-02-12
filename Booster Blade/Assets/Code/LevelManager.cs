@@ -52,6 +52,8 @@ public class LevelManager : MonoBehaviour
     private string levelMusic = "Post Apocalypse";
     [SerializeField]
     private string actName = "";
+
+    private bool debugIVon= false;
     void Awake() 
     {
         entityManager = GetComponent<EntityManager>();
@@ -91,10 +93,26 @@ public class LevelManager : MonoBehaviour
         {
             saveManager.DeleteRunProgress();
         }
-        else if (Keyboard.current.jKey.wasPressedThisFrame) //is this the same key for WASD attack?
+        else if (Keyboard.current.tKey.wasPressedThisFrame) //is this the same key for WASD attack?
         {
             saveManager.WipeSave();
 
+        }
+        else if (Keyboard.current.iKey.wasPressedThisFrame)
+        {
+            if (!debugIVon)
+            {
+                playerController.SetDebugInvincibility(true);
+                debugIVon = true;
+                Debug.LogWarning("Player Invincibility enabled.");
+            }
+            else
+            {
+                playerController.SetDebugInvincibility(false);
+                debugIVon = false;
+                Debug.LogWarning("Player Invincibility disabled.");
+            }
+            
         }
         else if (Keyboard.current.bKey.wasPressedThisFrame)
         {

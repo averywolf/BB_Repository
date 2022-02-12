@@ -12,6 +12,7 @@ public class Laser : MonoBehaviour
     public bool isLaserActive;
     public bool effectsEnabled = false;
     private Vector3 laserHitPos;
+   
     //maybe start laser as inactive?
     void Awake()
     {

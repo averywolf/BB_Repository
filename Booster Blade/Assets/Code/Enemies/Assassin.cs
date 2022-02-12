@@ -19,7 +19,7 @@ public class Assassin : MonoBehaviour
     private GameObject teleportParticles;
 
     [SerializeField]
-    private int tempTimesToFire = 4;
+    private int tempTimesToFire = 8;
     public IEnumerator AttemptToMurder()
     {
         PlayerController playControl = LevelManager.instance.GetPlayerController();
@@ -86,6 +86,10 @@ public class Assassin : MonoBehaviour
             BeginMurderAttempt();
         }
   
+    }
+    public void AssassinDeath()
+    {
+        Destroy(gameObject);
     }
     public void ReadyAssassin()
     {

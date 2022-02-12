@@ -23,7 +23,7 @@ public class FixedTurret : MonoBehaviour
         while (true)
         {
             // AudioManager.instance.Play("Shoot1");
-            fixedAttack.Fire(transform);
+            fixedAttack.Fire(turretFirePoint);
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
             {
                 yield return waitForFixedUpdate;
