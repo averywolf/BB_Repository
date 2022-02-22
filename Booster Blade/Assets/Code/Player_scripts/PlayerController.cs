@@ -283,9 +283,10 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
         canTurn = true;
     }
+    //should come out of a boost panel with reduced cooldown
 
     //differentiate between entering with boost panel and inputting manually
-    public void BeginBoost(float boostingDuration, bool spendStamina)
+    public void BeginBoost(float boostingDuration, bool manualBoost)
     {
         CeaseRoutine(exhaustBoost);
         //CeaseRoutine(boostCooldown); //not sure fi this should be here
@@ -295,25 +296,38 @@ public class PlayerController : MonoBehaviour
         dashTrail.SetEnabled(true);
         dashTrail.testDashBoosting = true;
         currentMoveState = PlayerMoveStates.boosting;
-        StartCoroutine(exhaustBoost = SlowFromBoost(boostingDuration));
-        if (spendStamina)
-        {
-            canBoost = false;
-            StartCoroutine(boostCooldown = BoostCooldown(boostCooldownTime));
-        }
+        StartCoroutine(exhaustBoost = SlowFromBoost(boostingDuration, manualBoost));
+  
         AudioManager.instance.Play("Boost");
   
         playerSword.swordBoosting = true;
         playerAnimator.SetBool("heroBoosting", true);
         //should go after the last horizontal/vertical
     }
+    //might need two guages to be layered on top of each other?
+    public IEnumerator SlowFromBoost(float boostStateDuration, bool manualBoost) //exit this if player has another state
+    {
+        if (manualBoost)
+        {
+            canBoost = false;
+        }
+        float currentTime = 1;
+        float boostLastRate = 1 / (boostStateDuration / Time.deltaTime);
 
-    public IEnumerator SlowFromBoost(float boostStateDuration) //exit this if player has another state
-    {    
-        yield return new WaitForSeconds(boostStateDuration);
+        while (currentTime > 0)
+        {
+            testUI.SetStaminaSlider(currentTime);
+            boostLastRate = 1 / (boostStateDuration / Time.deltaTime);
+            currentTime -= boostLastRate;
+            yield return null;
+        }
+
+        //yield return new WaitForSeconds(boostStateDuration);
 
         ExitBoost();
+        StartCoroutine(BoostCooldown(boostCooldownTime));
     }
+    
     public void ExitBoost()
     {
         playerAnimator.SetBool("heroBoosting", false);
@@ -321,9 +335,11 @@ public class PlayerController : MonoBehaviour
         //dashTrail.SetEnabled(false);
         dashTrail.testDashBoosting = false;
         playerSword.swordBoosting = false;
+        
     }
     public IEnumerator BoostCooldown(float coolDown)
     {
+        testUI.StaminaFlash(false);
         float currentTime = 0;
         float cooldownRate = 1 / (coolDown/Time.deltaTime);
 
@@ -335,6 +351,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
         AudioManager.instance.Play("BoostMeterFull");
+        testUI.StaminaFlash(true);
         canBoost = true;
     }
     #endregion

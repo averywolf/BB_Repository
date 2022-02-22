@@ -28,7 +28,7 @@ public class BasicButton : MonoBehaviour
             Debug.Log("PressingButton");
             if(KeyBolt != null)
             {
-                StartCoroutine(TestShootBolt(testDoor, 1f));
+                StartCoroutine(TestShootBolt(testDoor, 3f));
             }
             
             SpawnParticles(ButtonPressFX, transform.position);

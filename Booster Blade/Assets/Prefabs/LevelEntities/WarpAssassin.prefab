@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 24.15
+  m_Radius: 15
 --- !u!114 &8444420240842958664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 5763607795485734335}
   - component: {fileID: 5763607795485734330}
   - component: {fileID: 2043116995423516567}
+  - component: {fileID: 8151149375305912189}
   m_Layer: 0
   m_Name: WarpAssassin
   m_TagString: Untagged
@@ -129,6 +130,9 @@ MonoBehaviour:
   teleDistance: 5
   teleportParticles: {fileID: 3326193482900577939, guid: 6ee4df28b88037c4bae7605d4fdc03dc,
     type: 3}
+  deathParticles: {fileID: 3326193482900577939, guid: 547ec2fb4a341d5459cbdc8a36ff3d8b,
+    type: 3}
+  noticeDuration: 1
   tempTimesToFire: 8
 --- !u!212 &5763607795485734335
 SpriteRenderer:
@@ -233,6 +237,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &8151149375305912189
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763607795485734334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4561652a11a69614eaee615945c6a22d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8849666708396047421
 GameObject:
   m_ObjectHideFlags: 0

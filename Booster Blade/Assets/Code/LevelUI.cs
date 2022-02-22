@@ -23,9 +23,18 @@ public class LevelUI : MonoBehaviour
 
     [SerializeField]
     SuperTextMesh timer;
+
+    [SerializeField]
+    Image staminaFill;
+
+    [SerializeField]
+    Color fullChargeColor;
+    [SerializeField]
+    Color chargineColor;
     public void Awake()
     {
         deathBG.SetActive(false);
+        staminaSlider.value = 1;
     }
     public void ClearTitleCard()
     {
@@ -45,6 +54,17 @@ public class LevelUI : MonoBehaviour
     {
         staminaSlider.value = staminaVal;
         //staminaSlider;
+    }
+    public void StaminaFlash(bool flashOn)
+    {
+        if (flashOn)
+        {
+            staminaFill.color = fullChargeColor;
+        }
+        else
+        {
+            staminaFill.color = chargineColor;
+        }
     }
     public void SetTimer(float timerValue)
     {

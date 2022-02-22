@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Assassin : MonoBehaviour
 {
+    private Animator animator;
     public AimedAttack testAimedAttack;
     private bool assassinReadied = false;
     private bool tryingToKill = false;
@@ -17,12 +18,24 @@ public class Assassin : MonoBehaviour
     public float teleDistance=1;
     [SerializeField]
     private GameObject teleportParticles;
-
+    [SerializeField]
+    private GameObject deathParticles;
+    [SerializeField]
+    private float noticeDuration;
     [SerializeField]
     private int tempTimesToFire = 8;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        animator.Play("idle");
+    }
     public IEnumerator AttemptToMurder()
     {
+
+        animator.Play("idle");
         PlayerController playControl = LevelManager.instance.GetPlayerController();
+
         SpawnParticles(teleportParticles, transform.position);
         transform.position = LevelManager.instance.GetPlayerTransform().position;
         transform.parent = LevelManager.instance.GetPlayerTransform();
@@ -75,20 +88,29 @@ public class Assassin : MonoBehaviour
     {
         if (assassinReadied)
         {
+           
             StartCoroutine(AttemptToMurder());
         }
+    }
+    public IEnumerator NoticePlayer()
+    {
+        animator.Play("notice");
+
+        yield return new WaitForSeconds(noticeDuration);
+        BeginMurderAttempt();
     }
     public void CommitToMurderingPlayer()
     {
         if (!tryingToKill)
         {
             tryingToKill = true;
-            BeginMurderAttempt();
+            StartCoroutine(NoticePlayer());
         }
   
     }
     public void AssassinDeath()
     {
+        SpawnParticles(deathParticles, transform.position);
         Destroy(gameObject);
     }
     public void ReadyAssassin()

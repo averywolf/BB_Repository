@@ -9,6 +9,7 @@ public class BoostPanel : MonoBehaviour
     /// Currently doesn't work on multiples of these values
     /// </summary>
     /// <returns></returns>
+    [HideInInspector]
     public Transform boostPanelTransform;
     private void Awake()
     {

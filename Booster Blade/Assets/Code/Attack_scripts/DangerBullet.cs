@@ -14,7 +14,7 @@ public class DangerBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            gameObject.SetActive(false);
+            RemoveBullet();
         }   
     }
     //called by PlayerCore if damage actually goes through
