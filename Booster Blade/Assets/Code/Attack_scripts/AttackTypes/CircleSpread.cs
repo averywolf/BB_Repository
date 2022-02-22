@@ -42,7 +42,15 @@ public class CircleSpread : FixedAttack
     }
     public override void Fire(Transform firePoint)
     {//unsure if quaternions ruin this
-        CircleAttack(firePoint.rotation.z, firePoint.position);
+        if (randomizeAngle)
+        {
+            Fire(firePoint.position);
+        }
+        else
+        {
+            CircleAttack(firePoint.rotation.z, firePoint.position);
+        }
+    
 
     }
 

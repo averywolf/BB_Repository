@@ -5,11 +5,19 @@ using UnityEngine;
 public class VineWeakpoint : MonoBehaviour
 {
     //po
-
+    OvergrownCore overgrownCore;
+    [SerializeField]
+    public bool isCut =false;
+    private void Awake()
+    {
+        isCut = false;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<SwordSlash>())
         {
+            isCut = true;
+            gameObject.SetActive(false);
             //enemyHealth.HurtEnemy();
         }
     }
