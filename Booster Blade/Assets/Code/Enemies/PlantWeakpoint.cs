@@ -18,4 +18,8 @@ public class PlantWeakpoint : MonoBehaviour
             //enemyHealth.HurtEnemy();
         }
     }
+    public void WeakdownCutEffect()
+    {
+        gameObject.SetActive(false);
+    }
 }

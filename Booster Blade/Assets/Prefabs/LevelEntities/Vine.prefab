@@ -51,7 +51,7 @@ MonoBehaviour:
   pointZ: {fileID: 694941490963187868}
   vineLineA: {fileID: 7464103522014759998}
   vineLineZ: {fileID: 250532831191272412}
-  vineIdleFX: {fileID: 3326193482900577939, guid: 0116f6bc6b931a34c9d8131129ceac0a,
+  vineIdleFX: {fileID: 3326193482900577939, guid: 6dbdfafafd294244ab8037ead46d1f16,
     type: 3}
   isVineCut: 0
 --- !u!1 &3898827372556660141

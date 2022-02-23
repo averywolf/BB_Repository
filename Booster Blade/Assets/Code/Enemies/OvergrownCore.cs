@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class OvergrownCore : MonoBehaviour
 {
+    public GameObject plantdoor;
+    public LineRenderer doorColumn;
+
     public List<OvergrownVine> overgrownVines;
     public FixedAttack fixedAttack;
     private Coroutine attackProcess;
@@ -19,6 +22,10 @@ public class OvergrownCore : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        doorColumn.useWorldSpace = true;
+
+        doorColumn.SetPosition(0, transform.position);
+        doorColumn.SetPosition(1, plantdoor.transform.position);
     }
 
     public void PlantWake()
@@ -65,11 +72,16 @@ public class OvergrownCore : MonoBehaviour
     }
     public IEnumerator PlantDeathProcess()
     {
+        YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         animator.Play("plant_death");
         StopCoroutine(attackProcess);
         SpawnParticles(deathFX, transform.position);
-        yield return new WaitForSeconds(2);
+        for (float duration = 1; duration > 0; duration -= Time.fixedDeltaTime)
+        {
+            yield return waitForFixedUpdate;
+        }
         Destroy(gameObject);
+    
     }
 
     public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)
