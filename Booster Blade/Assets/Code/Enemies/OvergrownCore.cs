@@ -4,23 +4,43 @@ using UnityEngine;
 
 public class OvergrownCore : MonoBehaviour
 {
-    public List<VineWeakpoint> weakpoints;
+    public List<OvergrownVine> overgrownVines;
     public FixedAttack fixedAttack;
+    private Coroutine attackProcess;
+    private Animator animator;
+    [SerializeField]
+    private GameObject deathFX;
+
+    private bool attackingPlayer = false;
     
+    //get only to attack within range
+
+    private bool plantIsAlive = true;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public void PlantWake()
     {
-        StartCoroutine(RepeatTurret());
+        animator.Play("plant_idle");
+        //
     }
     public void Update()
     {
-        for (int i = 0; i < weakpoints.Count; i++)
+        if (plantIsAlive)
         {
-            if (!weakpoints[i].isCut)
+            for (int i = 0; i < overgrownVines.Count; i++)
             {
-                return;
+                if (!overgrownVines[i].isVineCut)
+                {
+                    return;
+                }
             }
+            KillPlant();
         }
-        KillPlant();
+     
+       // KillPlant();
     }
     public IEnumerator RepeatTurret()
     {
@@ -39,6 +59,30 @@ public class OvergrownCore : MonoBehaviour
     }
     public void KillPlant()
     {
+        Debug.Log("Plant is dead.");
+        plantIsAlive = false;
+        StartCoroutine(PlantDeathProcess());
+    }
+    public IEnumerator PlantDeathProcess()
+    {
+        animator.Play("plant_death");
+        StopCoroutine(attackProcess);
+        SpawnParticles(deathFX, transform.position);
+        yield return new WaitForSeconds(2);
         Destroy(gameObject);
+    }
+
+    public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)
+    {
+        GameObject particleEffect = Instantiate(particleEffectPrefab, spawnPoint, particleEffectPrefab.transform.rotation);
+        Destroy(particleEffect, particleEffect.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
+    }
+    public void StartAttacking()
+    {
+        if(attackingPlayer == false)
+        {
+            attackingPlayer = true;
+            attackProcess = StartCoroutine(RepeatTurret());
+        }
     }
 }
