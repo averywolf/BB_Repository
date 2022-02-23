@@ -282,6 +282,8 @@ MonoBehaviour:
   playerInput: {fileID: 0}
   currentRunSpeed: 22
   boostSpeedModifier: 15
+  horizontal: 0
+  vertical: 0
   testStun: 0
   dashTrail: {fileID: 2273449789586011497}
   playerBody: {fileID: 2273449790131124435}
@@ -291,7 +293,7 @@ MonoBehaviour:
   canControlPlayer: 0
   currentPlayerHP: 0
   boostDuration: 2
-  boostCooldownTime: 3
+  boostCooldownTime: 1.5
   testUI: {fileID: 0}
   debugUI: {fileID: 0}
   bodyFlash: {fileID: 414264765}
@@ -560,7 +562,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -191675929
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 1
   m_Sprite: {fileID: 7113549497127142848, guid: f0764d7208e624541a25307c2f809026,
     type: 3}
@@ -867,7 +869,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -191675929
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: -3577085347431246455, guid: 65c73042161881b4a9d1dc6f846ff0ea,
     type: 3}
