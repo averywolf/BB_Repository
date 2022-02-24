@@ -5,19 +5,37 @@ using UnityEngine;
 public class EnemyGem : KeyGem
 {
     public GameObject requiredEnemiesHolder;
-    public List<EnemyHealth> enemiesToDestroy;
+    private List<EnemyHealth> enemiesToDestroy;
 
-    public void Update()
+    public void Start()
     {
-        if (!conditionsHaveBeenMet)
+        EnemyHealth[] enemies = requiredEnemiesHolder.GetComponentsInChildren<EnemyHealth>();
+        enemiesToDestroy = new List<EnemyHealth>();
+        foreach (EnemyHealth enemyHealth in enemies)
         {
-            if (!requiredEnemiesHolder.GetComponentInChildren<EnemyHealth>())
+            enemiesToDestroy.Add(enemyHealth.GetComponent<EnemyHealth>());
+        }
+
+        for (int i = 0; i < enemiesToDestroy.Count; i++)
+        {
+            enemiesToDestroy[i].enemyGem = this;
+        }
+    }
+    public override void CheckConditions()
+    {
+        //if (!requiredEnemiesHolder.GetComponentInChildren<EnemyHealth>())
+        //{
+            for (int i = 0; i < enemiesToDestroy.Count; i++)
             {
-                Debug.Log("The enemies needed to open the door have been dealt with.");
-                UnlockDoor();
+                if (!enemiesToDestroy[i].enemyDead)
+                {
+                    return;
+                }
             }
 
-        }
+            Debug.Log("The enemies needed to open the door have been dealt with.");
+            UnlockDoor();
+        //}
     }
 
 }

@@ -17,7 +17,6 @@ public class BasicButton : MonoBehaviour
     //public GameObject KeyBolt;
     [HideInInspector]
     public ButtonGem keyGem;
-    public Transform testDoor;
     private void Awake()
     {
         butAnim = GetComponent<Animator>();

@@ -68,7 +68,8 @@ public class BatEnemy : MonoBehaviour
     {
         SpawnParticles(batDeathFX, transform.position);
         AudioManager.instance.Play("EnemyDeath_D");
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
     public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)
     {
