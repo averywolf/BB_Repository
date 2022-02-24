@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.EventSystems;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
@@ -33,7 +34,7 @@ public class LevelManager : MonoBehaviour
     private CheckpointManager checkpointManager;
     private EntityManager entityManager;
 
-    public int currentLevelIndex;
+    public int currentLevelIndex; //if this index is 9, the player is at the final stage
 
     [SerializeField, Header("After beating level, this scene loads (usually an Intermission)")]
     public string sceneToGoToNext = "";
@@ -48,12 +49,15 @@ public class LevelManager : MonoBehaviour
 
     public InputAction startBoost;
 
+
     [SerializeField]
     private string levelMusic = "Post Apocalypse";
     [SerializeField]
     private string actName = "";
 
     private bool debugIVon= false;
+    [SerializeField, Tooltip("Only applies during the final stage")]
+    private float finalTimeLimit;
     void Awake() 
     {
         entityManager = GetComponent<EntityManager>();
@@ -185,6 +189,16 @@ public class LevelManager : MonoBehaviour
         playerController.FreezePlayer(true);
         levelUI.UpdateHPHUD(startingPlayerHP);
         playerController.currentPlayerHP = startingPlayerHP;
+        
+        if (currentLevelIndex == 9) //if it's the final stage
+        {
+            Debug.Log("It's the final stage! Removing limiters.");
+            playerController.limitersRemoved = true;
+        }
+        else
+        {
+            playerController.limitersRemoved = false;
+        }
         //loads whereever the player is supposed to be
     }
     //player might just refer to LevelUI directly
@@ -248,16 +262,39 @@ public class LevelManager : MonoBehaviour
         }
     }
     public IEnumerator GameTimer()
-    { //currently resets when you die?
+    {
         //levelTime = 0;
-        Debug.Log("Setting GameTimer to" + saveManager.currentTimeInLevel);
+        float currentTime = 0;
+  
+        Debug.Log("Player has spent " + saveManager.currentTimeInLevel +" in level.");
         levelTime = saveManager.currentTimeInLevel;
-        while (true)
+        ///Final Countdown seems to work fine, but it doesn't seem to save the player's time properly.
+        if (currentLevelIndex == 9)
         {
-            levelTime += Time.deltaTime;
-            levelUI.SetTimer(levelTime);
-            yield return null;
+            levelUI.SetTimer(finalTimeLimit);
+            while (currentTime<finalTimeLimit)
+            {
+                currentTime += Time.deltaTime;
+                levelTime += currentTime;
+                levelUI.SetTimer(finalTimeLimit-currentTime);
+                yield return null;
+            }
+            levelUI.SetTimer(0);
+            playerController.KillPLayer(); //will probably initiate a special game over but this should do for now
         }
+        else
+        {
+         
+       
+            while (true)
+            {
+         
+                levelTime += Time.deltaTime;
+                levelUI.SetTimer(levelTime);
+                yield return null;
+            }
+        }
+
     }
     public void OnStartBoost(InputAction.CallbackContext context)
     {

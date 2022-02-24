@@ -15,6 +15,7 @@ public class KeyGem : MonoBehaviour
     private GameObject gemFX;
     public void UnlockDoor()
     {
+        Debug.Log("Enough buttons have been pressed.");
         doorToOpen.OpenDoor(true);
         conditionsHaveBeenMet = true;
         SpawnParticles(gemFX, transform.position);

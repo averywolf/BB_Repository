@@ -14,7 +14,9 @@ public class BasicButton : MonoBehaviour
     public UnityEvent OnButtonPressed;
     public GameObject ButtonPressFX;
 
-    public GameObject KeyBolt;
+    //public GameObject KeyBolt;
+    [HideInInspector]
+    public ButtonGem keyGem;
     public Transform testDoor;
     private void Awake()
     {
@@ -26,30 +28,35 @@ public class BasicButton : MonoBehaviour
         if (!isPressed)
         {
             Debug.Log("PressingButton");
-            if(KeyBolt != null)
-            {
-                StartCoroutine(TestShootBolt(testDoor, 3f));
-            }
+        
+            //if(KeyBolt != null)
+            //{
+            //    StartCoroutine(TestShootBolt(testDoor, 3f));
+            //}
             
             SpawnParticles(ButtonPressFX, transform.position);
+           // StartCoroutine(testDoor.get)
             //should play clicking sound
             //might play particle effect when pressed?
             ChangeButtonStatus(true);
-           
+            if (keyGem != null)
+            {
+                keyGem.ButtonSignal(transform);
+            }
         }
     }
-    public IEnumerator TestShootBolt(Transform target, float timeSpeed)
-    {
-        GameObject bolt = Instantiate(KeyBolt, transform.position, transform.rotation);
-        Transform boltTrans = bolt.transform;
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * timeSpeed)
-        {
-            boltTrans.position = Vector3.Lerp(transform.position, target.position, t);
+    //public IEnumerator TestShootBolt(Transform target, float timeSpeed)
+    //{
+    //    GameObject bolt = Instantiate(KeyBolt, transform.position, transform.rotation);
+    //    Transform boltTrans = bolt.transform;
+    //    for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * timeSpeed)
+    //    {
+    //        boltTrans.position = Vector3.Lerp(transform.position, target.position, t);
 
-            yield return null;
-        }
-        Destroy(bolt);
-    }
+    //        yield return null;
+    //    }
+    //    Destroy(bolt);
+    //}
 
 
     public void ChangeButtonStatus(bool setToPressed)

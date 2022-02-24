@@ -221,12 +221,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.45, y: 0}
-      - {x: 1, y: 2.4}
-      - {x: -0.5, y: 2.4}
+    - - {x: 3, y: 0}
+      - {x: 1.5, y: 2.5}
+      - {x: -0.8, y: 2.5}
       - {x: 0, y: 0}
-      - {x: -0.5, y: -2.4}
-      - {x: 1, y: -2.4}
+      - {x: -0.8, y: -2.5}
+      - {x: 1.5, y: -2.5}
 --- !u!1 &2273449788443605633
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +305,7 @@ MonoBehaviour:
   playerPaused: 0
   swordSlashing: 0
   boostSource: {fileID: 0}
+  limitersRemoved: 0
 --- !u!114 &2273449788443605632
 MonoBehaviour:
   m_ObjectHideFlags: 0

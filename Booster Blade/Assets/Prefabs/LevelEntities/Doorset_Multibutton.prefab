@@ -102,7 +102,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1972533803
-  m_SortingLayer: -3
+  m_SortingLayer: -5
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1387e1844bcd93a42be74fc98f952538, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -132,6 +132,7 @@ MonoBehaviour:
   basicButtons:
   - {fileID: 8264269451888499396}
   - {fileID: 8264269452466061218}
+  keyBolt: {fileID: 7278484423089769602, guid: 98cb8d698a2826a409f63e9e54cc9ac6, type: 3}
 --- !u!61 &4085140106605211502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -254,7 +255,7 @@ PrefabInstance:
     - target: {fileID: 5332754607125476787, guid: da6be12d8415ac74c99a3ba4a7bd5634,
         type: 3}
       propertyPath: m_SortingLayer
-      value: -6
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5332754607125476787, guid: da6be12d8415ac74c99a3ba4a7bd5634,
         type: 3}
@@ -485,7 +486,7 @@ PrefabInstance:
     - target: {fileID: 5332754607125476787, guid: da6be12d8415ac74c99a3ba4a7bd5634,
         type: 3}
       propertyPath: m_SortingLayer
-      value: -6
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5332754607125476787, guid: da6be12d8415ac74c99a3ba4a7bd5634,
         type: 3}

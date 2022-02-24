@@ -92,7 +92,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool swordSlashing=false;
     public CinemachineImpulseSource boostSource;
-    
+
+    [HideInInspector]
+    public bool limitersRemoved = false; //set to true by LevelManager if it's the final stage
     public enum PlayerMoveStates
     {
         idle,
@@ -325,11 +327,24 @@ public class PlayerController : MonoBehaviour
         //yield return new WaitForSeconds(boostStateDuration);
 
         ExitBoost();
-        StartCoroutine(BoostCooldown(boostCooldownTime));
+        if (limitersRemoved)
+        {
+            StartCoroutine(BoostCooldown(0.2f));
+        }
+        else
+        {
+            StartCoroutine(BoostCooldown(boostCooldownTime));
+        }
+
+        
     }
     
     public void ExitBoost()
     {
+        testUI.SetStaminaSlider(0);
+        testUI.StaminaFlash(false);
+        ///Might need to deplete bar instantly here; this is called if player bumps into enemy while boosting
+        /// There could potentially be a strat were
         playerAnimator.SetBool("heroBoosting", false);
         currentMoveState = PlayerMoveStates.moving;
         //dashTrail.SetEnabled(false);
@@ -339,17 +354,18 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator BoostCooldown(float coolDown)
     {
-        testUI.StaminaFlash(false);
+        
         float currentTime = 0;
-        float cooldownRate = 1 / (coolDown/Time.deltaTime);
+        float cooldownRate = 1 / (coolDown/Time.fixedDeltaTime);
 
         while (currentTime<1)
         {
             testUI.SetStaminaSlider(currentTime);
-            cooldownRate = 1 / (coolDown / Time.deltaTime);
+            cooldownRate = 1 / (coolDown / Time.fixedDeltaTime);
             currentTime += cooldownRate;
             yield return null;
         }
+        testUI.SetStaminaSlider(1);
         AudioManager.instance.Play("BoostMeterFull");
         testUI.StaminaFlash(true);
         canBoost = true;

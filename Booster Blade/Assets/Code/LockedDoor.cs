@@ -2,26 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class LockedDoor : MonoBehaviour
 {
-    private Animator doorAnim;
-
-    private bool isDoorOpen = false;
-
     public GameObject keyBolt;
-    private void Awake()
-    {
-        doorAnim = GetComponent<Animator>();
-    }
-    public void OpenDoor(bool shouldOpen)
-    {
-        if (shouldOpen)
-        {
-            AudioManager.instance.Play("BreakCrystal1");
-            doorAnim.Play("basicdoor_open");
-            isDoorOpen = true;
-        }
-    }
+
     public IEnumerator ShootKeyBolt(Transform startingPoint, float timeSpeed)
     {
         Transform doortarget = transform;
@@ -35,5 +19,4 @@ public class Door : MonoBehaviour
         }
         Destroy(bolt);
     }
-    //public affectlock method that can be called through an event in an enemy?
 }

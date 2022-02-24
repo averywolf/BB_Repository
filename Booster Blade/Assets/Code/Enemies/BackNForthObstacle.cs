@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BackNForthObstacle : MonoBehaviour
 {
+    //Note: these drones appear to get off-sync easily
+
     private Rigidbody2D obstacleRB;
 
     [SerializeField]
@@ -26,7 +28,7 @@ public class BackNForthObstacle : MonoBehaviour
 
     public void TestFunction()
     {
-        Debug.LogWarning("A BEYBLADE WITH 3 BITBEASTS HAS BEEN FOUND.");
+       // Debug.LogWarning("A BEYBLADE WITH 3 BITBEASTS HAS BEEN FOUND.");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

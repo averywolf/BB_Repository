@@ -67,6 +67,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
   levelMusic: Post Apocalypse
   actName: CRYSTAL PATH ACT 1
+  finalTimeLimit: 15
 --- !u!114 &8425930940845957715
 MonoBehaviour:
   m_ObjectHideFlags: 0
