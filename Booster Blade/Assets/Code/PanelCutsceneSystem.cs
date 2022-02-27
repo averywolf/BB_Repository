@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class PanelCutsceneSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<CutscenePanel> cutscenePanels;
+
+    public int currentPanel; //current id of panel displayed
+
+    public void Awake()
     {
-        
+        for (int i = 0; i < cutscenePanels.Count; i++)
+        {
+            cutscenePanels[i].gameObject.SetActive(false);
+        }
+    }
+    public void PanelTransition()
+    {
+
+    }
+    public void SkipCutscene()
+    {
+
+    }
+    public void Start()
+    {
+        AudioManager.instance.PlayMusic("Mus_Intro");
+        StartCoroutine(TestPanelProcess());
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator TestPanelProcess()
     {
-        
+        Debug.Log("Starting cutscene.");
+        for (int i = 0; i < cutscenePanels.Count; i++)
+        {
+            cutscenePanels[i].ShowPanel();
+            yield return new WaitForSeconds(cutscenePanels[i].stayTime);
+            cutscenePanels[i].HidePanel();
+        }
+        Debug.Log("Done with cutscene.");
     }
 }
