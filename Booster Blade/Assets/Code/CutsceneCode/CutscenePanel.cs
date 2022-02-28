@@ -7,6 +7,7 @@ public class CutscenePanel : MonoBehaviour
     public UnityEvent OnPanelShow;
 
     //types WaitTime WaitForSignal
+    public bool fadeToNext;
     public float stayTime; //how long this panel stays on screen before proceeding to the next panel
 
     public void ShowPanel()
