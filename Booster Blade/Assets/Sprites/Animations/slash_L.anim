@@ -30,7 +30,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.06666667
+        time: 0.057142857
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -39,7 +39,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
+        time: 0.25714287
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -67,7 +67,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
+        time: 0.25714287
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -87,10 +87,10 @@ AnimationClip:
     - time: 0
       value: {fileID: -4218250893126386942, guid: 65c73042161881b4a9d1dc6f846ff0ea,
         type: 3}
-    - time: 0.06666667
+    - time: 0.057142857
       value: {fileID: 7592743664598044352, guid: 65c73042161881b4a9d1dc6f846ff0ea,
         type: 3}
-    - time: 0.2
+    - time: 0.25714287
       value: {fileID: 7592743664598044352, guid: 65c73042161881b4a9d1dc6f846ff0ea,
         type: 3}
     attribute: m_Sprite
@@ -101,13 +101,13 @@ AnimationClip:
     - time: 0
       value: {fileID: 1260302724017676575, guid: f0764d7208e624541a25307c2f809026,
         type: 3}
-    - time: 0.06666667
+    - time: 0.057142857
       value: {fileID: 45304263695807850, guid: f0764d7208e624541a25307c2f809026, type: 3}
     attribute: m_Sprite
     path: PlayerBody/Sword
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 30
+  m_SampleRate: 35
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -153,7 +153,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.23333333
+    m_StopTime: 0.2857143
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -182,7 +182,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.06666667
+        time: 0.057142857
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -191,7 +191,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
+        time: 0.25714287
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -219,7 +219,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.2
+        time: 0.25714287
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -238,7 +238,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.06666667
+  - time: 0.057142857
     functionName: SwingSFX
     data: 
     objectReferenceParameter: {fileID: 0}
