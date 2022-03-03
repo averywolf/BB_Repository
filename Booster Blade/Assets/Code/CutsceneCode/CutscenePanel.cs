@@ -19,4 +19,8 @@ public class CutscenePanel : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    public void PanelPlaySFX(string name)
+    {
+        AudioManager.instance.Play(name);
+    }
 }
