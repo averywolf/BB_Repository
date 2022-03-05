@@ -11,6 +11,9 @@ public class LevelUI : MonoBehaviour
     [SerializeField]
     SuperTextMesh actTitleText;
 
+    [SerializeField]
+    SuperTextMesh levelDialogue;
+
 
     [SerializeField]
     Animator titlecardanim;
@@ -31,11 +34,25 @@ public class LevelUI : MonoBehaviour
     Color fullChargeColor;
     [SerializeField]
     Color chargineColor;
+    public static LevelUI instance;
+
     public void Awake()
     {
         deathBG.SetActive(false);
         staminaSlider.value = 1;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+        levelDialogue.gameObject.SetActive(false);
     }
+
+
     public void ClearTitleCard()
     {
         titlecardanim.Play("titlecard_clearaway");
@@ -89,4 +106,12 @@ public class LevelUI : MonoBehaviour
     {
         actTitleText.text = message;
     }
+
+    public void SayLevelDialogue(string dialogueLine)
+    {
+
+        levelDialogue.text = dialogueLine;
+        levelDialogue.gameObject.SetActive(true);
+    }
+
 }

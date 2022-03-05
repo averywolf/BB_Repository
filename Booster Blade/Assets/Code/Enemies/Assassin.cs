@@ -25,6 +25,11 @@ public class Assassin : MonoBehaviour
     [SerializeField]
     private int tempTimesToFire = 8;
 
+
+    [SerializeField]
+    ChargeTell chargeTell;
+    [SerializeField]
+    float chargeTime;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -40,12 +45,17 @@ public class Assassin : MonoBehaviour
         transform.position = LevelManager.instance.GetPlayerTransform().position;
         transform.parent = LevelManager.instance.GetPlayerTransform();
         transform.localPosition = new Vector2(teleDistance, 0);
+       
+    
+        //might make this fixedUpdate
         SpawnParticles(teleportParticles, transform.position);
         float duration = timeToReadyAttack;
         float currentTime = 0.0f;
+
+        chargeTell.ActivateTell(chargeTime, 3, 0); // currently just does this as soon as it locks on
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
 
-        //forget why I do this instead of waittime
+        //forget why I do this instead of waittime, I think contantly setting position might be irrelevant since it's already parented
         while (currentTime <= duration)
         {
             Vector2 telePos = new Vector2(playControl.horizontal, playControl.vertical);

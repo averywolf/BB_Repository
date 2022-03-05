@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CardVictoryJingle
   m_EditorClassIdentifier: 
   audioName: CardVictoryJingle
-  Clip: {fileID: 8300000, guid: 1a6f32f16c3d2fa429a42aa3889025f4, type: 3}
+  Clip: {fileID: 8300000, guid: 3a7623c01bd470c45afbaf36835dd532, type: 3}
   Volume: 1
   Pitch: 1
   Loop: 0
