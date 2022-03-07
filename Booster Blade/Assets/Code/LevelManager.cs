@@ -275,7 +275,8 @@ public class LevelManager : MonoBehaviour
             while (currentTime<finalTimeLimit)
             {
                 currentTime += Time.deltaTime;
-                levelTime += currentTime;
+                //levelTime += currentTime;
+                levelTime = currentTime;
                 levelUI.SetTimer(finalTimeLimit-currentTime);
                 yield return null;
             }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
     public string firstLevelName="";
@@ -10,7 +12,13 @@ public class MainMenu : MonoBehaviour
     private bool ableToInteractWithMenu=false;
     private SaveManager saveManager;
 
-    public SuperTextMesh resultsTemp;
+    public GameObject resultsMenu;
+    public GameObject firstButton;
+
+    public SuperTextMesh resultsText;
+
+
+    public GameObject resultsReturnButton;
     //no loading save yet
 
 
@@ -22,6 +30,8 @@ public class MainMenu : MonoBehaviour
     }
     void Start()
     {
+        SetNewFirstSelected(firstButton);
+        resultsMenu.SetActive(false);
         ableToInteractWithMenu = true;
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlayMusic("Occult");
@@ -48,19 +58,64 @@ public class MainMenu : MonoBehaviour
     {
         saveManager.WipeSave();
     }
-    public void ViewRecords()
-    {
-        Debug.Log("Would be able to use a feature for records... IF I HAD THEM!!!!");
-        //Use resultsTemp
-    }
+
     public void QuitGame()
     {
         Debug.Log("Attempting to quit game.");
         Application.Quit();
     }
 
-    public void DisplayTempResults()
+    public void OpenResultsScreen()
     {
-
+        resultsMenu.SetActive(true);
+        SetNewFirstSelected(resultsReturnButton);
+        DisplayBestTimes();
     }
+    public void CloseResultsScreen()
+    {
+        resultsMenu.SetActive(false);
+        SetNewFirstSelected(firstButton);
+    }
+    public void DisplayBestTimes()
+    {
+        //Currently you can view all results even if you haven't beaten the stages
+
+        string resultsTally = "";
+        for (int i = 0; i < 10; i++) //might grab level name lenght from a manager
+        {
+            float levelTime = saveManager.RetrieveRecordTime(i).bestTime;
+            if (levelTime == 999999)
+            {
+                resultsTally += "Stage " + (i + 1).ToString() + ": Not cleared \n";
+            }
+            else
+            {
+                resultsTally += "Stage " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
+            }
+           
+        }
+
+        resultsText.text = resultsTally;
+        //display total
+    }
+    private void SetNewFirstSelected(GameObject firstSelection)
+    {
+        //clear selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        //set a new selected object
+        EventSystem.current.SetSelectedGameObject(firstSelection);
+        firstSelection.GetComponent<Button>().Select();
+        //firstPauseButton.GetComponent<Button>().Select();
+    }
+    private string FormatTime(float time)
+    {
+        int intTime = (int)time;
+        int minutes = intTime / 60;
+        int seconds = intTime % 60;
+        float fraction = time * 1000;
+        fraction = (fraction % 1000);
+        string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, fraction);
+        return timeText;
+    }
+
 }

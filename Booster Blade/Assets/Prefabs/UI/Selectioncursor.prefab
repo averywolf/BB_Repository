@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5578945126374811409}
   - component: {fileID: 5578945126374811414}
   - component: {fileID: 5578945126374811408}
+  - component: {fileID: 7622611778620535264}
   m_Layer: 0
   m_Name: Selectioncursor
   m_TagString: Untagged
@@ -88,4 +89,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95388e54dc4a7044ea7600d5c097ffaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelCanvas: {fileID: 0}
   xOffset: 60
+--- !u!210 &7622611778620535264
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5578945126374811412}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 50
