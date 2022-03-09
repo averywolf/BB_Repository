@@ -9,6 +9,7 @@ public class ManosCore : MonoBehaviour
 
     public List<Chain> chains;
     public FixedAttack fixedAttack;
+    public AimedAttack aimedAttack;
     private Coroutine attackProcess;
     [SerializeField]
     private GameObject deathFX;
@@ -26,7 +27,7 @@ public class ManosCore : MonoBehaviour
         doorColumn.SetPosition(1, manosDoor.transform.position);
     }
 
-    public void PlantWake()
+    public void ManosWake()
     {
 
     }
@@ -53,6 +54,21 @@ public class ManosCore : MonoBehaviour
         {
             // AudioManager.instance.Play("Shoot1");
             fixedAttack.Fire(transform);
+            for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
+            {
+                yield return waitForFixedUpdate;
+            }
+        }
+    }
+    public IEnumerator RepeatTurretAimed()
+    {
+
+        float fireRate = aimedAttack.GetRateOfFire();
+        YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
+        while (true)
+        {
+            // AudioManager.instance.Play("Shoot1");
+            aimedAttack.FireAimed(transform.position, LevelManager.instance.GetPlayerTransform().position);
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
             {
                 yield return waitForFixedUpdate;
@@ -91,6 +107,15 @@ public class ManosCore : MonoBehaviour
             LevelUI.instance.SayLevelDialogue("I'm gonna kill you!!!");
             attackingPlayer = true;
             attackProcess = StartCoroutine(RepeatTurret());
+
+            if (fixedAttack != null)
+            {
+                StartCoroutine(RepeatTurret());
+            }
+            if (aimedAttack != null)
+            {
+                StartCoroutine(RepeatTurretAimed());
+            }
         }
     }
 }

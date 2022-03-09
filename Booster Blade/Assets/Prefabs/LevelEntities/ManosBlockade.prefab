@@ -126,7 +126,8 @@ MonoBehaviour:
   doorColumn: {fileID: 1223052895569115377}
   chains:
   - {fileID: 1840856897981499001}
-  fixedAttack: {fileID: 11400000, guid: bb6683502bc67c1478651da51857ebca, type: 2}
+  fixedAttack: {fileID: 11400000, guid: 65461ebdf7f13ae498a1a7e2943a3013, type: 2}
+  aimedAttack: {fileID: 11400000, guid: d080b4a3975c3fe46bbfdaf95ec5acdf, type: 2}
   deathFX: {fileID: 3326193482900577939, guid: 5cb29d0bc34d94149aca2d5ce5540e76, type: 3}
 --- !u!212 &1223052895209769642
 SpriteRenderer:
