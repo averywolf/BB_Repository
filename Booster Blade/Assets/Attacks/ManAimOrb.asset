@@ -17,10 +17,19 @@ MonoBehaviour:
     type: 3}
   fireSFX: 
   bulletKeyPoints:
-  - keyPointDelay: 0
+  - keyPointDelay: 0.2
     bulletAction:
       actionType: 1
       setSpeed: 0
+      endScale: 0
+      scaleDuration: 0
+      accelDuration: 0
+      endSpeed: 0
+      spinRate: 0
+  - keyPointDelay: 0
+    bulletAction:
+      actionType: 0
+      setSpeed: 40
       endScale: 0
       scaleDuration: 0
       accelDuration: 0
@@ -36,7 +45,7 @@ MonoBehaviour:
       endSpeed: 0
       spinRate: 0
   bulletColor: {r: 1, g: 1, b: 1, a: 1}
-  bulletMoveSpeed: 5
+  bulletMoveSpeed: 14
   amountToFire: 3
   initialAngle: 0
   randomizeAngle: 0

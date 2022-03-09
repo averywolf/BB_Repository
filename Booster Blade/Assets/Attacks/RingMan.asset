@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e40d0ec58988d804383fc347e4605ff8, type: 3}
   m_Name: RingMan
   m_EditorClassIdentifier: 
-  rateOfFire: 4
+  rateOfFire: 0.04
   bulletPrefab: {fileID: 6850305764697293782, guid: 73d0e83a203d0844c9cdfcc1ee158ef6,
     type: 3}
   fireSFX: Shoot1
@@ -26,19 +26,19 @@ MonoBehaviour:
       accelDuration: 0
       endSpeed: 0
       spinRate: 0
-  - keyPointDelay: 1
+  - keyPointDelay: 0
     bulletAction:
       actionType: 4
       setSpeed: 0
       endScale: 0
       scaleDuration: 0
-      accelDuration: 4
-      endSpeed: 30
+      accelDuration: 0.4
+      endSpeed: 50
       spinRate: 0
   bulletColor: {r: 1, g: 1, b: 1, a: 1}
-  bulletMoveSpeed: 10
+  bulletMoveSpeed: 15
   initialAngle: 0
   circleRadius: 15
   scaleWithBulletNumber: 0
-  randomPositions: 1
-  amountToFire: 4
+  randomPositions: 0
+  amountToFire: 2

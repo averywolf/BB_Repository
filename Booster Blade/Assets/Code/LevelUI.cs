@@ -106,12 +106,22 @@ public class LevelUI : MonoBehaviour
     {
         actTitleText.text = message;
     }
+    public void DialogueFade()
+    {
+        //doesn't quite work yet
+       // levelDialogue.GetComponent<SuperTextMesh>().style= FontStyle.Bold;
+       // levelDialogue.GetComponent<SuperTextMesh>().color = Color.blue;
 
+       levelDialogue.gameObject.SetActive(false);
+        //LeanTween.alpha(levelDialogue.gameObject, 0, 2);
+    }
     public void SayLevelDialogue(string dialogueLine)
     {
-
+        
         levelDialogue.text = dialogueLine;
         levelDialogue.gameObject.SetActive(true);
+        
+        Invoke("DialogueFade", 2);
     }
 
 }

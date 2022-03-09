@@ -23,7 +23,7 @@ public class CircleSpread : FixedAttack
         CircleAttack(angleStart, firePoint);
 
     }
-    private void CircleAttack(float angleStart, Vector2 firePoint)
+    public void CircleAttack(float angleStart, Vector2 firePoint)
     {
         float angleIncrements = 360 / amountToFire;
         BulletPooler pooler = PoolHolder.Pooler;
@@ -37,7 +37,6 @@ public class CircleSpread : FixedAttack
                 ShootBullet(bullet, firePoint, angle, bulletMoveSpeed);
             }
         }
-        Debug.Log("Should do this only once per shot");
         PlayAttackSFX();
     }
     public override void Fire(Transform firePoint)

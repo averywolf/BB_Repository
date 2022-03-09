@@ -48,8 +48,10 @@ public class RingAroundPoint : AimedAttack
             Vector2 direction = aimPoint - newPos;
             float angle = Mathf.Atan2(direction.y, direction.x)//returns a value in radians--the angle 
                 * Mathf.Rad2Deg; //multiply by this to convert to degrees
-
-            ShootBullet(bullet, newPos, angle, bulletMoveSpeed);
+            if (bullet != null)
+            {
+                ShootBullet(bullet, newPos, angle, bulletMoveSpeed);
+            }
            
         }
         PlayAttackSFX();
