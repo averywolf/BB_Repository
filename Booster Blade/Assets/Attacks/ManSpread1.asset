@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7405a2c47ae89f245b3ffe152a636a59, type: 3}
   m_Name: ManSpread1
   m_EditorClassIdentifier: 
-  rateOfFire: 5
+  rateOfFire: 0.2
   bulletPrefab: {fileID: 6850305764697293782, guid: 73d0e83a203d0844c9cdfcc1ee158ef6,
     type: 3}
-  fireSFX: Shoot1
+  fireSFX: 
   bulletKeyPoints:
   - keyPointDelay: 0
     bulletAction:
@@ -27,7 +27,7 @@ MonoBehaviour:
       endSpeed: 0
       spinRate: 0
   bulletColor: {r: 1, g: 1, b: 1, a: 1}
-  bulletMoveSpeed: 5
-  amountToFire: 15
+  bulletMoveSpeed: 8
+  amountToFire: 4
   initialAngle: 0
   randomizeAngle: 0

@@ -42,9 +42,10 @@ public class RingAroundPoint : AimedAttack
         {
 
             circAngle = (j * Mathf.PI * 2f / amountToFire) + refAngle;
+           // circAngle = (j * Mathf.PI * 2f / amountToFire) + 90;
             GameObject bullet = pooler.GrabBullet(bulletPrefab);
-
-            Vector2 newPos = aimPoint + (new Vector2(Mathf.Cos(circAngle) * radius, Mathf.Sin(circAngle) * radius));
+            //Vector2 newPos = aimPoint + (new Vector2(Mathf.Cos(circAngle) * radius, Mathf.Sin(circAngle) * radius));
+            Vector2 newPos = aimPoint + (new Vector2(Mathf.Cos(circAngle) * radius, Mathf.Sin(0) * radius));
             Vector2 direction = aimPoint - newPos;
             float angle = Mathf.Atan2(direction.y, direction.x)//returns a value in radians--the angle 
                 * Mathf.Rad2Deg; //multiply by this to convert to degrees

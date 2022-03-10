@@ -10,6 +10,7 @@ public class ManosCore : MonoBehaviour
     public List<Chain> chains;
     public FixedAttack fixedAttack;
     public AimedAttack aimedAttack;
+    public AimedAttack aimedAttack2;
     private Coroutine spiralAttack;
     private Coroutine attackProcess;
     public CircleSpread circleSpread;
@@ -20,6 +21,12 @@ public class ManosCore : MonoBehaviour
     private Animator manosAnim;
     private bool attackingPlayer = false;
 
+    [SerializeField]
+    private int aimCircleIterations;
+    [SerializeField]
+    private int spiralIterations;
+    [SerializeField]
+    private float attackSwitchTime;
     //get only to attack within range
 
     private bool coreIsAlive = true;
@@ -91,14 +98,14 @@ public class ManosCore : MonoBehaviour
         manosAnim.Play("manos_exit");
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         // animator.Play("plant_death");
-        StopCoroutine(spiralAttack);
-        //StopCoroutine(attackProcess);
+        //StopCoroutine(spiralAttack);
+        StopCoroutine(attackProcess);
         SpawnParticles(deathFX, transform.position);
         for (float duration = 1; duration > 0; duration -= Time.fixedDeltaTime)
         {
             yield return waitForFixedUpdate;
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
 
     }
 
@@ -107,10 +114,11 @@ public class ManosCore : MonoBehaviour
         float fireRate = circleSpread.GetRateOfFire();
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         float j = 0;
+
         while (true)
         {
             j+=rotateRate;
-
+            j = j % 360;
             // AudioManager.instance.Play("Shoot1");
             circleSpread.CircleAttack(j, transform.position);
            // aimedAttack.FireAimed(transform.position, LevelManager.instance.GetPlayerTransform().position);
@@ -120,7 +128,46 @@ public class ManosCore : MonoBehaviour
             }
         }
     }
+    public IEnumerator SpiralAttack(int numTimes)
+    {
+        float fireRate = circleSpread.GetRateOfFire();
+        YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
+        float j = 0;
+        int timesDone = 0;
+        while (timesDone <numTimes)
+        {
+            j += rotateRate;
+            j = j % 360;
+            // AudioManager.instance.Play("Shoot1");
+            circleSpread.CircleAttack(j, transform.position);
+            // aimedAttack.FireAimed(transform.position, LevelManager.instance.GetPlayerTransform().position);
+            for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
+            {
+                yield return waitForFixedUpdate;
+            }
+            timesDone++;
+        }
+    }
+    public IEnumerator ManosPattern()
+    {
+      //  Coroutine aimedCou = StartCoroutine(RepeatAimedAttack(aimedAttack, transform, LevelManager.instance.GetPlayerTransform(), aimCircleIterations));
+        while (true)
+        {
 
+          
+             yield return StartCoroutine(RepeatAimedAttack(aimedAttack, transform, LevelManager.instance.GetPlayerTransform(), aimCircleIterations));
+            yield return new WaitForSeconds(attackSwitchTime);
+            //spawn assassin like drone instead?
+            yield return StartCoroutine(SpiralAttack(spiralIterations));
+            //yield return StartCoroutine(RepeatFixedAttack(fixedAttack, transform, spiralIterations));
+            yield return new WaitForSeconds(attackSwitchTime);
+            yield return StartCoroutine(RepeatAimedAttack(aimedAttack2, transform, LevelManager.instance.GetPlayerTransform(), aimCircleIterations));
+            yield return new WaitForSeconds(attackSwitchTime);
+            yield return StartCoroutine(SpiralAttack(spiralIterations));
+            //yield return StartCoroutine(RepeatFixedAttack(fixedAttack, transform, spiralIterations));
+            yield return new WaitForSeconds(attackSwitchTime);
+        }
+    }
     public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)
     {
         GameObject particleEffect = Instantiate(particleEffectPrefab, spawnPoint, particleEffectPrefab.transform.rotation);
@@ -140,17 +187,58 @@ public class ManosCore : MonoBehaviour
     }
     public void StartToKill()
     {
-        if (fixedAttack != null)
+        attackProcess = StartCoroutine(ManosPattern());
+
+        //if (fixedAttack != null)
+        //{
+        //    StartCoroutine(RepeatTurret());
+        //}
+        //if (aimedAttack != null)
+        //{
+        //    StartCoroutine(RepeatTurretAimed());
+        //}
+        //if (circleSpread != null)
+        //{
+        //    spiralAttack = StartCoroutine(SpiralAttack());
+        //}
+    }
+    public IEnumerator RepeatFixedAttack(FixedAttack fixedAttack, Transform firePoint, int numTimes)
+    {
+
+        YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
+        int j = 0;
+        float fireRate = fixedAttack.GetRateOfFire();
+
+        while (j < numTimes)
         {
-            StartCoroutine(RepeatTurret());
-        }
-        if (aimedAttack != null)
-        {
-            StartCoroutine(RepeatTurretAimed());
-        }
-        if (circleSpread != null)
-        {
-            spiralAttack = StartCoroutine(SpiralAttack());
+            // AudioManager.instance.Play("Shoot1");
+            fixedAttack.Fire(firePoint.position);
+            for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
+            {
+                yield return waitForFixedUpdate;
+            }
+            j++;
         }
     }
+
+    public IEnumerator RepeatAimedAttack(AimedAttack aimedAttack, Transform firePoint, Transform aimTransform, int numTimes)
+    {
+        YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
+
+        int j = 0;
+        float fireRate = aimedAttack.GetRateOfFire();
+        while (j < numTimes)
+        {
+            aimedAttack.FireAimed(firePoint.position, aimTransform.position);
+            // audioManager.Play("BossShoot_Arco1");
+            for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
+            {
+                yield return waitForFixedUpdate;
+            }
+            j++;
+        }
+    }
+
+
+
 }

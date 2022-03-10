@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e40d0ec58988d804383fc347e4605ff8, type: 3}
-  m_Name: RingMan
+  m_Name: RingMan 1
   m_EditorClassIdentifier: 
   rateOfFire: 0.04
   bulletPrefab: {fileID: 6850305764697293782, guid: 73d0e83a203d0844c9cdfcc1ee158ef6,
