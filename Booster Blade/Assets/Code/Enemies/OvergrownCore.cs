@@ -66,6 +66,7 @@ public class OvergrownCore : MonoBehaviour
     }
     public void KillPlant()
     {
+        AudioManager.instance.Play("PlantDeath");
         Debug.Log("Plant is dead.");
         plantIsAlive = false;
         StartCoroutine(PlantDeathProcess());
@@ -93,6 +94,7 @@ public class OvergrownCore : MonoBehaviour
     {
         if(attackingPlayer == false)
         {
+            AudioManager.instance.Play("PlantDeath");
             attackingPlayer = true;
             attackProcess = StartCoroutine(RepeatTurret());
         }

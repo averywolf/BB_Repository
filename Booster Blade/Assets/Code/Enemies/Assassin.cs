@@ -49,6 +49,7 @@ public class Assassin : MonoBehaviour
     
         //might make this fixedUpdate
         SpawnParticles(teleportParticles, transform.position);
+        AudioManager.instance.Play("AssassinTeleport");
         float duration = timeToReadyAttack;
         float currentTime = 0.0f;
 
@@ -104,8 +105,9 @@ public class Assassin : MonoBehaviour
     }
     public IEnumerator NoticePlayer()
     {
+        
+        AudioManager.instance.Play("AssassinNotice");
         animator.Play("notice");
-
         yield return new WaitForSeconds(noticeDuration);
         BeginMurderAttempt();
     }
@@ -121,6 +123,7 @@ public class Assassin : MonoBehaviour
     public void AssassinDeath()
     {
         SpawnParticles(deathParticles, transform.position);
+        AudioManager.instance.Play("EnemyDeath_D");
         Destroy(gameObject);
     }
     public void ReadyAssassin()

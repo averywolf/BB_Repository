@@ -26,7 +26,6 @@ public class BasicButton : MonoBehaviour
 
         if (!isPressed)
         {
-            Debug.Log("PressingButton");
         
             //if(KeyBolt != null)
             //{
@@ -62,10 +61,10 @@ public class BasicButton : MonoBehaviour
     {
         if (setToPressed)
         {
-            Debug.Log("Trying to press button!");
             butAnim.Play("butpressed");
             isPressed = true;
             OnButtonPressed.Invoke();
+            AudioManager.instance.Play("ButtonPress");
         }
         else
         {

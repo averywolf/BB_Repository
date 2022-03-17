@@ -45,6 +45,7 @@ public class SlamCrusher : MonoBehaviour
     {
         if (!isMoving && isAbleToMoveAgain)
         {
+            AudioManager.instance.Play("CrusherBegin");
             crushSense.ActivateSense(false);
             Debug.Log("Attempting to crush");
             transform.rotation = Quaternion.Euler(0, 0, attackAngle);
@@ -56,7 +57,7 @@ public class SlamCrusher : MonoBehaviour
     public void EndCrushing()
     {
         shakeSource.GenerateImpulse();
-        Debug.Log("Stopping movement.");
+        AudioManager.instance.Play("CrusherImpact");
         rb.velocity = Vector3.zero;
         isMoving = false;
         crushSense.ActivateSense(true); //probably will have short delay until activated again
@@ -134,7 +135,7 @@ public class SlamCrusher : MonoBehaviour
         {
 
             StartCoroutine(SlamShockwave());
-            Debug.Log("Hit wall");
+
             return true;
         }
         else

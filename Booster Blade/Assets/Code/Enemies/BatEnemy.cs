@@ -17,9 +17,11 @@ public class BatEnemy : MonoBehaviour
     private GameObject batDeathFX;
 
     private bool batReady = false;
+    private bool chasingPlayer = false;
     private void Awake()
     {
         batReady= false;
+        chasingPlayer = false;
         aIPath = GetComponent<AIPath>();
         seeker = GetComponent<Seeker>();
         aIDestinationSetter = GetComponent<AIDestinationSetter>();
@@ -38,9 +40,10 @@ public class BatEnemy : MonoBehaviour
     }
     public void BatSpotPlayer(bool wasSpotted)
     {
-        if (wasSpotted)
+        if (wasSpotted &&!chasingPlayer)
         {
-            Debug.Log("Bat found target!");
+            chasingPlayer=true;
+            AudioManager.instance.Play("BatSqueak");
             StartBatMoving();
         }
     }

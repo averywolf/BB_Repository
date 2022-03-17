@@ -28,6 +28,7 @@ public class LevelEntrance : MonoBehaviour
             if (startingFromEntrance)
             {
                 doorBurstFX.Play(true);
+                AudioManager.instance.Play("DoorEntranceBurst");
                 //Probably play explosion SFX, too
             }
         }

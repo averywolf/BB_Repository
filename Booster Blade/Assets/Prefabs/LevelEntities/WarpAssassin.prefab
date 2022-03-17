@@ -74,6 +74,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  LostPlayer:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5763607795485734334
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,7 +390,7 @@ PrefabInstance:
     - target: {fileID: 2945359253725615798, guid: 622f0ace9b425b44ea957bf3f167ce51,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622f0ace9b425b44ea957bf3f167ce51, type: 3}

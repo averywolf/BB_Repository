@@ -15,6 +15,7 @@ public class LevelExitDoor : MonoBehaviour
     public void GoThroughExitDoor()
     {
         //call Levelmanager, proceed to next level
+        AudioManager.instance.Play("ExitLevel");
         levelManager.ExitLevel();
 
     }

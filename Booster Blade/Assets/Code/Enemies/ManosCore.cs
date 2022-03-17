@@ -107,6 +107,7 @@ public class ManosCore : MonoBehaviour
             manosAnim.Play("manos_exit");
         }
         LevelUI.instance.SayLevelDialogue(deathPhrase);
+        AudioManager.instance.Play("EnemyDeath_D"); //placeholder
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         // animator.Play("plant_death");
         //StopCoroutine(spiralAttack);
@@ -189,6 +190,7 @@ public class ManosCore : MonoBehaviour
         if (attackingPlayer == false)
         {
             //maybe weakpoints animate in, too?
+            AudioManager.instance.Play("ManosEnter");
             manosAnim.Play("manos_enter");
             LevelUI.instance.SayLevelDialogue("Get a load of THIS!!!");
             attackingPlayer = true;

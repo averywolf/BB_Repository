@@ -44,10 +44,14 @@ public class AimedTurret : MonoBehaviour
     }
     public void StartBlasting()
     {
-        if (!isShooting)
+        if (turretPrimed)
         {
-            StartCoroutine(RepeatTurret());
-            isShooting = true;
+            if (!isShooting)
+            {
+                StartCoroutine(RepeatTurret());
+                isShooting = true;
+            }
+
         }
 
     }

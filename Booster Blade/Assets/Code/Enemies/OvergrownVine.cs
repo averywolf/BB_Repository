@@ -55,6 +55,7 @@ public class OvergrownVine : MonoBehaviour
     {
         if (!isVineCut)
         {
+            AudioManager.instance.Play("VineCut");
             weakPoint.WeakdownCutEffect();
             vineLineA.enabled = false;
             vineLineZ.enabled = false;

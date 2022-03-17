@@ -62,6 +62,7 @@ public class IntermissionManager : MonoBehaviour
             {
                 resultsScreen.HideResults();
                 dialogueManager.BeginDialogue();
+                
                 currentInterState = IntermissionState.duringDialogue;
                 AudioManager.instance.PlayMusic("Occult");
             }
