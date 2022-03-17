@@ -10,11 +10,6 @@ public class ChargeTell : MonoBehaviour
     {
         chargeTransform = transform;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-       // StartCoroutine(ScaleOverTime(3, 3, 0));
-    }
 
     public IEnumerator ScaleOverTime(float duration, float ogScale, float endScale)
     {

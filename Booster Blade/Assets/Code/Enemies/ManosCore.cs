@@ -28,8 +28,12 @@ public class ManosCore : MonoBehaviour
     [SerializeField]
     private float attackSwitchTime;
     //get only to attack within range
-
+    [SerializeField]
+    private bool isLastOne; //if true then manos dies with its destruction
     private bool coreIsAlive = true;
+
+    [SerializeField]
+    private string deathPhrase = "";
     private void Awake()
     {
         manosAnim = GetComponent<Animator>();
@@ -89,13 +93,20 @@ public class ManosCore : MonoBehaviour
     }
     public void KillCore()
     {
-        Debug.Log("Plant is dead.");
         coreIsAlive = false;
         StartCoroutine(CoreDeathProcess());
     }
     public IEnumerator CoreDeathProcess()
     {
-        manosAnim.Play("manos_exit");
+        if (isLastOne)
+        {
+            manosAnim.Play("manos_exitlate");
+        }
+        else
+        {
+            manosAnim.Play("manos_exit");
+        }
+        LevelUI.instance.SayLevelDialogue(deathPhrase);
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         // animator.Play("plant_death");
         //StopCoroutine(spiralAttack);
@@ -179,7 +190,7 @@ public class ManosCore : MonoBehaviour
         {
             //maybe weakpoints animate in, too?
             manosAnim.Play("manos_enter");
-            LevelUI.instance.SayLevelDialogue("I'm gonna kill you!!!");
+            LevelUI.instance.SayLevelDialogue("Get a load of THIS!!!");
             attackingPlayer = true;
            // attackProcess = StartCoroutine(RepeatTurret());
 

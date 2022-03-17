@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3d3de0fe13d3bc489e02062eccd5e25, type: 3}
-  m_Name: TestAimed
+  m_Name: AimedBasic
   m_EditorClassIdentifier: 
   rateOfFire: 1
   bulletPrefab: {fileID: 6850305764697293782, guid: bb765574767026f4da364d8eedc28de7,
@@ -18,7 +18,7 @@ MonoBehaviour:
   fireSFX: 
   bulletKeyPoints: []
   bulletColor: {r: 1, g: 1, b: 1, a: 1}
-  bulletMoveSpeed: 10
+  bulletMoveSpeed: 20
   shotOffset: 0
   angleVariance: 0
   speedVariance: 0

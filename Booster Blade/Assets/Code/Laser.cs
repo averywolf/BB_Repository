@@ -12,7 +12,9 @@ public class Laser : MonoBehaviour
     public bool isLaserActive;
     public bool effectsEnabled = false;
     private Vector3 laserHitPos;
-   
+
+    public LayerMask laserMask;
+    public LaserTell laserTell;
     //maybe start laser as inactive?
     void Awake()
     {
@@ -25,22 +27,24 @@ public class Laser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity, laserMask);
+        laserTell.ShootLaserTell(transform.position, ray.point);
         //make sure this doesn't happen when game is paused, too, probably
         if (isLaserActive)
         {
-            //will need to expand so enemies don't hit lasers, probably
-            // RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, 15f, 12 );
-            //lasermask determiens what layers to ignore
-            //make it so raycast ignores trigger colliders (they collide but aren't stopped by it)
-            int layerMaskk=(1<<13) + (1<<14) + (1<<11); //BITSHIFTING
+            ////will need to expand so enemies don't hit lasers, probably
+            //// RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, 15f, 12 );
+            ////lasermask determiens what layers to ignore
+            ////make it so raycast ignores trigger colliders (they collide but aren't stopped by it)
+            //int layerMaskk=(1<<13) + (1<<14) + (1<<11); //BITSHIFTING
             
-            layerMaskk = ~layerMaskk; //turns every zero into a 1 or whatever (inverting)
+            //layerMaskk = ~layerMaskk; //turns every zero into a 1 or whatever (inverting)
 
-            RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity,layerMaskk); //anything on layer 13 should be ignored, everything else would be hit
+           // RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity,layerMaskk); //anything on layer 13 should be ignored, everything else would be hit
+           // RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity, laserMask);
             //create a second layeramaks variable, add before doing inverting (so you would add 1<<4 to layermask BEFORE inverting)
 
             //RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up);
-            Debug.DrawLine(transform.position, ray.point);
             laserHitPos = ray.point;
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, laserHitPos);
@@ -59,6 +63,7 @@ public class Laser : MonoBehaviour
         }
         else
         {
+           
             //hideLineRenderer
         }
   
@@ -69,12 +74,17 @@ public class Laser : MonoBehaviour
         if (turnOn)
         {
             lineRenderer.enabled = true;
+            laserTell.ShowLaserTell(false);
         }
         else
         {
             lineRenderer.enabled = false;
+            
+            laserTell.ShowLaserTell(true);
+
+
         }
-  
+
     }
     public void ToggleLaser()
     {

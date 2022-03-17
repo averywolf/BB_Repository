@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FixedTurret : MonoBehaviour
+public class AimedTurret : MonoBehaviour
 {
-    public FixedAttack fixedAttack;
+    public AimedAttack aimedAttack;
     public Transform turretFirePoint;
 
     public bool startFiringAutomatically = true;
@@ -12,7 +12,13 @@ public class FixedTurret : MonoBehaviour
 
     private bool isShooting = false;
     // Start is called before the first frame update
+    private Transform playerTransform;
 
+
+    private void Start()
+    {
+        playerTransform = LevelManager.instance.GetPlayerTransform();
+    }
     public void TurretWake()
     {
         turretPrimed = true;
@@ -25,12 +31,11 @@ public class FixedTurret : MonoBehaviour
 
     public IEnumerator RepeatTurret()
     {
-        float fireRate = fixedAttack.GetRateOfFire();
+        float fireRate = aimedAttack.GetRateOfFire();
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         while (true)
         {
-            // AudioManager.instance.Play("Shoot1");
-            fixedAttack.Fire(turretFirePoint);
+            aimedAttack.FireAimed(turretFirePoint.position, playerTransform.position);
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
             {
                 yield return waitForFixedUpdate;
@@ -44,6 +49,11 @@ public class FixedTurret : MonoBehaviour
             StartCoroutine(RepeatTurret());
             isShooting = true;
         }
-   
+
+    }
+    public void StopBlasting()
+    {
+        StopAllCoroutines();
+        isShooting = false;
     }
 }
