@@ -160,11 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorToOpen: {fileID: 6256226843292096335}
   gemFX: {fileID: 3326193482900577939, guid: d2425a6ddaf17584bb21d9aea109ef3f, type: 3}
-  keyBolt: {fileID: 7278484423089769602, guid: 98cb8d698a2826a409f63e9e54cc9ac6, type: 3}
+  keyBolt: {fileID: 7278484423089769602, guid: f41f5ccca24e41b4baa79fe23aba2d0b, type: 3}
   requiredEnemiesHolder: {fileID: 5993662775011119395}
-  enemiesToDestroy:
-  - {fileID: 1581863591358751246}
-  - {fileID: 1581863592653207907}
 --- !u!1001 &5993662774318205263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240,18 +237,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5993662774318205263}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1581863591358751246 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5106567439025957697, guid: aa554ae43130209429f6b3f306c6546f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5993662774318205263}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c787f8a57efc2404ba19e11b603f410a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5993662775069528610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -322,18 +307,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5993662775069528610}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1581863592653207907 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5106567439025957697, guid: aa554ae43130209429f6b3f306c6546f,
-    type: 3}
-  m_PrefabInstance: {fileID: 5993662775069528610}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c787f8a57efc2404ba19e11b603f410a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5993662775774293412
 PrefabInstance:
   m_ObjectHideFlags: 0

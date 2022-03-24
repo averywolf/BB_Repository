@@ -3849,7 +3849,7 @@ MonoBehaviour:
   _color: {r: 1, g: 1, b: 1, a: 1}
   forceAnimation: 0
   richText: 1
-  readDelay: 0.2
+  readDelay: 0.06
   speedReadScale: 2
   ignoreTimeScale: 1
   disableAnimatedText: 0

@@ -120,8 +120,8 @@ public class LevelUI : MonoBehaviour
         
         levelDialogue.text = dialogueLine;
         levelDialogue.gameObject.SetActive(true);
-        
-        Invoke("DialogueFade", 2);
+        //need to add function that waits until text is finished
+        Invoke("DialogueFade", 5);
     }
 
 }

@@ -31,7 +31,8 @@ public class ManosCore : MonoBehaviour
     [SerializeField]
     private bool isLastOne; //if true then manos dies with its destruction
     private bool coreIsAlive = true;
-
+    [SerializeField]
+    private string introPhrase = "";
     [SerializeField]
     private string deathPhrase = "";
     private void Awake()
@@ -111,8 +112,13 @@ public class ManosCore : MonoBehaviour
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         // animator.Play("plant_death");
         //StopCoroutine(spiralAttack);
-        StopCoroutine(attackProcess);
+        if (attackProcess != null)
+        {
+            StopCoroutine(attackProcess);
+        }
+
         SpawnParticles(deathFX, transform.position);
+        manosDoor.SetActive(false);
         for (float duration = 1; duration > 0; duration -= Time.fixedDeltaTime)
         {
             yield return waitForFixedUpdate;
@@ -192,7 +198,7 @@ public class ManosCore : MonoBehaviour
             //maybe weakpoints animate in, too?
             AudioManager.instance.Play("ManosEnter");
             manosAnim.Play("manos_enter");
-            LevelUI.instance.SayLevelDialogue("Get a load of THIS!!!");
+            LevelUI.instance.SayLevelDialogue(introPhrase);
             attackingPlayer = true;
            // attackProcess = StartCoroutine(RepeatTurret());
 

@@ -138,8 +138,9 @@ MonoBehaviour:
   deathFX: {fileID: 3326193482900577939, guid: 5cb29d0bc34d94149aca2d5ce5540e76, type: 3}
   aimCircleIterations: 10
   spiralIterations: 12
-  attackSwitchTime: 1
+  attackSwitchTime: 1.5
   isLastOne: 0
+  introPhrase: Get a load of THIS!!!
   deathPhrase: NO!!! I can't believe this!!!
 --- !u!212 &1223052895209769642
 SpriteRenderer:
