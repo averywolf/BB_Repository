@@ -34,11 +34,16 @@ public class LevelUI : MonoBehaviour
     Color fullChargeColor;
     [SerializeField]
     Color chargineColor;
+
+    public SuperTextMesh smallNotification;
     public static LevelUI instance;
+
+   
 
     public void Awake()
     {
         deathBG.SetActive(false);
+        smallNotification.gameObject.SetActive(false);
         staminaSlider.value = 1;
         if (instance == null)
         {
@@ -123,5 +128,16 @@ public class LevelUI : MonoBehaviour
         //need to add function that waits until text is finished
         Invoke("DialogueFade", 5);
     }
-
+    public void NotificationFade()
+    {
+        //will add better animation later
+        smallNotification.gameObject.SetActive(false);
+    }
+    //might lump in to levelDialogue system
+    public void DisplaySmallNotification(string notification)
+    {
+        smallNotification.gameObject.SetActive(true);
+        smallNotification.text = notification;
+        Invoke("NotificationFade", 3);
+    }
 }

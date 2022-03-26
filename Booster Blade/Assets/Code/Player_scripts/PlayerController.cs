@@ -93,8 +93,12 @@ public class PlayerController : MonoBehaviour
     public bool swordSlashing=false;
     public CinemachineImpulseSource boostSource;
 
+
+
     [HideInInspector]
     public bool limitersRemoved = false; //set to true by LevelManager if it's the final stage
+
+    private IEnumerator boostCooldownCou;
     public enum PlayerMoveStates
     {
         idle,
@@ -290,7 +294,9 @@ public class PlayerController : MonoBehaviour
     //differentiate between entering with boost panel and inputting manually
     public void BeginBoost(float boostingDuration, bool manualBoost)
     {
+        testUI.StaminaFlash(true); //if the bar isn't blue already, this makes it so
         CeaseRoutine(exhaustBoost);
+        CeaseRoutine(boostCooldownCou); //exits cooldown immediately, this is important for boost panels so they recharge appropriately if player is in cooldown
         //CeaseRoutine(boostCooldown); //not sure fi this should be here
         GameObject boostStartEffect = Instantiate(ChargeReleaseEffect, transform.position, playerBody.transform.rotation, transform);
         boostSource.GenerateImpulse();
@@ -306,12 +312,20 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("heroBoosting", true);
         //should go after the last horizontal/vertical
     }
+    public void InstantFullMeter()
+    {
+        testUI.SetStaminaSlider(1);
+        AudioManager.instance.Play("BoostMeterFull");
+        testUI.StaminaFlash(true);
+        canBoost = true;
+    }
     //might need two guages to be layered on top of each other?
     public IEnumerator SlowFromBoost(float boostStateDuration, bool manualBoost) //exit this if player has another state
     {
+
         if (manualBoost)
         {
-            canBoost = false;
+            canBoost = false; //does this even do anything?
         }
         float currentTime = 1;
         float boostLastRate = 1 / (boostStateDuration / Time.deltaTime);
@@ -327,16 +341,7 @@ public class PlayerController : MonoBehaviour
         //yield return new WaitForSeconds(boostStateDuration);
 
         ExitBoost();
-        if (limitersRemoved)
-        {
-            StartCoroutine(BoostCooldown(0.2f));
-        }
-        else
-        {
-            StartCoroutine(BoostCooldown(boostCooldownTime));
-        }
-
-        
+        InitiateCooldown(manualBoost);
     }
     
     public void ExitBoost()
@@ -351,6 +356,21 @@ public class PlayerController : MonoBehaviour
         dashTrail.testDashBoosting = false;
         playerSword.swordBoosting = false;
         
+    }
+    public void InitiateCooldown(bool manual)
+    {
+        if (limitersRemoved)
+        {
+            StartCoroutine(boostCooldownCou = BoostCooldown(0.2f));
+        }
+        else if (!manual)
+        {
+            InstantFullMeter();
+        }
+        else
+        {
+            StartCoroutine(boostCooldownCou = BoostCooldown(boostCooldownTime));
+        }
     }
     public IEnumerator BoostCooldown(float coolDown)
     {
@@ -398,6 +418,7 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         playerRb.velocity = Vector3.zero;
+        playerAnimator.Play("heroDeath");
         LevelManager.instance.LevelDeathProcess();
     }
 
@@ -412,7 +433,7 @@ public class PlayerController : MonoBehaviour
     {
         isInvincible = true;
         ExitBoost();
-        //Need to exit slash, too
+        //Need to exit slash, too (unsure if this comment is still relevant)
 
         bodyFlash.Flash(false, 0.3f);
         swordFlash.Flash(false, 0.3f);
@@ -433,7 +454,6 @@ public class PlayerController : MonoBehaviour
         }
         //yield return new WaitForSeconds(invincibleTime);
         isInvincible = false;
-        Debug.Log("Can be damaged again.");
         yield return null;
     }
     #endregion

@@ -211,7 +211,11 @@ public class LevelManager : MonoBehaviour
         AudioManager.instance.StopMusic();
         canPauseGame = false;
         levelUI.StartDeathUI();
-        StopCoroutine(gameTimer);
+        if(gameTimer != null)
+        {
+            StopCoroutine(gameTimer);
+        }
+     
         //do this but with currentLevelTime
         saveManager.currentTimeInLevel = levelTime;
         //saveManager.activeSave.SetCurrentLevelTime(levelTime); //registers time before death but doesn't formally save it
@@ -251,7 +255,7 @@ public class LevelManager : MonoBehaviour
 
         gameTimer = StartCoroutine(GameTimer());
         playerController.FreezePlayer(false);
-        playerController.BeginBoost(2, false);
+        playerController.BeginBoost(2, true);
         entityManager.ActivateEntities();
         levelEntrance.OpenDoor(true, startingFromEntrance); //only gets door to play effect if starting from beginning
         canPauseGame = true;

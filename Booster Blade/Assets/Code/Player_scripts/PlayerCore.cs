@@ -35,8 +35,7 @@ public class PlayerCore : MonoBehaviour
             if (!playerController.isInvincible)
             {
                 collision.GetComponent<DangerBullet>().RemoveBullet();
-            }
-         
+            }  
         }
         if (collision.GetComponent<BoostPanel>())
         {
@@ -55,6 +54,11 @@ public class PlayerCore : MonoBehaviour
         {
             collision.GetComponent<BasicButton>().PressButton();
         }
+        if (collision.GetComponent<Collectible>())
+        {
+            collision.GetComponent<Collectible>().PickUpCollectible();
+        }
+
         //if(touching danger object) danger object has an on damage player event?
     }
 
