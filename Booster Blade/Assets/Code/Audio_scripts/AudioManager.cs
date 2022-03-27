@@ -135,6 +135,7 @@ public class AudioManager : MonoBehaviour
 
         return audioController;
     }
+
     public void MusicPitchSetTest(float pitchValue)
     {
         if (currentMusicTrack != null)

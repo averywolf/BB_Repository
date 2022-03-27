@@ -16,8 +16,10 @@ public class BackNForthObstacle : MonoBehaviour
     private Vector2 droneVelocity;
 
     public float currentFacingAngle;
+    private AudioSource audioSource;
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         obstacleRB = GetComponent<Rigidbody2D>();
     }
 
@@ -25,12 +27,6 @@ public class BackNForthObstacle : MonoBehaviour
     {
         currentFacingAngle = transform.eulerAngles.z;    
     }
-
-    public void TestFunction()
-    {
-       // Debug.LogWarning("A BEYBLADE WITH 3 BITBEASTS HAS BEEN FOUND.");
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
@@ -48,6 +44,7 @@ public class BackNForthObstacle : MonoBehaviour
     }
     private void ReverseDirection()
     {
+        audioSource.Play();
         currentFacingAngle += 180;
         transform.rotation = Quaternion.Euler(0, 0, currentFacingAngle);
         StartMoving();
