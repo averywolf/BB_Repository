@@ -30,16 +30,24 @@ public class Assassin : MonoBehaviour
     ChargeTell chargeTell;
     [SerializeField]
     float chargeTime;
+    PlayerController player;
+    bool teleportingAround = false;
+    public float distancemodifier=0;
     private void Awake()
     {
         animator = GetComponent<Animator>();
         animator.Play("idle");
+    }
+    private void Start()
+    {
+        player = LevelManager.instance.GetPlayerController();
     }
     public IEnumerator AttemptToMurder()
     {
 
         animator.Play("idle");
         PlayerController playControl = LevelManager.instance.GetPlayerController();
+        CheckPlayerMurderStatus();
 
         SpawnParticles(teleportParticles, transform.position);
         transform.position = LevelManager.instance.GetPlayerTransform().position;
@@ -52,7 +60,7 @@ public class Assassin : MonoBehaviour
         AudioManager.instance.Play("AssassinTeleport");
         float duration = timeToReadyAttack;
         float currentTime = 0.0f;
-
+        teleportingAround = true;
         chargeTell.ActivateTell(chargeTime, 3, 0); // currently just does this as soon as it locks on
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
 
@@ -60,12 +68,13 @@ public class Assassin : MonoBehaviour
         while (currentTime <= duration)
         {
             Vector2 telePos = new Vector2(playControl.horizontal, playControl.vertical);
-            transform.localPosition = -telePos * 5;
+            transform.localPosition = -telePos * (5+distancemodifier);
             currentTime += Time.fixedDeltaTime;
 
             yield return waitForFixedUpdate;
         }
-
+        player.numberOfMurderers -= 1;
+        teleportingAround = false;
         transform.parent = null;
         //might need rewrite
         Vector2 aimPoint= LevelManager.instance.GetPlayerTransform().position;
@@ -99,7 +108,7 @@ public class Assassin : MonoBehaviour
     {
         if (assassinReadied)
         {
-           
+            teleportingAround = false;
             StartCoroutine(AttemptToMurder());
         }
     }
@@ -116,13 +125,30 @@ public class Assassin : MonoBehaviour
         if (!tryingToKill)
         {
             tryingToKill = true;
+          
             StartCoroutine(NoticePlayer());
         }
   
     }
+
+    public void CheckPlayerMurderStatus()
+    {
+        if (player.numberOfMurderers < 5)
+        {
+            //don't try to kill
+        }
+        player.numberOfMurderers += 1;
+        distancemodifier = player.numberOfMurderers;
+        
+    }
     public void AssassinDeath()
     {
         SpawnParticles(deathParticles, transform.position);
+     
+        if (teleportingAround)
+        {
+            player.numberOfMurderers -= 1;
+        }
         AudioManager.instance.Play("EnemyDeath_D");
         Destroy(gameObject);
     }

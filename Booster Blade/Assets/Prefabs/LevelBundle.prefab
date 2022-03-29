@@ -729,7 +729,7 @@ MonoBehaviour:
   _color32:
     serializedVersion: 2
     rgba: 4294967295
-  _color: {r: 1, g: 1, b: 1, a: 1}
+  _color: {r: 0.67761374, g: 0, b: 1, a: 1}
   forceAnimation: 0
   richText: 1
   readDelay: 0.06

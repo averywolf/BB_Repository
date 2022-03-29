@@ -141,6 +141,7 @@ MonoBehaviour:
   tempTimesToFire: 8
   chargeTell: {fileID: 7149137678875476336}
   chargeTime: 3
+  distancemodifier: 0
 --- !u!212 &5763607795485734335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -177,8 +178,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -34114941
+  m_SortingLayer: -9
   m_SortingOrder: 0
   m_Sprite: {fileID: 8817603437483112400, guid: d6cf7ba6acfe5ac4a9c953d3ca9e90f7,
     type: 3}

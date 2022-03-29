@@ -93,15 +93,17 @@ public class LevelManager : MonoBehaviour
     }
     private void Update()
     {
+        #region
         if (Keyboard.current.uKey.wasPressedThisFrame)
         {
             saveManager.DeleteRunProgress();
         }
-        else if (Keyboard.current.tKey.wasPressedThisFrame) //is this the same key for WASD attack?
+        else if (Keyboard.current.tKey.wasPressedThisFrame) 
         {
             saveManager.WipeSave();
 
         }
+        
         else if (Keyboard.current.iKey.wasPressedThisFrame)
         {
             if (!debugIVon)
@@ -116,16 +118,7 @@ public class LevelManager : MonoBehaviour
                 debugIVon = false;
                 Debug.LogWarning("Player Invincibility disabled.");
             }
-            
-        }
-        else if (Keyboard.current.bKey.wasPressedThisFrame)
-        {
-            AudioManager.instance.PauseMusic(true);
-        }
-        else if (Keyboard.current.nKey.wasPressedThisFrame)
-        {
 
-            AudioManager.instance.PauseMusic(false);
         }
         else if (Keyboard.current.pKey.wasPressedThisFrame)
         {
@@ -136,11 +129,67 @@ public class LevelManager : MonoBehaviour
         {
             playerController.KillPLayer();
         }
-        //if (startBoost.triggered && !levelStarted)
-        //{
 
-        //    BeginLevel();
-        //}
+        void SkipToLevel(string levelName) //apparently you can put functions in here? neat
+        {
+            SaveManager.instance.hasNotBeganLevel = true; //just in case
+            SceneManager.LoadScene(levelName); //unsure if there's anything else I need to do
+        }
+        if (Keyboard.current.leftShiftKey.isPressed) //extremely rudimentary level select system. need to hold left shift
+        {
+            if (Keyboard.current.digit1Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-01");
+            }
+            if (Keyboard.current.digit2Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-02");
+            }
+            if (Keyboard.current.digit3Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-03");
+            }
+            if (Keyboard.current.digit4Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-04");
+            }
+            if (Keyboard.current.digit5Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-05");
+            }
+            if (Keyboard.current.digit6Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-06");
+            }
+            if (Keyboard.current.digit7Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-07");
+            }
+            if (Keyboard.current.digit8Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-08");
+            }
+            if (Keyboard.current.digit9Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-09");
+            }
+            if (Keyboard.current.digit0Key.wasPressedThisFrame)
+            {
+                SkipToLevel("L-10");
+            }
+        }
+        #endregion
+
+        else if (Keyboard.current.bKey.wasPressedThisFrame)
+        {
+            AudioManager.instance.PauseMusic(true);
+        }
+        else if (Keyboard.current.nKey.wasPressedThisFrame)
+        {
+
+            AudioManager.instance.PauseMusic(false);
+        }
+  
         if (canPauseGame && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             playerController.playerPaused = pauseMenu.PauseGame();
@@ -314,6 +363,7 @@ public class LevelManager : MonoBehaviour
  
    
     }
+  
     //i guess this resets all enemies?
     public void RestartLevel()
     {

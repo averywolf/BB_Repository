@@ -67,6 +67,8 @@ public class PlayerController : MonoBehaviour
     //might make public
     [HideInInspector]
     public bool isInvincible = false;
+
+    public int numberOfMurderers = 0; //used to keep track of how many assassins are attacking
     #endregion
 
     [HideInInspector]
@@ -130,21 +132,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!playerPaused && !isPlayerFrozen)
         {
-
-            #region DEBUG INPUTS
-            if (Keyboard.current.uKey.wasPressedThisFrame) //used for debugging
-            {
-                Debug.Log("Trying to shake!");
-               //s Vector3 shakeVect = new Vector3(horizontal, vertical, 0f);
-                //boostSource.GenerateImpulse(movementVelValue);
-                boostSource.GenerateImpulse();
-                // KillPLayer();
-            }
-            //if (Keyboard.current.iKey.wasPressedThisFrame)
-            //{
-            //    SaveManager.instance.DeleteSave();
-            //}
-            #endregion
 
             if (wallChecker.boxCollider2D.enabled== false)
             {
@@ -233,7 +220,6 @@ public class PlayerController : MonoBehaviour
             {
                 playerRb.velocity = movementVelValue; //might instead set when changing facing directions
             }
-            
         }   
     }
 
@@ -289,9 +275,8 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
         canTurn = true;
     }
-    //should come out of a boost panel with reduced cooldown
 
-    //differentiate between entering with boost panel and inputting manually
+    //differentiates between entering with boost panel and inputting manually
     public void BeginBoost(float boostingDuration, bool manualBoost)
     {
         testUI.StaminaFlash(true); //if the bar isn't blue already, this makes it so
@@ -348,14 +333,26 @@ public class PlayerController : MonoBehaviour
     {
         testUI.SetStaminaSlider(0);
         testUI.StaminaFlash(false);
-        ///Might need to deplete bar instantly here; this is called if player bumps into enemy while boosting
-        /// There could potentially be a strat were
+
         playerAnimator.SetBool("heroBoosting", false);
         currentMoveState = PlayerMoveStates.moving;
         //dashTrail.SetEnabled(false);
         dashTrail.testDashBoosting = false;
         playerSword.swordBoosting = false;
         
+    }
+    public void InterruptBoost()
+    {
+        if(currentMoveState.Equals (PlayerMoveStates.boosting))
+        {
+            if(exhaustBoost != null)
+            {
+                StopCoroutine(exhaustBoost); //might move over to ExitBoost
+
+            }
+            ExitBoost();
+            InitiateCooldown(true);
+        }
     }
     public void InitiateCooldown(bool manual)
     {
@@ -432,7 +429,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator HurtState(Transform dangerObj)
     {
         isInvincible = true;
-        ExitBoost();
+        InterruptBoost(); //might lead to some interesting behavior for speedruns
         //Need to exit slash, too (unsure if this comment is still relevant)
 
         bodyFlash.Flash(false, 0.3f);

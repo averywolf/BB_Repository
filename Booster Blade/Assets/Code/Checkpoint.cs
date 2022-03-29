@@ -22,7 +22,7 @@ public class Checkpoint : MonoBehaviour
         if (isCheckpointActive == false)
         {
             SpawnParticles(checkpointtouchFX, transform.position);
-            Debug.Log("Registering checkpoint");
+            LevelUI.instance.DisplaySmallNotification("CHECKPOINT");
             checkpointAnim.Play("checkP_active");
             isCheckpointActive = true;
             //used to send in the name of the scene, too, but that's irrelevant

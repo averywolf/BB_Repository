@@ -129,10 +129,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorToOpen: {fileID: 4417473694001403578}
   gemFX: {fileID: 3326193482900577939, guid: 1079d86a2d2b31f4598e697bc0146b30, type: 3}
+  keyBolt: {fileID: 7278484423089769602, guid: 98cb8d698a2826a409f63e9e54cc9ac6, type: 3}
   basicButtons:
   - {fileID: 8264269451888499396}
   - {fileID: 8264269452466061218}
-  keyBolt: {fileID: 7278484423089769602, guid: 98cb8d698a2826a409f63e9e54cc9ac6, type: 3}
 --- !u!61 &4085140106605211502
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,32 +140,6 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8264269451888499392}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2}
-  m_EdgeRadius: 0
---- !u!61 &4085140106108946965
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8264269452466061222}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -255,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 5332754607125476787, guid: da6be12d8415ac74c99a3ba4a7bd5634,
         type: 3}
       propertyPath: m_SortingLayer
-      value: -10
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 5332754607125476787, guid: da6be12d8415ac74c99a3ba4a7bd5634,
         type: 3}
@@ -305,12 +279,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da6be12d8415ac74c99a3ba4a7bd5634, type: 3}
---- !u!1 &8264269452466061222 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5332754607125476784, guid: da6be12d8415ac74c99a3ba4a7bd5634,
-    type: 3}
-  m_PrefabInstance: {fileID: 4085140106108946966}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8264269452466061223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5332754607125476785, guid: da6be12d8415ac74c99a3ba4a7bd5634,
@@ -323,7 +291,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4085140106108946966}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8264269452466061222}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31f17e556190def40bf27c016014124b, type: 3}
@@ -486,7 +454,7 @@ PrefabInstance:
     - target: {fileID: 5332754607125476787, guid: da6be12d8415ac74c99a3ba4a7bd5634,
         type: 3}
       propertyPath: m_SortingLayer
-      value: -10
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 5332754607125476787, guid: da6be12d8415ac74c99a3ba4a7bd5634,
         type: 3}
