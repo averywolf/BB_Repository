@@ -8,14 +8,17 @@ public class Collectible : MonoBehaviour
 
     public GameObject collectFX;
 
+    //add function to hide collectible if already obtained
+
     //Called by PlayerCore upon making contact
     public void PickUpCollectible()
     {
         SpawnParticles(collectFX, transform.position);
         AudioManager.instance.Play("Collect");
-        LevelUI.instance.DisplaySmallNotification("Collectible GET!");
+        LevelUI.instance.DisplaySmallNotification("Collectible Found!");
+
+        LevelManager.instance.SaveCollectibleTemporary();
         Destroy(gameObject);
-        //interact with LevelManager to register this as collected, most likely
     }
 
     public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)

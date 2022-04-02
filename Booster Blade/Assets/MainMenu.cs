@@ -83,7 +83,7 @@ public class MainMenu : MonoBehaviour
         string resultsTally = "";
         for (int i = 0; i < 10; i++) //might grab level name lenght from a manager
         {
-            float levelTime = saveManager.RetrieveRecordTime(i).bestTime;
+            float levelTime = saveManager.RetrieveRecordData(i).bestTime;
             if (levelTime == 999999)
             {
                 resultsTally += "Stage " + (i + 1).ToString() + ": Not cleared \n";

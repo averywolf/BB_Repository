@@ -38,11 +38,13 @@ public class LevelUI : MonoBehaviour
     public SuperTextMesh smallNotification;
     public static LevelUI instance;
 
-   
+    //might make itz unique clazz
+    public GameObject collectibleTracker;
 
     public void Awake()
     {
         deathBG.SetActive(false);
+        collectibleTracker.SetActive(false);
         smallNotification.gameObject.SetActive(false);
         staminaSlider.value = 1;
         if (instance == null)
@@ -139,5 +141,10 @@ public class LevelUI : MonoBehaviour
         smallNotification.gameObject.SetActive(true);
         smallNotification.text = notification;
         Invoke("NotificationFade", 3);
+    }
+
+    public void DisplayCollectible(bool found)
+    {
+        collectibleTracker.SetActive(found);
     }
 }

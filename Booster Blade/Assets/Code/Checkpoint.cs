@@ -27,8 +27,7 @@ public class Checkpoint : MonoBehaviour
             isCheckpointActive = true;
             //used to send in the name of the scene, too, but that's irrelevant
             //SaveManager.instance.activeSave.RegisterCheckPoint(gameObject.transform.position, SceneManager.GetActiveScene().name);
-            SaveManager.instance.RegisterCheckPoint(checkPointID);
-            SaveManager.instance.SaveBothData();
+            LevelManager.instance.SaveWithCheckpoint(checkPointID);
         }
 
     }

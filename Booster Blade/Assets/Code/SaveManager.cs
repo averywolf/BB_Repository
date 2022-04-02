@@ -12,7 +12,6 @@ public class SaveManager : MonoBehaviour
     //public SaveData activeSave;
     public CurrentRunData currentRunData;
     public RecordsData recordsData;
-    public TempLevelData tempLevelData = new TempLevelData();
     public bool hasLoaded = false;
 
     
@@ -45,7 +44,6 @@ public class SaveManager : MonoBehaviour
         //maybe don't load at the beginning of each scene
     }
     //Time doesn't reset when hitting a checkpoint
- 
 
     // [Consider looking into constructors--I might need to reset it when deleting progress/hitting new game]
     public void RegisterCheckPoint(int checkPointID)
@@ -161,21 +159,7 @@ public class SaveManager : MonoBehaviour
     //serialize that to show the score, all you would have to do is populate the dictionary
     //upon loading, and then check if there's a score for the level in question.
 
-    //persists between scenes and reloads but is not saved to memory ever, not actually used I think
-    public class TempLevelData
-    {
-        public int tempLevelID;
-
-        public TempLevelData()
-        {
-           // Debug.Log("Created temp data, should only be called once!");
-            //resetsStuffIGuess
-        }
-        //lastSavedAtCheckpoint
-        //startingCheckpoint
-        //checkpoint position
-    }
-
+   
 
     //stores data relevant to the run the player is on. cleared when starting new game or wiping save.
     //disregarded if doing time attack
@@ -316,13 +300,13 @@ public class SaveManager : MonoBehaviour
         }
     }
     
-    public LevelData RetrieveCurrentTime(int lvlIndex)
+    public LevelData RetrieveCurrentData(int lvlIndex)
     {
         //only need to call LoadDict here since the dictionary won't matter outside of looking at times (since it's the level data list that's viewable in inspector and always updates when saving)
         currentRunData.LoadCurrentRunDict();
         return RetrieveLevelData(lvlIndex, currentRunData.currentRunLevelDict);
     }
-    public LevelData RetrieveRecordTime(int lvlIndex)
+    public LevelData RetrieveRecordData(int lvlIndex)
     {
         recordsData.LoadRecordsDict();
         Debug.Log("Looking for best time at index " + lvlIndex);
@@ -402,7 +386,7 @@ public class SaveManager : MonoBehaviour
     }
 
  
-
+    //conzolodate into rezet temp data?
 
     public void SetUpSavesAtLevelStart(int curSceneIndex)
     {
@@ -416,13 +400,9 @@ public class SaveManager : MonoBehaviour
         // Maybe will create a variation that doesn't save currentTime (like for time trials?)
         Debug.Log("Completion time was: " + endTime + ". Saving data for lvlIndex " +curLevelIndex + ".");
         currentTimeInLevel = endTime; //unsure about this
-
-       
         SaveCurrentTimes(curLevelIndex, endTime);
-        
-        
-        float timeToBeat = RetrieveRecordTime(curLevelIndex).bestTime;
-        
+
+        float timeToBeat = RetrieveRecordData(curLevelIndex).bestTime;
         
         //only need to show old record if you beat the level with a better record than before
         if (timeToBeat == 999999)
@@ -433,7 +413,7 @@ public class SaveManager : MonoBehaviour
         else if(endTime < timeToBeat)
         {
             //player beat their record!
-            if (RetrieveRecordTime(curLevelIndex).hasLevelBeenBeaten) //no point in updating oldBestTime if they haven't beaten level before
+            if (RetrieveRecordData(curLevelIndex).hasLevelBeenBeaten) //no point in updating oldBestTime if they haven't beaten level before
             {
                 oldBestTime = timeToBeat;
             }
@@ -445,10 +425,11 @@ public class SaveManager : MonoBehaviour
 
         lastSavedAtCheckpoint = false;
         isGoingToIntermissionFromLevel = true;
-        RetrieveRecordTime(curLevelIndex).hasLevelBeenBeaten = true;
+        RetrieveRecordData(curLevelIndex).hasLevelBeenBeaten = true;
         SaveBothData(); //sure? levelmanager might have been missing this
     }
-
+    //
+    
     //Called when starting a New Game
     public void DeleteRunProgress()
     {
@@ -501,7 +482,13 @@ public class SaveManager : MonoBehaviour
         LoadBothData();
         //gets rid of ALL save data, not just for the current run
     }
-    
+
 
     //need to figure out when to set the continue index
+
+    //call this in levelmanager to save
+    public void SaveCollectibleStatus(int curLevelIndex, bool gotCollectible)
+    {
+        RetrieveCurrentData(curLevelIndex).gotStageCollectible = gotCollectible;
+    }
 }

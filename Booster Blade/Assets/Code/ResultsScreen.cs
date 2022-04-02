@@ -30,8 +30,8 @@ public class ResultsScreen : MonoBehaviour
         if (saveManager.isGoingToIntermissionFromLevel)
         {
             saveManager.LoadBothData(); //probably pointless to put this here
-            Debug.Log("CHECKING TIMES at index " + curIndex + ". CURRENT= " + saveManager.RetrieveCurrentTime(curIndex).bestTime + ", RECORD = " + saveManager.RetrieveRecordTime(curIndex).bestTime);
-            CompareTimes(saveManager.RetrieveCurrentTime(curIndex).bestTime, saveManager.oldBestTime);
+            Debug.Log("CHECKING TIMES at index " + curIndex + ". CURRENT= " + saveManager.RetrieveCurrentData(curIndex).bestTime + ", RECORD = " + saveManager.RetrieveRecordData(curIndex).bestTime);
+            CompareTimes(saveManager.RetrieveCurrentData(curIndex).bestTime, saveManager.oldBestTime);
             //timeText.text = ("Time: " + FormatTime(SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime));
         }
         else

@@ -17,7 +17,7 @@ public class CutsceneEvent
     {
         Archie,
         Zaria,
-        Badguy
+        Manos
     }
 
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TotalResults : MonoBehaviour
 {
+    //displayed at end credits
     public SuperTextMesh resultsText;
 
     SaveManager saveManager;
@@ -22,7 +23,7 @@ public class TotalResults : MonoBehaviour
         float totalTime = 0;
         for (int i = 0; i < 10; i++) //might grab level name lenght from a manager
         {
-            float levelTime = saveManager.RetrieveCurrentTime(i).bestTime;
+            float levelTime = saveManager.RetrieveCurrentData(i).bestTime;
             resultsTally += "Stage " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
 
             totalTime += levelTime;

@@ -26,7 +26,7 @@ public class LevelManager : MonoBehaviour
     private PauseMenu pauseMenu;
 
     [HideInInspector]
-    public bool canPauseGame =false;
+    public bool canPauseGame = false;
     public bool gamePaused;
 
     //store level checkpoints
@@ -55,9 +55,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private string actName = "";
 
-    private bool debugIVon= false;
+    private bool debugIVon = false;
     [SerializeField, Tooltip("Only applies during the final stage")]
     private float finalTimeLimit;
+
+    [HideInInspector]
+    public bool tempGotStageCollectible= true;
+
     void Awake() 
     {
         entityManager = GetComponent<EntityManager>();
@@ -84,6 +88,8 @@ public class LevelManager : MonoBehaviour
         //This should ensure that the player will Continue from this level. Think I need to save to make this happen, though.
 
         saveManager.SetUpSavesAtLevelStart((SceneManager.GetActiveScene().buildIndex));
+        MirrorSavesWithTempStats(); //do thiz firzt before the levelUI
+        levelUI.DisplayCollectible(tempGotStageCollectible);
         AudioManager.instance.StopMusic();
         Time.timeScale = 0;
         levelUI.SetActText(actName);
@@ -180,15 +186,6 @@ public class LevelManager : MonoBehaviour
         }
         #endregion
 
-        else if (Keyboard.current.bKey.wasPressedThisFrame)
-        {
-            AudioManager.instance.PauseMusic(true);
-        }
-        else if (Keyboard.current.nKey.wasPressedThisFrame)
-        {
-
-            AudioManager.instance.PauseMusic(false);
-        }
   
         if (canPauseGame && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
@@ -318,10 +315,8 @@ public class LevelManager : MonoBehaviour
     {
         //levelTime = 0;
         float currentTime = 0;
-  
-        Debug.Log("Player has spent " + saveManager.currentTimeInLevel +" in level.");
         levelTime = saveManager.currentTimeInLevel;
-        ///Final Countdown seems to work fine, but it doesn't seem to save the player's time properly.
+        ///Final Countdown seems to work fine but might need further testing
         if (currentLevelIndex == 9)
         {
             levelUI.SetTimer(finalTimeLimit);
@@ -338,8 +333,6 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-         
-       
             while (true)
             {
          
@@ -354,7 +347,6 @@ public class LevelManager : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Should BOOST OFF");
             if (!levelStarted)
             {
                 BeginLevel();
@@ -367,6 +359,7 @@ public class LevelManager : MonoBehaviour
     //i guess this resets all enemies?
     public void RestartLevel()
     {
+        saveManager.SaveCollectibleStatus(currentLevelIndex, false); // rezetz if player picked it up. maybe thiz rezet needz to happen at the Initialization procezz inztead?
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -377,8 +370,10 @@ public class LevelManager : MonoBehaviour
         // transitions to intermission scene
 
         StopCoroutine(gameTimer);
+        saveManager.SaveCollectibleStatus(currentLevelIndex, tempGotStageCollectible); //loglevelCompletionData already calls "save both data" so it doesn't seem like there's need
         saveManager.LogLevelCompletionData(currentLevelIndex, levelTime);
-        
+       
+
         Debug.Log("Current time when exiting: " + saveManager.currentTimeInLevel);
 
         StartCoroutine(TransitionManager.instance.TransitionToIntermission(sceneToGoToNext));
@@ -391,6 +386,36 @@ public class LevelManager : MonoBehaviour
     public PlayerController GetPlayerController()
     {
         return playerController;
+    }
+    
+    /// <summary>
+    /// Called when touching collectible. Does NOT save to memory until a checkpoint is touched or the level ends
+    /// </summary>
+    public void SaveCollectibleTemporary()
+    {
+        tempGotStageCollectible = true;
+    }
+
+    //called when restarting level
+    
+    /// <summary>
+    /// Called when touching checkpoint
+    /// </summary>
+    /// <param name="checkpointID"></param>
+    public void SaveWithCheckpoint(int checkpointID)
+    {
+        saveManager.RegisterCheckPoint(checkpointID);
+        saveManager.SaveCollectibleStatus(currentLevelIndex, tempGotStageCollectible); //saves collectible to memory for currentRun
+        saveManager.SaveBothData();
+    }
+    //remember to save after beating level, too
+    public void ResetTempLevelStats()
+    {
+        
+    }
+    public void MirrorSavesWithTempStats()
+    {
+        tempGotStageCollectible=saveManager.RetrieveCurrentData(currentLevelIndex).gotStageCollectible; //this way, if the player dies, levelManager already remembers they got the collectible here. might be unnecessary if you just check saveManager only?
     }
 
 }
