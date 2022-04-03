@@ -88,7 +88,15 @@ public class LevelManager : MonoBehaviour
         //This should ensure that the player will Continue from this level. Think I need to save to make this happen, though.
 
         saveManager.SetUpSavesAtLevelStart((SceneManager.GetActiveScene().buildIndex));
-        MirrorSavesWithTempStats(); //do thiz firzt before the levelUI
+        if (saveManager.hasNotBeganLevel)
+        {
+            //might need more troubleshooting
+            saveManager.RetrieveCurrentData(currentLevelIndex).gotStageCollectible = false; // Makes the collectible status reset if player is playing the stage for the first time during the run
+            
+        }
+
+        MirrorSavesWithTempStats(); //do this first before showing the levelUI, since it uses tempGotStageCollectible
+
         levelUI.DisplayCollectible(tempGotStageCollectible);
         AudioManager.instance.StopMusic();
         Time.timeScale = 0;
@@ -217,10 +225,12 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
+            
             if (saveManager.hasNotBeganLevel)
             {
                 saveManager.currentTimeInLevel = 0;
                 Debug.Log("First time playing level");
+
                 saveManager.hasNotBeganLevel = false;
             }
             playerController.SetFacingDirection(1,0);
@@ -265,7 +275,7 @@ public class LevelManager : MonoBehaviour
         //do this but with currentLevelTime
         saveManager.currentTimeInLevel = levelTime;
         //saveManager.activeSave.SetCurrentLevelTime(levelTime); //registers time before death but doesn't formally save it
-        Invoke("RestartLevel", 2); //placeholder
+        Invoke("RestartFromLevelSave", 2); //Might uses a coroutine instead of Invoke later
     }
     
     public void BeginLevel()
@@ -356,13 +366,22 @@ public class LevelManager : MonoBehaviour
    
     }
   
-    //i guess this resets all enemies?
+    // called when manually resetting the level
+    // restarts from the very beginning of the stage, ignoring all checkpoints. checkpoint progress is lost.
+    // collectible progress is wiped, too
     public void RestartLevel()
     {
+        saveManager.lastSavedAtCheckpoint = false;
+        saveManager.tempCheckpointID = -1; //unsure if setting this value to its default is safe
         saveManager.SaveCollectibleStatus(currentLevelIndex, false); // rezetz if player picked it up. maybe thiz rezet needz to happen at the Initialization procezz inztead?
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
+    //called specifically when the player dies mid-stage.
+    // collectible save data is not erased, it persists if the player had touched a checkpoint after getting the collectible
+    public void RestartFromLevelSave()
+    {  
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     public void ExitLevel()
     {
         //saves level information (time that level was beaten, deathcount)
@@ -389,10 +408,13 @@ public class LevelManager : MonoBehaviour
     }
     
     /// <summary>
-    /// Called when touching collectible. Does NOT save to memory until a checkpoint is touched or the level ends
+    /// Called when touching collectible.
+    /// Shows the player picked it up through the UI.
+    /// Does NOT save collectible status to memory until a checkpoint is touched or the level ends
     /// </summary>
     public void SaveCollectibleTemporary()
     {
+        levelUI.DisplayCollectible(true);
         tempGotStageCollectible = true;
     }
 
