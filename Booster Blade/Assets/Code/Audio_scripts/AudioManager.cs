@@ -326,7 +326,12 @@ public class AudioManager : MonoBehaviour
     {
         MusicGroup.audioMixer.SetFloat("MasterVolume", Mathf.Lerp(-80, 0, value));
     }
+    public float GetMusicVolume(){ //don't think thiz iz good yet
 
+        float vol;
+        MusicGroup.audioMixer.GetFloat("MusicVolume", out vol);
+        return vol;
+    }
     public void SetMusicPitch(float value)
     {
 

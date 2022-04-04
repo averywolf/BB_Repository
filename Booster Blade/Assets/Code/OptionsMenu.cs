@@ -9,10 +9,17 @@ public class OptionsMenu : MonoBehaviour
     // Start is called before the first frame update
     public GameObject optionsButton;//uses this to reselect past button when exiting
 
+    public Slider SFXSlider;
+    public Slider musicSlider;
     public GameObject closeButton;
+
     private void Awake()
     {
         gameObject.SetActive(false);   
+    }
+    public void Start()
+    {
+        InitializeSliders();
     }
     public void OptionsOpen()
     {
@@ -43,5 +50,15 @@ public class OptionsMenu : MonoBehaviour
     public void SliderSetMusicVolume(float value)
     {
         AudioManager.instance.SetMusicVolume(value);
+    }
+    public void SliderSetSFXVolume(float value)
+    {
+        AudioManager.instance.SetSoundVolume(value);
+    }
+    public void InitializeSliders()
+    {
+       // musicSlider.value=
+       // AudioManager.instance.GetMusicVolume();
+      //  Debug.Log(AudioManager.instance.GetMusicVolume());
     }
 }
