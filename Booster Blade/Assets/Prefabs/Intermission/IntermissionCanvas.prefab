@@ -5826,8 +5826,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 59.403}
-  m_SizeDelta: {x: 335.5802, y: 61.193314}
+  m_AnchoredPosition: {x: 0, y: 60}
+  m_SizeDelta: {x: 340, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3706354301520165056
 CanvasRenderer:
@@ -5983,7 +5983,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 320, y: 22.28}
+  m_SizeDelta: {x: 320, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3706354301591527326
 MonoBehaviour:
@@ -7021,10 +7021,10 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  _text: You got through the level!
+  _text: STAGE CLEAR
   drawText: You got through the level!
   hyphenedText: You got through the level!
-  font: {fileID: 12800000, guid: 203072432d0fdbc4da6c1361a6f8a008, type: 3}
+  font: {fileID: 12800000, guid: f800349f95c9c5c4e8fb3fade79ccfee, type: 3}
   _color32:
     serializedVersion: 2
     rgba: 4294967295
@@ -7050,10 +7050,10 @@ MonoBehaviour:
   perlinPitchMulti: 1
   reading: 0
   unreading: 0
-  size: 16.1
+  size: 40
   bestFitMulti: 1
-  quality: 64
-  filterMode: 1
+  quality: 256
+  filterMode: 0
   maskMode: 0
   style: 0
   baseOffset: {x: 0, y: 0, z: 0}
@@ -7405,7 +7405,7 @@ MonoBehaviour:
   _text: Time
   drawText: Time
   hyphenedText: Time
-  font: {fileID: 12800000, guid: 2c4272676b112f34b99287cae1053e69, type: 3}
+  font: {fileID: 12800000, guid: c614902aa0a37c54eba7da55d5b3025a, type: 3}
   _color32:
     serializedVersion: 2
     rgba: 4294967295
@@ -7433,8 +7433,8 @@ MonoBehaviour:
   unreading: 0
   size: 14
   bestFitMulti: 1
-  quality: 64
-  filterMode: 1
+  quality: 128
+  filterMode: 0
   maskMode: 0
   style: 0
   baseOffset: {x: 0, y: 0, z: 0}
@@ -7999,7 +7999,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 50, y: -26}
-  m_SizeDelta: {x: 320, y: 22.28}
+  m_SizeDelta: {x: 320, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4294129998308738634
 MonoBehaviour:
@@ -9339,10 +9339,10 @@ MonoBehaviour:
   perlinPitchMulti: 1
   reading: 0
   unreading: 0
-  size: 10
+  size: 16
   bestFitMulti: 1
   quality: 64
-  filterMode: 1
+  filterMode: 0
   maskMode: 0
   style: 0
   baseOffset: {x: 0, y: 0, z: 0}

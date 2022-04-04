@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: Occult
   Clip: {fileID: 8300000, guid: 07314511d6c0d1b48b342b4a272ddec1, type: 3}
-  Volume: 0.816
+  Volume: 0.597
   Pitch: 1
   Loop: 1
   SpacialBlend: 0

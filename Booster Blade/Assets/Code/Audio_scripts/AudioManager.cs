@@ -316,7 +316,7 @@ public class AudioManager : MonoBehaviour
     //functions that set the volume of the individual mixers
     public void SetMusicVolume(float value)
     {
-        MusicGroup.audioMixer.SetFloat("MusVolume", Mathf.Lerp(-80, 0, value));
+        MusicGroup.audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80, 0, value));
     }
     public void SetSoundVolume(float value)
     {

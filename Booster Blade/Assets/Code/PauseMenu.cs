@@ -11,6 +11,10 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject pauseGraphic;
 
+    [SerializeField]
+    private MenuArrow menuArrow;
+    [SerializeField]
+    OptionsMenu optionsMenu;
     private void Awake()
     {
         pauseGraphic.SetActive(false);
@@ -30,8 +34,10 @@ public class PauseMenu : MonoBehaviour
             AudioManager.instance.PauseMusic(true);
             // AudioManager.instance.MusicPitchSetTest(0.5f);
             Time.timeScale = 0;
-            SetNewFirstSelected(firstPauseButton);
+           
             pauseGraphic.SetActive(true);
+            SetNewFirstSelected(firstPauseButton);
+            menuArrow.PlaceArrow(firstPauseButton.GetComponent<RectTransform>());
 
         }
         //tacky solution
@@ -48,7 +54,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void Unpause()
     {
-
+        PlayButtonClickSFX();
         Debug.Log("Unpause pressed");
         Time.timeScale = 1;
         Debug.Log("Game Resumed");
@@ -61,15 +67,21 @@ public class PauseMenu : MonoBehaviour
     }
     public void RetryLevel()
     {
-        Debug.Log("Pressed Retry");
+        PlayButtonClickSFX();
         LevelManager.instance.RestartLevel();
     }
     public void QuitToMenu()
     {
+        PlayButtonClickSFX();
         LevelManager.instance.ExitToMenu();
     }
-    public void QuitGame()
+    public void OpenPauseOptions()
     {
-        
+        PlayButtonClickSFX();
+        optionsMenu.OptionsOpen();
+    }
+    public void PlayButtonClickSFX()
+    {
+        AudioManager.instance.Play("UIButtonClick");
     }
 }

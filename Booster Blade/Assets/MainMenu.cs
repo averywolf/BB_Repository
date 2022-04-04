@@ -20,6 +20,8 @@ public class MainMenu : MonoBehaviour
 
     public GameObject resultsReturnButton;
     //no loading save yet
+    [SerializeField]
+    private OptionsMenu optionsMenu;
 
 
 
@@ -41,6 +43,7 @@ public class MainMenu : MonoBehaviour
     //starts run from the beginning, plays the intro cutscene, goes onto the first level
     public void StartNewGame()
     {
+        PlayButtonClickSFX();
         ableToInteractWithMenu = false;
         //temp solution
         saveManager.DeleteRunProgress();
@@ -49,6 +52,7 @@ public class MainMenu : MonoBehaviour
     //picks up from the level where the current run left off. starts at beginning of the last level, doesn't take into account checkpoints
     public void ContinueGame()
     {
+        PlayButtonClickSFX();
         //Maybe if continue index is 0 don't continue?
         SceneManager.LoadScene(saveManager.currentRunData.continueIndex);
 
@@ -56,9 +60,14 @@ public class MainMenu : MonoBehaviour
     //deletes all save data
     public void WipeRecords()
     {
+        PlayButtonClickSFX();
         saveManager.WipeSave();
     }
+    public void OpenOptions()
+    {
 
+        optionsMenu.OptionsOpen(); //options menu takes care of SetNewFirstSelected stuff
+    }
     public void QuitGame()
     {
         Debug.Log("Attempting to quit game.");
@@ -67,12 +76,14 @@ public class MainMenu : MonoBehaviour
 
     public void OpenResultsScreen()
     {
+        PlayButtonClickSFX();
         resultsMenu.SetActive(true);
         SetNewFirstSelected(resultsReturnButton);
         DisplayBestTimes();
     }
     public void CloseResultsScreen()
     {
+        PlayButtonClickSFX();
         resultsMenu.SetActive(false);
         SetNewFirstSelected(firstButton);
     }
@@ -117,5 +128,8 @@ public class MainMenu : MonoBehaviour
         string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, fraction);
         return timeText;
     }
-
+    public void PlayButtonClickSFX()
+    {
+        AudioManager.instance.Play("UIButtonClick");
+    }
 }

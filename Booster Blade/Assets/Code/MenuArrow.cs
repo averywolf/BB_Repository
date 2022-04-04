@@ -19,13 +19,19 @@ public class MenuArrow : MonoBehaviour
     }
     public void PlaceArrow(RectTransform t)
     {
-        
         Vector3 pos = t.anchoredPosition;
         pos.x -= (t.rect.width / 2f ) + xOffset;
         //pos.z = 0;
         //Debug.Log("setting arrow to position " + pos);
         rectTransform.anchoredPosition = pos;
         //rectTransform.anchoredPosition = new Vector3(0, 0, 0);
-        Debug.Log("AnchoredPosition =" + rectTransform.anchoredPosition);
+       // Debug.Log("AnchoredPosition =" + rectTransform.anchoredPosition);
+        PlayButtonSelectSFX();
+    }
+ 
+    //have words highlight effect, too
+    public void PlayButtonSelectSFX()
+    {
+        AudioManager.instance.Play("UIButtonSelect");
     }
 }

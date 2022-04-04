@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5578945126374811414}
   - component: {fileID: 5578945126374811408}
   - component: {fileID: 7622611778620535264}
+  - component: {fileID: 4054034468152233503}
   m_Layer: 0
   m_Name: Selectioncursor
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5578945126374811409
 CanvasRenderer:
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7113549497127142848, guid: f0764d7208e624541a25307c2f809026,
+  m_Sprite: {fileID: 2611444837133904639, guid: f518c9ae4f4eb014393583d59715b730,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -90,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCanvas: {fileID: 0}
-  xOffset: 60
+  xOffset: 15
 --- !u!210 &7622611778620535264
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -102,3 +103,22 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 50
+--- !u!95 &4054034468152233503
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5578945126374811412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc992c0f424359246ab707fa5e7b26a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

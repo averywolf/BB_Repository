@@ -59,7 +59,7 @@ MonoBehaviour:
   showEventFoldout: 0
   showBetaFoldout: 0
   info:
-  - pos: {x: -17.0625, y: 0.5, z: 0}
+  - pos: {x: -18, y: -0.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 7, y: 7}
+    size: {x: 8, y: 8}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -95,10 +95,10 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chSize: 64
+    chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: -10.9375, y: 0.5, z: 0}
+  - pos: {x: -12, y: -0.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 7, y: 7}
+    size: {x: 8, y: 8}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -134,10 +134,10 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chSize: 64
+    chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: -5.6875, y: 0.5, z: 0}
+  - pos: {x: -6, y: -0.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
     rawIndex: 1
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 7, y: 7}
+    size: {x: 8, y: 8}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -173,10 +173,10 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chSize: 64
+    chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: -1.3125, y: 0.5, z: 0}
+  - pos: {x: 0, y: -0.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
     rawIndex: 2
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 7, y: 7}
+    size: {x: 8, y: 8}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -212,10 +212,10 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chSize: 64
+    chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: 3.9375, y: 0.5, z: 0}
+  - pos: {x: 6, y: -0.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
     rawIndex: 3
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 7, y: 7}
+    size: {x: 8, y: 8}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -251,10 +251,10 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chSize: 64
+    chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: 11.8125, y: 0.5, z: 0}
+  - pos: {x: 12, y: -0.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
     rawIndex: 4
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 7, y: 7}
+    size: {x: 8, y: 8}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -290,10 +290,10 @@ MonoBehaviour:
     soundClipData: {fileID: 0}
     IdxIdentifier: 0
     InfoInUse: 0
-    chSize: 64
+    chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: -20.875, y: 0.5, z: 0}
+  - pos: {x: -9, y: -0.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 1
     readTime: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
     rawIndex: 5
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 7, y: 7}
+    size: {x: 8, y: 8}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -341,11 +341,11 @@ MonoBehaviour:
   hyphenedText: 'Resume
 
 '
-  font: {fileID: 12800000, guid: 3a331bd56e57a0748b912f832b17c3a0, type: 3}
+  font: {fileID: 12800000, guid: 806eac7b6e5b3b140acacb07fc1a714c, type: 3}
   _color32:
     serializedVersion: 2
     rgba: 4294967295
-  _color: {r: 0, g: 0, b: 0, a: 1}
+  _color: {r: 1, g: 1, b: 1, a: 1}
   forceAnimation: 0
   richText: 1
   readDelay: 0
@@ -367,13 +367,13 @@ MonoBehaviour:
   perlinPitchMulti: 1
   reading: 0
   unreading: 0
-  size: 7
+  size: 8
   bestFitMulti: 1
-  quality: 64
+  quality: 128
   filterMode: 1
   maskMode: 0
   style: 0
-  baseOffset: {x: 0, y: -0.4, z: 0}
+  baseOffset: {x: 0, y: 0, z: 0}
   relativeBaseOffset: 1
   lineSpacing: 1
   characterSpacing: 0
@@ -383,32 +383,32 @@ MonoBehaviour:
   uiLimit: 1
   breakText: 0
   insertHyphens: 0
-  anchor: 0
+  anchor: 3
   alignment: 1
   verticalLimit: 0
   verticalLimitMode: 2
   leftoverText: 
   textMaterial: {fileID: 2100000, guid: e490a80c3724140c0ad176edb075a09e, type: 2}
   textMesh: {fileID: 0}
-  rawTopLeftBounds: {x: 55, y: -7.5, z: 0}
-  rawBottomRightBounds: {x: -55, y: 7.5, z: 0}
-  rawBottomRightTextBounds: {x: 34.125, y: -7, z: 0}
-  topLeftBounds: {x: 265, y: 205.5, z: 0}
-  topRightBounds: {x: 375, y: 205.5, z: 0}
-  bottomLeftBounds: {x: 265, y: 190.5, z: 0}
-  bottomRightBounds: {x: 375, y: 190.5, z: 0}
+  rawTopLeftBounds: {x: 45, y: -7.5, z: 0}
+  rawBottomRightBounds: {x: -45, y: 7.5, z: 0}
+  rawBottomRightTextBounds: {x: 36, y: -8, z: 0}
+  topLeftBounds: {x: 275, y: 205.5, z: 0}
+  topRightBounds: {x: 365, y: 205.5, z: 0}
+  bottomLeftBounds: {x: 275, y: 190.5, z: 0}
+  bottomRightBounds: {x: 365, y: 190.5, z: 0}
   centerBounds: {x: 320, y: 198, z: 0}
-  topLeftTextBounds: {x: 302.9375, y: 205.5, z: 0}
-  topRightTextBounds: {x: 337.0625, y: 205.5, z: 0}
-  bottomLeftTextBounds: {x: 302.9375, y: 198.5, z: 0}
-  bottomRightTextBounds: {x: 337.0625, y: 198.5, z: 0}
-  centerTextBounds: {x: 320, y: 202, z: 0}
-  finalTopLeftTextBounds: {x: 302.9375, y: 205.5, z: 0}
-  finalTopRightTextBounds: {x: 337.0625, y: 205.5, z: 0}
-  finalBottomLeftTextBounds: {x: 302.9375, y: 198.5, z: 0}
-  finalBottomRightTextBounds: {x: 337.0625, y: 198.5, z: 0}
-  finalCenterTextBounds: {x: 320, y: 202, z: 0}
-  unwrappedBottomRightTextBounds: {x: 34.125, y: -14, z: 0}
+  topLeftTextBounds: {x: 302, y: 205.5, z: 0}
+  topRightTextBounds: {x: 338, y: 205.5, z: 0}
+  bottomLeftTextBounds: {x: 302, y: 197.5, z: 0}
+  bottomRightTextBounds: {x: 338, y: 197.5, z: 0}
+  centerTextBounds: {x: 320, y: 201.5, z: 0}
+  finalTopLeftTextBounds: {x: 302, y: 205.5, z: 0}
+  finalTopRightTextBounds: {x: 338, y: 205.5, z: 0}
+  finalBottomLeftTextBounds: {x: 302, y: 197.5, z: 0}
+  finalBottomRightTextBounds: {x: 338, y: 197.5, z: 0}
+  finalCenterTextBounds: {x: 320, y: 201.5, z: 0}
+  unwrappedBottomRightTextBounds: {x: 36, y: -16, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -492,7 +492,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 18}
-  m_SizeDelta: {x: 110, y: 15}
+  m_SizeDelta: {x: 90, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4895222225396621045
 CanvasRenderer:
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4895222225396621049}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
