@@ -12,6 +12,8 @@ public class OptionsMenu : MonoBehaviour
     public Slider SFXSlider;
     public Slider musicSlider;
     public GameObject closeButton;
+    [SerializeField]
+    private MenuArrow menuArrow;
 
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class OptionsMenu : MonoBehaviour
     public void OptionsOpen()
     {
         SetNewFirstSelected(closeButton);
+        menuArrow.PlaceArrow(closeButton.GetComponent<RectTransform>()); //used to start arrow on this option
         gameObject.SetActive(true);
         PlayButtonClickSFX();
 

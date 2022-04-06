@@ -373,12 +373,12 @@ public class PlayerController : MonoBehaviour
     {
         
         float currentTime = 0;
-        float cooldownRate = 1 / (coolDown/Time.fixedDeltaTime);
+        float cooldownRate = 1 / (coolDown/(Time.fixedDeltaTime* Time.timeScale));
 
         while (currentTime<1)
         {
             testUI.SetStaminaSlider(currentTime);
-            cooldownRate = 1 / (coolDown / Time.fixedDeltaTime);
+            cooldownRate = 1 / (coolDown / (Time.fixedDeltaTime * Time.timeScale));
             currentTime += cooldownRate;
             yield return null;
         }

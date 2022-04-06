@@ -23,6 +23,10 @@ public class IntermissionManager : MonoBehaviour
     //index of the level the player just beat
     [SerializeField]
     public int LevelResultsIndex;
+
+    public SuperTextMesh promptForSkip;
+    public Coroutine skipPromptProcess;
+    private bool skipReady = false;
     public enum IntermissionState
     {
         beforeresults,
@@ -31,8 +35,6 @@ public class IntermissionManager : MonoBehaviour
         afterDialogue,
         other
     }
-
-
 
     void Awake()
     {
@@ -49,10 +51,13 @@ public class IntermissionManager : MonoBehaviour
 
     public void Start()
     {
-        currentInterState = IntermissionState.beforeresults;
+        skipReady = false;
+        RevertPrompt();
+           currentInterState = IntermissionState.beforeresults;
         AudioManager.instance.PlayMusic("CardVictoryJingle");
         SaveManager.instance.hasNotBeganLevel = true; //just in case
         resultsScreen.DisplayResults();
+        promptForSkip.gameObject.SetActive(false);
     }
     public void Update()
     {
@@ -62,7 +67,7 @@ public class IntermissionManager : MonoBehaviour
             {
                 resultsScreen.HideResults();
                 dialogueManager.BeginDialogue();
-                
+                promptForSkip.gameObject.SetActive(true);
                 currentInterState = IntermissionState.duringDialogue;
                 AudioManager.instance.PlayMusic("Occult");
             }
@@ -75,9 +80,40 @@ public class IntermissionManager : MonoBehaviour
         {
             if (currentInterState.Equals(IntermissionState.duringDialogue))
             {
-                dialogueManager.EndDialogue();
+                if (skipReady)
+                {
+                    StopSkip(skipPromptProcess);
+                    dialogueManager.EndDialogue();
+                }
+                else //shows a prompt to check if the player is sure before they skip
+                {
+                    //make a sound effect?
+                    skipPromptProcess = StartCoroutine(ResetSkipPrompt(2));
+                    skipReady = true;
+                   
+                }
             }
+            
         }
+    }
+    public void RevertPrompt()
+    {
+        skipReady = false;
+        promptForSkip.text = "ESC: SKIP INTERMISSION";
+    }
+    public void StopSkip(Coroutine skip)
+    {
+        if (skip != null)
+        {
+            StopCoroutine(skip);
+        }
+
+    }
+    public IEnumerator ResetSkipPrompt(float timeToReset)
+    {
+        promptForSkip.text = "PRESS AGAIN TO SKIP";
+        yield return new WaitForSeconds(timeToReset);
+        RevertPrompt();
     }
     public void SetInterState(IntermissionState interState)
     {

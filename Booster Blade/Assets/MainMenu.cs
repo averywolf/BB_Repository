@@ -17,15 +17,16 @@ public class MainMenu : MonoBehaviour
 
     public SuperTextMesh resultsText;
 
-
+    public GameObject recordsEnterButton;
     public GameObject resultsReturnButton;
     //no loading save yet
     [SerializeField]
     private OptionsMenu optionsMenu;
 
-
-
-    // Start is called before the first frame update
+    [SerializeField]
+    MenuArrow menuArrow;
+    [SerializeField]
+    private string menuSong = "";
     private void Awake()
     {
         saveManager = SaveManager.instance;   
@@ -36,7 +37,7 @@ public class MainMenu : MonoBehaviour
         resultsMenu.SetActive(false);
         ableToInteractWithMenu = true;
         AudioManager.instance.StopMusic();
-        AudioManager.instance.PlayMusic("Occult");
+        AudioManager.instance.PlayMusic(menuSong);
         SaveManager.instance.hasNotBeganLevel = true; //just in case
     }
 
@@ -45,7 +46,6 @@ public class MainMenu : MonoBehaviour
     {
         PlayButtonClickSFX();
         ableToInteractWithMenu = false;
-        //temp solution
         saveManager.DeleteRunProgress();
         SceneManager.LoadScene(firstLevelName);
     }
@@ -66,11 +66,10 @@ public class MainMenu : MonoBehaviour
     public void OpenOptions()
     {
 
-        optionsMenu.OptionsOpen(); //options menu takes care of SetNewFirstSelected stuff
+        optionsMenu.OptionsOpen(); //options menu takes care of SetNewFirstSelected and arrow placement stuff
     }
     public void QuitGame()
     {
-        Debug.Log("Attempting to quit game.");
         Application.Quit();
     }
 
@@ -78,6 +77,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayButtonClickSFX();
         resultsMenu.SetActive(true);
+        menuArrow.PlaceArrow(resultsMenu.GetComponent<RectTransform>());
         SetNewFirstSelected(resultsReturnButton);
         DisplayBestTimes();
     }
@@ -85,7 +85,9 @@ public class MainMenu : MonoBehaviour
     {
         PlayButtonClickSFX();
         resultsMenu.SetActive(false);
-        SetNewFirstSelected(firstButton);
+        
+        SetNewFirstSelected(recordsEnterButton);
+        menuArrow.PlaceArrow(recordsEnterButton.GetComponent<RectTransform>());
     }
     public void DisplayBestTimes()
     {

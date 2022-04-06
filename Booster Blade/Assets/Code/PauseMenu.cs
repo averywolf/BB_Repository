@@ -26,6 +26,7 @@ public class PauseMenu : MonoBehaviour
             AudioManager.instance.PauseMusic(false);
             // AudioManager.instance.MusicPitchSetTest(1f);
             Time.timeScale = 1;
+            
             SetNewFirstSelected(null);
             pauseGraphic.SetActive(false);
         }

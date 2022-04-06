@@ -367,7 +367,7 @@ MonoBehaviour:
   perlinPitchMulti: 1
   reading: 0
   unreading: 0
-  size: 8
+  size: 16
   bestFitMulti: 1
   quality: 128
   filterMode: 1
