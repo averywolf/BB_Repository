@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     OptionsMenu optionsMenu;
     private void Awake()
     {
+        gameObject.SetActive(true);
         pauseGraphic.SetActive(false);
     }
     public bool PauseGame()

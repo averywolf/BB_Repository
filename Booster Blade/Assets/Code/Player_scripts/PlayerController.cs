@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using System;
+using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour
 {
 
@@ -83,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isBouncingOffWall = false;
 
-
+    public static event Action OnPlayerTurn;
     private LevelManager levelManager;
     [HideInInspector]
     public bool isReversing = false;
@@ -148,6 +150,8 @@ public class PlayerController : MonoBehaviour
     {
         playerBody.transform.rotation = Quaternion.Euler(0, 0, angleToRotate);
         playerAnimator.SetFloat("heroDirection", angleToRotate);
+       // OnPlayerTurn.Invoke(); //buggy
+
     }
 
     //This controls when the inputs are checked.

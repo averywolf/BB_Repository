@@ -42,6 +42,7 @@ public class Assassin : MonoBehaviour
     {
         player = LevelManager.instance.GetPlayerController();
     }
+
     public IEnumerator AttemptToMurder()
     {
 
@@ -68,7 +69,7 @@ public class Assassin : MonoBehaviour
         while (currentTime <= duration)
         {
             Vector2 telePos = new Vector2(playControl.horizontal, playControl.vertical);
-            transform.localPosition = -telePos * (5+distancemodifier);
+            transform.localPosition = -telePos * (4+ (distancemodifier*3));
             currentTime += Time.fixedDeltaTime;
 
             yield return waitForFixedUpdate;
@@ -103,6 +104,23 @@ public class Assassin : MonoBehaviour
         //    transform.localPosition = new Vector2(0, -teleDistance);
         //}
 
+    }
+    public void OnEnable()
+    {
+        PlayerController.OnPlayerTurn += LockOnTeleport;
+
+    }
+    public void OnDisable()
+    {
+        PlayerController.OnPlayerTurn -= LockOnTeleport;
+    }
+    public void LockOnTeleport() //mimght need to put in teleport check
+    {
+        if (teleportingAround)
+        {
+            SpawnParticles(teleportParticles, transform.position);
+        }
+       
     }
     public void BeginMurderAttempt()
     {

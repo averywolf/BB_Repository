@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7405a2c47ae89f245b3ffe152a636a59, type: 3}
   m_Name: PlantSpread1
   m_EditorClassIdentifier: 
-  rateOfFire: 2
-  bulletPrefab: {fileID: 6850305764697293782, guid: 73d0e83a203d0844c9cdfcc1ee158ef6,
+  rateOfFire: 1
+  bulletPrefab: {fileID: 6850305764697293782, guid: 74630cfdcfeacf44390e51f474ace334,
     type: 3}
   fireSFX: 
   bulletKeyPoints:
@@ -23,10 +23,10 @@ MonoBehaviour:
       setSpeed: 0
       endScale: 0
       scaleDuration: 0
-      accelDuration: 0.5
-      endSpeed: 20
+      accelDuration: 0.3
+      endSpeed: 9
       spinRate: 0
-  - keyPointDelay: 0.5
+  - keyPointDelay: 0.6
     bulletAction:
       actionType: 0
       setSpeed: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
       accelDuration: 0
       endSpeed: 0
       spinRate: 0
-  - keyPointDelay: 0
+  - keyPointDelay: 0.1
     bulletAction:
       actionType: 1
       setSpeed: 0
@@ -44,14 +44,14 @@ MonoBehaviour:
       accelDuration: 0
       endSpeed: 0
       spinRate: 0
-  - keyPointDelay: 0.2
+  - keyPointDelay: 0
     bulletAction:
       actionType: 4
       setSpeed: 0
       endScale: 0
       scaleDuration: 0
-      accelDuration: 0.5
-      endSpeed: 50
+      accelDuration: 0
+      endSpeed: 45
       spinRate: 0
   bulletColor: {r: 1, g: 1, b: 1, a: 1}
   bulletMoveSpeed: 3
