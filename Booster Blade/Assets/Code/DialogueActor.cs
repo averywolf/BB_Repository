@@ -6,6 +6,7 @@ public class DialogueActor : MonoBehaviour
 {
     public string actorName="";
     public DialoguePosition actorDialoguePosition = DialoguePosition.top;
+    public Sprite portraitBg;
     public enum DialoguePosition
     {
         top,

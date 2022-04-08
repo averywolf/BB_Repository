@@ -9189,7 +9189,7 @@ PrefabInstance:
     - target: {fileID: 5185084337357247893, guid: d56f99f2ee38b994b973bdf1c359cd5e,
         type: 3}
       propertyPath: _text
-      value: Exit to Menu
+      value: EXIT TO MENU
       objectReference: {fileID: 0}
     - target: {fileID: 5185084337357247893, guid: d56f99f2ee38b994b973bdf1c359cd5e,
         type: 3}
@@ -10201,7 +10201,7 @@ PrefabInstance:
     - target: {fileID: 5185084337357247893, guid: d56f99f2ee38b994b973bdf1c359cd5e,
         type: 3}
       propertyPath: _text
-      value: 'Options
+      value: 'OPTIONS
 
 '
       objectReference: {fileID: 0}
@@ -11282,7 +11282,7 @@ PrefabInstance:
     - target: {fileID: 5185084337357247893, guid: d56f99f2ee38b994b973bdf1c359cd5e,
         type: 3}
       propertyPath: _text
-      value: Retry Level
+      value: RESTART STAGE
       objectReference: {fileID: 0}
     - target: {fileID: 5185084337357247893, guid: d56f99f2ee38b994b973bdf1c359cd5e,
         type: 3}
@@ -12366,6 +12366,13 @@ PrefabInstance:
         type: 3}
       propertyPath: size
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5185084337357247893, guid: d56f99f2ee38b994b973bdf1c359cd5e,
+        type: 3}
+      propertyPath: _text
+      value: 'RESUME
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 5185084337357247893, guid: d56f99f2ee38b994b973bdf1c359cd5e,
         type: 3}
