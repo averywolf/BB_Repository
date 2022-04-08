@@ -50,6 +50,7 @@ public class DialogueManager : MonoBehaviour
         currentTextMesh = dialogueBox.dialogueText;
         dialogueBox.SetDialogueText(cutsceneEvent.dialogueline);
         dialogueBox.charPortrait.sprite = currentActor.expressions[cutsceneEvent.expressionNum];
+        dialogueBox.portraitBG.sprite = currentActor.portraitBg;
         oldBox.HideBox();
         //probably should make the dialogue box that's not being used fade out
 

@@ -45,8 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorName: Archie
   actorDialoguePosition: 0
+  portraitBg: {fileID: -714124833874742066, guid: 059d74945e37e734c928a48f9c699723,
+    type: 3}
   expressions:
-  - {fileID: 21300000, guid: fc1d97a26624e764cb8b94ae4fd123b8, type: 3}
+  - {fileID: 21300000, guid: 4c930046fc4c7f74689c5379d74ea5c0, type: 3}
   - {fileID: 21300000, guid: c7a496120c2383741b86326121cfbc8c, type: 3}
   - {fileID: 21300000, guid: 04b0e13784485034f9390ac95b61c191, type: 3}
   - {fileID: 21300000, guid: 2c1bd68fa7b8c4c42a7ef40f42595188, type: 3}

@@ -69,6 +69,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1950453798861158050, guid: 9f38ed953b74e8a4984e098642d04c2a,
         type: 3}
+      propertyPath: portraitBg
+      value: 
+      objectReference: {fileID: -3785942246810008089, guid: 059d74945e37e734c928a48f9c699723,
+        type: 3}
+    - target: {fileID: 1950453798861158050, guid: 9f38ed953b74e8a4984e098642d04c2a,
+        type: 3}
       propertyPath: actorDialoguePosition
       value: 1
       objectReference: {fileID: 0}

@@ -11,6 +11,7 @@ public class DialogueBox : MonoBehaviour
 
     private SpriteRenderer boxRenderer;
     public bool readingText=false;
+    public Image portraitBG;
     public void Awake()
     {
         dialogueText.text = "";
