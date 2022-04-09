@@ -97,8 +97,6 @@ public class PlayerController : MonoBehaviour
     public bool swordSlashing=false;
     public CinemachineImpulseSource boostSource;
 
-
-
     [HideInInspector]
     public bool limitersRemoved = false; //set to true by LevelManager if it's the final stage
 
@@ -153,26 +151,6 @@ public class PlayerController : MonoBehaviour
        // OnPlayerTurn.Invoke(); //buggy
 
     }
-
-    //This controls when the inputs are checked.
-    //public void ReadDirectionInputs()
-    //{
-    //    if (canTurn && !swordSlashing && !isBouncingOffWall && canControlPlayer)
-    //    {
-    //        //bool directionChanged = CheckDirectionInput();
-    //        bool directionChanged = NewCheckDirectionInput();
-    //        Debug.Log("Horz= " + horizontal + "Vert = " + vertical);
-    //       // if (directionChanged)
-    //        {
-    //            //delay from changing direction?
-    //           // StartCoroutine(DirectionChangeDelay(0.3f)); //might need to be in fixedUpdate maybe?
-    //            // playerSword.SwordSpark();
-
-    //        //Move box?
-    //        }
-    //    }
-
-    //}
 
 
     public void SetMovementVel()
@@ -308,6 +286,42 @@ public class PlayerController : MonoBehaviour
         testUI.StaminaFlash(true);
         canBoost = true;
     }
+    public void CutsceneMode(Transform dest)
+    {
+        //turn off trails?
+
+
+        playerAnimator.Play("hero_return");
+        FreezePlayer(true);
+        currentMoveState = PlayerMoveStates.idle;
+        StartCoroutine(MoveToPoint(dest.position, 2));
+        
+        //end boost?
+        
+    }
+    
+    public IEnumerator MoveToPoint(Vector2 destination, float timeSpeed)
+    {
+        Vector2 startingPoint = playerBody.transform.position;
+        //while (true)
+        //{
+        //    //if (vector2.Distance(target.transform.position, transform.position) < 1)
+        //        playerBody.transform.position = Vector2.MoveTowards(transform.position, destination, timeSpeed* Time.deltaTime);
+        //    yield return null;
+        //}
+
+        //lerping time is weird
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * timeSpeed)
+        {
+           playerBody.transform.position = Vector3.Lerp(startingPoint, destination, t);
+
+            yield return null;
+        }
+
+
+        //  transform.position = Vector2.MoveTowards(transform.position, target.transform.position, Time.deltaTime * speed);
+    }
+
     //might need two guages to be layered on top of each other?
     public IEnumerator SlowFromBoost(float boostStateDuration, bool manualBoost) //exit this if player has another state
     {

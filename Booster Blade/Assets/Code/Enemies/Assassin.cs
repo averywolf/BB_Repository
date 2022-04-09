@@ -47,7 +47,7 @@ public class Assassin : MonoBehaviour
     public IEnumerator AttemptToMurder()
     {
 
-        animator.Play("idle");
+     
         PlayerController playControl = LevelManager.instance.GetPlayerController();
         CheckPlayerMurderStatus();
 
@@ -71,6 +71,8 @@ public class Assassin : MonoBehaviour
         {
             Vector2 telePos = new Vector2(playControl.horizontal, playControl.vertical);
             //play teleport before moving
+            animator.SetFloat("horz", playControl.horizontal);
+            animator.SetFloat("vert", playControl.vertical);
             transform.localPosition = -telePos * (4+ (distancemodifier*3));
             currentTime += Time.fixedDeltaTime;
 
@@ -87,25 +89,30 @@ public class Assassin : MonoBehaviour
         StartCoroutine(AssassinCooldown());
     }
 
-    public void Teleport(float attackAngle)
+    public void SetAimDirection(float horzValue, float vertValue)
     {
-        //if (attackAngle == 0)
-        //{
-        //    transform.localPosition = new Vector2(teleDistance, 0);
-        //}
-        //else if(attackAngle == 90)
-        //{
-        //    transform.localPosition = new Vector2(0, teleDistance);
-        //}
-        //else if(attackAngle == 180)
-        //{
-        //    transform.localPosition = new Vector2(-teleDistance, 0);
-        //}
-        //else if(attackAngle == 270)
-        //{
-        //    transform.localPosition = new Vector2(0, -teleDistance);
-        //}
+        float newAngleToFace = 0;
+        //sets newAngleToFace based on the corresponding direction values
+        if (horzValue == 1f && vertValue == 0f)
+        {
+            //  horizontal = 1; vertical = 0;
+            newAngleToFace = 0;
+        }
+        else if (horzValue == -1f && vertValue == 0f)
+        {
+            newAngleToFace = 180;
+        }
+        else if (horzValue == 0 && vertValue == -1f)
+        {
+            // horizontal = 0; vertical = -1;
+            newAngleToFace = 270;
 
+        }
+        else if (horzValue == 0f && vertValue == 1f)
+        {
+            // horizontal = 0; vertical = 1;
+            newAngleToFace = 90;
+        }
     }
     public void OnEnable()
     {

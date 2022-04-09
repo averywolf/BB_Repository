@@ -22,6 +22,11 @@ public class PlayerCore : MonoBehaviour
                 collision.GetComponent<LevelExitDoor>().GoThroughExitDoor();
             }
         }
+        if (collision.GetComponent<MonolithCore>())
+        {
+            playerController.CutsceneMode(collision.GetComponent<MonolithCore>().accessPoint);
+            Debug.Log("touched Monolith");
+        }
 
         if (collision.GetComponent<DangerHitbox>())
         {
