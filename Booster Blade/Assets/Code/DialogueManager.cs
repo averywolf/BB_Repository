@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     //When checking the CutsceneEvent's Actor enum it'll determine which one of these to read
     public DialogueActor archie;
     public DialogueActor zaria;
+    public DialogueActor manos;
     
     public List<CutsceneEvent> cutsceneEvents;
     [SerializeField]
@@ -65,7 +66,10 @@ public class DialogueManager : MonoBehaviour
         {
             return zaria;
         }
-        //no Badguy yet
+        else if (actor.Equals(CutsceneEvent.Actor.Manos))
+        {
+            return manos;
+        }
         return archie;
     }
 
