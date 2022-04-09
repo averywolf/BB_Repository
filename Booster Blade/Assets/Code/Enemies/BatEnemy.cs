@@ -18,6 +18,8 @@ public class BatEnemy : MonoBehaviour
 
     private bool batReady = false;
     private bool chasingPlayer = false;
+
+    public WeakX weakX;
     private void Awake()
     {
         batReady= false;
@@ -43,6 +45,7 @@ public class BatEnemy : MonoBehaviour
         if (wasSpotted &&!chasingPlayer)
         {
             chasingPlayer=true;
+            weakX.SummonWeakX();
             AudioManager.instance.Play("BatSqueak");
             StartBatMoving();
         }

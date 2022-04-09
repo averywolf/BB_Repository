@@ -33,6 +33,7 @@ public class Assassin : MonoBehaviour
     PlayerController player;
     bool teleportingAround = false;
     public float distancemodifier=0;
+    public WeakX weakX;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -69,6 +70,7 @@ public class Assassin : MonoBehaviour
         while (currentTime <= duration)
         {
             Vector2 telePos = new Vector2(playControl.horizontal, playControl.vertical);
+            //play teleport before moving
             transform.localPosition = -telePos * (4+ (distancemodifier*3));
             currentTime += Time.fixedDeltaTime;
 
@@ -135,6 +137,7 @@ public class Assassin : MonoBehaviour
         
         AudioManager.instance.Play("AssassinNotice");
         animator.Play("notice");
+        weakX.SummonWeakX();
         yield return new WaitForSeconds(noticeDuration);
         BeginMurderAttempt();
     }

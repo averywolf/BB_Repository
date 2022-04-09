@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  target: {fileID: 0}
+  target: {fileID: 6607695590251031623}
 --- !u!61 &5106567439025957700
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -344,6 +344,7 @@ MonoBehaviour:
   batMoveSpeed: 26
   batDeathFX: {fileID: 3326193482900577939, guid: 547ec2fb4a341d5459cbdc8a36ff3d8b,
     type: 3}
+  weakX: {fileID: 0}
 --- !u!114 &1295071390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,6 +410,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c672ff1a80532547a19624db6d47ffe, type: 3}
+--- !u!1 &7689750354150183310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4925802577673668236, guid: 9c672ff1a80532547a19624db6d47ffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 3381231819314632450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6607695590251031623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8457703258686552901, guid: 9c672ff1a80532547a19624db6d47ffe,
@@ -494,12 +501,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,
         type: 3}
+      propertyPath: SpottedPlayer.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,
+        type: 3}
       propertyPath: SpottedPlayer.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1295071389}
     - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,
         type: 3}
+      propertyPath: SpottedPlayer.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7689750354150183310}
+    - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,
+        type: 3}
       propertyPath: SpottedPlayer.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,
+        type: 3}
+      propertyPath: SpottedPlayer.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,
@@ -510,6 +532,11 @@ PrefabInstance:
     - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,
         type: 3}
       propertyPath: SpottedPlayer.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,
+        type: 3}
+      propertyPath: SpottedPlayer.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7690059763372869812, guid: 09bfc77fcad780741871dd9c429cdb74,

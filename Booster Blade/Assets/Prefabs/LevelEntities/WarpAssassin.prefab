@@ -142,6 +142,7 @@ MonoBehaviour:
   chargeTell: {fileID: 7149137678875476336}
   chargeTime: 3
   distancemodifier: 0
+  weakX: {fileID: 3751383813902897559}
 --- !u!212 &5763607795485734335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ SpriteRenderer:
   m_SortingLayerID: -34114941
   m_SortingLayer: -9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8817603437483112400, guid: d6cf7ba6acfe5ac4a9c953d3ca9e90f7,
+  m_Sprite: {fileID: -5864454520980539721, guid: 62e1ad011252d64489d528253abd82c5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -412,6 +413,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5300169536581656620}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3751383813902897559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9043909402530083259, guid: 9c672ff1a80532547a19624db6d47ffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5300169536581656620}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e4b2f140409b5c4ebaddba4db9049e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5464786599986485185
 PrefabInstance:
   m_ObjectHideFlags: 0
