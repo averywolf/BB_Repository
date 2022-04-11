@@ -39,6 +39,7 @@ public class MainMenu : MonoBehaviour
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlayMusic(menuSong);
         SaveManager.instance.hasNotBeganLevel = true; //just in case
+        Time.timeScale = 1;
     }
 
     //starts run from the beginning, plays the intro cutscene, goes onto the first level

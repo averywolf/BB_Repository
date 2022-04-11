@@ -11,6 +11,8 @@ public class PanelCutsceneSystem : MonoBehaviour
     public int currentPanel; //current id of panel displayed
 
     public Image panelFader;
+    [SerializeField]
+    private string cutsceneSong = "";
     public void Awake()
     {
         for (int i = 0; i < cutscenePanels.Count; i++)
@@ -18,6 +20,7 @@ public class PanelCutsceneSystem : MonoBehaviour
             cutscenePanels[i].gameObject.SetActive(false);
         }
     }
+
     public void Update()
     {
         ///MAKE THIS REFER TO PLAYER INPUT INSTEAD
@@ -41,7 +44,8 @@ public class PanelCutsceneSystem : MonoBehaviour
     }
     public void Start()
     {
-        AudioManager.instance.PlayMusic("Mus_Intro");
+        Time.timeScale = 1;
+        AudioManager.instance.PlayMusic(cutsceneSong);
         StartCoroutine(TestPanelProcess());
     }
 
@@ -61,6 +65,7 @@ public class PanelCutsceneSystem : MonoBehaviour
             }
             
             yield return new WaitForSeconds(cutscenePanels[i].stayTime);
+
             if (!cutscenePanels[i].cutImmediately) {
                 FadeTransition(1, 0.2f);// fade to white
                 yield return new WaitForSeconds(0.2f);
@@ -69,6 +74,7 @@ public class PanelCutsceneSystem : MonoBehaviour
             cutscenePanels[i].HidePanel();
             
         }
+
         Debug.Log("Done with cutscene.");
         SceneManager.LoadScene(sceneToGoTo);
     }

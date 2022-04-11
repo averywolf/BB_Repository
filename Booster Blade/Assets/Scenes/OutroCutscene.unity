@@ -936,6 +936,7 @@ MonoBehaviour:
   sceneToGoTo: Credits
   currentPanel: 0
   panelFader: {fileID: 1268491580}
+  cutsceneSong: Mus_Intro
 --- !u!4 &1615562856
 Transform:
   m_ObjectHideFlags: 0
