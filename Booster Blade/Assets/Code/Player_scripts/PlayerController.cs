@@ -101,6 +101,8 @@ public class PlayerController : MonoBehaviour
     public bool limitersRemoved = false; //set to true by LevelManager if it's the final stage
 
     private IEnumerator boostCooldownCou;
+    [HideInInspector]
+    public MonolithCore monolithCoreRef;//only relevant in final stage
     public enum PlayerMoveStates
     {
         idle,
@@ -294,7 +296,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.Play("hero_return");
         FreezePlayer(true);
         currentMoveState = PlayerMoveStates.idle;
-        StartCoroutine(MoveToPoint(dest.position, 2));
+        StartCoroutine(MoveToPoint(dest.position, 4));
         
         //end boost?
         
@@ -317,7 +319,7 @@ public class PlayerController : MonoBehaviour
 
             yield return null;
         }
-
+        monolithCoreRef.InsertSword();
 
         //  transform.position = Vector2.MoveTowards(transform.position, target.transform.position, Time.deltaTime * speed);
     }

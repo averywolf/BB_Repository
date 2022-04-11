@@ -24,6 +24,8 @@ public class PlayerCore : MonoBehaviour
         }
         if (collision.GetComponent<MonolithCore>())
         {
+   
+            playerController.monolithCoreRef = collision.GetComponent<MonolithCore>();
             playerController.CutsceneMode(collision.GetComponent<MonolithCore>().accessPoint);
             Debug.Log("touched Monolith");
         }
