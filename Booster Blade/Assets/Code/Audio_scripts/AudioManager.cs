@@ -329,6 +329,12 @@ public class AudioManager : MonoBehaviour
     public float GetMusicVolume(){ //don't think thiz iz good yet
 
         float vol;
+        MusicGroup.audioMixer.GetFloat("SFXVolume", out vol);
+        return vol;
+    }
+    public float GetSFXVolume()
+    {
+        float vol;
         MusicGroup.audioMixer.GetFloat("MusicVolume", out vol);
         return vol;
     }

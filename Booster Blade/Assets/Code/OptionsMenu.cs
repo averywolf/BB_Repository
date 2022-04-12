@@ -25,6 +25,7 @@ public class OptionsMenu : MonoBehaviour
     }
     public void OptionsOpen()
     {
+        InitializeSliders();
         SetNewFirstSelected(closeButton);
         menuArrow.PlaceArrow(closeButton.GetComponent<RectTransform>()); //used to start arrow on this option
         gameObject.SetActive(true);
@@ -53,6 +54,7 @@ public class OptionsMenu : MonoBehaviour
     public void SliderSetMusicVolume(float value)
     {
         AudioManager.instance.SetMusicVolume(value);
+
     }
     public void SliderSetSFXVolume(float value)
     {
@@ -60,8 +62,14 @@ public class OptionsMenu : MonoBehaviour
     }
     public void InitializeSliders()
     {
+
        // musicSlider.value=
        // AudioManager.instance.GetMusicVolume();
-      //  Debug.Log(AudioManager.instance.GetMusicVolume());
+        Debug.Log("Music vol: " + (AudioManager.instance.GetMusicVolume()/-80));
+        Debug.Log("sfx vol: " + (AudioManager.instance.GetSFXVolume()/-80));
+        musicSlider.value = Mathf.InverseLerp(-80, 0, AudioManager.instance.GetMusicVolume());
+        SFXSlider.value = Mathf.InverseLerp(-80, 0, AudioManager.instance.GetSFXVolume()); 
+
     }
+
 }

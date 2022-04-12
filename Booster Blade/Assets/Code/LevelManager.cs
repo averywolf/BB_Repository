@@ -391,7 +391,6 @@ public class LevelManager : MonoBehaviour
         StopCoroutine(gameTimer);
         saveManager.SaveCollectibleStatus(currentLevelIndex, tempGotStageCollectible); //loglevelCompletionData already calls "save both data" so it doesn't seem like there's need
         saveManager.LogLevelCompletionData(currentLevelIndex, levelTime);
-       
 
         Debug.Log("Current time when exiting: " + saveManager.currentTimeInLevel);
 

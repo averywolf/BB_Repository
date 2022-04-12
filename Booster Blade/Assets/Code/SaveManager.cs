@@ -328,6 +328,7 @@ public class SaveManager : MonoBehaviour
         //unsure about this, also should probably just be "save record"
         SaveBothData();
     }
+
     //called when a record at lvlIndex needs to be updated
     public void SaveNewRecord(int lvlIndex, float timeAchieved)
     {
