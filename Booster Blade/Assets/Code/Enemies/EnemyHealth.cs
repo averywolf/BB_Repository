@@ -11,6 +11,15 @@ public class EnemyHealth : MonoBehaviour
     public EnemyGem enemyGem;
 
     public bool enemyDead = false;
+    public ParticleSystem keyParticle;
+    private void Awake()
+    {
+        if(keyParticle != null)
+        {
+            keyParticle.Stop();
+        }
+    
+    }
     public void HurtEnemy()
     {
         //not bothering with HP just yet
@@ -25,6 +34,20 @@ public class EnemyHealth : MonoBehaviour
         {
             enemyGem.ButtonSignal(transform);
         }
+        if (keyParticle != null)
+        {
+            keyParticle.Stop();
+        }
         OnEnemyDeath.Invoke();
+ 
+    }
+    public void SetKeyStatus()
+    {
+        if (keyParticle != null)
+        {
+            Debug.Log("Key particle effect activated.");
+            keyParticle.Play(); //why doesn't this play immediately?
+        }
+       
     }
 }

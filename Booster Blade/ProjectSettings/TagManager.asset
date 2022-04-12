@@ -81,6 +81,9 @@ TagManager:
   - name: ForeDecorTiles
     uniqueID: 147276167
     locked: 0
+  - name: AssassinLayer
+    uniqueID: 778183487
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

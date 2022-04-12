@@ -14,11 +14,13 @@ public class EnemyGem : KeyGem
         foreach (EnemyHealth enemyHealth in enemies)
         {
             enemiesToDestroy.Add(enemyHealth.GetComponent<EnemyHealth>());
+      
         }
 
         for (int i = 0; i < enemiesToDestroy.Count; i++)
         {
             enemiesToDestroy[i].enemyGem = this;
+            enemiesToDestroy[i].SetKeyStatus();
         }
     }
     public override void CheckConditions()
