@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
 
     [HideInInspector]
     public bool canPauseGame = false;
-    public bool gamePaused;
+    public bool gamePaused; //might not be needed?
 
     //store level checkpoints
     private SaveManager saveManager;
@@ -191,6 +191,11 @@ public class LevelManager : MonoBehaviour
             {
                 SkipToLevel("L-10");
             }
+            if( Keyboard.current.cKey.wasPressedThisFrame)
+            {
+                PretendYouGotCollectible();
+            }
+            
         }
         #endregion
 
@@ -201,8 +206,15 @@ public class LevelManager : MonoBehaviour
         }
 
     }
-
-    public void InitializePlayer() //sets up player at the start of level
+    public void PretendYouGotCollectible()
+    {
+        Debug.Log("Pretending you got the collectible in this stage!");
+        levelUI.DisplayCollectible(true);
+        tempGotStageCollectible = true;
+        
+    }
+    //Called at Start to setup player and save data.
+    public void InitializePlayer() 
     {
         //if player saved at checkpoint, put them over where the checkpoint is
         if (saveManager.lastSavedAtCheckpoint && !saveManager.startStageFromBeginning)
@@ -224,8 +236,7 @@ public class LevelManager : MonoBehaviour
             }
         }
         else
-        {
-            
+        {    
             if (saveManager.hasNotBeganLevel)
             {
                 saveManager.currentTimeInLevel = 0;
@@ -387,8 +398,10 @@ public class LevelManager : MonoBehaviour
         //saves level information (time that level was beaten, deathcount)
 
         // transitions to intermission scene
-
-        StopCoroutine(gameTimer);
+        if (gameTimer != null)
+        {
+            StopCoroutine(gameTimer);
+        }
         saveManager.SaveCollectibleStatus(currentLevelIndex, tempGotStageCollectible); //loglevelCompletionData already calls "save both data" so it doesn't seem like there's need
         saveManager.LogLevelCompletionData(currentLevelIndex, levelTime);
 

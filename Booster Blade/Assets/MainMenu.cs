@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     public string firstLevelName="";
     public PlayerInput playerInput;
-    private bool ableToInteractWithMenu=false;
+    private bool ableToInteractWithMenu=false; //doesn't do anything as of writing but might be used to stop player from inputting during transitions
     private SaveManager saveManager;
 
     public GameObject resultsMenu;
@@ -34,12 +34,13 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         SetNewFirstSelected(firstButton);
-        resultsMenu.SetActive(false);
+        resultsMenu.SetActive(false); //options menu hides itself
         ableToInteractWithMenu = true;
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlayMusic(menuSong);
+        Debug.Log("Making sure the player hasNotBeganLevel here");
         SaveManager.instance.hasNotBeganLevel = true; //just in case
-        Time.timeScale = 1;
+        Time.timeScale = 1; //resets time to make sure it moves if the player got here from the pause menu
     }
 
     //starts run from the beginning, plays the intro cutscene, goes onto the first level
@@ -47,7 +48,7 @@ public class MainMenu : MonoBehaviour
     {
         PlayButtonClickSFX();
         ableToInteractWithMenu = false;
-        saveManager.DeleteRunProgress();
+        saveManager.DeleteRunProgress(); //should clear current run but NOT records
         SceneManager.LoadScene(firstLevelName);
     }
     //picks up from the level where the current run left off. starts at beginning of the last level, doesn't take into account checkpoints
@@ -95,9 +96,11 @@ public class MainMenu : MonoBehaviour
         //Currently you can view all results even if you haven't beaten the stages
 
         string resultsTally = "";
+
+        //Specifically, this shows the individual best times for each stage
         for (int i = 0; i < 10; i++) //might grab level name lenght from a manager
         {
-            float levelTime = saveManager.RetrieveRecordData(i).bestTime;
+            float levelTime = saveManager.RetrieveRecordData(i).timeBeaten;
             if (levelTime == 999999)
             {
                 resultsTally += "Stage " + (i + 1).ToString() + ": Not cleared \n";

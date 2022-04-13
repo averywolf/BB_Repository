@@ -4,26 +4,25 @@ using UnityEngine;
 using System.IO;
 public class SaveManager : MonoBehaviour
 {
-
     public static SaveManager instance;
-
-    string recordsFilePath; //where our file will be saved
-    string runFilePath;
-    //public SaveData activeSave;
     public CurrentRunData currentRunData;
     public RecordsData recordsData;
-    public bool hasLoaded = false;
 
-    
+    string recordsFilePath; //where our Records file will be saved
+    string runFilePath;//where our Run file will be saved
+
+    //review the variables below
+
     public bool startStageFromBeginning= true;
     public float currentTimeInLevel; //should be reset to 0 when starting level from beginning,
 
+    //value resets on Start() from the Main Menu and Intermission scenes.
     public bool hasNotBeganLevel = true;
     public bool isGoingToIntermissionFromLevel = false;
     public bool lastSavedAtCheckpoint = false;
     public int tempCheckpointID= -1;
-    public float oldBestTime = 999999; //just used to carry on to intermission, the results are saved once you beat the level
-    //move lastSavedAtCheckpoint over here?
+    public float oldBestTime = 999999; //just used to tranfer the previous best time over to the intermission, the results are saved once you beat the level
+
     private void Awake()
     {
         //if no save exists, create one
@@ -52,124 +51,20 @@ public class SaveManager : MonoBehaviour
         lastSavedAtCheckpoint = true;
     }
 
-    [System.Serializable]
-    public class SaveDataOld
-    {
-
-        public Dictionary<int, LevelData> levelDict;
-
-        public float currentLevelTime=0; //time in current stage. if player quits level early this is not saved. only saved after reaching the end.
-
-        //maybe save deaths?
-
-        public SaveDataOld() //default constructor
-        {
-            levelDict = new Dictionary<int, LevelData>();
-        //initialize level data
-        }
-
-        public void SetCurrentLevelTime(float time)
-        {
-            currentLevelTime = time;
-        }
-
-        //called when the player reaches the results screen and gets a high score
-        public void SaveCompleteLevelData(int lvlIndex, float timeAchieved)
-        {
-            //maybe handle overwritting logic outside of save system?
-            if (levelDict.ContainsKey(lvlIndex))
-            {
-                levelDict[lvlIndex].bestTime = timeAchieved;
-
-            }
-            else
-            {
-                //not sure if calling the constructor to fill out this information is needed
-                levelDict[lvlIndex] = new LevelData(lvlIndex, timeAchieved);
-                //The player hasn't beaten this level before! Add the data.
-            }
-        }
-
-        //public FightData RetrieveFightData(int levelIndex)
-        //{
-        //    //    LoadFightData();
-        //    //    if (fightDict.ContainsKey(levelIndex))
-        //    //    {
-        //    //        return fightDict[levelIndex];
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        //fightDict[levelIndex] = new FightData(levelIndex);
-        //    //        return null;//fightDict[levelIndex];
-        //    //    }
-        //    return null;
-        //}
-        //public void SerializeFightData()
-        //    {
-        //        //    fightDatas = new List<FightData>();
-        //        //    foreach (KeyValuePair<int, FightData> info in fightDict)
-        //        //    {
-        //        //        fightDatas.Add(info.Value);
-        //        //        //might need to look at key?
-        //        //    }
-        //    }
-        ////Fill up dictionary with fightdata
-        //public void LoadFightData()
-        //{
-        //    fightDict = new Dictionary<int, FightData>();
-        //    for (int i = 0; i < fightDatas.Count; i++)
-        //    {
-        //        fightDict[fightDatas[i].levelIndex] = fightDatas[i];
-        //        //fightDict[fightDatas[i].levelIndex]=
-        //    }
-        //}
-
-        //public void UpdateBestTime(int levelIndex, float achievedTime, bool usedAssists)
-        //{
-        //    if (fightDict.ContainsKey(levelIndex))
-        //    {
-        //        //prioritize times that you got without assists
-        //        if (fightDict[levelIndex].bestTime > achievedTime || fightDict[levelIndex].beatWithAssists && !usedAssists)
-        //        {
-        //            if (!fightDict[levelIndex].beatWithAssists && usedAssists)
-        //            {
-        //                //don't update with new time, even if the one you did with assists got a better time
-        //            }
-        //            else
-        //            {
-        //                fightDict[levelIndex].bestTime = achievedTime;
-        //                fightDict[levelIndex].beatWithAssists = usedAssists;
-        //            }
-        //        }
-        //        fightDict[levelIndex].bugWasCaught = true; //registers bug as caught
-        //    }
-        //    else
-        //    {
-        //        //If there's not any data there, add some
-        //        fightDict[levelIndex] = new FightData(levelIndex, achievedTime, usedAssists);
-        //        fightDict[levelIndex].bugWasCaught = true;
-        //    }
-        //}
-
-    }
-
-
-
     //for saving, add all the Values inside the dictionary to a List<LevelScore> and 
     //serialize that to show the score, all you would have to do is populate the dictionary
     //upon loading, and then check if there's a score for the level in question.
 
    
 
-    //stores data relevant to the run the player is on. cleared when starting new game or wiping save.
-    //disregarded if doing time attack
+    //Stores data relevant to the run the player is on. cleared when starting new game or wiping save.
     [System.Serializable]
     public class CurrentRunData
     {
         public int continueIndex; //index of the level that's loaded if you select to continue the game, might need to be set independently of LevelData
         bool beatGame = false;
-        int totalDeathCount= 0;
-        int totalHitsTaken = 0;
+        //int totalDeathCount= 0;
+        //int totalHitsTaken = 0;
 
         public List<LevelData> levelDatas;
         //game should look at this when continuing
@@ -256,30 +151,6 @@ public class SaveManager : MonoBehaviour
 
     }
 
-    //public FightData RetrieveFightData(int levelIndex)
-    //{
-    //    //    LoadFightData();
-    //    //    if (fightDict.ContainsKey(levelIndex))
-    //    //    {
-    //    //        return fightDict[levelIndex];
-    //    //    }
-    //    //    else
-    //    //    {
-    //    //        //fightDict[levelIndex] = new FightData(levelIndex);
-    //    //        return null;//fightDict[levelIndex];
-    //    //    }
-    //    return null;
-    //}
-    //public void SerializeFightData()
-    //    {
-    //        //    fightDatas = new List<FightData>();
-    //        //    foreach (KeyValuePair<int, FightData> info in fightDict)
-    //        //    {
-    //        //        fightDatas.Add(info.Value);
-    //        //        //might need to look at key?
-    //        //    }
-    //    }
-
     //Based on RetrieveFightData, likely will not work without LoadingFightData first
     private LevelData RetrieveLevelData(int lvlIndex, Dictionary<int, LevelData> dictToRetrieve)
     {
@@ -294,9 +165,10 @@ public class SaveManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Could not find leveldata at key" + lvlIndex);
-            //this makes an empty set of LevelData to look at, I think
-            return dictToRetrieve[lvlIndex] = new LevelData();
+            Debug.LogWarning("COULD NOT FIND LEVELDATA AT KEY " + lvlIndex);
+            //need to add empty set of leveldata
+            LevelData dataToRetrive = new LevelData(lvlIndex);
+            return dictToRetrieve[lvlIndex] = dataToRetrive; // probably should throw exception
         }
     }
     
@@ -313,11 +185,13 @@ public class SaveManager : MonoBehaviour
 
         return RetrieveLevelData(lvlIndex, recordsData.recordLevelDict);
     }
+
+    //This saves the time for the specific dictionary called (logic is the same for Run and Record)
     private void SaveLevelTime(int lvlIndex, float timeAchieved, Dictionary<int, LevelData> dictToSave)
     {
         if (dictToSave.ContainsKey(lvlIndex))
         {
-            dictToSave[lvlIndex].bestTime = timeAchieved;
+            dictToSave[lvlIndex].timeBeaten = timeAchieved;
         }
         else
         {
@@ -325,7 +199,7 @@ public class SaveManager : MonoBehaviour
             dictToSave[lvlIndex] = new LevelData(lvlIndex, timeAchieved);
             //The player hasn't beaten this level before! Add the data.
         }
-        //unsure about this, also should probably just be "save record"
+
         SaveBothData();
     }
 
@@ -341,7 +215,7 @@ public class SaveManager : MonoBehaviour
         SaveLevelTime(lvlIndex, timeAchieved, currentRunData.currentRunLevelDict);
     }
 
-    //Saves both the current run and records to disk
+    //Saves both the current run and records to disk. called more often then maybe necessary
     public void SaveBothData()
     {
         currentRunData.SerializeLevelData();
@@ -382,8 +256,6 @@ public class SaveManager : MonoBehaviour
             currentRunData = new CurrentRunData();
             //might need to serialize here?
         }
-        hasLoaded = true;
-
     }
 
  
@@ -396,34 +268,35 @@ public class SaveManager : MonoBehaviour
         SaveBothData(); //should just save continue index, I don't think it should cause further issues
         
     }
+    /// <summary>
+    /// Called at the end of the level by LevelManager before moving to Intermission scene. (when player beats a stage/skips it through the debug P command)
+    /// </summary>
+    /// <param name="curLevelIndex"></param>
+    /// <param name="endTime"></param>
     public void LogLevelCompletionData(int curLevelIndex, float endTime)
-    {   // Called at the end of the level by level manager before moving to intermission. updates the current times and results
-        // Maybe will create a variation that doesn't save currentTime (like for time trials?)
+    {   
         Debug.Log("Completion time was: " + endTime + ". Saving data for lvlIndex " +curLevelIndex + ".");
         currentTimeInLevel = endTime; //unsure about this
         SaveCurrentTimes(curLevelIndex, endTime);
 
-        float timeToBeat = RetrieveRecordData(curLevelIndex).bestTime;
+        float timeToBeat = RetrieveRecordData(curLevelIndex).timeBeaten;
         
         //only need to show old record if you beat the level with a better record than before
         if (timeToBeat == 999999)
         {
-            Debug.Log("First time clearing level " + curLevelIndex);
-            SaveNewRecord(curLevelIndex, endTime);
+            Debug.Log("First time clearing level " + curLevelIndex + " during this run.");
+      
         }
         else if(endTime < timeToBeat)
         {
             //player beat their record!
-            if (RetrieveRecordData(curLevelIndex).hasLevelBeenBeaten) //no point in updating oldBestTime if they haven't beaten level before
-            {
-                oldBestTime = timeToBeat;
-            }
+            //if (RetrieveRecordData(curLevelIndex).hasLevelBeenBeaten) //no point in updating oldBestTime if they haven't beaten level before
+            //{
+               
 
-            SaveNewRecord(curLevelIndex, endTime);
-            //have a variable called Old best time? intermission might look at that
         }
-
-
+        oldBestTime = timeToBeat;
+        SaveNewRecord(curLevelIndex, endTime);
         lastSavedAtCheckpoint = false;
         isGoingToIntermissionFromLevel = true;
         RetrieveRecordData(curLevelIndex).hasLevelBeenBeaten = true;
@@ -438,12 +311,13 @@ public class SaveManager : MonoBehaviour
         {
             File.Delete(runFilePath);
             currentRunData = new CurrentRunData(); //reset to default values
+            Debug.Log("CURRENT RUN DELETED");
             SaveBothData();
         }
         else
         {
             currentRunData = new CurrentRunData(); //reset to default values
-
+            Debug.Log("CURRENT RUN DELETED");
             SaveBothData();
         }
         LoadBothData();
@@ -491,5 +365,9 @@ public class SaveManager : MonoBehaviour
     public void SaveCollectibleStatus(int curLevelIndex, bool gotCollectible)
     {
         RetrieveCurrentData(curLevelIndex).gotStageCollectible = gotCollectible;
+    }
+    public void FillWithEmptyCurrentData()
+    {
+        //might be useful to establish in New Game after wiping save
     }
 }

@@ -7,6 +7,7 @@ public class TotalResults : MonoBehaviour
     //displayed at end credits
     public SuperTextMesh resultsText;
 
+    public List<GameObject> collectibleIcons;
     SaveManager saveManager;
     private void Awake()
     {
@@ -15,7 +16,13 @@ public class TotalResults : MonoBehaviour
 
     public void Start()
     {
+        for (int i = 0; i < 10; i++)
+        {
+            collectibleIcons[i].SetActive(false);
+        }
+        ShowCollectibles();
         DisplayRunResults();
+    
     }
     public void DisplayRunResults()
     {
@@ -23,7 +30,7 @@ public class TotalResults : MonoBehaviour
         float totalTime = 0;
         for (int i = 0; i < 10; i++) //might grab level name lenght from a manager
         {
-            float levelTime = saveManager.RetrieveCurrentData(i).bestTime;
+            float levelTime = saveManager.RetrieveCurrentData(i).timeBeaten; //shows each time the player got from each level during the run
             resultsTally += "Stage " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
 
             totalTime += levelTime;
@@ -43,6 +50,16 @@ public class TotalResults : MonoBehaviour
         fraction = (fraction % 1000);
         string timeText = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, fraction);
         return timeText;
+    }
+    public void ShowCollectibles()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (saveManager.RetrieveCurrentData(i).gotStageCollectible)
+            {
+                collectibleIcons[i].SetActive(true);
+            }
+        }
     }
 
 

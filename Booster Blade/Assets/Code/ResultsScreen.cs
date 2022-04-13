@@ -30,8 +30,8 @@ public class ResultsScreen : MonoBehaviour
         if (saveManager.isGoingToIntermissionFromLevel)
         {
             saveManager.LoadBothData(); //probably pointless to put this here
-            Debug.Log("CHECKING TIMES at index " + curIndex + ". CURRENT= " + saveManager.RetrieveCurrentData(curIndex).bestTime + ", RECORD = " + saveManager.RetrieveRecordData(curIndex).bestTime);
-            CompareTimes(saveManager.RetrieveCurrentData(curIndex).bestTime, saveManager.oldBestTime);
+            Debug.Log("CHECKING TIMES at index " + curIndex + ". CURRENT= " + saveManager.RetrieveCurrentData(curIndex).timeBeaten + ", RECORD = " + saveManager.RetrieveRecordData(curIndex).timeBeaten);
+            CompareTimes(saveManager.RetrieveCurrentData(curIndex).timeBeaten, saveManager.oldBestTime);
             //timeText.text = ("Time: " + FormatTime(SaveManager.instance.activeSave.RetrieveLevelData(IntermissionManager.instance.LevelResultsIndex).bestTime));
         }
         else
@@ -42,11 +42,13 @@ public class ResultsScreen : MonoBehaviour
 
     public void CompareTimes(float curTime, float timeToBeat)
     {
-        if (timeToBeat == 999999) //erronously shows if player beat level again but didn't beat their record
+        if (timeToBeat == 999999)  //maybe inztead check if timez are equal
+            
+            //erronously shows if player beat level again but didn't beat their record
         {
             //I guess this is how I can determine if the player didn't beat the level yet?
             Debug.Log("Beat level for first time!");
-            timeText.text = ("Best time: " + FormatTime(curTime));
+            timeText.text = ("Time: " + FormatTime(curTime));
 
         }
         else if (curTime <= timeToBeat)
