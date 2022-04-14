@@ -38,6 +38,7 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 0;
            
             pauseGraphic.SetActive(true);
+            optionsMenu.gameObject.SetActive(false);
             SetNewFirstSelected(firstPauseButton);
             menuArrow.PlaceArrow(firstPauseButton.GetComponent<RectTransform>());
 
@@ -57,11 +58,10 @@ public class PauseMenu : MonoBehaviour
     public void Unpause()
     {
         PlayButtonClickSFX();
-        Debug.Log("Unpause pressed");
         Time.timeScale = 1;
-        Debug.Log("Game Resumed");
         SetNewFirstSelected(null);
         pauseGraphic.SetActive(false);
+        optionsMenu.OptionsHide();
         LevelManager.instance.GetPlayerController().playerPaused = false;
         gameIsPaused = false;
         AudioManager.instance.PauseMusic(false);

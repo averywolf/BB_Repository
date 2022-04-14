@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stage_3
   m_EditorClassIdentifier: 
   audioName: Stage_3
-  Clip: {fileID: 8300000, guid: 0b5801224df552347b41bfe355d84532, type: 3}
+  Clip: {fileID: 8300000, guid: 032b515d2212f3547bf65b10fd4d3ddb, type: 3}
   Volume: 1
   Pitch: 1
   Loop: 1

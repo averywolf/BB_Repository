@@ -103,6 +103,8 @@ public class PlayerController : MonoBehaviour
     private IEnumerator boostCooldownCou;
     [HideInInspector]
     public MonolithCore monolithCoreRef;//only relevant in final stage
+
+    public CinemachineImpulseSource hurtShake;
     public enum PlayerMoveStates
     {
         idle,
@@ -421,6 +423,7 @@ public class PlayerController : MonoBehaviour
             swordSlashing = false; //breaks out of slash?
             LevelManager.instance.ManagerUpdateHud(currentPlayerHP);
             AudioManager.instance.Play("PlayerTakeDamage");
+            hurtShake.GenerateImpulse();
             if (currentPlayerHP < 1)
             {
                 KillPLayer();

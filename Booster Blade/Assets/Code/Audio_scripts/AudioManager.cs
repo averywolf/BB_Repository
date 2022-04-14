@@ -126,7 +126,6 @@ public class AudioManager : MonoBehaviour
             }
             currentMusicTrack = audioController;
             currentSongName = audioData.name;
-            SetMusicPitch(1); //restting this is probably a good idea
         }
 
         audioController.Play();
@@ -294,24 +293,6 @@ public class AudioManager : MonoBehaviour
         return currentSongName;
     }
 
-    //No longer works for me
-    //effectly serves as master volume changer
-    public void MusicVolumeChanged(float sliderVal)
-    {
-        //mvol = sliderVal;
-        //foreach (Sound m in musicPlaylist)
-        //{
-        //    m.source.volume = m.baseVolume * mvol;
-        //}
-    }
-    public void SoundVolumeChanged(float sliderVal)
-    {
-        //evol = sliderVal;
-        //foreach (Sound s in sounds)
-        //{
-        //    s.source.volume = s.baseVolume * evol;
-        //}
-    }
 
     //functions that set the volume of the individual mixers
     public void SetMusicVolume(float value)
@@ -320,35 +301,26 @@ public class AudioManager : MonoBehaviour
     }
     public void SetSoundVolume(float value)
     {
-        MusicGroup.audioMixer.SetFloat("SFXVolume", Mathf.Lerp(-80, 0, value));
+        SFXGroup.audioMixer.SetFloat("SFXVolume", Mathf.Lerp(-80, 0, value));
     }
+    //not actually used in game
     public void SetMasterVolume(float value)
     {
-        MusicGroup.audioMixer.SetFloat("MasterVolume", Mathf.Lerp(-80, 0, value));
+        MasterGroup.audioMixer.SetFloat("MasterVolume", Mathf.Lerp(-80, 0, value));
     }
     public float GetMusicVolume(){ //don't think thiz iz good yet
 
         float vol;
-        MusicGroup.audioMixer.GetFloat("SFXVolume", out vol);
+        MusicGroup.audioMixer.GetFloat("MusicVolume", out vol);
         return vol;
     }
     public float GetSFXVolume()
     {
         float vol;
-        MusicGroup.audioMixer.GetFloat("MusicVolume", out vol);
+        SFXGroup.audioMixer.GetFloat("SFXVolume", out vol);
         return vol;
     }
-    public void SetMusicPitch(float value)
-    {
 
-        //if (currentMusicTrack != null)
-        //{
-        //    currentMusicTrack.SetSourcePitch(value);
-        //}
-        //lerping might not be necessary
-
-        //MusicGroup.audioMixer.SetFloat("MusicPitch", value);
-    }
 
     public void FadeCurrentBGM(float fadeDuration, float targetVolumeAmount)
     {

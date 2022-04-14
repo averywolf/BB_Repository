@@ -59,7 +59,7 @@ MonoBehaviour:
   showEventFoldout: 0
   showBetaFoldout: 0
   info:
-  - pos: {x: -18, y: -0.5, z: 0}
+  - pos: {x: -36, y: -8.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 8, y: 8}
+    size: {x: 16, y: 16}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -98,7 +98,7 @@ MonoBehaviour:
     chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: -12, y: -0.5, z: 0}
+  - pos: {x: -24, y: -8.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
     rawIndex: 0
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 8, y: 8}
+    size: {x: 16, y: 16}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -137,7 +137,7 @@ MonoBehaviour:
     chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: -6, y: -0.5, z: 0}
+  - pos: {x: -12, y: -8.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
     rawIndex: 1
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 8, y: 8}
+    size: {x: 16, y: 16}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -176,7 +176,7 @@ MonoBehaviour:
     chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: 0, y: -0.5, z: 0}
+  - pos: {x: 0, y: -8.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
     rawIndex: 2
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 8, y: 8}
+    size: {x: 16, y: 16}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -215,7 +215,7 @@ MonoBehaviour:
     chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: 6, y: -0.5, z: 0}
+  - pos: {x: 12, y: -8.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
     rawIndex: 3
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 8, y: 8}
+    size: {x: 16, y: 16}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -254,7 +254,7 @@ MonoBehaviour:
     chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: 12, y: -0.5, z: 0}
+  - pos: {x: 24, y: -8.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 0
     readTime: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
     rawIndex: 4
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 8, y: 8}
+    size: {x: 16, y: 16}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -293,7 +293,7 @@ MonoBehaviour:
     chSize: 128
     submeshChange: 0
     invoked: 1
-  - pos: {x: -9, y: -0.5, z: 0}
+  - pos: {x: 27, y: -8.5, z: 0}
     offset: {x: 0, y: 0, z: 0}
     isEndOfParagraph: 1
     readTime: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
     rawIndex: 5
     indent: 0
     drawAnimData: {fileID: 11400000, guid: 79b3a58975db94dc0878c84bf4315875, type: 2}
-    size: {x: 8, y: 8}
+    size: {x: 16, y: 16}
     alignment: 1
     drawOrder: 0
     ev: []
@@ -392,23 +392,23 @@ MonoBehaviour:
   textMesh: {fileID: 0}
   rawTopLeftBounds: {x: 45, y: -7.5, z: 0}
   rawBottomRightBounds: {x: -45, y: 7.5, z: 0}
-  rawBottomRightTextBounds: {x: 36, y: -8, z: 0}
+  rawBottomRightTextBounds: {x: 72, y: -16, z: 0}
   topLeftBounds: {x: 275, y: 205.5, z: 0}
   topRightBounds: {x: 365, y: 205.5, z: 0}
   bottomLeftBounds: {x: 275, y: 190.5, z: 0}
   bottomRightBounds: {x: 365, y: 190.5, z: 0}
   centerBounds: {x: 320, y: 198, z: 0}
-  topLeftTextBounds: {x: 302, y: 205.5, z: 0}
-  topRightTextBounds: {x: 338, y: 205.5, z: 0}
-  bottomLeftTextBounds: {x: 302, y: 197.5, z: 0}
-  bottomRightTextBounds: {x: 338, y: 197.5, z: 0}
-  centerTextBounds: {x: 320, y: 201.5, z: 0}
-  finalTopLeftTextBounds: {x: 302, y: 205.5, z: 0}
-  finalTopRightTextBounds: {x: 338, y: 205.5, z: 0}
-  finalBottomLeftTextBounds: {x: 302, y: 197.5, z: 0}
-  finalBottomRightTextBounds: {x: 338, y: 197.5, z: 0}
-  finalCenterTextBounds: {x: 320, y: 201.5, z: 0}
-  unwrappedBottomRightTextBounds: {x: 36, y: -16, z: 0}
+  topLeftTextBounds: {x: 284, y: 205.5, z: 0}
+  topRightTextBounds: {x: 356, y: 205.5, z: 0}
+  bottomLeftTextBounds: {x: 284, y: 189.5, z: 0}
+  bottomRightTextBounds: {x: 356, y: 189.5, z: 0}
+  centerTextBounds: {x: 320, y: 197.5, z: 0}
+  finalTopLeftTextBounds: {x: 284, y: 205.5, z: 0}
+  finalTopRightTextBounds: {x: 356, y: 205.5, z: 0}
+  finalBottomLeftTextBounds: {x: 284, y: 189.5, z: 0}
+  finalBottomRightTextBounds: {x: 356, y: 189.5, z: 0}
+  finalCenterTextBounds: {x: 320, y: 197.5, z: 0}
+  unwrappedBottomRightTextBounds: {x: 72, y: -32, z: 0}
   onCompleteEvent:
     m_PersistentCalls:
       m_Calls: []

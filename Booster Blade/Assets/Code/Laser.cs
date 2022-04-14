@@ -15,6 +15,7 @@ public class Laser : MonoBehaviour
 
     public LayerMask laserMask;
     public LaserTell laserTell;
+    public AudioSource laserAudio;//used so we can have proximal audio when switching on and off laser
     //maybe start laser as inactive?
     void Awake()
     {
@@ -89,7 +90,9 @@ public class Laser : MonoBehaviour
     public void ToggleLaser()
     {
         //isLaserActive= !isLaserActive;
+        laserAudio.Play();
         TurnOnLaser(!isLaserActive);
+
     }
 
     public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)

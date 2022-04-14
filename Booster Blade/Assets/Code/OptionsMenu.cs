@@ -38,6 +38,11 @@ public class OptionsMenu : MonoBehaviour
         SetNewFirstSelected(optionsButton);
         PlayButtonClickSFX();
     }
+    public void OptionsHide()
+    {
+        //used to exit options without playing sfx
+        gameObject.SetActive(false);
+    }
     private void SetNewFirstSelected(GameObject firstSelection)
     {
         //clear selected object
@@ -65,8 +70,7 @@ public class OptionsMenu : MonoBehaviour
 
        // musicSlider.value=
        // AudioManager.instance.GetMusicVolume();
-        Debug.Log("Music vol: " + (AudioManager.instance.GetMusicVolume()/-80));
-        Debug.Log("sfx vol: " + (AudioManager.instance.GetSFXVolume()/-80));
+
         musicSlider.value = Mathf.InverseLerp(-80, 0, AudioManager.instance.GetMusicVolume());
         SFXSlider.value = Mathf.InverseLerp(-80, 0, AudioManager.instance.GetSFXVolume()); 
 
