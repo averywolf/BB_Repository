@@ -22,7 +22,7 @@ TagManager:
   - GenericObstacle
   - ActionTrigger
   - HitWallsNotPlayer
-  - 
+  - Decor
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: BackgroundObj1
     uniqueID: 3459601697
+    locked: 0
+  - name: Decor
+    uniqueID: 2759601987
     locked: 0
   - name: WeakX
     uniqueID: 469597675
