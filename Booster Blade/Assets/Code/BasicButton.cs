@@ -17,8 +17,11 @@ public class BasicButton : MonoBehaviour
     //public GameObject KeyBolt;
     [HideInInspector]
     public ButtonGem keyGem;
+    public ParticleSystem keyParticle;
     private void Awake()
     {
+        keyParticle.Play();
+
         butAnim = GetComponent<Animator>();
     }
     public void PressButton()
@@ -43,24 +46,13 @@ public class BasicButton : MonoBehaviour
             }
         }
     }
-    //public IEnumerator TestShootBolt(Transform target, float timeSpeed)
-    //{
-    //    GameObject bolt = Instantiate(KeyBolt, transform.position, transform.rotation);
-    //    Transform boltTrans = bolt.transform;
-    //    for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * timeSpeed)
-    //    {
-    //        boltTrans.position = Vector3.Lerp(transform.position, target.position, t);
 
-    //        yield return null;
-    //    }
-    //    Destroy(bolt);
-    //}
-
-
+ 
     public void ChangeButtonStatus(bool setToPressed)
     {
         if (setToPressed)
         {
+            keyParticle.Stop();
             butAnim.Play("butpressed");
             isPressed = true;
             OnButtonPressed.Invoke();
@@ -68,7 +60,7 @@ public class BasicButton : MonoBehaviour
         }
         else
         {
-
+            keyParticle.Play();
             butAnim.Play("butnotpressed");
             isPressed = false;
 

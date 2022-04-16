@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
         float inputX = context.ReadValue<Vector2>().x;
         float inputY = context.ReadValue<Vector2>().y;
         
-        if (!isDead && canTurn && !swordSlashing && !isBouncingOffWall && canControlPlayer &&!playerPaused)
+        if (!isDead && canTurn && !swordSlashing && !isBouncingOffWall && canControlPlayer &&!playerPaused && !isPlayerFrozen) 
         {
 
             //bool directionChanged = CheckDirectionInput();
@@ -292,16 +292,11 @@ public class PlayerController : MonoBehaviour
     }
     public void CutsceneMode(Transform dest)
     {
-        //turn off trails?
-
-
         playerAnimator.Play("hero_return");
         FreezePlayer(true);
+        dashTrail.SetEnabled(false);
         currentMoveState = PlayerMoveStates.idle;
-        StartCoroutine(MoveToPoint(dest.position, 4));
-        
-        //end boost?
-        
+        StartCoroutine(MoveToPoint(dest.position, 4));   
     }
     
     public IEnumerator MoveToPoint(Vector2 destination, float timeSpeed)

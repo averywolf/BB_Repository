@@ -11,8 +11,6 @@ public class BackNForthObstacle : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 5f;
 
-    private float turnDelayTime = 0.5f;
-
     private Vector2 droneVelocity;
 
     public float currentFacingAngle;

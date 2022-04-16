@@ -12,6 +12,8 @@ public class DialogueBox : MonoBehaviour
     private SpriteRenderer boxRenderer;
     public bool readingText=false;
     public Image portraitBG;
+    [HideInInspector]
+    public bool isCharacterVisible = false;
     public void Awake()
     {
         dialogueText.text = "";
@@ -19,14 +21,13 @@ public class DialogueBox : MonoBehaviour
     }
     public void SetDialogueText(string message)
     {
-        //if (dialogueText.reading)
-        //{
-        //    dialogueText.SkipToEnd();
-        //    //only increment cutscene now?
-        //}
-        //else
-        //{
-            dialogueText.text = message;
+        if(isCharacterVisible == false)
+        {
+            DisplayBox();
+        }
+        //might potentially be a redundant check
+
+        dialogueText.text = message;
 
             FocusBox();
         //}
@@ -43,5 +44,10 @@ public class DialogueBox : MonoBehaviour
     public void FocusBox()
     {
         canvasGroup.alpha = 1f;
+    }
+    public void DisplayBox() //used to make the character who's speaking appear
+    {
+        isCharacterVisible = true;
+        gameObject.SetActive(true);
     }
 }

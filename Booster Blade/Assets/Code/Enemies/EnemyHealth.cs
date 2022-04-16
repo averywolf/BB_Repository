@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (keyParticle != null)
         {
-            Debug.Log("Key particle effect activated.");
+
             keyParticle.Play(); //why doesn't this play immediately?
         }
        

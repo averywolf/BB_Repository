@@ -54,11 +54,12 @@ public class IntermissionManager : MonoBehaviour
         skipReady = false;
         RevertPrompt();
            currentInterState = IntermissionState.beforeresults;
-        AudioManager.instance.PlayMusic("CardVictoryJingle");
+        
         SaveManager.instance.hasNotBeganLevel = true; //just in case
         resultsScreen.DisplayResults();
         promptForSkip.gameObject.SetActive(false);
     }
+    
     public void Update()
     {
         if (Keyboard.current.zKey.wasPressedThisFrame)

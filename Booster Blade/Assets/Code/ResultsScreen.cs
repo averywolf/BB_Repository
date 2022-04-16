@@ -39,7 +39,10 @@ public class ResultsScreen : MonoBehaviour
             Debug.Log("Did not get here from level, shouldn't save anything since this has to be for testing");
         }
     }
-
+    public void PlayVictorySong()
+    {
+        AudioManager.instance.PlayMusic("CardVictoryJingle");
+    }
     public void CompareTimes(float curTime, float timeToBeat)
     {
         if (timeToBeat == 999999)  //maybe inztead check if timez are equal

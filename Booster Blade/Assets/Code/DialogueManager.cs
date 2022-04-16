@@ -27,8 +27,8 @@ public class DialogueManager : MonoBehaviour
 
     public void BeginDialogue()
     {
-        upperDialogueBox.gameObject.SetActive(true);
-        lowerDialogueBox.gameObject.SetActive(true);
+        //upperDialogueBox.gameObject.SetActive(true);
+        //lowerDialogueBox.gameObject.SetActive(true);
         ReadCutsceneText(cutsceneEvents[0]);
         currentCutsceneEventNumber = 0;
     }
