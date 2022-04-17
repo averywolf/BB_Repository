@@ -34,10 +34,12 @@ public class LevelUI : MonoBehaviour
     Color fullChargeColor;
     [SerializeField]
     Color chargineColor;
-
+    public GameObject notifBox;
     public SuperTextMesh smallNotification;
     public static LevelUI instance;
 
+    public Coroutine notifProcess;
+    public Coroutine dialogueProcess;
     //might make itz unique clazz
     public GameObject collectibleTracker;
 
@@ -45,7 +47,7 @@ public class LevelUI : MonoBehaviour
     {
         deathBG.SetActive(false);
         collectibleTracker.SetActive(false);
-        smallNotification.gameObject.SetActive(false);
+        notifBox.SetActive(false);
         staminaSlider.value = 1;
         if (instance == null)
         {
@@ -116,33 +118,63 @@ public class LevelUI : MonoBehaviour
     public void DialogueFade()
     {
         //doesn't quite work yet
-       // levelDialogue.GetComponent<SuperTextMesh>().style= FontStyle.Bold;
-       // levelDialogue.GetComponent<SuperTextMesh>().color = Color.blue;
+        // levelDialogue.GetComponent<SuperTextMesh>().style= FontStyle.Bold;
+        // levelDialogue.GetComponent<SuperTextMesh>().color = Color.blue;
 
-       levelDialogue.gameObject.SetActive(false);
+      //  levelDialogue.gameObject.SetActive(false);
+        levelDialogue.Unread();
         //LeanTween.alpha(levelDialogue.gameObject, 0, 2);
     }
     public void SayLevelDialogue(string dialogueLine)
     {
-        
         levelDialogue.text = dialogueLine;
+        if(dialogueProcess != null)
+        {
+            StopCoroutine(dialogueProcess);
+        }
         levelDialogue.gameObject.SetActive(true);
         //need to add function that waits until text is finished
-        Invoke("DialogueFade", 5);
+        dialogueProcess = StartCoroutine(DialogueProcess());
     }
     public void NotificationFade()
     {
         //will add better animation later
-        smallNotification.gameObject.SetActive(false);
+   
+        smallNotification.UnRead();
+
     }
     //might lump in to levelDialogue system
     public void DisplaySmallNotification(string notification)
     {
-        smallNotification.gameObject.SetActive(true);
+        Debug.Log("Should be notification");
+        if (notifProcess != null)
+        {
+            StopCoroutine(notifProcess);
+        }
+        
+        notifBox.SetActive(true);
         smallNotification.text = notification;
-        Invoke("NotificationFade", 3);
+        StartCoroutine(NotificationProcess());
+       // Invoke("NotificationFade", 3);
     }
-
+    public IEnumerator NotificationProcess()
+    {
+        while (smallNotification.reading)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.5f);
+        NotificationFade();
+    }
+    public IEnumerator DialogueProcess()
+    {
+        while (levelDialogue.reading)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(1f);
+        DialogueFade();
+    }
     public void DisplayCollectible(bool found)
     {
         collectibleTracker.SetActive(found);
