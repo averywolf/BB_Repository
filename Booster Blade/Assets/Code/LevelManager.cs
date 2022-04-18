@@ -108,41 +108,41 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         #region
-        if (Keyboard.current.uKey.wasPressedThisFrame)
-        {
-            saveManager.DeleteRunProgress();
-        }
-        else if (Keyboard.current.tKey.wasPressedThisFrame) 
-        {
-            saveManager.WipeSave();
+        //if (Keyboard.current.uKey.wasPressedThisFrame)
+        //{
+        //    saveManager.DeleteRunProgress();
+        //}
+        //else if (Keyboard.current.tKey.wasPressedThisFrame) 
+        //{
+        //    saveManager.WipeSave();
 
-        }
+        //}
         
-        else if (Keyboard.current.iKey.wasPressedThisFrame)
-        {
-            if (!debugIVon)
-            {
-                playerController.SetDebugInvincibility(true);
-                debugIVon = true;
-                Debug.LogWarning("Player Invincibility enabled.");
-            }
-            else
-            {
-                playerController.SetDebugInvincibility(false);
-                debugIVon = false;
-                Debug.LogWarning("Player Invincibility disabled.");
-            }
+        //else if (Keyboard.current.iKey.wasPressedThisFrame)
+        //{
+        //    if (!debugIVon)
+        //    {
+        //        playerController.SetDebugInvincibility(true);
+        //        debugIVon = true;
+        //        Debug.LogWarning("Player Invincibility enabled.");
+        //    }
+        //    else
+        //    {
+        //        playerController.SetDebugInvincibility(false);
+        //        debugIVon = false;
+        //        Debug.LogWarning("Player Invincibility disabled.");
+        //    }
 
-        }
-        else if (Keyboard.current.pKey.wasPressedThisFrame)
-        {
-            ExitLevel();
-            //ends level immediately
-        }
-        else if (Keyboard.current.oKey.wasPressedThisFrame)
-        {
-            playerController.KillPLayer();
-        }
+        //}
+        //else if (Keyboard.current.pKey.wasPressedThisFrame)
+        //{
+        //    ExitLevel();
+        //    //ends level immediately
+        //}
+        //else if (Keyboard.current.oKey.wasPressedThisFrame)
+        //{
+        //    playerController.KillPLayer();
+        //}
 
         void SkipToLevel(string levelName) //apparently you can put functions in here? neat
         {
@@ -194,6 +194,10 @@ public class LevelManager : MonoBehaviour
             if( Keyboard.current.cKey.wasPressedThisFrame)
             {
                 PretendYouGotCollectible();
+            }
+            if (Keyboard.current.pKey.wasPressedThisFrame)
+            {
+                ExitLevel();
             }
             
         }
