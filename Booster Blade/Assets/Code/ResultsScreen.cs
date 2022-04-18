@@ -42,6 +42,7 @@ public class ResultsScreen : MonoBehaviour
     public void PlayVictorySong()
     {
         AudioManager.instance.PlayMusic("CardVictoryJingle");
+       // AudioManager.instance.PlayMusic("Occult");
     }
     public void CompareTimes(float curTime, float timeToBeat)
     {

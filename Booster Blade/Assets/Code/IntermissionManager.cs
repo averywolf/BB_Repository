@@ -27,6 +27,7 @@ public class IntermissionManager : MonoBehaviour
     public SuperTextMesh promptForSkip;
     public Coroutine skipPromptProcess;
     private bool skipReady = false;
+    public string startIntermissionSong = "";
     public enum IntermissionState
     {
         beforeresults,
@@ -51,15 +52,21 @@ public class IntermissionManager : MonoBehaviour
 
     public void Start()
     {
+        AudioManager.instance.StopMusic();
         skipReady = false;
         RevertPrompt();
-           currentInterState = IntermissionState.beforeresults;
+        promptForSkip.gameObject.SetActive(false);
+        currentInterState = IntermissionState.beforeresults;
         
         SaveManager.instance.hasNotBeganLevel = true; //just in case
-        resultsScreen.DisplayResults();
-        promptForSkip.gameObject.SetActive(false);
+        Invoke("BeginVictory", 0.3f);
+
+
     }
-    
+    public void BeginVictory()
+    {
+       resultsScreen.DisplayResults();
+    }
     public void Update()
     {
         if (Keyboard.current.zKey.wasPressedThisFrame)
@@ -70,7 +77,7 @@ public class IntermissionManager : MonoBehaviour
                 dialogueManager.BeginDialogue();
                 promptForSkip.gameObject.SetActive(true);
                 currentInterState = IntermissionState.duringDialogue;
-                AudioManager.instance.PlayMusic("Occult");
+                AudioManager.instance.PlayMusic(startIntermissionSong);
             }
             else if(currentInterState.Equals(IntermissionState.duringDialogue))
             {

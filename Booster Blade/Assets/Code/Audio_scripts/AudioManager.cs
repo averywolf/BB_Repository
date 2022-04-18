@@ -244,12 +244,14 @@ public class AudioManager : MonoBehaviour
 
     void Awake() //sets up the list of sounds and makes sure the audio manager is a singleton
     {
+        Debug.Log("ZHould only be one!");
         if (instance == null)
         {
             instance = this;
         }
         else //if there's already an instance of AudioManager in the scene
         {
+            Debug.Log("Tried to deztroy");
             Destroy(gameObject);
             return;
         }
