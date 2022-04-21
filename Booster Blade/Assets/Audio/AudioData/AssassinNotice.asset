@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: AssassinNotice
   Clip: {fileID: 8300000, guid: 03aeb80a58c31a247aebbd5320e13e18, type: 3}
-  Volume: 1
-  Pitch: 1
+  Volume: 0.701
+  Pitch: 0.96
   Loop: 0
   SpacialBlend: 0
   isMusic: 0

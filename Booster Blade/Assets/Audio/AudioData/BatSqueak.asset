@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: BatSqueak
   Clip: {fileID: 8300000, guid: c99ef4c20619cc94691d58695a444a71, type: 3}
-  Volume: 1
+  Volume: 0.807
   Pitch: 1
   Loop: 0
   SpacialBlend: 0

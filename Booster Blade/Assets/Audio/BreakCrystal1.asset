@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: BreakCrystal1
   Clip: {fileID: 8300000, guid: 861f7bd4f37be5841a1b79ba9e8e5a5b, type: 3}
-  Volume: 0.216
+  Volume: 0.138
   Pitch: 1
   Loop: 0
   SpacialBlend: 0

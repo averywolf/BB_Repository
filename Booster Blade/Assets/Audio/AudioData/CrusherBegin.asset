@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: CrusherBegin
   Clip: {fileID: 8300000, guid: 4730400cb9222eb499260705c42cf891, type: 3}
-  Volume: 1
+  Volume: 0.622
   Pitch: 1
   Loop: 0
   SpacialBlend: 0

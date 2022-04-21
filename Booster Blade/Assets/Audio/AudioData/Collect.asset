@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Collect
   m_EditorClassIdentifier: 
   audioName: Collect
-  Clip: {fileID: 8300000, guid: 000d6a86404fe3149b2c20f3114adb47, type: 3}
+  Clip: {fileID: 8300000, guid: b19ee0d1c9462854796afe7a6d218123, type: 3}
   Volume: 1
   Pitch: 1
   Loop: 0
