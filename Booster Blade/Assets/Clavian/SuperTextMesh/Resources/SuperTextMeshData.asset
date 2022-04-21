@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SuperTextMeshData
   m_EditorClassIdentifier: 
   textDataEditMode: 0
-  showEffectsFoldout: 0
-  showWavesFoldout: 0
+  showEffectsFoldout: 1
+  showWavesFoldout: 1
   showJittersFoldout: 0
   showDrawAnimsFoldout: 0
   showTextColorFoldout: 1

@@ -7440,7 +7440,7 @@ MonoBehaviour:
     chSize: 64
     submeshChange: 0
     invoked: 1
-  _text: <w>Press Z
+  _text: <w=weakwave>Press Z
   drawText: Press Z
   hyphenedText: Press Z
   font: {fileID: 12800000, guid: b4c8c19e9da1b524e8b730333bcc4f41, type: 3}
