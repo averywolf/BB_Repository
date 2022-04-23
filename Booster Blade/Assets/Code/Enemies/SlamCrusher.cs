@@ -20,7 +20,7 @@ public class SlamCrusher : MonoBehaviour
     private bool isAbleToMoveAgain;
     [SerializeField]
     private LayerMask crusherMask;
-
+    private bool readying;
 
     private CinemachineImpulseSource shakeSource;
     private void Awake()
@@ -43,16 +43,22 @@ public class SlamCrusher : MonoBehaviour
 
     public void StartCrushing(float attackAngle)
     {
-        if (!isMoving && isAbleToMoveAgain)
+        if (!isMoving && isAbleToMoveAgain) //might need ready
         {
             AudioManager.instance.Play("CrusherBegin");
             crushSense.ActivateSense(false);
             Debug.Log("Attempting to crush");
-            transform.rotation = Quaternion.Euler(0, 0, attackAngle);
-            rb.velocity = transform.right * moveSpeed;
-            isMoving = true;
-        }
+            StartCoroutine(SlowStart(attackAngle));
 
+        }
+    }
+    public IEnumerator SlowStart(float attackAngle)
+    {
+
+        yield return new WaitForSeconds(0.5f);
+        transform.rotation = Quaternion.Euler(0, 0, attackAngle);
+        rb.velocity = transform.right * moveSpeed;
+        isMoving = true;
     }
     public void EndCrushing()
     {

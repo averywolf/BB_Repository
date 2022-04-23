@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     private int currentCutsceneEventNumber = 0;
 
     private SuperTextMesh currentTextMesh;
+
+    public DriverTalk driverTalk;
     public void Awake()
     {
         upperDialogueBox.gameObject.SetActive(false);
@@ -49,6 +51,7 @@ public class DialogueManager : MonoBehaviour
             oldBox = upperDialogueBox;
         }
         currentTextMesh = dialogueBox.dialogueText;
+        CheckDialogueAction(cutsceneEvent.dialogueAction);
         dialogueBox.SetDialogueText(cutsceneEvent.dialogueline);
         dialogueBox.charPortrait.sprite = currentActor.expressions[cutsceneEvent.expressionNum];
         dialogueBox.portraitBG.sprite = currentActor.portraitBg;
@@ -56,18 +59,40 @@ public class DialogueManager : MonoBehaviour
         //probably should make the dialogue box that's not being used fade out
 
     }
+    public void CheckDialogueAction(string dAction)
+    {
+        if (dAction == "")
+        {
+            //do nothing
+        }
+        else if (dAction == "stopMus")
+        {
+            AudioManager.instance.StopMusic();
+        }
+        else if (dAction == "buzz1")
+        {
+            //ztatic at level 1
+        }
+        //zpecify for zpecific zoundz
+        else {
+            AudioManager.instance.PlayMusic(dAction);
+        }
+    }
     public DialogueActor GetDialogueActor(CutsceneEvent.Actor actor)
     {
         if (actor.Equals(CutsceneEvent.Actor.Archie))
         {
+            driverTalk.ArchieTalk();
             return archie;
         }
         else if (actor.Equals(CutsceneEvent.Actor.Zaria))
         {
+            driverTalk.ZariaTalk();
             return zaria;
         }
         else if (actor.Equals(CutsceneEvent.Actor.Manos))
         {
+            driverTalk.ManTalk();
             return manos;
         }
         return archie;

@@ -7,6 +7,7 @@ public class CutsceneEvent
 {
     [TextArea]
     public string dialogueline = "";
+    
     //speedread and skiptotheend are supertextmeshfeatures;
 
     //variable that determines which DialogueActor to use
@@ -19,5 +20,5 @@ public class CutsceneEvent
         Zaria,
         Manos
     }
-
+    public string dialogueAction = "";
 }
