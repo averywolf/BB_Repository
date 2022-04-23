@@ -35,6 +35,11 @@ public class PlayerCore : MonoBehaviour
             //logic for hitting lasers works on the laser's end
             playerController.HurtPlayer(collision.gameObject);
         }
+        if (collision.GetComponent<HPPickup>())
+        {
+            collision.GetComponent<HPPickup>().HealPickedUp();
+            playerController.HealToFull();
+        }
         //maybe one day Dangerhitbox and DangerBullet won't be separate
         if(collision.GetComponent<DangerBullet>())
         {

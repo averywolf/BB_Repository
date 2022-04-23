@@ -436,7 +436,11 @@ public class PlayerController : MonoBehaviour
         playerAnimator.Play("heroDeath");
         LevelManager.instance.LevelDeathProcess();
     }
-
+    public void HealToFull()
+    {
+        currentPlayerHP = LevelManager.instance.startingPlayerHP;
+        LevelManager.instance.ManagerUpdateHud(currentPlayerHP);
+    }
     public void KnockbackPlayer(Transform dangerObj)
     {
         float thrust = 5; //make variable 

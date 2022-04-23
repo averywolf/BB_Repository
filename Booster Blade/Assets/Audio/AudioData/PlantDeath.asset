@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlantDeath
   m_EditorClassIdentifier: 
   audioName: PlantDeath
-  Clip: {fileID: 8300000, guid: b26a0d76f10f2e14aa9d621ae9e40673, type: 3}
+  Clip: {fileID: 8300000, guid: 73011cf6253174147a579ec6815a51eb, type: 3}
   Volume: 1
   Pitch: 1
   Loop: 0

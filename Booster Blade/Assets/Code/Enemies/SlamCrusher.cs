@@ -22,6 +22,7 @@ public class SlamCrusher : MonoBehaviour
     private LayerMask crusherMask;
     private bool readying;
 
+    public ParticleSystem cubeparticle;
     private CinemachineImpulseSource shakeSource;
     private void Awake()
     {
@@ -46,6 +47,7 @@ public class SlamCrusher : MonoBehaviour
         if (!isMoving && isAbleToMoveAgain) //might need ready
         {
             AudioManager.instance.Play("CrusherBegin");
+            cubeparticle.Play();
             crushSense.ActivateSense(false);
             Debug.Log("Attempting to crush");
             StartCoroutine(SlowStart(attackAngle));
@@ -56,6 +58,8 @@ public class SlamCrusher : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.5f);
+        //another zound 
+
         transform.rotation = Quaternion.Euler(0, 0, attackAngle);
         rb.velocity = transform.right * moveSpeed;
         isMoving = true;

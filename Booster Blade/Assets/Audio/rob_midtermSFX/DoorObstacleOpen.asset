@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DoorObstacleOpen
   m_EditorClassIdentifier: 
   audioName: DoorObstacleOpen
-  Clip: {fileID: 8300000, guid: 8454b21052f7b1a42bfa9f2eb0abcd69, type: 3}
+  Clip: {fileID: 8300000, guid: cb20b7dd9afacc34884204ef2cdffdfa, type: 3}
   Volume: 1
-  Pitch: 1
+  Pitch: 0.71
   Loop: 0
   SpacialBlend: 0
   isMusic: 0

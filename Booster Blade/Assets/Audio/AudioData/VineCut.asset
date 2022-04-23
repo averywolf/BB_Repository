@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0a61d1ca2b4234fbaac218f7024595, type: 3}
   m_Name: VineCut
   m_EditorClassIdentifier: 
-  audioName: Vinecut
-  Clip: {fileID: 8300000, guid: 3d98c2b881efa314e837334a24b2a5e5, type: 3}
-  Volume: 1
+  audioName: VineCut
+  Clip: {fileID: 8300000, guid: 4e0384b892e769645abce3593c30082f, type: 3}
+  Volume: 0.569
   Pitch: 1
   Loop: 0
   SpacialBlend: 0

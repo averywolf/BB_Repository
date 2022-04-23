@@ -53,13 +53,14 @@ public class Chain : MonoBehaviour
             weakPoint.WeakpointCutEffect(); //triggers whatever VFX the weakpoint itself has for being attacked, might add a delay to this happening
             chainLineA.enabled = false;
             chainLineZ.enabled = false;
-            StartCoroutine(ExplodeDownLength(pointA.position, weakPoint.transform.position));
-            StartCoroutine(ExplodeDownLength(pointZ.position, weakPoint.transform.position));
+            StartCoroutine(ExplodeDownLength(pointA, weakPoint.transform.position));
+            StartCoroutine(ExplodeDownLength(pointZ, weakPoint.transform.position));
             isChainCut = true;
         }
     }
-    public IEnumerator ExplodeDownLength(Vector3 pA, Vector3 pB)
+    public IEnumerator ExplodeDownLength(Transform pontA, Vector3 pB)
     {
+        Vector3 pA = pontA.position;
         Vector3 chain = pA - pB;
         Vector3 chainDirection = chain.normalized;
         float totalDistance = chain.magnitude;
@@ -79,6 +80,7 @@ public class Chain : MonoBehaviour
             }
 
         }
+        pontA.gameObject.SetActive(false);
     }
 
     public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)

@@ -59,15 +59,17 @@ public class OvergrownVine : MonoBehaviour
             weakPoint.WeakdownCutEffect();
             vineLineA.enabled = false;
             vineLineZ.enabled = false;
-            StartCoroutine(VineParticles(pointA.position, weakPoint.transform.position));
-            StartCoroutine(VineParticles(pointZ.position, weakPoint.transform.position));
+            StartCoroutine(VineParticles(pointA, weakPoint.transform.position));
+            StartCoroutine(VineParticles(pointZ, weakPoint.transform.position));
             //gameObject.SetActive(false);
             isVineCut = true;
+
         }
   
     }
-    public IEnumerator VineParticles(Vector3 pA, Vector3 pB)
+    public IEnumerator VineParticles(Transform pontA, Vector3 pB)
     {
+        Vector3 pA = pontA.position;
         Vector3 vineLine = pA- pB;
         Vector3 vineDirection = vineLine.normalized;
         float totalDistance = vineLine.magnitude;
@@ -88,7 +90,7 @@ public class OvergrownVine : MonoBehaviour
             }
            
         }
-
+        pontA.gameObject.SetActive(false);
         //    while (true)
         //{
         //    // AudioManager.instance.Play("Shoot1");

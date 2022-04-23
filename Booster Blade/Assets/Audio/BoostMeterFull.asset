@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BoostMeterFull
   m_EditorClassIdentifier: 
   audioName: BoostMeterFull
-  Clip: {fileID: 8300000, guid: c0e79079e6668ea4797633699a86f796, type: 3}
+  Clip: {fileID: 8300000, guid: b19ee0d1c9462854796afe7a6d218123, type: 3}
   Volume: 1
   Pitch: 1
   Loop: 0

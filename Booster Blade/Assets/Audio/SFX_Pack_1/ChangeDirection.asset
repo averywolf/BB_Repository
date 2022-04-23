@@ -15,7 +15,7 @@ MonoBehaviour:
   audioName: ChangeDirection
   Clip: {fileID: 8300000, guid: efd26f5aa3e98664b93201d5eb647081, type: 3}
   Volume: 1
-  Pitch: 1
+  Pitch: 0.65
   Loop: 0
   SpacialBlend: 0
   isMusic: 0

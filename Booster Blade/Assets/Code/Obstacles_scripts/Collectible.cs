@@ -7,6 +7,8 @@ public class Collectible : MonoBehaviour
     //CollectibleID might be needed, might be set for each collectible differently?
 
     public GameObject collectFX;
+    public List<Sprite> colImg; // equal to level ID
+    
 
     //add function to hide collectible if already obtained
 

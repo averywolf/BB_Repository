@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ButtonPress
   m_EditorClassIdentifier: 
   audioName: ButtonPress
-  Clip: {fileID: 8300000, guid: b5110d220dc9c7d4984934b376244415, type: 3}
-  Volume: 1
+  Clip: {fileID: 8300000, guid: 4b863ae878a3cdf47acfb4ac3f24088c, type: 3}
+  Volume: 0.238
   Pitch: 1
   Loop: 0
   SpacialBlend: 0

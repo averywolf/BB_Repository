@@ -94,7 +94,8 @@ public class OvergrownCore : MonoBehaviour
     {
         if(attackingPlayer == false)
         {
-            AudioManager.instance.Play("PlantDeath");
+            AudioManager.instance.Play("PlantNotice");
+            LevelUI.instance.DisplaySmallNotification("IT AWAKES");
             attackingPlayer = true;
             attackProcess = StartCoroutine(RepeatTurret());
         }
