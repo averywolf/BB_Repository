@@ -226,6 +226,7 @@ public class LevelManager : MonoBehaviour
             Checkpoint startingCheckpoint = checkpointManager.SearchForCheckpoint(saveManager.tempCheckpointID);
             if(startingCheckpoint != null)
             {
+                startingCheckpoint.DeactivateSpawnedCheckpoint();
                 playerController.transform.position = startingCheckpoint.transform.position;
                 Vector2 checkDirection = playerController.DirectionConverter(startingCheckpoint.transform.eulerAngles.z);
                 playerController.SetFacingDirection(checkDirection.x, checkDirection.y);

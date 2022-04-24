@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3924503896645764673}
   - component: {fileID: 3924503896645764672}
-  - component: {fileID: 3924503896645764687}
   - component: {fileID: 3924503896645764686}
   - component: {fileID: 3924503896645764676}
   m_Layer: 0
@@ -71,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1626648527
-  m_SortingLayer: -8
+  m_SortingLayer: -9
   m_SortingOrder: 0
   m_Sprite: {fileID: -5195811659427404027, guid: 1dff872547c5ab24ea06e50a454e8e3b,
     type: 3}
@@ -85,25 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &3924503896645764687
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3924503896645764683}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 726fe931aecac1944baefea689312025, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &3924503896645764686
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -144,3 +124,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectFX: {fileID: 3326193482900577939, guid: 6260fed217bd6554e9047b63c899f102,
     type: 3}
+  colImg:
+  - {fileID: 1644060952557416952, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: -8351249293608845906, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: 6666609174251709808, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: 4892365039229399504, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: -7926938572215041205, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: 6592116536660055273, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: 8415608196523289569, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: -3249960372105350395, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: -1629028949495057720, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: 3930676916357158654, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  spriteRenderer: {fileID: 3924503896645764672}

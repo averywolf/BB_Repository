@@ -6,6 +6,7 @@ public class Assassin : MonoBehaviour
 {
     private Animator animator;
     public AimedAttack testAimedAttack;
+    private AudioManager audioManager;
     private bool assassinReadied = false;
     private bool tryingToKill = false;
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class Assassin : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.Play("idle");
+        audioManager = AudioManager.instance;
     }
     private void Start()
     {
@@ -260,7 +262,7 @@ public class Assassin : MonoBehaviour
         while (j < numTimes)
         {
             aimedAttack.FireAimed(firePoint.position, aimPoint);
-            //audioManager.Play("BossShoot_Arco1");
+            audioManager.Play("AssassinFire");
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
             {
                 yield return waitForFixedUpdate;

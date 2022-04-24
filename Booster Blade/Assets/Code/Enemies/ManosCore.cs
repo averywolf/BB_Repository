@@ -35,8 +35,10 @@ public class ManosCore : MonoBehaviour
     private string introPhrase = "";
     [SerializeField]
     private string deathPhrase = "";
+    AudioManager audiomanager;
     private void Awake()
     {
+        audiomanager = AudioManager.instance;
         manosAnim = GetComponent<Animator>();
         doorColumn.useWorldSpace = true;
 
@@ -157,6 +159,7 @@ public class ManosCore : MonoBehaviour
             j += rotateRate;
             j = j % 360;
             // AudioManager.instance.Play("Shoot1");
+            audiomanager.Play("ManosFire2");
             circleSpread.CircleAttack(j, transform.position);
             // aimedAttack.FireAimed(transform.position, LevelManager.instance.GetPlayerTransform().position);
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
@@ -208,18 +211,6 @@ public class ManosCore : MonoBehaviour
     {
         attackProcess = StartCoroutine(ManosPattern());
 
-        //if (fixedAttack != null)
-        //{
-        //    StartCoroutine(RepeatTurret());
-        //}
-        //if (aimedAttack != null)
-        //{
-        //    StartCoroutine(RepeatTurretAimed());
-        //}
-        //if (circleSpread != null)
-        //{
-        //    spiralAttack = StartCoroutine(SpiralAttack());
-        //}
     }
     public IEnumerator RepeatFixedAttack(FixedAttack fixedAttack, Transform firePoint, int numTimes)
     {
@@ -231,6 +222,7 @@ public class ManosCore : MonoBehaviour
         while (j < numTimes)
         {
             // AudioManager.instance.Play("Shoot1");
+            audiomanager.Play("ManosFire2");
             fixedAttack.Fire(firePoint.position);
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
             {
@@ -250,6 +242,7 @@ public class ManosCore : MonoBehaviour
         {
             aimedAttack.FireAimed(firePoint.position, aimTransform.position);
             // audioManager.Play("BossShoot_Arco1");
+            audiomanager.Play("ManosPlaceBul");
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
             {
                 yield return waitForFixedUpdate;

@@ -8,10 +8,23 @@ public class Collectible : MonoBehaviour
 
     public GameObject collectFX;
     public List<Sprite> colImg; // equal to level ID
-    
+    public SpriteRenderer spriteRenderer;
 
     //add function to hide collectible if already obtained
 
+    public void Start()
+    {
+        if (LevelManager.instance.tempGotStageCollectible)
+        {
+            gameObject.SetActive(false); //should hide collectible if it's already saved
+
+        }
+        SetUpGraphic();
+    }
+    public void SetUpGraphic()
+    {
+        spriteRenderer.sprite = colImg[LevelManager.instance.currentLevelIndex];
+    }
     //Called by PlayerCore upon making contact
     public void PickUpCollectible()
     {

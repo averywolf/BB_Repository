@@ -13,7 +13,7 @@ public class OvergrownCore : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private GameObject deathFX;
-
+    AudioManager audiomanager;
     private bool attackingPlayer = false;
     
     //get only to attack within range
@@ -21,6 +21,7 @@ public class OvergrownCore : MonoBehaviour
     private bool plantIsAlive = true;
     private void Awake()
     {
+        audiomanager = AudioManager.instance;
         animator = GetComponent<Animator>();
         doorColumn.useWorldSpace = true;
 
@@ -56,7 +57,7 @@ public class OvergrownCore : MonoBehaviour
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         while (true)
         {
-            // AudioManager.instance.Play("Shoot1");
+            audiomanager.Play("PlantFire1");
             fixedAttack.Fire(transform);
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)
             {

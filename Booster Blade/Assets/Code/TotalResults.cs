@@ -7,7 +7,8 @@ public class TotalResults : MonoBehaviour
     //displayed at end credits
     public SuperTextMesh resultsText;
 
-    public List<GameObject> collectibleIcons;
+ 
+    public List<CollectIcon> collectibleIcons;
     SaveManager saveManager;
     private void Awake()
     {
@@ -18,7 +19,7 @@ public class TotalResults : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            collectibleIcons[i].SetActive(false);
+            collectibleIcons[i].PickIcon(i);
         }
         ShowCollectibles();
         DisplayRunResults();
@@ -57,11 +58,9 @@ public class TotalResults : MonoBehaviour
         {
             if (saveManager.RetrieveCurrentData(i).gotStageCollectible)
             {
-                collectibleIcons[i].SetActive(true);
+                collectibleIcons[i].IconOn();
             }
         }
     }
-
-
 }
 

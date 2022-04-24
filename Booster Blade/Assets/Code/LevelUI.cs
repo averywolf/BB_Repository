@@ -41,12 +41,12 @@ public class LevelUI : MonoBehaviour
     public Coroutine notifProcess;
     public Coroutine dialogueProcess;
     //might make itz unique clazz
-    public GameObject collectibleTracker;
+    public CollectIcon collectibleTracker;
 
     public void Awake()
     {
         deathBG.SetActive(false);
-        collectibleTracker.SetActive(false);
+        
         notifBox.SetActive(false);
         staminaSlider.value = 1;
         if (instance == null)
@@ -59,6 +59,7 @@ public class LevelUI : MonoBehaviour
             return;
         }
         levelDialogue.gameObject.SetActive(false);
+        
     }
 
 
@@ -177,6 +178,12 @@ public class LevelUI : MonoBehaviour
     }
     public void DisplayCollectible(bool found)
     {
-        collectibleTracker.SetActive(found);
+        collectibleTracker.PickIcon(LevelManager.instance.currentLevelIndex);
+        if (found)
+        {
+            collectibleTracker.IconOn();
+
+        }
+
     }
 }

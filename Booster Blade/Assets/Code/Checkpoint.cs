@@ -17,6 +17,11 @@ public class Checkpoint : MonoBehaviour
         checkpointAnim.Play("checkP_inactive");
     }
     //if touching player
+    public void DeactivateSpawnedCheckpoint() //prevents player from activating checkpoint when spawning on it
+    {
+        isCheckpointActive = true;
+
+    }
     public void RegisterCheckpoint()
     {
         if (isCheckpointActive == false)
