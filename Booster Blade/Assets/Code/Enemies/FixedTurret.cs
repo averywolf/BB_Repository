@@ -11,8 +11,13 @@ public class FixedTurret : MonoBehaviour
     private bool turretPrimed = false;
 
     private bool isShooting = false;
+    private AudioSource audioSource;
     // Start is called before the first frame update
 
+    public void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     public void TurretWake()
     {
         turretPrimed = true;
@@ -29,6 +34,7 @@ public class FixedTurret : MonoBehaviour
         YieldInstruction waitForFixedUpdate = new WaitForFixedUpdate();
         while (true)
         {
+            audioSource.Play();
             // AudioManager.instance.Play("Shoot1");
             fixedAttack.Fire(turretFirePoint);
             for (float duration = fireRate; duration > 0; duration -= Time.fixedDeltaTime)

@@ -61,6 +61,7 @@ public class PlayerCore : MonoBehaviour
         if(collision.GetComponent<Checkpoint>())
         {
             collision.GetComponent<Checkpoint>().RegisterCheckpoint();
+            playerController.HealToFull();
         }
         if (collision.GetComponent<BasicButton>())
         {
