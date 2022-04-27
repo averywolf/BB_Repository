@@ -21,17 +21,13 @@ public class PanelCutsceneSystem : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void SkipInput(InputAction.CallbackContext context)
     {
-        ///MAKE THIS REFER TO PLAYER INPUT INSTEAD
-        if (Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (context.performed)
         {
-
             SkipCutscene();
-
         }
     }
-
     public void SkipCutscene()
     {
         StopAllCoroutines();

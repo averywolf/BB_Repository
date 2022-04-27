@@ -6,20 +6,52 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 public class CreditsSystem : MonoBehaviour
 {
+    public List<CreditsPanel> creditsPanels;
+    public TotalResults totalResults;
     public string sceneToGoTo;
     public string musicToPlay;
+
+    public Animator creditsAnim;
+    public void Awake()
+    {
+        for (int i = 0; i < creditsPanels.Count; i++)
+        {
+            creditsPanels[i].gameObject.SetActive(false);
+        }
+        totalResults.HideTotalResults();
+    }
+
+    public void BeginCredits()
+    {
+        creditsAnim.Play("credits");
+    }
     public void Start()
     {
-        AudioManager.instance.PlayMusic(musicToPlay);
+        Time.timeScale = 1;
+        // AudioManager.instance.PlayMusic(musicToPlay);
+        Invoke("BeginCredits", 0.3f);
+   
+       // StartCoroutine(CreditsProcess());
     }
-    private void Update()
+
+    public IEnumerator CreditsProcess()
     {
-        ///MAKE THIS REFER TO PLAYER INPUT INSTEAD
-        if (Keyboard.current.zKey.wasPressedThisFrame)
+        for (int i = 0; i < creditsPanels.Count; i++)
         {
+            creditsPanels[i].ShowPanel();
 
+            yield return new WaitForSeconds(creditsPanels[i].stayTime);
+
+            creditsPanels[i].HidePanel();
+
+        }
+        totalResults.DisplayRunResults();
+    }
+    public void CreditsAdvanceInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
             ReturnToTitle();
-
         }
     }
     public void ShowFinalResults()

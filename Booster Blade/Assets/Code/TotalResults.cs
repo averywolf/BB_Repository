@@ -14,19 +14,34 @@ public class TotalResults : MonoBehaviour
     {
         saveManager = SaveManager.instance;
     }
-
-    public void Start()
+    public void HideTotalResults()
     {
+        resultsText.gameObject.SetActive(false);
+        for (int i = 0; i < 10; i++)
+        {
+            collectibleIcons[i].gameObject.SetActive(false);
+        }
+    }
+    //public void Start()
+    //{
+    //    for (int i = 0; i < 10; i++)
+    //    {
+    //        collectibleIcons[i].PickIcon(i);
+    //    }
+    //    ShowCollectibles();
+    
+    //}
+
+    public void DisplayRunResults()
+    {
+        resultsText.gameObject.SetActive(true);
         for (int i = 0; i < 10; i++)
         {
             collectibleIcons[i].PickIcon(i);
+            collectibleIcons[i].gameObject.SetActive(true);
         }
         ShowCollectibles();
-        DisplayRunResults();
-    
-    }
-    public void DisplayRunResults()
-    {
+        gameObject.SetActive(true);
         string resultsTally = "";
         float totalTime = 0;
         for (int i = 0; i < 10; i++) //might grab level name lenght from a manager

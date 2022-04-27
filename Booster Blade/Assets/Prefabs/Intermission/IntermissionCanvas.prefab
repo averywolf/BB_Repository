@@ -13236,32 +13236,42 @@ MonoBehaviour:
   - dialogueline: Gee, it sure is <s=1.2>BORING</s> around here...
     characterActor: 0
     expressionNum: 2
+    dialogueAction: 
   - dialogueline: My boy, placeholder dialogue is what a true GAMER strives for.
       Or so I have read.
     characterActor: 0
     expressionNum: 1
+    dialogueAction: 
   - dialogueline: I just wonder what the <w> OMNILITH</w> is up to...
     characterActor: 0
     expressionNum: 2
+    dialogueAction: 
   - dialogueline: ...probably just sitting there.
     characterActor: 0
     expressionNum: 0
+    dialogueAction: 
   - dialogueline: Hey, I'm saying more dialogue! That's pretty neat.
     characterActor: 0
     expressionNum: 3
+    dialogueAction: 
   - dialogueline: That is certainly a thing you are doing!
     characterActor: 0
     expressionNum: 3
+    dialogueAction: 
   - dialogueline: <j>...and now it's an earthquake!</j>
     characterActor: 0
     expressionNum: 3
+    dialogueAction: 
   - dialogueline: <j>ahhhhhhhhhhhhhhhhhh</j>
     characterActor: 1
     expressionNum: 2
+    dialogueAction: 
   - dialogueline: okay earthquake's over for me I'm done with this conversation
     characterActor: 1
     expressionNum: 0
+    dialogueAction: 
   currentCutsceneEventNumber: 0
+  driverTalk: {fileID: 0}
 --- !u!1 &3706354301591527297
 GameObject:
   m_ObjectHideFlags: 0
@@ -13810,11 +13820,11 @@ MonoBehaviour:
   bottomLeftBounds: {x: 0, y: 260, z: 0}
   bottomRightBounds: {x: 640, y: 260, z: 0}
   centerBounds: {x: 320, y: 300, z: 0}
-  topLeftTextBounds: {x: -63.774414, y: 393, z: 0}
-  topRightTextBounds: {x: 703.7744, y: 393, z: 0}
-  bottomLeftTextBounds: {x: -63.774414, y: 286.5, z: 0}
-  bottomRightTextBounds: {x: 703.7744, y: 286.5, z: 0}
-  centerTextBounds: {x: 320, y: 339.75, z: 0}
+  topLeftTextBounds: {x: 31.71875, y: 340, z: 0}
+  topRightTextBounds: {x: 608.28125, y: 340, z: 0}
+  bottomLeftTextBounds: {x: 31.71875, y: 260, z: 0}
+  bottomRightTextBounds: {x: 608.28125, y: 260, z: 0}
+  centerTextBounds: {x: 320, y: 300, z: 0}
   finalTopLeftTextBounds: {x: 31.71875, y: 340, z: 0}
   finalTopRightTextBounds: {x: 608.28125, y: 340, z: 0}
   finalBottomLeftTextBounds: {x: 31.71875, y: 260, z: 0}
@@ -13874,6 +13884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3706354301884940914}
   - component: {fileID: 3706354301884940913}
+  - component: {fileID: 116035630215910737}
   m_Layer: 0
   m_Name: IntermissionManager
   m_TagString: Untagged
@@ -13918,6 +13929,75 @@ MonoBehaviour:
   LevelResultsIndex: 0
   promptForSkip: {fileID: 5633425187658575204}
   startIntermissionSong: Occult
+--- !u!114 &116035630215910737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3706354301884940915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5b164f4e299d5494f892aa42c9a34d6f,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c605e128-0562-466e-8c21-34a78af57a3b
+    m_ActionName: Player/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down,/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3706354301884940913}
+        m_MethodName: DialogueAdvanceInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a05b8332-8def-4c40-87af-7c74c0fd889e
+    m_ActionName: Player/Boost[/Keyboard/z,/XInputControllerWindows/buttonSouth,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e45acaac-8202-4feb-a7ea-077f8b403754
+    m_ActionName: Player/Slash[/Keyboard/x,/Keyboard/l,/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3706354301884940913}
+        m_MethodName: SkipInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5be6b5eb-1483-4867-9225-5797e03b2292
+    m_ActionName: Player/Start[/Keyboard/escape,/XInputControllerWindows/start]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &3706354302259023278
 GameObject:
   m_ObjectHideFlags: 0
@@ -14622,11 +14702,11 @@ MonoBehaviour:
   bottomLeftBounds: {x: 13.899994, y: 60, z: 0}
   bottomRightBounds: {x: 446.1, y: 60, z: 0}
   centerBounds: {x: 230, y: 90, z: 0}
-  topLeftTextBounds: {x: -87.495605, y: 100.125, z: 0}
-  topRightTextBounds: {x: 182.74812, y: 100.125, z: 0}
-  bottomLeftTextBounds: {x: -87.495605, y: 62.850006, z: 0}
-  bottomRightTextBounds: {x: 182.74812, y: 62.850006, z: 0}
-  centerTextBounds: {x: 47.62626, y: 81.4875, z: 0}
+  topLeftTextBounds: {x: 13.899994, y: 120, z: 0}
+  topRightTextBounds: {x: 216.9, y: 120, z: 0}
+  bottomLeftTextBounds: {x: 13.899994, y: 92, z: 0}
+  bottomRightTextBounds: {x: 216.9, y: 92, z: 0}
+  centerTextBounds: {x: 115.399994, y: 106, z: 0}
   finalTopLeftTextBounds: {x: 13.899994, y: 120, z: 0}
   finalTopRightTextBounds: {x: 216.9, y: 120, z: 0}
   finalBottomLeftTextBounds: {x: 13.899994, y: 92, z: 0}
@@ -17571,7 +17651,7 @@ MonoBehaviour:
   debugMode: 0
   totalReadTime: 0.00001
   totalUnreadTime: 0.00001
-  currentReadTime: 15.469029
+  currentReadTime: 145.0402
   autoRead: 1
   rememberReadPosition: 1
   autoQuality: 0

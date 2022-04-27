@@ -202,13 +202,6 @@ public class LevelManager : MonoBehaviour
             
         }
         #endregion
-
-  
-        if (canPauseGame && Keyboard.current.escapeKey.wasPressedThisFrame)
-        {
-            playerController.playerPaused = pauseMenu.PauseGame();
-        }
-
     }
     public void PretendYouGotCollectible()
     {
@@ -217,6 +210,17 @@ public class LevelManager : MonoBehaviour
         tempGotStageCollectible = true;
         
     }
+    public void PauseInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (canPauseGame)
+            {
+                playerController.playerPaused = pauseMenu.PauseGame();
+            }
+        }
+    }
+
     //Called at Start to setup player and save data.
     public void InitializePlayer() 
     {
