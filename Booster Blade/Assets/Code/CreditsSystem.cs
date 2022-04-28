@@ -34,19 +34,6 @@ public class CreditsSystem : MonoBehaviour
        // StartCoroutine(CreditsProcess());
     }
 
-    public IEnumerator CreditsProcess()
-    {
-        for (int i = 0; i < creditsPanels.Count; i++)
-        {
-            creditsPanels[i].ShowPanel();
-
-            yield return new WaitForSeconds(creditsPanels[i].stayTime);
-
-            creditsPanels[i].HidePanel();
-
-        }
-        totalResults.DisplayRunResults();
-    }
     public void CreditsAdvanceInput(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -54,9 +41,15 @@ public class CreditsSystem : MonoBehaviour
             ReturnToTitle();
         }
     }
+    
+    public void EndTheCredits()
+    {
+        ShowFinalResults();
+    }
     public void ShowFinalResults()
     {
-
+        creditsAnim.Play("hidecredits");
+        totalResults.DisplayRunResults();
     }
     public void ReturnToTitle()
     {

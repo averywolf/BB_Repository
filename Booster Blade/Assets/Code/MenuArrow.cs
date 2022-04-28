@@ -8,10 +8,11 @@ public class MenuArrow : MonoBehaviour
     [SerializeField]
     private RectTransform levelCanvas;
     public float xOffset = 0;
+
     //set recttransform instead?
     private void Awake()
     {
-        
+      
         rectTransform = GetComponent<RectTransform>();
         rectTransform.SetParent(levelCanvas, false);
         rectTransform.anchoredPosition = Vector3.zero;
@@ -28,7 +29,16 @@ public class MenuArrow : MonoBehaviour
        // Debug.Log("AnchoredPosition =" + rectTransform.anchoredPosition);
         PlayButtonSelectSFX();
     }
+    public void PlaceArrowNoSound(RectTransform t)
+    {
+        Vector3 pos = t.anchoredPosition;
+        pos.x -= (t.rect.width / 2f) + xOffset;
+        //pos.z = 0;
+        //Debug.Log("setting arrow to position " + pos);
+        rectTransform.anchoredPosition = pos;
+    }
  
+
     //have words highlight effect, too
     public void PlayButtonSelectSFX()
     {

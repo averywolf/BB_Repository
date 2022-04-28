@@ -10,9 +10,11 @@ public class TotalResults : MonoBehaviour
  
     public List<CollectIcon> collectibleIcons;
     SaveManager saveManager;
+    public GameObject resultsPanel;
     private void Awake()
     {
         saveManager = SaveManager.instance;
+        resultsPanel.SetActive(false);
     }
     public void HideTotalResults()
     {
@@ -34,6 +36,7 @@ public class TotalResults : MonoBehaviour
 
     public void DisplayRunResults()
     {
+        resultsPanel.gameObject.SetActive(true);
         resultsText.gameObject.SetActive(true);
         for (int i = 0; i < 10; i++)
         {
@@ -41,6 +44,7 @@ public class TotalResults : MonoBehaviour
             collectibleIcons[i].gameObject.SetActive(true);
         }
         ShowCollectibles();
+        
         gameObject.SetActive(true);
         string resultsTally = "";
         float totalTime = 0;
@@ -52,7 +56,7 @@ public class TotalResults : MonoBehaviour
             totalTime += levelTime;
         }
         resultsTally += "TOTAL: " + FormatTime(totalTime);
-
+        saveManager.LogTotalTime(totalTime);
         resultsText.text = resultsTally;
 
         //display total

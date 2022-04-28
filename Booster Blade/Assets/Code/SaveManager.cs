@@ -61,6 +61,7 @@ public class SaveManager : MonoBehaviour
     [System.Serializable]
     public class CurrentRunData
     {
+        public float totalRunTime; // set this through TotalResults
         public int continueIndex; //index of the level that's loaded if you select to continue the game, might need to be set independently of LevelData
         bool beatGame = false;
         //int totalDeathCount= 0;
@@ -119,6 +120,7 @@ public class SaveManager : MonoBehaviour
     [System.Serializable]
     public class RecordsData
     {
+        public float bestTotalTime;
         public Dictionary<int, LevelData> recordLevelDict;
         public List<LevelData> levelDatas;
 
@@ -301,6 +303,15 @@ public class SaveManager : MonoBehaviour
         isGoingToIntermissionFromLevel = true;
         RetrieveRecordData(curLevelIndex).hasLevelBeenBeaten = true;
         SaveBothData(); //sure? levelmanager might have been missing this
+    }
+
+    public void LogTotalTime(float totalTime)
+    {
+        currentRunData.totalRunTime = totalTime;
+        if (totalTime > recordsData.bestTotalTime)
+        {
+            recordsData.bestTotalTime = totalTime;
+        }
     }
     //
     

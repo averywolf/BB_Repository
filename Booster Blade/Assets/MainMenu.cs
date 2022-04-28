@@ -27,12 +27,21 @@ public class MainMenu : MonoBehaviour
     MenuArrow menuArrow;
     [SerializeField]
     private string menuSong = "";
+    public bool menuInitialized= false;
+
+    public GameObject OptionsDeleteConfirmation;
+    public GameObject optionsDontDelete;
+    public GameObject optionsOpenDeleteConfirmation;
+
+    public GameObject deletedText;
     private void Awake()
     {
         saveManager = SaveManager.instance;   
     }
     void Start()
     {
+        deletedText.gameObject.SetActive(false);
+        OptionsDeleteConfirmation.SetActive(false);
         SetNewFirstSelected(firstButton);
         resultsMenu.SetActive(false); //options menu hides itself
         ableToInteractWithMenu = true;
@@ -41,6 +50,7 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Making sure the player hasNotBeganLevel here");
         SaveManager.instance.hasNotBeganLevel = true; //just in case
         Time.timeScale = 1; //resets time to make sure it moves if the player got here from the pause menu
+        menuInitialized = true;
     }
 
     //starts run from the beginning, plays the intro cutscene, goes onto the first level
@@ -59,11 +69,38 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(saveManager.currentRunData.continueIndex);
 
     }
+
+    public void ShowDeletedText()
+    {
+        deletedText.gameObject.SetActive(true);
+        Invoke("HideDeletedText", 1);   
+    }
+    public void HideDeletedText()
+    {
+        deletedText.gameObject.SetActive(false);
+    }
     //deletes all save data
     public void WipeRecords()
     {
         PlayButtonClickSFX();
         saveManager.WipeSave();
+        SetNewFirstSelected(optionsOpenDeleteConfirmation);
+        OptionsDeleteConfirmation.SetActive(false);
+        ShowDeletedText();
+        //play sound effect
+    }
+    public void OpenDeleteConfirmation()
+    {
+        menuArrow.PlaceArrowNoSound(optionsDontDelete.GetComponent<RectTransform>());
+        SetNewFirstSelected(optionsDontDelete);
+        PlayButtonClickSFX();
+        OptionsDeleteConfirmation.SetActive(true);
+    }
+    public void DontWipeRecords()
+    {
+        PlayButtonClickSFX();
+        SetNewFirstSelected(optionsOpenDeleteConfirmation);
+        OptionsDeleteConfirmation.SetActive(false);
     }
     public void OpenOptions()
     {
@@ -137,5 +174,17 @@ public class MainMenu : MonoBehaviour
     public void PlayButtonClickSFX()
     {
         AudioManager.instance.Play("UIButtonClick");
+    }
+
+    public void ConditionalSelect(RectTransform t) //used by New Game arrow to prevent sound from playing automatically
+    {
+        if (menuInitialized)
+        {
+            menuArrow.PlaceArrow(t);
+        }
+        else
+        {
+            menuArrow.PlaceArrowNoSound(t);
+        }
     }
 }
