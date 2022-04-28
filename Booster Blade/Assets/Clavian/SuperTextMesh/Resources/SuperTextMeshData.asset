@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDataEditMode: 0
   showEffectsFoldout: 1
-  showWavesFoldout: 1
+  showWavesFoldout: 0
   showJittersFoldout: 0
   showDrawAnimsFoldout: 0
-  showTextColorFoldout: 1
+  showTextColorFoldout: 0
   showColorsFoldout: 1
   showGradientsFoldout: 0
   showTexturesFoldout: 0
-  showInlineFoldout: 0
-  showDelaysFoldout: 0
+  showInlineFoldout: 1
+  showDelaysFoldout: 1
   showVoicesFoldout: 0
   showFontsFoldout: 0
   showSoundClipsFoldout: 0

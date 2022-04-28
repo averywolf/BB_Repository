@@ -20,11 +20,14 @@ public class DialogueManager : MonoBehaviour
 
     private SuperTextMesh currentTextMesh;
 
+    public Image staticEffect;
+    private Color staticDefaultColor= Color.white;
     public DriverTalk driverTalk;
     public void Awake()
     {
         upperDialogueBox.gameObject.SetActive(false);
         lowerDialogueBox.gameObject.SetActive(false);
+        SetStaticLevel(0);
     }
 
     public void BeginDialogue()
@@ -73,10 +76,36 @@ public class DialogueManager : MonoBehaviour
         {
             //ztatic at level 1
         }
+        else if (dAction == "static0")
+        {
+            SetStaticLevel(0);
+        }
+        else if (dAction == "static1")
+        {
+            SetStaticLevel(0.20f);
+        }
+        else if (dAction == "static2")
+        {
+            SetStaticLevel(0.35f);
+        }
+        else if (dAction == "static3")
+        {
+            SetStaticLevel(0.75f);
+        }
+        else if (dAction == "static4")
+        {
+            SetStaticLevel(1);
+        }
         //zpecify for zpecific zoundz
-        else {
+        else
+        {
             AudioManager.instance.PlayMusic(dAction);
         }
+    }
+
+    public void SetStaticLevel(float level)
+    {
+        staticEffect.color = new Color(staticDefaultColor.r, staticDefaultColor.g, staticDefaultColor.b, level);
     }
     public DialogueActor GetDialogueActor(CutsceneEvent.Actor actor)
     {

@@ -11,6 +11,8 @@ public class TotalResults : MonoBehaviour
     public List<CollectIcon> collectibleIcons;
     SaveManager saveManager;
     public GameObject resultsPanel;
+
+
     private void Awake()
     {
         saveManager = SaveManager.instance;
@@ -58,7 +60,7 @@ public class TotalResults : MonoBehaviour
         resultsTally += "TOTAL: " + FormatTime(totalTime);
         saveManager.LogTotalTime(totalTime);
         resultsText.text = resultsTally;
-
+       
         //display total
     }
     private string FormatTime(float time)

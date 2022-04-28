@@ -23,6 +23,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private OptionsMenu optionsMenu;
 
+    public SuperTextMesh totalResults;
+
     [SerializeField]
     MenuArrow menuArrow;
     [SerializeField]
@@ -38,6 +40,7 @@ public class MainMenu : MonoBehaviour
     {
         saveManager = SaveManager.instance;   
     }
+    public Button continueButton;
     void Start()
     {
         deletedText.gameObject.SetActive(false);
@@ -51,6 +54,14 @@ public class MainMenu : MonoBehaviour
         SaveManager.instance.hasNotBeganLevel = true; //just in case
         Time.timeScale = 1; //resets time to make sure it moves if the player got here from the pause menu
         menuInitialized = true;
+        if(saveManager.currentRunData.continueIndex == 0)
+        {
+            continueButton.interactable = false;
+        }
+        else
+        {
+            continueButton.interactable = true;
+        }
     }
 
     //starts run from the beginning, plays the intro cutscene, goes onto the first level
@@ -85,6 +96,7 @@ public class MainMenu : MonoBehaviour
         PlayButtonClickSFX();
         saveManager.WipeSave();
         SetNewFirstSelected(optionsOpenDeleteConfirmation);
+        SetContinueButtonStatus();
         OptionsDeleteConfirmation.SetActive(false);
         ShowDeletedText();
         //play sound effect
@@ -150,7 +162,27 @@ public class MainMenu : MonoBehaviour
         }
 
         resultsText.text = resultsTally;
+        if(saveManager.recordsData.bestTotalTime == -1)
+        {
+            totalResults.text = "COMPLETE RUN TIME NOT YET RECORDED";
+        }
+        else
+        {
+            totalResults.text = "FASTEST COMPLETE RUN: " + FormatTime(saveManager.recordsData.bestTotalTime).ToString();
+        }
+      
         //display total
+    }
+    private void SetContinueButtonStatus()
+    {
+        if (saveManager.currentRunData.continueIndex == 0)
+        {
+            continueButton.interactable = false;
+        }
+        else
+        {
+            continueButton.interactable = true;
+        }
     }
     private void SetNewFirstSelected(GameObject firstSelection)
     {

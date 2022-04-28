@@ -10,7 +10,7 @@ public class CreditsSystem : MonoBehaviour
     public TotalResults totalResults;
     public string sceneToGoTo;
     public string musicToPlay;
-
+    private bool atTotalResults;
     public Animator creditsAnim;
     public void Awake()
     {
@@ -27,6 +27,7 @@ public class CreditsSystem : MonoBehaviour
     }
     public void Start()
     {
+        atTotalResults = false;
         Time.timeScale = 1;
         // AudioManager.instance.PlayMusic(musicToPlay);
         Invoke("BeginCredits", 0.3f);
@@ -38,6 +39,7 @@ public class CreditsSystem : MonoBehaviour
     {
         if (context.performed)
         {
+            if(atTotalResults == true)
             ReturnToTitle();
         }
     }
@@ -49,6 +51,7 @@ public class CreditsSystem : MonoBehaviour
     public void ShowFinalResults()
     {
         creditsAnim.Play("hidecredits");
+        atTotalResults = true;
         totalResults.DisplayRunResults();
     }
     public void ReturnToTitle()

@@ -61,8 +61,8 @@ public class SaveManager : MonoBehaviour
     [System.Serializable]
     public class CurrentRunData
     {
-        public float totalRunTime; // set this through TotalResults
-        public int continueIndex; //index of the level that's loaded if you select to continue the game, might need to be set independently of LevelData
+        public float totalRunTime = -1; // set this through TotalResults
+        public int continueIndex=0; //index of the level that's loaded if you select to continue the game, might need to be set independently of LevelData
         bool beatGame = false;
         //int totalDeathCount= 0;
         //int totalHitsTaken = 0;
@@ -120,7 +120,7 @@ public class SaveManager : MonoBehaviour
     [System.Serializable]
     public class RecordsData
     {
-        public float bestTotalTime;
+        public float bestTotalTime = -1;
         public Dictionary<int, LevelData> recordLevelDict;
         public List<LevelData> levelDatas;
 

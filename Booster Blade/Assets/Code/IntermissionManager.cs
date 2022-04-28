@@ -73,7 +73,11 @@ public class IntermissionManager : MonoBehaviour
                 dialogueManager.BeginDialogue();
                 promptForSkip.gameObject.SetActive(true);
                 currentInterState = IntermissionState.duringDialogue;
-                AudioManager.instance.PlayMusic(startIntermissionSong);
+                if(startIntermissionSong != "")
+                {
+                    AudioManager.instance.PlayMusic(startIntermissionSong);
+                }
+       
             }
             else if (currentInterState.Equals(IntermissionState.duringDialogue))
             {
