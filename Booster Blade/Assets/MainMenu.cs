@@ -178,10 +178,12 @@ public class MainMenu : MonoBehaviour
         if (saveManager.currentRunData.continueIndex == 0)
         {
             continueButton.interactable = false;
+            continueButton.GetComponentInChildren<SuperTextMesh>().text = "UNAVAILIABLE";
         }
         else
         {
             continueButton.interactable = true;
+            continueButton.GetComponentInChildren<SuperTextMesh>().text = "CONTINUE";
         }
     }
     private void SetNewFirstSelected(GameObject firstSelection)
