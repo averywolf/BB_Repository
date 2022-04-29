@@ -33,19 +33,7 @@ public class Laser : MonoBehaviour
         //make sure this doesn't happen when game is paused, too, probably
         if (isLaserActive)
         {
-            ////will need to expand so enemies don't hit lasers, probably
-            //// RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, 15f, 12 );
-            ////lasermask determiens what layers to ignore
-            ////make it so raycast ignores trigger colliders (they collide but aren't stopped by it)
-            //int layerMaskk=(1<<13) + (1<<14) + (1<<11); //BITSHIFTING
-            
-            //layerMaskk = ~layerMaskk; //turns every zero into a 1 or whatever (inverting)
 
-           // RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity,layerMaskk); //anything on layer 13 should be ignored, everything else would be hit
-           // RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up, Mathf.Infinity, laserMask);
-            //create a second layeramaks variable, add before doing inverting (so you would add 1<<4 to layermask BEFORE inverting)
-
-            //RaycastHit2D ray = Physics2D.Raycast(transform.position, transform.up);
             laserHitPos = ray.point;
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, laserHitPos);

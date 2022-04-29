@@ -1622,7 +1622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2497117486111457027}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -62, y: -70, z: -20}
+  m_LocalPosition: {x: -70, y: -80, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2497117486408054323}
@@ -5466,16 +5466,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectImage: {fileID: 4013535535739132475}
   colImg:
-  - {fileID: 1644060952557416952, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: -8351249293608845906, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 6666609174251709808, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 4892365039229399504, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: -7926938572215041205, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 6592116536660055273, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 8415608196523289569, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: -3249960372105350395, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: -1629028949495057720, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 3930676916357158654, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: 21300000, guid: 0a8ef185bc0ad884ea27870c21a06027, type: 3}
+  - {fileID: 21300000, guid: 758977341306b7a4ea260d033e843c6c, type: 3}
+  - {fileID: 21300000, guid: dd4d973441b4cbf4f94a36f7ffe0ad5c, type: 3}
+  - {fileID: 21300000, guid: a570bd36dc430bc42850e01e43f7338c, type: 3}
+  - {fileID: 21300000, guid: 46d48631729ee78479082371108781ae, type: 3}
+  - {fileID: 21300000, guid: b4895d48c10fd5344a3405efd80a4525, type: 3}
+  - {fileID: 21300000, guid: 1c5941d38e6445541835e86776aa73e8, type: 3}
+  - {fileID: 21300000, guid: 0151514dd3386b648a86ba7e1fc4a8a9, type: 3}
+  - {fileID: 21300000, guid: ade80b4b4adb0304fb0b3d628e0481d3, type: 3}
+  - {fileID: 21300000, guid: 58e39b4a56f051b4ab1082373bf9685f, type: 3}
 --- !u!1 &4817123206897968190
 GameObject:
   m_ObjectHideFlags: 0
@@ -7525,11 +7525,11 @@ MonoBehaviour:
   bottomLeftBounds: {x: -94.07501, y: -114.90502, z: 80}
   bottomRightBounds: {x: -29.924984, y: -114.90502, z: 80}
   centerBounds: {x: -62, y: -82.83, z: 80}
-  topLeftTextBounds: {x: -94.07501, y: -50.75499, z: 80}
-  topRightTextBounds: {x: -31.207985, y: -50.75499, z: 80}
-  bottomLeftTextBounds: {x: -94.07501, y: -71.283, z: 80}
-  bottomRightTextBounds: {x: -31.207985, y: -71.283, z: 80}
-  centerTextBounds: {x: -62.6415, y: -61.018993, z: 0}
+  topLeftTextBounds: {x: -102.07501, y: -60.75499, z: 80}
+  topRightTextBounds: {x: -39.207985, y: -60.75499, z: 80}
+  bottomLeftTextBounds: {x: -102.07501, y: -81.283, z: 80}
+  bottomRightTextBounds: {x: -39.207985, y: -81.283, z: 80}
+  centerTextBounds: {x: -70.641495, y: -71.019, z: 0}
   finalTopLeftTextBounds: {x: -94.07501, y: -50.75499, z: 80}
   finalTopRightTextBounds: {x: -31.207985, y: -50.75499, z: 80}
   finalBottomLeftTextBounds: {x: -94.07501, y: -71.283, z: 80}
@@ -7560,7 +7560,7 @@ MonoBehaviour:
   debugMode: 0
   totalReadTime: 0.00001
   totalUnreadTime: 0.00001
-  currentReadTime: 108.26713
+  currentReadTime: 59.05255
   autoRead: 1
   rememberReadPosition: 1
   autoQuality: 0

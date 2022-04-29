@@ -72,8 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 1626648527
   m_SortingLayer: -9
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5195811659427404027, guid: 1dff872547c5ab24ea06e50a454e8e3b,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a8ef185bc0ad884ea27870c21a06027, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,14 +124,14 @@ MonoBehaviour:
   collectFX: {fileID: 3326193482900577939, guid: 6260fed217bd6554e9047b63c899f102,
     type: 3}
   colImg:
-  - {fileID: 1644060952557416952, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: -8351249293608845906, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 6666609174251709808, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 4892365039229399504, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: -7926938572215041205, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 6592116536660055273, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 8415608196523289569, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: -3249960372105350395, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: -1629028949495057720, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
-  - {fileID: 3930676916357158654, guid: 5627135d2e08a2c43a109e1b813d97bd, type: 3}
+  - {fileID: 21300000, guid: 0a8ef185bc0ad884ea27870c21a06027, type: 3}
+  - {fileID: 21300000, guid: 758977341306b7a4ea260d033e843c6c, type: 3}
+  - {fileID: 21300000, guid: dd4d973441b4cbf4f94a36f7ffe0ad5c, type: 3}
+  - {fileID: 21300000, guid: a570bd36dc430bc42850e01e43f7338c, type: 3}
+  - {fileID: 21300000, guid: 46d48631729ee78479082371108781ae, type: 3}
+  - {fileID: 21300000, guid: b4895d48c10fd5344a3405efd80a4525, type: 3}
+  - {fileID: 21300000, guid: 1c5941d38e6445541835e86776aa73e8, type: 3}
+  - {fileID: 21300000, guid: 0151514dd3386b648a86ba7e1fc4a8a9, type: 3}
+  - {fileID: 21300000, guid: ade80b4b4adb0304fb0b3d628e0481d3, type: 3}
+  - {fileID: 21300000, guid: 58e39b4a56f051b4ab1082373bf9685f, type: 3}
   spriteRenderer: {fileID: 3924503896645764672}
