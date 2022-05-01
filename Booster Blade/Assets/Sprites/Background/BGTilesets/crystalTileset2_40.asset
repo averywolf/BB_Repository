@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: crystalTileset2_40
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 1794907936452077349, guid: 4508daeb14809a44fbfdc98551a3ce00,
+  m_Sprite: {fileID: 1794907936452077349, guid: c160578441db3ae418a1f2a6d260b214,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
