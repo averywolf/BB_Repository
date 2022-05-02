@@ -8,6 +8,7 @@ public class CutscenePanel : MonoBehaviour
 
     //types WaitTime WaitForSignal
     public bool cutImmediately = false;
+   
     public float stayTime; //how long this panel stays on screen before proceeding to the next panel
 
     public void ShowPanel()
