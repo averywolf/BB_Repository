@@ -14980,6 +14980,7 @@ GameObject:
   - component: {fileID: 3706354302958785481}
   - component: {fileID: 3706354302958785482}
   - component: {fileID: 3706354302958785483}
+  - component: {fileID: 1264393341967519094}
   m_Layer: 0
   m_Name: IntermissionCanvas
   m_TagString: Untagged
@@ -15070,6 +15071,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!210 &1264393341967519094
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3706354302958785484}
+  m_Enabled: 1
+  m_SortingLayerID: 1997224179
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!1 &3827442179522561366
 GameObject:
   m_ObjectHideFlags: 0

@@ -399,8 +399,10 @@ public class LevelManager : MonoBehaviour
     //called specifically when the player dies mid-stage.
     // collectible save data is not erased, it persists if the player had touched a checkpoint after getting the collectible
     public void RestartFromLevelSave()
-    {  
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    {
+        StartCoroutine(TransitionManager.instance.Death(SceneManager.GetActiveScene().name));
+
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void ExitLevel()
     {

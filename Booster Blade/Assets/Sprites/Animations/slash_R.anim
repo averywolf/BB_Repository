@@ -88,10 +88,10 @@ AnimationClip:
       value: {fileID: -7237693430787047495, guid: 65c73042161881b4a9d1dc6f846ff0ea,
         type: 3}
     - time: 0.057142857
-      value: {fileID: -8429602374061708503, guid: 65c73042161881b4a9d1dc6f846ff0ea,
+      value: {fileID: -7764228169503734774, guid: f6cbfcd6c1b5b734cbe91fd78c4b2611,
         type: 3}
     - time: 0.25714287
-      value: {fileID: -8429602374061708503, guid: 65c73042161881b4a9d1dc6f846ff0ea,
+      value: {fileID: -7764228169503734774, guid: f6cbfcd6c1b5b734cbe91fd78c4b2611,
         type: 3}
     attribute: m_Sprite
     path: PlayerBody/Herobody
@@ -144,8 +144,8 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: -7237693430787047495, guid: 65c73042161881b4a9d1dc6f846ff0ea, type: 3}
-    - {fileID: -8429602374061708503, guid: 65c73042161881b4a9d1dc6f846ff0ea, type: 3}
-    - {fileID: -8429602374061708503, guid: 65c73042161881b4a9d1dc6f846ff0ea, type: 3}
+    - {fileID: -7764228169503734774, guid: f6cbfcd6c1b5b734cbe91fd78c4b2611, type: 3}
+    - {fileID: -7764228169503734774, guid: f6cbfcd6c1b5b734cbe91fd78c4b2611, type: 3}
     - {fileID: 1260302724017676575, guid: f0764d7208e624541a25307c2f809026, type: 3}
     - {fileID: 45304263695807850, guid: f0764d7208e624541a25307c2f809026, type: 3}
   m_AnimationClipSettings:

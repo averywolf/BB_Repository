@@ -105,6 +105,8 @@ public class PlayerController : MonoBehaviour
     public MonolithCore monolithCoreRef;//only relevant in final stage
 
     public CinemachineImpulseSource hurtShake;
+
+    public float currentAngleForDeathAnim = 0;
     public enum PlayerMoveStates
     {
         idle,
@@ -152,7 +154,7 @@ public class PlayerController : MonoBehaviour
     {
         playerBody.transform.rotation = Quaternion.Euler(0, 0, angleToRotate);
         playerAnimator.SetFloat("heroDirection", angleToRotate);
-       // OnPlayerTurn.Invoke(); //buggy
+        currentAngleForDeathAnim = angleToRotate;
 
     }
 

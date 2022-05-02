@@ -28,6 +28,7 @@ public class IntermissionManager : MonoBehaviour
     public Coroutine skipPromptProcess;
     private bool skipReady = false;
     public string startIntermissionSong = "";
+    private bool canInteract = true;
     public enum IntermissionState
     {
         beforeresults,
@@ -65,10 +66,11 @@ public class IntermissionManager : MonoBehaviour
     }
     public void DialogueAdvanceInput(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && canInteract)
         {
             if (currentInterState.Equals(IntermissionState.results))
             {
+                
                 resultsScreen.HideResults();
                 dialogueManager.BeginDialogue();
                 promptForSkip.gameObject.SetActive(true);
@@ -88,7 +90,7 @@ public class IntermissionManager : MonoBehaviour
 
     public void SkipInput(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && canInteract)
         {
             if (currentInterState.Equals(IntermissionState.duringDialogue))
             {
@@ -111,43 +113,7 @@ public class IntermissionManager : MonoBehaviour
     {
        resultsScreen.DisplayResults();
     }
-    public void Update()
-    {
-        //if (Keyboard.current.zKey.wasPressedThisFrame)
-        //{
-        //    if (currentInterState.Equals(IntermissionState.results))
-        //    {
-        //        resultsScreen.HideResults();
-        //        dialogueManager.BeginDialogue();
-        //        promptForSkip.gameObject.SetActive(true);
-        //        currentInterState = IntermissionState.duringDialogue;
-        //        AudioManager.instance.PlayMusic(startIntermissionSong);
-        //    }
-        //    else if(currentInterState.Equals(IntermissionState.duringDialogue))
-        //    {
-        //        dialogueManager.AdvanceCutscene();
-        //    }
-        //}
-        //else if (Keyboard.current.escapeKey.wasPressedThisFrame)
-        //{
-        //    if (currentInterState.Equals(IntermissionState.duringDialogue))
-        //    {
-        //        if (skipReady)
-        //        {
-        //            StopSkip(skipPromptProcess);
-        //            dialogueManager.EndDialogue();
-        //        }
-        //        else //shows a prompt to check if the player is sure before they skip
-        //        {
-        //            //make a sound effect?
-        //            skipPromptProcess = StartCoroutine(ResetSkipPrompt(2));
-        //            skipReady = true;
-                   
-        //        }
-        //    }
-            
-        //}
-    }
+
     public void RevertPrompt()
     {
         skipReady = false;
@@ -173,7 +139,10 @@ public class IntermissionManager : MonoBehaviour
     }
     public void GoToNextLevel()
     {
-        SceneManager.LoadScene(nextLevel);
+        canInteract = false;
+        StartCoroutine(TransitionManager.instance.InterToStage(nextLevel));
+
+      //  SceneManager.LoadScene(nextLevel);
     }
     //have separate system specific to here that plays events when the dialogue reaches a certain increment (might wait for the event to play out before actually advancing text
 }

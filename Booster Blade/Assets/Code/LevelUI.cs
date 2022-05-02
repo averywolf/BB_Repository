@@ -22,6 +22,8 @@ public class LevelUI : MonoBehaviour
     GameObject deathBG;
 
     [SerializeField]
+    GameObject dPlayer;
+    [SerializeField]
     Slider staminaSlider;
 
     [SerializeField]
@@ -43,10 +45,11 @@ public class LevelUI : MonoBehaviour
     //might make itz unique clazz
     public CollectIcon collectibleTracker;
 
+    public Animator dPlayerAnim;
     public void Awake()
     {
         deathBG.SetActive(false);
-        
+        dPlayer.SetActive(false);
         notifBox.SetActive(false);
         staminaSlider.value = 1;
         if (instance == null)
@@ -75,8 +78,19 @@ public class LevelUI : MonoBehaviour
     public void StartDeathUI()
     {
         deathBG.SetActive(true);
+        dPlayer.SetActive(true);
+        SetDeathPlayer();
     }
-
+    public void SetDeathPlayer()
+    {
+        //dPlayer.GetComponent<RectTransform>().rotation = LevelManager.instance.GetPlayerTransform().rotation;
+        SetDeathAnimation(LevelManager.instance.GetPlayerController().currentAngleForDeathAnim);
+    }
+    public void SetDeathAnimation(float angleToRotate)
+    {
+        dPlayer.GetComponent<RectTransform>().rotation = Quaternion.Euler(0, 0, angleToRotate);
+        dPlayerAnim.SetFloat("heroDirection", angleToRotate);
+    }
     public void SetStaminaSlider(float staminaVal)
     {
         staminaSlider.value = staminaVal;

@@ -345,7 +345,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 6}
   m_EdgeRadius: 0
 --- !u!120 &1223052895569115377
 LineRenderer:
@@ -384,7 +384,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 68525
-  m_SortingLayer: -11
+  m_SortingLayer: -13
   m_SortingOrder: 3
   m_Positions:
   - {x: 0, y: 0, z: 0}

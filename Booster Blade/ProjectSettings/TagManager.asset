@@ -72,9 +72,6 @@ TagManager:
   - name: WallTiles
     uniqueID: 1972533803
     locked: 0
-  - name: Deathplane
-    uniqueID: 1210824009
-    locked: 0
   - name: Player
     uniqueID: 4103291367
     locked: 0
@@ -93,3 +90,9 @@ TagManager:
   - name: UI
     uniqueID: 1997224179
     locked: 1
+  - name: Deathplane
+    uniqueID: 1210824009
+    locked: 0
+  - name: TransUI
+    uniqueID: 1446649587
+    locked: 0
