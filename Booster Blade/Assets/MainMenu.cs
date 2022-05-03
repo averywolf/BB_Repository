@@ -178,7 +178,7 @@ public class MainMenu : MonoBehaviour
         if (saveManager.currentRunData.continueIndex == 0)
         {
             continueButton.interactable = false;
-            continueButton.GetComponentInChildren<SuperTextMesh>().text = "UNAVAILIABLE";
+            continueButton.GetComponentInChildren<SuperTextMesh>().text = "CONTINUE";
         }
         else
         {
