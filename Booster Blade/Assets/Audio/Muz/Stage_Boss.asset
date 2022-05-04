@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stage_Boss
   m_EditorClassIdentifier: 
   audioName: Stage_Boss
-  Clip: {fileID: 8300000, guid: d2b03f12cab98d545a18c8a05381ab04, type: 3}
+  Clip: {fileID: 8300000, guid: 9a537a3c1fa66f540869568dd922dae0, type: 3}
   Volume: 1
   Pitch: 1
   Loop: 1

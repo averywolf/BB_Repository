@@ -41,7 +41,10 @@ public class PanelCutsceneSystem : MonoBehaviour
     public void Start()
     {
         Time.timeScale = 1;
-        AudioManager.instance.PlayMusic(cutsceneSong);
+        if(cutsceneSong != "")
+        {
+            AudioManager.instance.PlayMusic(cutsceneSong);
+        }
         StartCoroutine(TestPanelProcess());
     }
 
@@ -72,6 +75,15 @@ public class PanelCutsceneSystem : MonoBehaviour
         }
 
         Debug.Log("Done with cutscene.");
+        AudioManager.instance.StopMusic();
         SceneManager.LoadScene(sceneToGoTo);
+    }
+    public void PlayIntroSong()
+    {
+        AudioManager.instance.Play("IntroTheme");
+    }
+    public void DramaticMusicStop()
+    {
+        AudioManager.instance.StopMusic();
     }
 }
