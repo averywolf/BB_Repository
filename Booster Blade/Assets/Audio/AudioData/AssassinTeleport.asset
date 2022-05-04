@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: AssassinTeleport
   Clip: {fileID: 8300000, guid: f5cde1ffee60cb44c8037a211579cfa6, type: 3}
-  Volume: 1
-  Pitch: 1
+  Volume: 0.571
+  Pitch: 0.98
   Loop: 0
   SpacialBlend: 0
   isMusic: 0

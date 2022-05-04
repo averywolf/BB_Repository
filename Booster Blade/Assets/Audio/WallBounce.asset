@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: WallBounce
   Clip: {fileID: 8300000, guid: 28603e1e54e99bc4d859c191ef850869, type: 3}
-  Volume: 1
+  Volume: 0.7
   Pitch: 1
   Loop: 0
   SpacialBlend: 0

@@ -146,6 +146,8 @@ public class LevelManager : MonoBehaviour
 
         void SkipToLevel(string levelName) //apparently you can put functions in here? neat
         {
+            saveManager.lastSavedAtCheckpoint = false;
+            saveManager.tempCheckpointID = -1; 
             SaveManager.instance.hasNotBeganLevel = true; //just in case
             SceneManager.LoadScene(levelName); //unsure if there's anything else I need to do
         }

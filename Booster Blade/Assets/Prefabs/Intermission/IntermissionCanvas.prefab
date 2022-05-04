@@ -6708,7 +6708,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.298
+  m_Volume: 0.446
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -12832,7 +12832,7 @@ MonoBehaviour:
 
     we can hold
     an entire conversation.'
-  font: {fileID: 12800000, guid: cd99514f9f22ee5489477fac1baeea8f, type: 3}
+  font: {fileID: 12800000, guid: 806eac7b6e5b3b140acacb07fc1a714c, type: 3}
   _color32:
     serializedVersion: 2
     rgba: 4294967295
@@ -12849,7 +12849,7 @@ MonoBehaviour:
   undrawAnimName: Appear
   audioSource: {fileID: 4182382149611794605}
   audioClips:
-  - {fileID: 8300000, guid: efd26f5aa3e98664b93201d5eb647081, type: 3}
+  - {fileID: 8300000, guid: 36346b56d38852e44be1c9bea6bfe3b2, type: 3}
   stopPreviousSound: 1
   pitchMode: 0
   overridePitch: 1
@@ -12968,7 +12968,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.298
+  m_Volume: 0.446
   m_Pitch: 1
   Loop: 0
   Mute: 0

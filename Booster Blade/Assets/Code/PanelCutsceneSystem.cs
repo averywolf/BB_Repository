@@ -41,7 +41,8 @@ public class PanelCutsceneSystem : MonoBehaviour
     public void Start()
     {
         Time.timeScale = 1;
-        if(cutsceneSong != "")
+        AudioManager.instance.StopMusic();
+        if (cutsceneSong != "")
         {
             AudioManager.instance.PlayMusic(cutsceneSong);
         }

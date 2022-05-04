@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: Convo_Tut
   Clip: {fileID: 8300000, guid: 79fc9fc6f03740c49a6df0a9843941b0, type: 3}
-  Volume: 1
+  Volume: 0.672
   Pitch: 1
   Loop: 1
   SpacialBlend: 0
