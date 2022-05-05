@@ -60,10 +60,11 @@ public class LevelManager : MonoBehaviour
     private float finalTimeLimit;
 
     [HideInInspector]
-    public bool tempGotStageCollectible= true;
+    public bool tempGotStageCollectible= false;
 
     void Awake() 
     {
+        tempGotStageCollectible = false;
         entityManager = GetComponent<EntityManager>();
         checkpointManager = GetComponent<CheckpointManager>();
         if (instance == null)
