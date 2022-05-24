@@ -154,6 +154,22 @@ public class LevelManager : MonoBehaviour
         }
         if (Keyboard.current.leftShiftKey.isPressed) //extremely rudimentary level select system. need to hold left shift
         {
+            if (Keyboard.current.iKey.wasPressedThisFrame)
+            {
+                if (!debugIVon)
+                {
+                    playerController.SetDebugInvincibility(true);
+                    debugIVon = true;
+                    Debug.LogWarning("Player Invincibility enabled.");
+                }
+                else
+                {
+                    playerController.SetDebugInvincibility(false);
+                    debugIVon = false;
+                    Debug.LogWarning("Player Invincibility disabled.");
+                }
+            }
+
             if (Keyboard.current.digit1Key.wasPressedThisFrame)
             {
                 SkipToLevel("L-01");
@@ -202,8 +218,32 @@ public class LevelManager : MonoBehaviour
             {
                 ExitLevel();
             }
+                    //else if (Keyboard.current.iKey.wasPressedThisFrame)
+        //{
+        //    if (!debugIVon)
+        //    {
+        //        playerController.SetDebugInvincibility(true);
+        //        debugIVon = true;
+        //        Debug.LogWarning("Player Invincibility enabled.");
+        //    }
+        //    else
+        //    {
+        //        playerController.SetDebugInvincibility(false);
+        //        debugIVon = false;
+        //        Debug.LogWarning("Player Invincibility disabled.");
+        //    }
+           
+        }
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            playerController.spacepaused= true;
             
         }
+        if (Keyboard.current.spaceKey.wasReleasedThisFrame)
+        {
+            playerController.spacepaused = false;
+        }
+        
         #endregion
     }
     public void PretendYouGotCollectible()

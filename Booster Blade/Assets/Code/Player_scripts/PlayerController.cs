@@ -107,6 +107,8 @@ public class PlayerController : MonoBehaviour
     public CinemachineImpulseSource hurtShake;
 
     public float currentAngleForDeathAnim = 0;
+
+    public bool spacepaused=false;
     public enum PlayerMoveStates
     {
         idle,
@@ -206,7 +208,15 @@ public class PlayerController : MonoBehaviour
         {
             if (!isStunned && !isDead && !isPlayerFrozen)
             {
-                playerRb.velocity = movementVelValue; //might instead set when changing facing directions
+                if (spacepaused) //DELETE THIS
+                {
+                    playerRb.velocity = new Vector3(0, 0, 0);
+                }
+                else
+                {
+                    playerRb.velocity = movementVelValue; //might instead set when changing facing directions
+                }
+                
             }
         }   
     }
