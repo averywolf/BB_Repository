@@ -20,6 +20,8 @@ public class BatEnemy : MonoBehaviour
     private bool chasingPlayer = false;
 
     public WeakX weakX;
+
+    public bool debugBatAlt =false;
     private void Awake()
     {
         batReady= false;
@@ -33,7 +35,15 @@ public class BatEnemy : MonoBehaviour
     }
     public void Start()
     {
-        aIDestinationSetter.target = LevelManager.instance.GetPlayerController().transform; //might be better to grab playerCore transform?
+        if (debugBatAlt)
+        {
+            aIDestinationSetter.target = LevelManager.instance.debugDestination;
+        }
+        else
+        {
+            aIDestinationSetter.target = LevelManager.instance.GetPlayerController().transform; //might be better to grab playerCore transform?}
+        }
+
     }
     //make this be called by EnitityBehavior?
     public void BatWakeUp()
@@ -58,8 +68,10 @@ public class BatEnemy : MonoBehaviour
         }
       
     }
+    
     public void Update()
     {
+
         if(aIPath.desiredVelocity.x >= 0.005f)
         {
             batGFX.localScale = new Vector3(1f, 1f, 1f);

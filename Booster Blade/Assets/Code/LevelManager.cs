@@ -56,12 +56,13 @@ public class LevelManager : MonoBehaviour
     private string actName = "";
 
     private bool debugIVon = false;
+    private bool debugStop = false;
     [SerializeField, Tooltip("Only applies during the final stage")]
     private float finalTimeLimit;
 
     [HideInInspector]
     public bool tempGotStageCollectible= false;
-
+    public Transform debugDestination;
     void Awake() 
     {
         tempGotStageCollectible = false;
@@ -236,12 +237,17 @@ public class LevelManager : MonoBehaviour
         }
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            playerController.spacepaused= true;
-            
-        }
-        if (Keyboard.current.spaceKey.wasReleasedThisFrame)
-        {
-            playerController.spacepaused = false;
+            if (debugStop)
+            {
+                playerController.spacepaused = false;
+                debugStop = false;
+            }
+            else
+            {
+                playerController.spacepaused = true;
+                debugStop = true;
+            }
+
         }
         
         #endregion
