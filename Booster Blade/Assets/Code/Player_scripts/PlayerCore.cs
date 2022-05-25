@@ -74,9 +74,4 @@ public class PlayerCore : MonoBehaviour
 
         //if(touching danger object) danger object has an on damage player event?
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-     
-    }
 }

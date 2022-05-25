@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
 
     private float xEnvironmentMod;//represents outside forces on object like energy fields
     private float yEnvironmentMod;
-    [SerializeField]
-    private GameObject playerBody;
+    [HideInInspector]
+    public GameObject playerBody;
 
     public GameObject ChargeReleaseEffect;
     private IEnumerator exhaustBoost; //after a certain time, exit boost and return to normal movement
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public PlayerMoveStates currentMoveState = PlayerMoveStates.moving;
     public PlayerSword playerSword;
-
+   
     private bool canTurn = true;
 
     private Vector2 initialturnpoint;
@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
     public float currentAngleForDeathAnim = 0;
 
     public bool spacepaused=false;
+    private IEnumerator bladeReturn;
     public enum PlayerMoveStates
     {
         idle,
@@ -132,8 +133,6 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("heroBoosting", false);
         playerSword.swordBoosting = false;
         isReversing = false;
-       // playerAnimator.Play("hero_lungeUp");
-        //SetLungeAnimation(currentFacingAngle);
     }
 
     private void Update()
@@ -302,36 +301,8 @@ public class PlayerController : MonoBehaviour
         testUI.StaminaFlash(true);
         canBoost = true;
     }
-    public void CutsceneMode(Transform dest)
-    {
-        playerAnimator.Play("hero_return");
-        FreezePlayer(true);
-        dashTrail.SetEnabled(false);
-        currentMoveState = PlayerMoveStates.idle;
-        StartCoroutine(MoveToPoint(dest.position, 4));   
-    }
-    
-    public IEnumerator MoveToPoint(Vector2 destination, float timeSpeed)
-    {
-        Vector2 startingPoint = playerBody.transform.position;
-        //while (true)
-        //{
-        //    //if (vector2.Distance(target.transform.position, transform.position) < 1)
-        //        playerBody.transform.position = Vector2.MoveTowards(transform.position, destination, timeSpeed* Time.deltaTime);
-        //    yield return null;
-        //}
 
-        //lerping time is weird
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * timeSpeed)
-        {
-           playerBody.transform.position = Vector3.Lerp(startingPoint, destination, t);
-
-            yield return null;
-        }
-        monolithCoreRef.InsertSword();
-
-        //  transform.position = Vector2.MoveTowards(transform.position, target.transform.position, Time.deltaTime * speed);
-    }
+  
 
     //might need two guages to be layered on top of each other?
     public IEnumerator SlowFromBoost(float boostStateDuration, bool manualBoost) //exit this if player has another state
@@ -445,6 +416,15 @@ public class PlayerController : MonoBehaviour
     {
         isDead = true;
         playerRb.velocity = Vector3.zero;
+
+
+
+
+        CeaseRoutine(bladeReturn); //should stop the blade return lunge at the end of the game if the player dies during the animation
+        //trying thiz out
+  //      transform.position = playerBody.transform;
+        playerBody.transform.localPosition = new Vector2(0, 0);
+
         playerAnimator.Play("heroDeath");
         LevelManager.instance.LevelDeathProcess();
     }
@@ -536,8 +516,6 @@ public class PlayerController : MonoBehaviour
         
     }
     
-  
-
     //Turns the player based on the specified direction, that's it
     //Used after PlayerController decides through logic if you're allowed to make a turn, or called instantly by other objects to make player face a certain way
     public void SetFacingDirection(float horzValue, float vertValue)
@@ -646,6 +624,42 @@ public class PlayerController : MonoBehaviour
             AudioManager.instance.Play("ChangeDirection");
         }
     }
+    public void CommunicateBladeReturn()
+    {
+       //plays a sound
+       //stops music
+       //stops timer
+    }
+    public void CutsceneMode(Transform dest)
+    {
+        RotateBody(0); //makes sure they're facing right
+        playerAnimator.Play("hero_return");
+        FreezePlayer(true);
+        dashTrail.SetEnabled(false);
+        currentMoveState = PlayerMoveStates.idle;
+        StartCoroutine(bladeReturn = MoveToPoint(dest.position, 0.1f)); //og= 4
+    }
 
+    public IEnumerator MoveToPoint(Vector2 destination, float timeSpeed)
+    {
+        Vector2 startingPoint = playerBody.transform.position;
+        //while (true)
+        //{
+        //    //if (vector2.Distance(target.transform.position, transform.position) < 1)
+        //        playerBody.transform.position = Vector2.MoveTowards(transform.position, destination, timeSpeed* Time.deltaTime);
+        //    yield return null;
+        //}
+
+        //lerping time is weird
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime * timeSpeed) //ficked?
+        {
+            playerBody.transform.position = Vector3.Lerp(startingPoint, destination, t);
+
+            yield return null;
+        }
+        monolithCoreRef.InsertSword();
+
+        //  transform.position = Vector2.MoveTowards(transform.position, target.transform.position, Time.deltaTime * speed);
+    }
 
 }

@@ -46,6 +46,9 @@ public class LevelUI : MonoBehaviour
     public CollectIcon collectibleTracker;
 
     public Animator dPlayerAnim;
+
+    [SerializeField]
+    private Canvas levelCan;
     public void Awake()
     {
         deathBG.SetActive(false);
@@ -83,8 +86,26 @@ public class LevelUI : MonoBehaviour
     }
     public void SetDeathPlayer()
     {
-        //dPlayer.GetComponent<RectTransform>().rotation = LevelManager.instance.GetPlayerTransform().rotation;
+      //  RectTransformUtility.WorldToScreenPoint(Camera.main, )
+         //dPlayerAnim.gameObject.GetComponent<RectTransform>().anchoredPosition = LevelManager.instance.GetPlayerController().playerBody.transform.position;
+        //dPlayerAnim.gameObject.GetComponent<RectTransform>().anchoredPosition = RectTransformUtility.WorldToScreenPoint(Camera.main, LevelManager.instance.GetPlayerController().playerBody.transform.position);
+
+      
+
+        //RectTransform myRect = dPlayerAnim.gameObject.GetComponent<RectTransform>();
+        //Vector2 positionOfPlayer= LevelManager.instance.GetPlayerController().playerBody.transform.position;
+        //Vector2 myPositionOnScreen = Camera.main.WorldToScreenPoint(positionOfPlayer);
+        
+        //Canvas copyOfMainCanvas = levelCan;
+        //Debug.Log("World space of player= (x= " + positionOfPlayer.x + ", y= "+positionOfPlayer.y+")");
+        //Debug.Log("Screen space of player= (x= " + myPositionOnScreen.x + ", y= " + myPositionOnScreen.y + ")");
+
+        //float scaleFactor = copyOfMainCanvas.scaleFactor;
+        //Vector2 finalPosition = new Vector2(myPositionOnScreen.x / scaleFactor, myPositionOnScreen.y / scaleFactor);
+        //myRect.anchoredPosition = finalPosition;
         SetDeathAnimation(LevelManager.instance.GetPlayerController().currentAngleForDeathAnim);
+
+
     }
     public void SetDeathAnimation(float angleToRotate)
     {
