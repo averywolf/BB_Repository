@@ -29,6 +29,7 @@ public class MonolithCore : MonoBehaviour
     {
         shakeSource.GenerateImpulse();
         Invoke("GoThroughExitDoor", 2);
+        LevelManager.instance.SaveTheWorld();
     }
 
 }

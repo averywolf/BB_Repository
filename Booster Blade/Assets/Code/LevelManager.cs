@@ -489,9 +489,21 @@ public class LevelManager : MonoBehaviour
         levelUI.DisplayCollectible(true);
         tempGotStageCollectible = true;
     }
+    public void SaveTheWorld()
+    {
+        if (gameTimer != null)
+        {
+            StopCoroutine(gameTimer);
+        }
+        AudioManager.instance.StopMusic();
+        //play sound
+        Debug.Log("Time stopped " + saveManager.currentTimeInLevel);
+        //play a sound
 
+
+    }
     //called when restarting level
-    
+
     /// <summary>
     /// Called when touching checkpoint
     /// </summary>

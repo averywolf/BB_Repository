@@ -637,7 +637,7 @@ public class PlayerController : MonoBehaviour
         FreezePlayer(true);
         dashTrail.SetEnabled(false);
         currentMoveState = PlayerMoveStates.idle;
-        StartCoroutine(bladeReturn = MoveToPoint(dest.position, 0.1f)); //og= 4
+        StartCoroutine(bladeReturn = MoveToPoint(dest.position, 4f)); //og= 4
     }
 
     public IEnumerator MoveToPoint(Vector2 destination, float timeSpeed)
