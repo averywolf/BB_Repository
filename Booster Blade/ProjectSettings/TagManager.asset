@@ -54,12 +54,6 @@ TagManager:
   - name: Decor
     uniqueID: 2759601987
     locked: 0
-  - name: WeakX
-    uniqueID: 469597675
-    locked: 0
-  - name: Enemy
-    uniqueID: 4260852355
-    locked: 0
   - name: LevelObject
     uniqueID: 1626648527
     locked: 0
@@ -71,6 +65,12 @@ TagManager:
     locked: 0
   - name: WallTiles
     uniqueID: 1972533803
+    locked: 0
+  - name: WeakX
+    uniqueID: 469597675
+    locked: 0
+  - name: Enemy
+    uniqueID: 4260852355
     locked: 0
   - name: Player
     uniqueID: 4103291367
