@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: UIButtonSelect
   m_EditorClassIdentifier: 
   audioName: UIButtonSelect
-  Clip: {fileID: 8300000, guid: a74fd6b5a7da374458c7fa90262beb72, type: 3}
-  Volume: 1
+  Clip: {fileID: 8300000, guid: 072405edbe476da44b80e457c1f316f4, type: 3}
+  Volume: 0.2
   Pitch: 1
   Loop: 0
   SpacialBlend: 0

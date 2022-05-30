@@ -66,6 +66,9 @@ TagManager:
   - name: WallTiles
     uniqueID: 1972533803
     locked: 0
+  - name: AboveWall
+    uniqueID: 3548385493
+    locked: 0
   - name: WeakX
     uniqueID: 469597675
     locked: 0

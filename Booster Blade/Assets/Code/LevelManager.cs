@@ -219,36 +219,23 @@ public class LevelManager : MonoBehaviour
             {
                 ExitLevel();
             }
-                    //else if (Keyboard.current.iKey.wasPressedThisFrame)
-        //{
-        //    if (!debugIVon)
-        //    {
-        //        playerController.SetDebugInvincibility(true);
-        //        debugIVon = true;
-        //        Debug.LogWarning("Player Invincibility enabled.");
-        //    }
-        //    else
-        //    {
-        //        playerController.SetDebugInvincibility(false);
-        //        debugIVon = false;
-        //        Debug.LogWarning("Player Invincibility disabled.");
-        //    }
-           
-        }
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            if (debugStop)
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                playerController.spacepaused = false;
-                debugStop = false;
-            }
-            else
-            {
-                playerController.spacepaused = true;
-                debugStop = true;
+                if (debugStop)
+                {
+                    playerController.spacepaused = false;
+                    debugStop = false;
+                }
+                else
+                {
+                    playerController.spacepaused = true;
+                    debugStop = true;
+                }
+
             }
 
         }
+  
         
         #endregion
     }

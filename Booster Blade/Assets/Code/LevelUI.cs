@@ -51,6 +51,8 @@ public class LevelUI : MonoBehaviour
     private Canvas levelCan;
     public void Awake()
     {
+        titlecardanim.gameObject.SetActive(true);
+        
         deathBG.SetActive(false);
         dPlayer.SetActive(false);
         notifBox.SetActive(false);
