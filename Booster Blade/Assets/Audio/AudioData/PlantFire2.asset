@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlantFire2
   m_EditorClassIdentifier: 
   audioName: PlantFire2
-  Clip: {fileID: 8300000, guid: e5c96b0c7a90b234c96dbda6c3db67a0, type: 3}
+  Clip: {fileID: 8300000, guid: 88f0f52c16b6d7d41b699400249170b3, type: 3}
   Volume: 1
   Pitch: 1
   Loop: 0

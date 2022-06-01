@@ -6,7 +6,8 @@ public class TotalResults : MonoBehaviour
 {
     //displayed at end credits
     public SuperTextMesh resultsText;
-
+    public SuperTextMesh resultsText2;
+    public SuperTextMesh resultsTextTotal;
  
     public List<CollectIcon> collectibleIcons;
     SaveManager saveManager;
@@ -26,15 +27,7 @@ public class TotalResults : MonoBehaviour
             collectibleIcons[i].gameObject.SetActive(false);
         }
     }
-    //public void Start()
-    //{
-    //    for (int i = 0; i < 10; i++)
-    //    {
-    //        collectibleIcons[i].PickIcon(i);
-    //    }
-    //    ShowCollectibles();
-    
-    //}
+
 
     public void DisplayRunResults()
     {
@@ -49,17 +42,37 @@ public class TotalResults : MonoBehaviour
         
         gameObject.SetActive(true);
         string resultsTally = "";
+        string resultsTally2 = "";
         float totalTime = 0;
         for (int i = 0; i < 10; i++) //might grab level name lenght from a manager
         {
             float levelTime = saveManager.RetrieveCurrentData(i).timeBeaten; //shows each time the player got from each level during the run
-            resultsTally += "Stage " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
+            if (i > 4)
+            {
+                if (i == 9)
+                {
+                    resultsTally2 += "ZONE X: " + FormatTime(levelTime) + "\n";
+                }   
+                else
+                {
+                    resultsTally2 += "ZONE " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
+                }
+                
+            }
+            else
+            {
+                resultsTally += "ZONE " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
+            }
+          
+      
 
             totalTime += levelTime;
         }
-        resultsTally += "TOTAL: " + FormatTime(totalTime);
+        resultsTextTotal.text= "TOTAL: " + FormatTime(totalTime);
+        //resultsTally += "TOTAL: " + FormatTime(totalTime);
         saveManager.LogTotalTime(totalTime);
         resultsText.text = resultsTally;
+        resultsText2.text = resultsTally2;
        
         //display total
     }

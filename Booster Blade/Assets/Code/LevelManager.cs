@@ -63,6 +63,8 @@ public class LevelManager : MonoBehaviour
     [HideInInspector]
     public bool tempGotStageCollectible= false;
     public Transform debugDestination;
+
+    private float currentTime;
     void Awake() 
     {
         tempGotStageCollectible = false;
@@ -318,11 +320,11 @@ public class LevelManager : MonoBehaviour
     {
         levelUI.UpdateHPHUD(hp);
     }
-    public void LevelDeathProcess()
+    public void LevelDeathProcess(bool timeout)
     {
         AudioManager.instance.StopMusic();
         canPauseGame = false;
-        levelUI.StartDeathUI();
+        levelUI.StartDeathUI(timeout);
         if(gameTimer != null)
         {
             StopCoroutine(gameTimer);
@@ -380,12 +382,14 @@ public class LevelManager : MonoBehaviour
     public IEnumerator GameTimer()
     {
         //levelTime = 0;
-        float currentTime = 0;
+        //float currentTime = 0;
+        currentTime = 0;
         levelTime = saveManager.currentTimeInLevel;
         ///Final Countdown seems to work fine but might need further testing
         if (currentLevelIndex == 9)
         {
             levelUI.SetTimer(finalTimeLimit);
+            levelUI.evilTimer = true;
             while (currentTime<finalTimeLimit)
             {
                 currentTime += Time.deltaTime;
@@ -395,7 +399,7 @@ public class LevelManager : MonoBehaviour
                 yield return null;
             }
             levelUI.SetTimer(0);
-            playerController.KillPLayer(); //will probably initiate a special game over but this should do for now
+            playerController.KillPLayer(true); //will probably initiate a special game over but this should do for now
         }
         else
         {
@@ -448,6 +452,7 @@ public class LevelManager : MonoBehaviour
         if (gameTimer != null)
         {
             StopCoroutine(gameTimer);
+            
         }
         saveManager.SaveCollectibleStatus(currentLevelIndex, tempGotStageCollectible); //loglevelCompletionData already calls "save both data" so it doesn't seem like there's need
         saveManager.LogLevelCompletionData(currentLevelIndex, levelTime);
@@ -480,8 +485,12 @@ public class LevelManager : MonoBehaviour
     {
         if (gameTimer != null)
         {
+            levelUI.evilTimer = false;
+            levelUI.SetTimer(currentTime);
             StopCoroutine(gameTimer);
+            
         }
+
         AudioManager.instance.StopMusic();
         //play sound
         Debug.Log("Time stopped " + saveManager.currentTimeInLevel);

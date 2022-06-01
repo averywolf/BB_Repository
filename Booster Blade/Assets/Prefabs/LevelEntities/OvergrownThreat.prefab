@@ -146,7 +146,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 68525
-  m_SortingLayer: -11
+  m_SortingLayer: -14
   m_SortingOrder: 3
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -280,7 +280,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -34114941
-  m_SortingLayer: -9
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: -565117254376547597, guid: a12f11dce25e6ec43a473da559c3bf0c,
     type: 3}
@@ -308,10 +308,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantdoor: {fileID: 1436246916380968049}
   doorColumn: {fileID: 7693315140153976457}
+  plantcore: {fileID: 4234027012356149437}
   overgrownVines:
   - {fileID: 6220098778710372714}
   fixedAttack: {fileID: 11400000, guid: bb6683502bc67c1478651da51857ebca, type: 2}
   deathFX: {fileID: 3326193482900577939, guid: 5cb29d0bc34d94149aca2d5ce5540e76, type: 3}
+  columnDeathFX: {fileID: 3326193482900577939, guid: de18305d3e319df4a9d78c086fa52430,
+    type: 3}
 --- !u!114 &5940363296532434824
 MonoBehaviour:
   m_ObjectHideFlags: 0

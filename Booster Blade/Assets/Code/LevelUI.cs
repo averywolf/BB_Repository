@@ -20,6 +20,8 @@ public class LevelUI : MonoBehaviour
 
     [SerializeField]
     GameObject deathBG;
+    [SerializeField]
+    SuperTextMesh deathText;
 
     [SerializeField]
     GameObject dPlayer;
@@ -49,6 +51,8 @@ public class LevelUI : MonoBehaviour
 
     [SerializeField]
     private Canvas levelCan;
+    [HideInInspector]
+    public bool evilTimer = false;
     public void Awake()
     {
         titlecardanim.gameObject.SetActive(true);
@@ -69,7 +73,10 @@ public class LevelUI : MonoBehaviour
         levelDialogue.gameObject.SetActive(false);
         
     }
-
+    public void EvilTimer()
+    {
+        timer.color = Color.red;
+    }
 
     public void ClearTitleCard()
     {
@@ -80,8 +87,16 @@ public class LevelUI : MonoBehaviour
     {
         healthtext.text = "HP: " + currentHP.ToString();
     }
-    public void StartDeathUI()
+    public void StartDeathUI(bool timeout)
     {
+        if (timeout)
+        {
+            deathText.text = "TIME OVER";
+        }
+        else
+        {
+            deathText.text = "GAME OVER";
+        }
         deathBG.SetActive(true);
         dPlayer.SetActive(true);
         SetDeathPlayer();
@@ -137,8 +152,17 @@ public class LevelUI : MonoBehaviour
         //timer.text = "Time: " + timerValue.ToString("F2");
         //TimeSpan timeToDisplay
         //timer.text = "Time: " + timerValue.ToString(@"hh\:mm\:ss");
-        timer.text = "Time: " + FormatTime(timerValue);
+        if (evilTimer)
+        {
+            timer.text = "<j>Time: " + FormatTime(timerValue);
+        }
+        else
+        {
+            timer.text = "Time: " + FormatTime(timerValue);
+        }
+
     }
+
     private string FormatTime(float time)
     {
         int intTime = (int)time;

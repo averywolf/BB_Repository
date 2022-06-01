@@ -404,7 +404,7 @@ public class PlayerController : MonoBehaviour
             hurtShake.GenerateImpulse();
             if (currentPlayerHP < 1)
             {
-                KillPLayer();
+                KillPLayer(false);
             }
             else
             {
@@ -412,7 +412,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    public void KillPLayer()
+    public void KillPLayer(bool throughTimeout)
     {
         isDead = true;
         playerRb.velocity = Vector3.zero;
@@ -426,7 +426,7 @@ public class PlayerController : MonoBehaviour
         playerBody.transform.localPosition = new Vector2(0, 0);
 
         playerAnimator.Play("heroDeath");
-        LevelManager.instance.LevelDeathProcess();
+        LevelManager.instance.LevelDeathProcess(throughTimeout);
     }
     public void HealToFull()
     {

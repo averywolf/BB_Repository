@@ -14744,7 +14744,7 @@ MonoBehaviour:
     chSize: 128
     submeshChange: 0
     invoked: 1
-  _text: 'Time: 00.00.000'
+  _text: 'Time: 00:00:000'
   drawText: 'Time: 00.00.000'
   hyphenedText: 'Time: 00.00.000'
   font: {fileID: 12800000, guid: c614902aa0a37c54eba7da55d5b3025a, type: 3}

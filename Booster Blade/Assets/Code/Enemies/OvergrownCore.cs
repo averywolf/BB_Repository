@@ -6,6 +6,7 @@ public class OvergrownCore : MonoBehaviour
 {
     public GameObject plantdoor;
     public LineRenderer doorColumn;
+    public GameObject plantcore;
 
     public List<OvergrownVine> overgrownVines;
     public FixedAttack fixedAttack;
@@ -13,6 +14,8 @@ public class OvergrownCore : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private GameObject deathFX;
+    [SerializeField]
+    private GameObject columnDeathFX;
     AudioManager audiomanager;
     private bool attackingPlayer = false;
     
@@ -47,8 +50,6 @@ public class OvergrownCore : MonoBehaviour
             }
             KillPlant();
         }
-     
-       // KillPlant();
     }
     public IEnumerator RepeatTurret()
     {
@@ -82,10 +83,29 @@ public class OvergrownCore : MonoBehaviour
         {
             yield return waitForFixedUpdate;
         }
-        Destroy(gameObject);
-    
+        plantdoor.SetActive(false);
+        plantcore.GetComponent<SpriteRenderer>().enabled = false;
+        ExplodePillar(transform, plantdoor.transform.position);
+        
     }
+    public void ExplodePillar(Transform pontA, Vector3 pB)
+    {
+        Vector3 pA = pontA.position;
+        Vector3 vineLine = pA - pB;
+        Vector3 vineDirection = vineLine.normalized;
+        float totalDistance = vineLine.magnitude;
 
+        int effectNumber = (int)(totalDistance / 1);
+        int j = 0;
+        while (j <= effectNumber)
+        {
+            Vector2 spawnPoint = pB + (vineDirection * (j * 1)); //no offset yet
+
+            SpawnParticles(columnDeathFX, spawnPoint);
+            j++;
+
+        }
+    }
     public void SpawnParticles(GameObject particleEffectPrefab, Vector2 spawnPoint)
     {
         GameObject particleEffect = Instantiate(particleEffectPrefab, spawnPoint, particleEffectPrefab.transform.rotation);

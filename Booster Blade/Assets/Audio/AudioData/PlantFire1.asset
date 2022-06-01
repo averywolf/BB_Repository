@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlantFire1
   m_EditorClassIdentifier: 
   audioName: PlantFire1
-  Clip: {fileID: 8300000, guid: d049f4cee0dca1c468a6087319922a29, type: 3}
+  Clip: {fileID: 8300000, guid: f03c604024702604ba15600e127f51e2, type: 3}
   Volume: 1
-  Pitch: 1
+  Pitch: 0.85
   Loop: 0
   SpacialBlend: 0
   isMusic: 0
