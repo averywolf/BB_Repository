@@ -27,8 +27,8 @@ public class ButtonGem : KeyGem
                 return;
             }
         }
-
-        UnlockDoor();//might need to move position of conditions have been met for keybolt to work
+        conditionsHaveBeenMet = true;
+       // UnlockDoor();//might need to move position of conditions have been met for keybolt to work
     }
     
 }

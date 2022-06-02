@@ -13,12 +13,15 @@ public class MainMenu : MonoBehaviour
     private SaveManager saveManager;
 
     public GameObject resultsMenu;
+    public GameObject creditsMenu;
     public GameObject firstButton;
 
     public SuperTextMesh resultsText;
 
     public GameObject recordsEnterButton;
     public GameObject resultsReturnButton;
+    public GameObject creditsEnterButton;
+    public GameObject creditsReturnButton;
     //no loading save yet
     [SerializeField]
     private OptionsMenu optionsMenu;
@@ -47,6 +50,7 @@ public class MainMenu : MonoBehaviour
         OptionsDeleteConfirmation.SetActive(false);
         SetNewFirstSelected(firstButton);
         resultsMenu.SetActive(false); //options menu hides itself
+        creditsMenu.SetActive(false);
         ableToInteractWithMenu = true;
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlayMusic(menuSong);
@@ -140,6 +144,22 @@ public class MainMenu : MonoBehaviour
         SetNewFirstSelected(recordsEnterButton);
         menuArrow.PlaceArrow(recordsEnterButton.GetComponent<RectTransform>());
     }
+    public void OpenCreditsScreen()
+    {
+        PlayButtonClickSFX();
+        creditsMenu.SetActive(true);
+        menuArrow.PlaceArrow(creditsMenu.GetComponent<RectTransform>());
+        SetNewFirstSelected(creditsReturnButton);
+    }
+    public void CloseCreditsScreen()
+    {
+        PlayButtonClickSFX();
+        creditsMenu.SetActive(false);
+
+        SetNewFirstSelected(creditsEnterButton);
+        menuArrow.PlaceArrow(creditsEnterButton.GetComponent<RectTransform>());
+    }
+
     public void DisplayBestTimes()
     {
         //Currently you can view all results even if you haven't beaten the stages

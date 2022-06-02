@@ -10,6 +10,8 @@ public class LevelUI : MonoBehaviour
 
     [SerializeField]
     SuperTextMesh actTitleText;
+    [SerializeField]
+    SuperTextMesh zoneNumberText;
 
     [SerializeField]
     SuperTextMesh levelDialogue;
@@ -53,8 +55,10 @@ public class LevelUI : MonoBehaviour
     private Canvas levelCan;
     [HideInInspector]
     public bool evilTimer = false;
+    private Canvas uiCanvas;
     public void Awake()
     {
+        uiCanvas = GetComponent<Canvas>();
         titlecardanim.gameObject.SetActive(true);
         
         deathBG.SetActive(false);
@@ -86,6 +90,17 @@ public class LevelUI : MonoBehaviour
     public void UpdateHPHUD(int currentHP)
     {
         healthtext.text = "HP: " + currentHP.ToString();
+    }
+    public void ShowHideAllUI()
+    {
+        if (uiCanvas.enabled)
+        {
+            uiCanvas.enabled = false;
+        }
+        else
+        {
+            uiCanvas.enabled = true;
+        }
     }
     public void StartDeathUI(bool timeout)
     {
@@ -176,6 +191,10 @@ public class LevelUI : MonoBehaviour
     public void SetActText(string message)
     {
         actTitleText.text = message;
+    }
+    public void SetZoneText(string message)
+    {
+        zoneNumberText.text = message;
     }
     public void DialogueFade()
     {

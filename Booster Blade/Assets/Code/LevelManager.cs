@@ -55,6 +55,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private string actName = "";
 
+
     private bool debugIVon = false;
     private bool debugStop = false;
     [SerializeField, Tooltip("Only applies during the final stage")]
@@ -105,9 +106,26 @@ public class LevelManager : MonoBehaviour
         AudioManager.instance.StopMusic();
         Time.timeScale = 0;
         levelUI.SetActText(actName);
+        levelUI.SetZoneText(NameZone());
         InitializePlayer();
         Time.timeScale = 1;
     
+    }
+    private string NameZone() //not the most elegant way of doing it, but it works
+    {
+        string zoneName = "";
+        if (currentLevelIndex != 9)
+        {
+
+            zoneName = "ZONE " + (currentLevelIndex +1).ToString();
+           
+        }
+        else {
+            zoneName = "ZONE X";
+
+        }
+
+        return zoneName;
     }
     private void Update()
     {
@@ -234,6 +252,10 @@ public class LevelManager : MonoBehaviour
                     debugStop = true;
                 }
 
+            }
+            if (Keyboard.current.hKey.wasPressedThisFrame)
+            {
+                levelUI.ShowHideAllUI();
             }
 
         }

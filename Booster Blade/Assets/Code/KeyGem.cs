@@ -14,24 +14,35 @@ public class KeyGem : MonoBehaviour
     [SerializeField]
     private GameObject gemFX;
     public GameObject keyBolt;
+
+
     public void UnlockDoor()
     {
         Debug.Log("Enough buttons have been pressed.");
         doorToOpen.OpenDoor(true);
-        conditionsHaveBeenMet = true;
+       // ClearBolts();
         SpawnParticles(gemFX, transform.position);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
     public void ButtonSignal(Transform buttonTransform)
     {
-
+        CheckConditions();
         if (!conditionsHaveBeenMet)
         {
-            StartCoroutine(ShootKeyBolt(buttonTransform, 6));
+            StartCoroutine(ShootKeyBolt(buttonTransform, 6, false)); //6
 
             // CheckAllButtons();
         }
+        else {
+            StartCoroutine(ShootKeyBolt(buttonTransform, 6, true));
+        }
     }
+
+    public void ClearBolts() {
+        StopAllCoroutines();
+
+    }
+    
     public virtual void CheckConditions()
     {
 
@@ -41,7 +52,7 @@ public class KeyGem : MonoBehaviour
         GameObject particleEffect = Instantiate(particleEffectPrefab, spawnPoint, particleEffectPrefab.transform.rotation);
         Destroy(particleEffect, particleEffect.GetComponent<ParticleSystem>().main.startLifetimeMultiplier);
     }
-    public IEnumerator ShootKeyBolt(Transform startingPoint, float timeSpeed)
+    public IEnumerator ShootKeyBolt(Transform startingPoint, float timeSpeed, bool willUnlockDoor)
     {
         Transform doortarget = transform;
         GameObject bolt = Instantiate(keyBolt, startingPoint.position, transform.rotation);
@@ -53,10 +64,17 @@ public class KeyGem : MonoBehaviour
             yield return null;
         }
         bolt.GetComponent<ParticleSystem>().Stop();
-        bolt.GetComponentInChildren<ParticleSystem>().gameObject.SetActive(true); //doesn't quite work yet, use triggerexplosion method
+        //bolt.GetComponentInChildren<ParticleSystem>().gameObject.SetActive(true); //doesn't quite work yet, use triggerexplosion method
         //needs to have a particle impact
-        Destroy(bolt, bolt.GetComponentInChildren<ParticleSystem>().main.startLifetimeMultiplier);
-        CheckConditions();
+       // Destroy(bolt, bolt.GetComponentInChildren<ParticleSystem>().main.startLifetimeMultiplier);
+       
+        Destroy(bolt);
+        Debug.Log("bolt deztroyed");
+        //CheckConditions();
+        if (willUnlockDoor) {
+            UnlockDoor();
+        }
+
     }
 
 }

@@ -26,6 +26,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (isCheckpointActive == false)
         {
+            AudioManager.instance.Play("CheckpointFound");
             SpawnParticles(checkpointtouchFX, transform.position);
             LevelUI.instance.DisplaySmallNotification("CHECKPOINT");
             checkpointAnim.Play("checkP_active");

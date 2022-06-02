@@ -36,7 +36,7 @@ public class EnemyGem : KeyGem
             }
 
             Debug.Log("The enemies needed to open the door have been dealt with.");
-            UnlockDoor();
+        conditionsHaveBeenMet = true;
         //}
     }
 
