@@ -68,7 +68,7 @@ public class KeyGem : MonoBehaviour
         //needs to have a particle impact
        // Destroy(bolt, bolt.GetComponentInChildren<ParticleSystem>().main.startLifetimeMultiplier);
        
-        Destroy(bolt);
+        //Destroy(bolt);
         Debug.Log("bolt deztroyed");
         //CheckConditions();
         if (willUnlockDoor) {
