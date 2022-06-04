@@ -31,6 +31,7 @@ public class TotalResults : MonoBehaviour
 
     public void DisplayRunResults()
     {
+        AudioManager.instance.Play("ChangeDirection");
         resultsPanel.gameObject.SetActive(true);
         resultsText.gameObject.SetActive(true);
         for (int i = 0; i < 10; i++)
@@ -47,34 +48,48 @@ public class TotalResults : MonoBehaviour
         for (int i = 0; i < 10; i++) //might grab level name lenght from a manager
         {
             float levelTime = saveManager.RetrieveCurrentData(i).timeBeaten; //shows each time the player got from each level during the run
+
             if (i > 4)
             {
                 if (i == 9)
                 {
-                    resultsTally2 += "ZONE X: " + FormatTime(levelTime) + "\n";
+                    resultsTally2 += "STAGE X: " + TimeWriter(levelTime);
                 }   
                 else
                 {
-                    resultsTally2 += "ZONE " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
+                    resultsTally2 += "STAGE " + (i + 1).ToString() + ": " + TimeWriter(levelTime);
                 }
                 
             }
             else
             {
-                resultsTally += "ZONE " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
+                resultsTally += "STAGE " + (i + 1).ToString() + ": " + TimeWriter(levelTime);
             }
           
       
 
             totalTime += levelTime;
         }
-        resultsTextTotal.text= "TOTAL: " + FormatTime(totalTime);
+        resultsTextTotal.text= "TOTAL TIME: " + FormatTime(totalTime);
         //resultsTally += "TOTAL: " + FormatTime(totalTime);
         saveManager.LogTotalTime(totalTime);
         resultsText.text = resultsTally;
         resultsText2.text = resultsTally2;
        
         //display total
+    }
+    public string TimeWriter(float score)
+    {
+        string levelT = "\n";
+        if(score== 999999)
+        {
+            levelT= "Not cleared \n";
+        }
+        else
+        {
+            levelT = FormatTime(score) + "\n";
+        }
+        return levelT;
     }
     private string FormatTime(float time)
     {

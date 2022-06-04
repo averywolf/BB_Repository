@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     public GameObject firstButton;
 
     public SuperTextMesh resultsText;
+    public SuperTextMesh resultsText2;
 
     public GameObject recordsEnterButton;
     public GameObject resultsReturnButton;
@@ -165,24 +166,53 @@ public class MainMenu : MonoBehaviour
         //Currently you can view all results even if you haven't beaten the stages
 
         string resultsTally = "";
-
+        string resultsTally2 = "";
         //Specifically, this shows the individual best times for each stage
         for (int i = 0; i < 10; i++) //might grab level name lenght from a manager
         {
             float levelTime = saveManager.RetrieveRecordData(i).timeBeaten;
-            if (levelTime == 999999)
+
+
+            if (i > 4)
             {
-                resultsTally += "Stage " + (i + 1).ToString() + ": Not cleared \n";
+                if (i == 9)
+                {
+                    resultsTally2 += "STAGE X: " + TimeWriter(levelTime);
+                }
+                else
+                {
+                    resultsTally2 += "STAGE " + (i + 1).ToString() + ": " + TimeWriter(levelTime);
+                }
+
             }
             else
             {
-                resultsTally += "Stage " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
+                resultsTally += "STAGE " + (i + 1).ToString() + ": " + TimeWriter(levelTime);
             }
-           
+
+
+            //if (levelTime == 999999)
+            //{
+            //    resultsTally += "STAGE " + (i + 1).ToString() + ": Not cleared \n";
+            //}
+            //else
+            //{
+            //    if (i == 9)
+            //    {
+            //        resultsTally += "STAGE X: " + FormatTime(levelTime) + "\n";
+            //    }
+            //    else
+            //    {
+            //        resultsTally += "STAGE " + (i + 1).ToString() + ": " + FormatTime(levelTime) + "\n";
+            //    }
+
         }
 
+        
+
         resultsText.text = resultsTally;
-        if(saveManager.recordsData.bestTotalTime == -1)
+        resultsText2.text = resultsTally2;
+        if (saveManager.recordsData.bestTotalTime == -1)
         {
             totalResults.text = "COMPLETE RUN TIME NOT YET RECORDED";
         }
@@ -192,6 +222,19 @@ public class MainMenu : MonoBehaviour
         }
       
         //display total
+    }
+    public string TimeWriter(float score)
+    {
+        string levelT = "\n";
+        if (score == 999999)
+        {
+            levelT = "Not cleared \n";
+        }
+        else
+        {
+            levelT = FormatTime(score) + "\n";
+        }
+        return levelT;
     }
     private void SetContinueButtonStatus()
     {

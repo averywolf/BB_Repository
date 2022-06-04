@@ -117,11 +117,11 @@ public class LevelManager : MonoBehaviour
         if (currentLevelIndex != 9)
         {
 
-            zoneName = "ZONE " + (currentLevelIndex +1).ToString();
+            zoneName = "STAGE " + (currentLevelIndex +1).ToString();
            
         }
         else {
-            zoneName = "ZONE X";
+            zoneName = "STAGE X";
 
         }
 
