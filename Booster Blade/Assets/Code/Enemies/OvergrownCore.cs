@@ -90,6 +90,7 @@ public class OvergrownCore : MonoBehaviour
     }
     public void ExplodePillar(Transform pontA, Vector3 pB)
     {
+        AudioManager.instance.Play("VineCut");
         Vector3 pA = pontA.position;
         Vector3 vineLine = pA - pB;
         Vector3 vineDirection = vineLine.normalized;

@@ -508,7 +508,7 @@ public class LevelManager : MonoBehaviour
         if (gameTimer != null)
         {
             levelUI.evilTimer = false;
-            levelUI.SetTimer(currentTime);
+            levelUI.SetTimer(finalTimeLimit - currentTime);
             StopCoroutine(gameTimer);
             
         }
