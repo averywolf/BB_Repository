@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1a6c3a5d2dc438d9a101c68249b2a9, type: 3}
   m_Name: period
   m_EditorClassIdentifier: 
-  showFoldout: 0
-  count: 3
+  showFoldout: 1
+  count: 7
