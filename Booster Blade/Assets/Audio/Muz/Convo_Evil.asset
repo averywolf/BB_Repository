@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Convo_Evil
   m_EditorClassIdentifier: 
   audioName: Convo_Evil
-  Clip: {fileID: 8300000, guid: 2c8d414cb16f03849836315a00b4fe34, type: 3}
-  Volume: 1
+  Clip: {fileID: 8300000, guid: 5665604fc4e61684e91f4fed6d92cff4, type: 3}
+  Volume: 0.67
   Pitch: 1
   Loop: 1
   SpacialBlend: 0
